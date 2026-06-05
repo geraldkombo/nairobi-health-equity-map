@@ -1,94 +1,87 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import CompareView from "@/components/CompareView";
 import SourcesPanel from "@/components/SourcesPanel";
-import WeightsControl from "@/components/WeightsControl";
-import type { WardRecord, IndicatorRecord } from "@/lib/adapters";
-import { DEFAULT_WEIGHTS, type PGSWeights } from "@/lib/scoring";
-import { fetchWards, fetchIndicators } from "@/lib/data-fetch";
+import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
+import { fetchCounties, fetchIndicators } from "@/lib/data-fetch";
 
 export default function ComparePage() {
-  const [wards, setWards] = useState<WardRecord[]>([]);
+  const [counties, setCounties] = useState<CountyRecord[]>([]);
   const [indicators, setIndicators] = useState<IndicatorRecord[]>([]);
-  const [wardA, setWardA] = useState("");
-  const [wardB, setWardB] = useState("");
-  const [weights, setWeights] = useState<PGSWeights>(DEFAULT_WEIGHTS);
+  const [countyA, setCountyA] = useState("");
+  const [countyB, setCountyB] = useState("");
 
   useEffect(() => {
     async function load() {
       try {
-        const [wardsRes, indicators] = await Promise.all([
-          fetchWards(),
+        const [countiesRes, indicators] = await Promise.all([
+          fetchCounties(),
           fetchIndicators(),
         ]);
-        setWards(wardsRes.wards);
+        setCounties(countiesRes.counties);
         setIndicators(indicators);
       } catch {}
     }
     load();
   }, []);
 
-  const selA = useMemo(() => wards.find((w) => w.id === wardA) ?? null, [wards, wardA]);
-  const selB = useMemo(() => wards.find((w) => w.id === wardB) ?? null, [wards, wardB]);
+  const selA = useMemo(() => counties.find((c) => c.id === countyA) ?? null, [counties, countyA]);
+  const selB = useMemo(() => counties.find((c) => c.id === countyB) ?? null, [counties, countyB]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <h1 className="text-xl font-semibold tracking-tight text-neutral-900">Compare wards</h1>
-      <p className="mt-1 text-sm text-neutral-500">Select two wards to compare their equity indicators side by side.</p>
+      <h1 className="text-xl font-semibold tracking-tight text-neutral-900">Compare counties</h1>
+      <p className="mt-1 text-sm text-neutral-500">Select two counties to compare their equity indicators side by side.</p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="ward-a" className="mb-1 block text-sm font-medium text-neutral-700">
-            First ward
+          <label htmlFor="county-a" className="mb-1 block text-sm font-medium text-neutral-700">
+            First county
           </label>
           <select
-            id="ward-a"
-            value={wardA}
-            onChange={(e) => setWardA(e.target.value)}
+            id="county-a"
+            value={countyA}
+            onChange={(e) => setCountyA(e.target.value)}
             className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-200"
-            aria-label="Select first ward"
+            aria-label="Select first county"
           >
-            <option value="">Choose a ward...</option>
-            {wards.map((w) => (
-              <option key={w.id} value={w.id}>
-                {w.name} — {w.subcounty}
+            <option value="">Choose a county...</option>
+            {counties.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
               </option>
             ))}
           </select>
         </div>
         <div>
-          <label htmlFor="ward-b" className="mb-1 block text-sm font-medium text-neutral-700">
-            Second ward
+          <label htmlFor="county-b" className="mb-1 block text-sm font-medium text-neutral-700">
+            Second county
           </label>
           <select
-            id="ward-b"
-            value={wardB}
-            onChange={(e) => setWardB(e.target.value)}
+            id="county-b"
+            value={countyB}
+            onChange={(e) => setCountyB(e.target.value)}
             className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-200"
-            aria-label="Select second ward"
+            aria-label="Select second county"
           >
-            <option value="">Choose a ward...</option>
-            {wards.map((w) => (
-              <option key={w.id} value={w.id}>
-                {w.name} — {w.subcounty}
+            <option value="">Choose a county...</option>
+            {counties.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
               </option>
             ))}
           </select>
         </div>
-      </div>
-
-      <div className="mt-6">
-        <WeightsControl weights={weights} onChange={setWeights} />
       </div>
 
       {selA && selB ? (
         <div className="mt-6">
-          <CompareView wardA={selA} wardB={selB} indicators={indicators} weights={weights} />
+          <CompareView countyA={selA} countyB={selB} indicators={indicators} />
         </div>
       ) : (
         <div className="mt-6 rounded-xl border border-neutral-200 bg-white p-8 text-center text-sm text-neutral-400">
-          Select two wards to see a comparison.
+          Select two counties to see a comparison.
         </div>
       )}
 

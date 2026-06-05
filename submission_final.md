@@ -1,4 +1,4 @@
-# Nairobi Health Equity Map
+﻿# Nairobi Health Equity Map
 **Submission for:** CSS Community Marketplace Exhibitor
 **Theme focus:** Community Systems in the Era of Donor Transition and UHC
 
@@ -9,12 +9,12 @@
 | **Demo geography** | Nairobi City County |
 | **Contact** | geraldshikunyi@gmail.com |
 | **Repository** | https://github.com/geraldkombo/nairobi-health-equity-map |
-| **Live demo** | https://nairobi-health-equity-map.netlify.app |
+| **Live demo** | https://uhcke.netlify.app |
 
 ---
 
 ## 1) One-line pitch
-**A public, open-data Nairobi health equity map—live on Netlify at https://nairobi-health-equity-map.netlify.app—built for researchers and journalists, showing where access gaps are, why they matter, and how to verify the data behind every insight.**
+**A public, open-data Nairobi health equity map—live on Netlify at https://uhcke.netlify.app—built for researchers and journalists, showing where access gaps are, why they matter, and how to verify the data behind every insight.**
 
 ## 2) Problem statement (why this matters now)
 Donor transition and the shift toward domestic financing increase the stakes of *county-level prioritization*. Communities, investigators, and the media need evidence that is:
@@ -25,13 +25,13 @@ Donor transition and the shift toward domestic financing increase the stakes of 
 Today, critical signals about access, service availability, and vulnerability are often spread across technical systems and reports that are hard to interpret quickly—especially for non-specialists. This limits timely accountability, micro-planning, and evidence-informed public discourse.
 
 ## 3) Solution overview (what the tool does)
-**Nairobi Health Equity Map** is a lightweight, map-first web application, live and verified at **https://nairobi-health-equity-map.netlify.app**, that:
+**Nairobi Health Equity Map** is a lightweight, map-first web application, live and verified at **https://uhcke.netlify.app**, that:
 - visualises facility and service-point layers (where available via open sources),
 - highlights underserved geographies using an **explainable Priority Gap Score (PGS)**,
 - provides plain-language "drivers" that explain *why* an area is flagged,
-- supports **side-by-side comparisons** between two locations (https://nairobi-health-equity-map.netlify.app/compare),
-- generates one-page briefs for reporting and accountability (https://nairobi-health-equity-map.netlify.app/brief?ward=KE047-003),
-- includes a dedicated methodology page (https://nairobi-health-equity-map.netlify.app/method), and
+- supports **side-by-side comparisons** between two locations (https://uhcke.netlify.app/compare),
+- generates one-page briefs for reporting and accountability (https://uhcke.netlify.app/brief?ward=KE047-003),
+- includes a dedicated methodology page (https://uhcke.netlify.app/method), and
 - provides researcher-friendly downloads: spreadsheets (CSV), map data (GeoJSON), and per-ward JSON exports.
 
 ## 4) What makes it innovative (and credible for research + media)
@@ -97,17 +97,17 @@ Current demo uses synthetic indicators with open-source ward boundaries (Open Ad
 | **CI/CD** | GitHub Actions (typecheck, lint, Playwright E2E) |
 
 **Live endpoints (Netlify Functions):**
-- `https://nairobi-health-equity-map.netlify.app/.netlify/functions/health`
-- `https://nairobi-health-equity-map.netlify.app/.netlify/functions/wards`
-- `https://nairobi-health-equity-map.netlify.app/.netlify/functions/facilities`
+- `https://uhcke.netlify.app/.netlify/functions/health`
+- `https://uhcke.netlify.app/.netlify/functions/wards`
+- `https://uhcke.netlify.app/.netlify/functions/facilities`
 
 ## 8) Demonstration plan (marketplace booth)
 In a 3-5 minute walkthrough, participants will:
-1. **Explore** the Nairobi map at https://nairobi-health-equity-map.netlify.app and identify high-priority underserved areas via the choropleth PGS visualization.
-2. **Click** a ward to see its Priority Gap Score + plain-language drivers + data provenance (e.g., Kibera: https://nairobi-health-equity-map.netlify.app/brief?ward=KE047-003).
-3. **Compare** two locations side-by-side at https://nairobi-health-equity-map.netlify.app/compare to show inequity clearly.
+1. **Explore** the Nairobi map at https://uhcke.netlify.app and identify high-priority underserved areas via the choropleth PGS visualization.
+2. **Click** a ward to see its Priority Gap Score + plain-language drivers + data provenance (e.g., Kibera: https://uhcke.netlify.app/brief?ward=KE047-003).
+3. **Compare** two locations side-by-side at https://uhcke.netlify.app/compare to show inequity clearly.
 4. **Generate** a one-page brief (print/PDF) to demonstrate real-world use in reporting and decision spaces.
-5. **Verify** methodology transparency at https://nairobi-health-equity-map.netlify.app/method.
+5. **Verify** methodology transparency at https://uhcke.netlify.app/method.
 6. **Download** data as CSV or GeoJSON for offline analysis and reproducibility.
 
 ## 9) Alignment to the forum theme
@@ -127,13 +127,13 @@ All URLs below have been tested and return HTTP 200:
 
 | Check | Status |
 |---|---|
-| Home page loads | ✅ https://nairobi-health-equity-map.netlify.app |
-| Method page | ✅ https://nairobi-health-equity-map.netlify.app/method |
-| Compare page | ✅ https://nairobi-health-equity-map.netlify.app/compare |
-| Brief generator | ✅ https://nairobi-health-equity-map.netlify.app/brief?ward=KE047-003 |
-| Data CSV accessible | ✅ https://nairobi-health-equity-map.netlify.app/data/indicators/ward_indicators.csv |
-| GeoJSON accessible | ✅ https://nairobi-health-equity-map.netlify.app/data/boundaries/nairobi_wards.geojson |
-| Snapshot fallback | ✅ https://nairobi-health-equity-map.netlify.app/data/snapshots/wards.json |
+| Home page loads | ✅ https://uhcke.netlify.app |
+| Method page | ✅ https://uhcke.netlify.app/method |
+| Compare page | ✅ https://uhcke.netlify.app/compare |
+| Brief generator | ✅ https://uhcke.netlify.app/brief?ward=KE047-003 |
+| Data CSV accessible | ✅ https://uhcke.netlify.app/data/indicators/ward_indicators.csv |
+| GeoJSON accessible | ✅ https://uhcke.netlify.app/data/boundaries/nairobi_wards.geojson |
+| Snapshot fallback | ✅ https://uhcke.netlify.app/data/snapshots/wards.json |
 | Source repository | ✅ https://github.com/geraldkombo/nairobi-health-equity-map |
 | HTTPS enforced | ✅ All pages served over TLS |
 | Clean URLs | ✅ /method, /compare, /brief resolve without .html extension |

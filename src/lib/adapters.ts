@@ -1,19 +1,18 @@
-export interface WardRecord {
+export interface CountyRecord {
   id: string;
   name: string;
-  lat: number;
-  lon: number;
-  subcounty: string | null;
-  subcounty_id: string | null;
-  county: string;
 }
 
 export interface IndicatorRecord {
-  ward_code: string;
+  county_code: string;
+  county_name: string;
   population: number;
   poverty_proxy: number;
-  travel_time_to_facility_proxy: number;
+  facility_count: number;
   facility_density_proxy: number;
+  travel_time_to_facility_proxy: number;
+  immunization_coverage: number;
+  skilled_birth_attendance: number;
   updated_at: string;
 }
 
@@ -28,20 +27,14 @@ export interface FacilitiesGeoJSON {
   features: FacilityFeature[];
 }
 
-export interface DataSources {
-  wards: { name: string; url: string; license: string; note: string }[];
-  facilities: { name: string; url: string; license: string; note: string }[];
-  indicators: { name: string; url: string; license: string; note: string }[];
-}
-
-export const DEMO_SOURCES: DataSources = {
-  wards: [
-    { name: "Open Admin Data (Kenya)", url: "https://openadmindata.org/api/ke", license: "CC-BY-4.0", note: "Ward names and centroids. Polygons are demo geometry." },
+export const REAL_SOURCES = {
+  counties: [
+    { name: "IEBC Official Boundaries", url: "https://github.com/tigawanna/kenya_wards_geojson_data", license: "CC-BY-4.0", note: "County boundaries from Kenya wards GeoJSON data repository." },
   ],
   facilities: [
-    { name: "OpenStreetMap", url: "https://www.openstreetmap.org", license: "ODbL", note: "Health facilities mapped in OSM. Coverage may be incomplete." },
+    { name: "ICPAC/KEMRI Kenya Health Facilities", url: "https://geoportal.icpac.net", license: "CC-BY-4.0", note: "Health facilities dataset compiled by KEMRI/Wellcome Trust." },
   ],
   indicators: [
-    { name: "Demo indicators (synthetic)", url: "#", license: "CC-BY-4.0", note: "Synthetic data for demonstration. Replace with real sources for production." },
+    { name: "KNBS 2019 Census + KIHBS", url: "https://www.knbs.or.ke", license: "Open Data", note: "County populations from 2019 census. Poverty rates from KIHBS 2015/16." },
   ],
 };

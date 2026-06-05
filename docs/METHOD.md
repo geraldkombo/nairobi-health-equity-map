@@ -25,11 +25,11 @@ Where a higher value should indicate greater priority (e.g., travel time), the n
 ## Aggregation
 
 ```
-PGS = (accessibility Ã— 0.4) + (vulnerability Ã— 0.3) + (population_pressure Ã— 0.3)
+PGS = (accessibility Ã- 0.4) + (vulnerability Ã- 0.3) + (population_pressure Ã- 0.3)
 ```
 
 Where:
-- `accessibility = travel_time_normalised Ã— 0.6 + facility_density_inverted Ã— 0.4`
+- `accessibility = travel_time_normalised Ã- 0.6 + facility_density_inverted Ã- 0.4`
 - `vulnerability = poverty_normalised`
 - `population_pressure = population_normalised`
 

@@ -22,20 +22,18 @@ export default function HowToUse() {
         <div id="how-to-use-content" className="border-t border-neutral-100 px-5 py-4 text-sm leading-6 text-neutral-600">
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <strong>Hover</strong> over a ward to see its name and Priority Gap Score.
+              <strong>Hover</strong> over a county to see its name and Priority Gap Score.
             </li>
             <li>
-              <strong>Click</strong> a ward to open its details panel with key facts, drivers, and data provenance.
+              <strong>Click</strong> a county to open its details panel with key facts, drivers, and data provenance.
             </li>
             <li>
-              Use the <strong>Compare</strong> page to place two wards side by side.
+              Use the <strong>Compare</strong> page to place two counties side by side.
             </li>
             <li>
-              Use the <strong>Brief</strong> button on a selected ward to generate a printable one-page summary.
+              Use the <strong>Brief</strong> button on a selected county to generate a printable one-page summary.
             </li>
-            <li>
-              Under <strong>Research mode</strong>, adjust PGS weights to explore sensitivity.
-            </li>
+
           </ul>
         </div>
       )}

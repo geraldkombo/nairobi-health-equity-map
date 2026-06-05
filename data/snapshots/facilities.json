@@ -1,49 +1,4218 @@
 {
   "type": "FeatureCollection",
-  "meta": {
-    "fetched_at": "2026-01-15T00:00:00.000Z",
-    "sources": [
-      {
-        "name": "OpenStreetMap",
-        "url": "https://www.openstreetmap.org",
-        "license": "ODbL",
-        "note": "Fallback snapshot. Queried via Overpass API for health facilities in Nairobi."
-      }
-    ]
-  },
   "features": [
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.75,-1.33]},"properties":{"name":"Karen Medical Centre","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.76,-1.32]},"properties":{"name":"Karen Hospital","amenity":"hospital"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.77,-1.315]},"properties":{"name":"Langata Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.8,-1.27]},"properties":{"name":"Kilimani Medical Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.81,-1.265]},"properties":{"name":"Westlands Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.795,-1.3]},"properties":{"name":"Kibera Community Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.8,-1.305]},"properties":{"name":"Kibera Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.85,-1.25]},"properties":{"name":"Mathare Hospital","amenity":"hospital"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.855,-1.245]},"properties":{"name":"Mathare Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.89,-1.255]},"properties":{"name":"Dandora Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.895,-1.25]},"properties":{"name":"Dandora Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.9,-1.2]},"properties":{"name":"Kasarani Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.905,-1.205]},"properties":{"name":"Kasarani Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.815,-1.24]},"properties":{"name":"Parklands Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.82,-1.235]},"properties":{"name":"Parklands Medical Centre","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.93,-1.3]},"properties":{"name":"Embakasi Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.935,-1.305]},"properties":{"name":"Embakasi Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.74,-1.34]},"properties":{"name":"Langata Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.78,-1.27]},"properties":{"name":"Westlands Medical","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.79,-1.275]},"properties":{"name":"Nairobi West Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.83,-1.23]},"properties":{"name":"Kianda Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.86,-1.23]},"properties":{"name":"Mwiki Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.87,-1.22]},"properties":{"name":"Ruaraka Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.88,-1.21]},"properties":{"name":"Kasarani Maternity","amenity":"hospital"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.815,-1.315]},"properties":{"name":"Otiende Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.825,-1.31]},"properties":{"name":"Woodley Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.83,-1.28]},"properties":{"name":"Hurlingham Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.75,-1.35]},"properties":{"name":"Mbagathi Hospital","amenity":"hospital"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.825,-1.295]},"properties":{"name":"Nairobi South Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.9,-1.26]},"properties":{"name":"Embakasi Medical Centre","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.92,-1.23]},"properties":{"name":"Komarock Clinic","amenity":"clinic"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.94,-1.22]},"properties":{"name":"Makadara Health Centre","amenity":"health_centre"}},
-    {"type":"Feature","geometry":{"type":"Point","coordinates":[36.83,-1.26]},"properties":{"name":"Muthangari Clinic","amenity":"clinic"}}
+    {
+      "type": "Feature",
+      "id": "kenya_health.4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.6896,
+          -1.21635
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 4,
+        "F_NAME": "CHURA DISP",
+        "HMIS_": null,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIKUYU",
+        "LOCATION": "KABETE",
+        "SUB_LOCATI": "CHURA",
+        "LONG": 36.6896,
+        "LAT": -1.21635,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.791234,
+          -1.182312
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 7,
+        "F_NAME": "GATHANGA DISP",
+        "HMIS_": 931,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "WAGUTHU",
+        "SUB_LOCATI": "GATHANGA",
+        "LONG": 36.791234,
+        "LAT": -1.182312,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.11",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.6689,
+          -1.16126
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 11,
+        "F_NAME": "GICHURU DISP",
+        "HMIS_": 198,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "LIMURU",
+        "LOCATION": "NGECHA",
+        "SUB_LOCATI": "NGECHA",
+        "LONG": 36.6689,
+        "LAT": -1.16126,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.24",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82123,
+          -1.174213
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 24,
+        "F_NAME": "KARIA DISP",
+        "HMIS_": 210,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "WAGUTHU",
+        "SUB_LOCATI": "NGEGU",
+        "LONG": 36.82123,
+        "LAT": -1.174213,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.25",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.78,
+          -1.22
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 25,
+        "F_NAME": "KARURA SDA DISP",
+        "HMIS_": null,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "KIHARA",
+        "SUB_LOCATI": "GACHIE",
+        "LONG": 36.78,
+        "LAT": -1.22,
+        "SPATIAL_RE": "ILRI VILLAGES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.26",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7399,
+          -1.18431
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 26,
+        "F_NAME": "KARURI HEALTH CENTRE",
+        "HMIS_": 261,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "KIAMBAA",
+        "SUB_LOCATI": "NJIKU",
+        "LONG": 36.7399,
+        "LAT": -1.18431,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82993,
+          -1.16938
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 29,
+        "F_NAME": "KIAMBU DISTRICT HOSPITAL",
+        "HMIS_": 251,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "KIAMBAA S/AREA",
+        "SUB_LOCATI": "TOWNSHIP(KIAMBAA)",
+        "LONG": 36.82993,
+        "LAT": -1.16938,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 1,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.35",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7386,
+          -1.21091
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 35,
+        "F_NAME": "KIHARA HEALTH CENTRE",
+        "HMIS_": 216,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "KIHARA",
+        "SUB_LOCATI": "MAHINDI",
+        "LONG": 36.7386,
+        "LAT": -1.21091,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.46",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.771525,
+          -1.192355
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 46,
+        "F_NAME": "LITTLE SERVANT OF SACRET HEART D",
+        "HMIS_": 435,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIAMBAA",
+        "LOCATION": "KIAMBAA",
+        "SUB_LOCATI": "NJORO(KIAMBU)",
+        "LONG": 36.771525,
+        "LAT": -1.192355,
+        "SPATIAL_RE": "SUBLOC CENTROID",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.50",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7,
+          -1.18
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 50,
+        "F_NAME": "MOST PRECIOUS BLOOD DISP",
+        "HMIS_": 3903,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "LIMURU",
+        "LOCATION": "TIGONI",
+        "SUB_LOCATI": "RED HILL",
+        "LONG": 36.7,
+        "LAT": -1.18,
+        "SPATIAL_RE": "ILRI VILLAGES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.57",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.670303,
+          -1.169356
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 57,
+        "F_NAME": "NGECHA ORTHODOX  DISP",
+        "HMIS_": null,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "LIMURU",
+        "LOCATION": "NGECHA",
+        "SUB_LOCATI": "NGECHA",
+        "LONG": 36.670303,
+        "LAT": -1.169356,
+        "SPATIAL_RE": "SUBLOC CENTROID",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.60",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7031,
+          -1.20204
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 60,
+        "F_NAME": "NYATHUNA HEALTH CENTRE",
+        "HMIS_": 260,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIKUYU",
+        "LOCATION": "NYATHUNA",
+        "SUB_LOCATI": "KIRANGARI(KIAMBU)",
+        "LONG": 36.7031,
+        "LAT": -1.20204,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.6667,
+          -1.26667
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 62,
+        "F_NAME": "P.C.E.A. KIKUYU HOSPITAL",
+        "HMIS_": 2441,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIKUYU",
+        "LOCATION": "KIKUYU",
+        "SUB_LOCATI": "KIKUYU TOWNSHIP",
+        "LONG": 36.6667,
+        "LAT": -1.26667,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 1,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.69",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7086,
+          -1.2526
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 69,
+        "F_NAME": "UTHIRU DISP",
+        "HMIS_": 231,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIKUYU",
+        "LOCATION": "KINOO",
+        "SUB_LOCATI": "UTHIRU(KIAMBU)",
+        "LONG": 36.7086,
+        "LAT": -1.2526,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.70",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7261,
+          -1.21737
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 70,
+        "F_NAME": "WANGIGE HEALTH CENTRE",
+        "HMIS_": 249,
+        "PROV": "CENTRAL",
+        "DIST": "KIAMBU",
+        "DIVISION": "KIKUYU",
+        "LOCATION": "NYATHUNA",
+        "SUB_LOCATI": "KARURA(KIKUYU)",
+        "LONG": 36.7261,
+        "LAT": -1.21737,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.375",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.0116,
+          -1.17885
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 14,
+        "F_NAME": "GITHURAI DISP",
+        "HMIS_": null,
+        "PROV": "CENTRAL",
+        "DIST": "THIKA",
+        "DIVISION": "RUIRU",
+        "LOCATION": "RUIRU",
+        "SUB_LOCATI": "KIUU",
+        "LONG": 37.0116,
+        "LAT": -1.17885,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.964",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.061235,
+          -1.412133
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 31,
+        "F_NAME": "KINANIE DISP",
+        "HMIS_": 4463,
+        "PROV": "EASTERN",
+        "DIST": "MACHAKOS",
+        "DIVISION": "MAVOKO",
+        "LOCATION": "LUKENYA",
+        "SUB_LOCATI": "KINANIE",
+        "LONG": 37.061235,
+        "LAT": -1.412133,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1426",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 1,
+        "F_NAME": "AL IBRAHIM HEALTH CENTRE",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1427",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 2,
+        "F_NAME": "APOSTLES OF JESUS DISP",
+        "HMIS_": 3126,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1428",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.95676,
+          -1.28724
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 3,
+        "F_NAME": "APTC  EMBAKASI HEALTH CENTRE",
+        "HMIS_": 56,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "EMBAKASI",
+        "SUB_LOCATI": "MIHANGO",
+        "LONG": 36.95676,
+        "LAT": -1.28724,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1429",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77192,
+          -1.30508
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 4,
+        "F_NAME": "AYANY ESTATE HEALTH CENTRE",
+        "HMIS_": 2541,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KIBERA",
+        "LOCATION": "SERA NGOMBE",
+        "SUB_LOCATI": "OLYMPIC",
+        "LONG": 36.77192,
+        "LAT": -1.30508,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1430",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.88416,
+          -1.2441
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 5,
+        "F_NAME": "BABA DOGO HEALTH CENTRE",
+        "HMIS_": 2542,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KARIOBANGI",
+        "SUB_LOCATI": "BABA DOGO",
+        "LONG": 36.88416,
+        "LAT": -1.2441,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1431",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86215,
+          -1.29221
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 6,
+        "F_NAME": "BAHATI DISP",
+        "HMIS_": 58,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MARINGO",
+        "SUB_LOCATI": "OFAFA MARINGO",
+        "LONG": 36.86215,
+        "LAT": -1.29221,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1432",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.861624,
+          -1.286682
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 7,
+        "F_NAME": "BAHATI HEALTH CENTRE",
+        "HMIS_": 131,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "BAHATI",
+        "SUB_LOCATI": "KIMATHI(NAIROBI)",
+        "LONG": 36.861624,
+        "LAT": -1.286682,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1433",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 8,
+        "F_NAME": "BETTER LIVING CENTRE SDA DISP",
+        "HMIS_": 2684,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1434",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 9,
+        "F_NAME": "BOHRA ROAD DISP NAIROBI",
+        "HMIS_": 4,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1435",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83112,
+          -1.27123
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 10,
+        "F_NAME": "BORAH ROAD DISP",
+        "HMIS_": 3356,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "NGARA",
+        "SUB_LOCATI": "NGARA EAST",
+        "LONG": 36.83112,
+        "LAT": -1.27123,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1436",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 11,
+        "F_NAME": "BR. ANDRE DISP",
+        "HMIS_": 3637,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1437",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 12,
+        "F_NAME": "CALEDONIA DISP",
+        "HMIS_": 59,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1438",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85212,
+          -1.28334
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 13,
+        "F_NAME": "CALIFORNIA HC",
+        "HMIS_": 2546,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "EASTLEIGH SOUTH",
+        "SUB_LOCATI": "EASTLEIGH SOUTH",
+        "LONG": 36.85212,
+        "LAT": -1.28334,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1439",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84111,
+          -1.26341
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 14,
+        "F_NAME": "CATHOLIC DISP",
+        "HMIS_": 3341,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "KARIOKOR",
+        "SUB_LOCATI": "PANGANI",
+        "LONG": 36.84111,
+        "LAT": -1.26341,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1440",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.87223,
+          -1.28315
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 15,
+        "F_NAME": "CHARLES NEW ROAD HC",
+        "HMIS_": 8,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKADARA",
+        "SUB_LOCATI": "HARAMBEE",
+        "LONG": 36.87223,
+        "LAT": -1.28315,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1441",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 16,
+        "F_NAME": "CHRISTIAN MEDICAL AID DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1442",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 17,
+        "F_NAME": "COMMUNITY HEALTH DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1443",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 18,
+        "F_NAME": "CRESCENT MEDICAL AID BIAFRA",
+        "HMIS_": 2543,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1444",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85221,
+          -1.26114
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 19,
+        "F_NAME": "CRESCENT MEDICAL AID EASTLEIGH",
+        "HMIS_": 2615,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "MATHARE",
+        "SUB_LOCATI": "MLANGO KUBWA",
+        "LONG": 36.85221,
+        "LAT": -1.26114,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1445",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.89223,
+          -1.31415
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 20,
+        "F_NAME": "CRESCENT MEDICAL AID MUKURU",
+        "HMIS_": 2662,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "MUKURU KWA NJENGA",
+        "SUB_LOCATI": "MUKURU KWA NJENGA",
+        "LONG": 36.89223,
+        "LAT": -1.31415,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1446",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83111,
+          -1.28141
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 21,
+        "F_NAME": "CRESENT MEDICAL AID KENYA",
+        "HMIS_": 2549,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY CENTRE",
+        "LONG": 36.83111,
+        "LAT": -1.28141,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1447",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.90223,
+          -1.24474
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 22,
+        "F_NAME": "DANDORA 2 HEALTH CENTRE",
+        "HMIS_": 2550,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "DANDORA",
+        "SUB_LOCATI": "DANDORA 'B'",
+        "LONG": 36.90223,
+        "LAT": -1.24474,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1448",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.88775,
+          -1.25761
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 23,
+        "F_NAME": "DANDORA HEALTH CENTRE",
+        "HMIS_": 132,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "DANDORA",
+        "SUB_LOCATI": "DANDORA 'A'",
+        "LONG": 36.88775,
+        "LAT": -1.25761,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1449",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 24,
+        "F_NAME": "DIS. INVEST. EDC SECT DISP",
+        "HMIS_": 64,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1450",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 25,
+        "F_NAME": "DOYA DISP",
+        "HMIS_": 2555,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1451",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85029,
+          -1.26869
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 26,
+        "F_NAME": "EASTLEIGH HEALTH CENTRE",
+        "HMIS_": 12,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "EASTLEIGH NORTH",
+        "SUB_LOCATI": "AIRBASE",
+        "LONG": 36.85029,
+        "LAT": -1.26869,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1452",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85121,
+          -1.27223
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 27,
+        "F_NAME": "EASTLEIGH LINES HC",
+        "HMIS_": 13,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "EASTLEIGH NORTH",
+        "SUB_LOCATI": "AIRBASE",
+        "LONG": 36.85121,
+        "LAT": -1.27223,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1453",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 28,
+        "F_NAME": "EDELVALE HC",
+        "HMIS_": 14,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1454",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 29,
+        "F_NAME": "ELIMU MED. DISP",
+        "HMIS_": 2619,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1455",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.91262,
+          -1.30795
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 30,
+        "F_NAME": "EMBAKASI DISP",
+        "HMIS_": 15,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "EMBAKASI",
+        "SUB_LOCATI": "EMBAKASI(NAIROBI)",
+        "LONG": 36.91262,
+        "LAT": -1.30795,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1456",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 31,
+        "F_NAME": "FAMILY WELFARE & PLANNING DISP",
+        "HMIS_": 16,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1457",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 32,
+        "F_NAME": "FATIMA DISP MISSION",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1458",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.830249,
+          -1.253175
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 33,
+        "F_NAME": "GETRUDES GARDENS CHILDREN'S HOSP",
+        "HMIS_": 151,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "HIGHRIDGE",
+        "SUB_LOCATI": "MUTHAIGA",
+        "LONG": 36.830249,
+        "LAT": -1.253175,
+        "SPATIAL_RE": "WAYUMBA",
+        "F_TYPE": 1,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1459",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.81763,
+          -1.25736
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 34,
+        "F_NAME": "HIGHRIDGE HC",
+        "HMIS_": 17,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "HIGHRIDGE",
+        "SUB_LOCATI": "HIGHRIDGE",
+        "LONG": 36.81763,
+        "LAT": -1.25736,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1460",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85865,
+          -1.28773
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 35,
+        "F_NAME": "HONO CRESCENT HC",
+        "HMIS_": 18,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "BAHATI",
+        "SUB_LOCATI": "KIMATHI(NAIROBI)",
+        "LONG": 36.85865,
+        "LAT": -1.28773,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1461",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85214,
+          -1.26111
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 36,
+        "F_NAME": "HURUMA LIONS CLINIC",
+        "HMIS_": 2678,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "MATHARE",
+        "SUB_LOCATI": "MLANGO KUBWA",
+        "LONG": 36.85214,
+        "LAT": -1.26111,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 3,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1462",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 37,
+        "F_NAME": "HURUMA LIONS CLINIC",
+        "HMIS_": 19,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1463",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 38,
+        "F_NAME": "INDUSTRIAL AREA CHESOI DISP",
+        "HMIS_": 79,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1464",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86157,
+          -1.30783
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 39,
+        "F_NAME": "INDUSTRIAL AREA LUNGA/L DISP",
+        "HMIS_": 80,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "VIWANDANI",
+        "SUB_LOCATI": "VIWANDANI",
+        "LONG": 36.86157,
+        "LAT": -1.30783,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1465",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83661,
+          -1.29805
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 40,
+        "F_NAME": "INDUSTRIAL AREA PRISON HEALTH CE",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "VIWANDANI",
+        "SUB_LOCATI": "LANDI MAWE",
+        "LONG": 36.83661,
+        "LAT": -1.29805,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1466",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82171,
+          -1.28358
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 41,
+        "F_NAME": "INOCULATION CENTRE DISP",
+        "HMIS_": 81,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY SQUARE",
+        "LONG": 36.82171,
+        "LAT": -1.28358,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1467",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8205,
+          -1.27776
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 42,
+        "F_NAME": "JAMIA CRESCENT MEDICAL AID DISP",
+        "HMIS_": 21,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY CENTRE",
+        "LONG": 36.8205,
+        "LAT": -1.27776,
+        "SPATIAL_RE": "WAYUMBA",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1468",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.87117,
+          -1.28896
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 43,
+        "F_NAME": "JERICHO HEALTH CENTRE",
+        "HMIS_": 2630,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKADARA",
+        "SUB_LOCATI": "LUMUMBA",
+        "LONG": 36.87117,
+        "LAT": -1.28896,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1469",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86548,
+          -1.28258
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 44,
+        "F_NAME": "JERUSALEM HEALTH CENTRE",
+        "HMIS_": 22,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "BAHATI",
+        "SUB_LOCATI": "UHURU",
+        "LONG": 36.86548,
+        "LAT": -1.28258,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1470",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 45,
+        "F_NAME": "JINNAH AVENUE HC",
+        "HMIS_": 23,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1471",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.72543,
+          -1.26114
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 46,
+        "F_NAME": "KABETE TECHNICAL AND TRADE DISP",
+        "HMIS_": 89,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KITISURU",
+        "SUB_LOCATI": "LORESHO",
+        "LONG": 36.72543,
+        "LAT": -1.26114,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1472",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 47,
+        "F_NAME": "KABIRO KAWANGWARE DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1473",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.91278,
+          -1.18716
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 48,
+        "F_NAME": "KAHAWA HEALTH CENTRE",
+        "HMIS_": 24,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KAHAWA",
+        "SUB_LOCATI": "KONGO SOWETO",
+        "LONG": 36.91278,
+        "LAT": -1.18716,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1474",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84534,
+          -1.29282
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 49,
+        "F_NAME": "KALOLENI SHC",
+        "HMIS_": 184,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKONGENI",
+        "SUB_LOCATI": "KALOLENI(NAIROBI)",
+        "LONG": 36.84534,
+        "LAT": -1.29282,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1475",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.89342,
+          -1.1761
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 50,
+        "F_NAME": "KAMITI HEALTH CENTRE",
+        "HMIS_": 136,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KAHAWA",
+        "SUB_LOCATI": "KAHAWA WEST/JUJA K",
+        "LONG": 36.89342,
+        "LAT": -1.1761,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1476",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.74933,
+          -1.26461
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 51,
+        "F_NAME": "KANGEMI HEALTH CENTRE",
+        "HMIS_": 137,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KANGEMI",
+        "SUB_LOCATI": "KANGEMI",
+        "LONG": 36.74933,
+        "LAT": -1.26461,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1477",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.70876,
+          -1.32211
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 52,
+        "F_NAME": "KAREN HEALTH CENTRE",
+        "HMIS_": 138,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KIBERA",
+        "LOCATION": "KAREN",
+        "SUB_LOCATI": "LENANA",
+        "LONG": 36.70876,
+        "LAT": -1.32211,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1478",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.88214,
+          -1.26314
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 53,
+        "F_NAME": "KARIOBANGI CATHOLIC DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "KARIOBANGI SOUTH",
+        "SUB_LOCATI": "KARIOBANGI SOUTH",
+        "LONG": 36.88214,
+        "LAT": -1.26314,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1479",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.88111,
+          -1.25123
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 54,
+        "F_NAME": "KARIOBANGI CHESIRE HOME DISP",
+        "HMIS_": 90,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KARIOBANGI",
+        "SUB_LOCATI": "KARIOBANGI NORTH",
+        "LONG": 36.88111,
+        "LAT": -1.25123,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1480",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.87978,
+          -1.25174
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 55,
+        "F_NAME": "KARIOBANGI HEALTH CENTRE",
+        "HMIS_": 139,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KARIOBANGI",
+        "SUB_LOCATI": "KARIOBANGI NORTH",
+        "LONG": 36.87978,
+        "LAT": -1.25174,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1481",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.87978,
+          -1.25174
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 56,
+        "F_NAME": "KARIOBANGI MCH / FP DISP",
+        "HMIS_": 2634,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KARIOBANGI",
+        "SUB_LOCATI": "KARIOBANGI NORTH",
+        "LONG": 36.87978,
+        "LAT": -1.25174,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1482",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83552,
+          -1.2763
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 57,
+        "F_NAME": "KARIOKOR DISP",
+        "HMIS_": 26,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "KARIOKOR",
+        "SUB_LOCATI": "ZIWANI/KARIOKOR",
+        "LONG": 36.83552,
+        "LAT": -1.2763,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1483",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.90139,
+          -1.21821
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 58,
+        "F_NAME": "KASARANI SHC",
+        "HMIS_": 185,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KASARANI",
+        "SUB_LOCATI": "KASARANI",
+        "LONG": 36.90139,
+        "LAT": -1.21821,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1484",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 59,
+        "F_NAME": "KATWEKERA PHC",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1485",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 60,
+        "F_NAME": "KAWANGWARE CATHOLIC DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1486",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.74052,
+          -1.28405
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 61,
+        "F_NAME": "KAWANGWARE HEALTH CENTRE",
+        "HMIS_": 2635,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KAWANGWARE",
+        "SUB_LOCATI": "KAWANGWARE",
+        "LONG": 36.74052,
+        "LAT": -1.28405,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1487",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.91668,
+          -1.26649
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 62,
+        "F_NAME": "KAYOLE HEALTH CENTRE",
+        "HMIS_": 2636,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "KAYOLE",
+        "SUB_LOCATI": "KAYOLE",
+        "LONG": 36.91668,
+        "LAT": -1.26649,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1488",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.806388,
+          -1.300876
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 63,
+        "F_NAME": "KENYATTA NATIONAL HOSPITAL",
+        "HMIS_": 157,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KENYATTA/GOLF COURSE",
+        "SUB_LOCATI": "KENYATTA",
+        "LONG": 36.806388,
+        "LAT": -1.300876,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 2,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1489",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 64,
+        "F_NAME": "KIBAGARE GOOD NEWS DISP",
+        "HMIS_": 3127,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1490",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 65,
+        "F_NAME": "KIBERA CATHOLIC DISP",
+        "HMIS_": 96,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1491",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 66,
+        "F_NAME": "KIBERA CRESCENT MEDICAL AID DISP",
+        "HMIS_": 2642,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1492",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8228,
+          -1.28704
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 67,
+        "F_NAME": "KICC DISP",
+        "HMIS_": 134,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY SQUARE",
+        "LONG": 36.8228,
+        "LAT": -1.28704,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1493",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.81064,
+          -1.28551
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 68,
+        "F_NAME": "LADY NORTH HEALTH CENTRE",
+        "HMIS_": 2647,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KILIMANI",
+        "SUB_LOCATI": "KILIMANI(NAIROBI)",
+        "LONG": 36.81064,
+        "LAT": -1.28551,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1494",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8231,
+          -1.28012
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 69,
+        "F_NAME": "LAGOS HC",
+        "HMIS_": 28,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY CENTRE",
+        "LONG": 36.8231,
+        "LAT": -1.28012,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1495",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7783,
+          -1.31814
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 70,
+        "F_NAME": "LANGATA HEALTH CENTRE",
+        "HMIS_": 141,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KIBERA",
+        "LOCATION": "MUGUMOINI",
+        "SUB_LOCATI": "BOMAS",
+        "LONG": 36.7783,
+        "LAT": -1.31814,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1496",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 71,
+        "F_NAME": "LIKONI ROAD SDA DISP",
+        "HMIS_": 119,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1497",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 72,
+        "F_NAME": "LION'S MATHARE DISP",
+        "HMIS_": 30,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1498",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.92214,
+          -1.23415
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 73,
+        "F_NAME": "LITTLE SISTERS OF ST FRANCIS",
+        "HMIS_": 3636,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "KASARANI",
+        "SUB_LOCATI": "MWIKI",
+        "LONG": 36.92214,
+        "LAT": -1.23415,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1499",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82667,
+          -1.29131
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 74,
+        "F_NAME": "LOCO HEALTH CENTRE",
+        "HMIS_": 98,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "VIWANDANI",
+        "SUB_LOCATI": "LANDI MAWE",
+        "LONG": 36.82667,
+        "LAT": -1.29131,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1500",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7447,
+          -1.23768
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 75,
+        "F_NAME": "LOWER KABETE SHC",
+        "HMIS_": 186,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KITISURU",
+        "SUB_LOCATI": "KITISURU",
+        "LONG": 36.7447,
+        "LAT": -1.23768,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1501",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86157,
+          -1.30783
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 76,
+        "F_NAME": "LUNGA LUNGA HEALTH CENTRE",
+        "HMIS_": 3351,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "VIWANDANI",
+        "SUB_LOCATI": "VIWANDANI",
+        "LONG": 36.86157,
+        "LAT": -1.30783,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1502",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.87226,
+          -1.29431
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 77,
+        "F_NAME": "MAKADARA HC",
+        "HMIS_": 32,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKADARA",
+        "SUB_LOCATI": "HAMZA",
+        "LONG": 36.87226,
+        "LAT": -1.29431,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1503",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84754,
+          -1.29394
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 79,
+        "F_NAME": "MAKONGENI HC",
+        "HMIS_": 33,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKONGENI",
+        "SUB_LOCATI": "MAKONGENI(NAIROBI)",
+        "LONG": 36.84754,
+        "LAT": -1.29394,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1504",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 80,
+        "F_NAME": "MARIA DOMINIQUE DISP",
+        "HMIS_": 3349,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1505",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 81,
+        "F_NAME": "MARIA IMMACULATE DISP(BAHATI)",
+        "HMIS_": 102,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1506",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86451,
+          -1.28894
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 82,
+        "F_NAME": "MARINGO HC",
+        "HMIS_": 34,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MARINGO",
+        "SUB_LOCATI": "OFAFA MARINGO",
+        "LONG": 36.86451,
+        "LAT": -1.28894,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1507",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 83,
+        "F_NAME": "MARY IMMACULATE DISP (KILIMANI)",
+        "HMIS_": 103,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1508",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.833478,
+          -1.305393
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 84,
+        "F_NAME": "MATER MISERICORDIAE HOSPITAL",
+        "HMIS_": 159,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MUKURU NYAYO",
+        "SUB_LOCATI": "NAIROBI SOUTH",
+        "LONG": 36.833478,
+        "LAT": -1.305393,
+        "SPATIAL_RE": "WAYUMBA",
+        "F_TYPE": 1,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1509",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86485,
+          -1.25323
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 85,
+        "F_NAME": "MATHARE NORTH HEALTH CENTRE",
+        "HMIS_": 2656,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "RUARAKA",
+        "SUB_LOCATI": "UTALII",
+        "LONG": 36.86485,
+        "LAT": -1.25323,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1510",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 86,
+        "F_NAME": "MATHARE VALLEY DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1511",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.844302,
+          -1.259489
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 87,
+        "F_NAME": "MATHARI MENTAL HOSPITAL",
+        "HMIS_": 160,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "MATHARE",
+        "SUB_LOCATI": "MATHARE",
+        "LONG": 36.844302,
+        "LAT": -1.259489,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 1,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1512",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.802242,
+          -1.307925
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 88,
+        "F_NAME": "MBAGATHI DISTRICT HOSPITAL",
+        "HMIS_": 154,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KENYATTA/GOLF COURSE",
+        "SUB_LOCATI": "GOLF COURSE",
+        "LONG": 36.802242,
+        "LAT": -1.307925,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 1,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1513",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 89,
+        "F_NAME": "MBOTELA HC",
+        "HMIS_": 37,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1514",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 90,
+        "F_NAME": "MILIMANI SDA DISP",
+        "HMIS_": 2660,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1515",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 91,
+        "F_NAME": "MURIRE DISP",
+        "HMIS_": 2716,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1516",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8332,
+          -1.2834
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 92,
+        "F_NAME": "MUTHURWA DISP",
+        "HMIS_": 38,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY CENTRE",
+        "LONG": 36.8332,
+        "LAT": -1.2834,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1517",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 93,
+        "F_NAME": "NAIROBI EVANGELICAL GRADUATE DIS",
+        "HMIS_": 107,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1518",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.836938,
+          -1.309483
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 94,
+        "F_NAME": "NAIROBI SOUTH B HEALTH CENTRE",
+        "HMIS_": 39,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MUKURU NYAYO",
+        "SUB_LOCATI": "NAIROBI SOUTH",
+        "LONG": 36.836938,
+        "LAT": -1.309483,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1519",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.81121,
+          -1.3101
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 95,
+        "F_NAME": "NAIROBI WEST SISTERS DISP",
+        "HMIS_": 3350,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KIBERA",
+        "LOCATION": "NAIROBI WEST",
+        "SUB_LOCATI": "NAIROBI WEST",
+        "LONG": 36.81121,
+        "LAT": -1.3101,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1520",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82251,
+          -1.28894
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 96,
+        "F_NAME": "NGAIRA AVENUE DISP",
+        "HMIS_": 2670,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY SQUARE",
+        "LONG": 36.82251,
+        "LAT": -1.28894,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1521",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83046,
+          -1.27077
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 97,
+        "F_NAME": "NGARA HEALTH CENTRE",
+        "HMIS_": 143,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "NGARA",
+        "SUB_LOCATI": "NGARA EAST",
+        "LONG": 36.83046,
+        "LAT": -1.27077,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1522",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7576,
+          -1.29896
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 98,
+        "F_NAME": "NGONG ROAD SHC",
+        "HMIS_": 187,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KENYATTA/GOLF COURSE",
+        "SUB_LOCATI": "WOODLEY",
+        "LONG": 36.7576,
+        "LAT": -1.29896,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1523",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86425,
+          -1.24995
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 99,
+        "F_NAME": "NYS HEALTH CENTRE",
+        "HMIS_": 106,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "RUARAKA",
+        "SUB_LOCATI": "UTALII",
+        "LONG": 36.86425,
+        "LAT": -1.24995,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1524",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.86425,
+          -1.24995
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 100,
+        "F_NAME": "NYS PUBLIC HEALTH",
+        "HMIS_": 4381,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "RUARAKA",
+        "SUB_LOCATI": "UTALII",
+        "LONG": 36.86425,
+        "LAT": -1.24995,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1525",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.871071,
+          -1.289024
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 101,
+        "F_NAME": "OFAFA JERICHO SHC",
+        "HMIS_": 188,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKADARA",
+        "SUB_LOCATI": "LUMUMBA",
+        "LONG": 36.871071,
+        "LAT": -1.289024,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1526",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.870483,
+          -1.288752
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 102,
+        "F_NAME": "OFAFA NAIROBI HC",
+        "HMIS_": 41,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "MAKADARA",
+        "LOCATION": "MAKADARA",
+        "SUB_LOCATI": "LUMUMBA",
+        "LONG": 36.870483,
+        "LAT": -1.288752,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1527",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.872106,
+          -1.247265
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 103,
+        "F_NAME": "P & T MCH DISP",
+        "HMIS_": 110,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "RUARAKA",
+        "SUB_LOCATI": "MATHARE NORTH",
+        "LONG": 36.872106,
+        "LAT": -1.247265,
+        "SPATIAL_RE": "SUBLOC CENTROID",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1528",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83815,
+          -1.26741
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 104,
+        "F_NAME": "PANGANI HC",
+        "HMIS_": 42,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "KARIOKOR",
+        "SUB_LOCATI": "PANGANI",
+        "LONG": 36.83815,
+        "LAT": -1.26741,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1529",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 105,
+        "F_NAME": "PRECIOUS BLOOD SISTERS DISP",
+        "HMIS_": 3635,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1530",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.911501,
+          -1.268017
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 106,
+        "F_NAME": "PROVIDE INTERNATIONAL DISP",
+        "HMIS_": 3590,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "KAYOLE",
+        "SUB_LOCATI": "KAYOLE",
+        "LONG": 36.911501,
+        "LAT": -1.268017,
+        "SPATIAL_RE": "WAYUMBA",
+        "F_TYPE": 4,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1531",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84565,
+          -1.27777
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 107,
+        "F_NAME": "PUMWANI DISP",
+        "HMIS_": 47,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "EASTLEIGH NORTH",
+        "SUB_LOCATI": "EASTLEIGH NORTH",
+        "LONG": 36.84565,
+        "LAT": -1.27777,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1532",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 108,
+        "F_NAME": "REDEEMED GOSPEL CHURCH HEALTH CE",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1533",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82251,
+          -1.28894
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 109,
+        "F_NAME": "RHODES AVENUE & CHEST & T. HEALT",
+        "HMIS_": 48,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY SQUARE",
+        "LONG": 36.82251,
+        "LAT": -1.28894,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1534",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.73649,
+          -1.27883
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 110,
+        "F_NAME": "RIRUTA CATHOLIC DISP",
+        "HMIS_": 117,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KAWANGWARE",
+        "SUB_LOCATI": "KAWANGWARE",
+        "LONG": 36.73649,
+        "LAT": -1.27883,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1535",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.74052,
+          -1.28405
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 111,
+        "F_NAME": "RIRUTA HEALTH CENTRE",
+        "HMIS_": 144,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KAWANGWARE",
+        "SUB_LOCATI": "KAWANGWARE",
+        "LONG": 36.74052,
+        "LAT": -1.28405,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1536",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 112,
+        "F_NAME": "RUARAKA HC",
+        "HMIS_": 49,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1537",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 113,
+        "F_NAME": "SANDFORD ROAD DISP",
+        "HMIS_": 50,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1538",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 114,
+        "F_NAME": "SDA DISP KIBERA",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1539",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84511,
+          -1.28729
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 115,
+        "F_NAME": "SHAURI MOYO DISP",
+        "HMIS_": 51,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "KAMUKUNJI",
+        "SUB_LOCATI": "SHAURI MOYO",
+        "LONG": 36.84511,
+        "LAT": -1.28729,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1540",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85,
+          -1.29
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 116,
+        "F_NAME": "SHAURI MOYO SDA DISP NAIROBI",
+        "HMIS_": 120,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "PUMWANI",
+        "LOCATION": "KAMUKUNJI",
+        "SUB_LOCATI": "SHAURI MOYO",
+        "LONG": 36.85,
+        "LAT": -1.29,
+        "SPATIAL_RE": "DISTRICT ESTIMATES",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1541",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 117,
+        "F_NAME": "SISTERS OF MERCY MAKADARA",
+        "HMIS_": 101,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1542",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.91808,
+          -1.26916
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 118,
+        "F_NAME": "SOWETO/KAYOLE DISP",
+        "HMIS_": 3352,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "KAYOLE",
+        "SUB_LOCATI": "KAYOLE",
+        "LONG": 36.91808,
+        "LAT": -1.26916,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1543",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82471,
+          -1.27904
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 119,
+        "F_NAME": "SPECIAL STD DISP",
+        "HMIS_": 122,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "CENTRAL",
+        "LOCATION": "STAREHE",
+        "SUB_LOCATI": "CITY CENTRE",
+        "LONG": 36.82471,
+        "LAT": -1.27904,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1544",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 120,
+        "F_NAME": "ST JOHN'S MCH/FP DISP",
+        "HMIS_": 3359,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1545",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 121,
+        "F_NAME": "ST. JOSEPH MUKASA",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1546",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 122,
+        "F_NAME": "ST. JOSEPH THE WORKER DISP",
+        "HMIS_": 3111,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1547",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 123,
+        "F_NAME": "ST. ODILLIAS DISP",
+        "HMIS_": 2691,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1548",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79915,
+          -1.28435
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 124,
+        "F_NAME": "STATE HOUSE DISP",
+        "HMIS_": 124,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KILIMANI",
+        "SUB_LOCATI": "KILIMANI(NAIROBI)",
+        "LONG": 36.79915,
+        "LAT": -1.28435,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1549",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.80337,
+          -1.27623
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 125,
+        "F_NAME": "STATE HOUSE ROAD DISP",
+        "HMIS_": 53,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KILIMANI",
+        "SUB_LOCATI": "KILIMANI(NAIROBI)",
+        "LONG": 36.80337,
+        "LAT": -1.27623,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1550",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.80617,
+          -1.29582
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 126,
+        "F_NAME": "UHURU AP CAMP DISP",
+        "HMIS_": 3333,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KENYATTA/GOLF COURSE",
+        "SUB_LOCATI": "KENYATTA",
+        "LONG": 36.80617,
+        "LAT": -1.29582,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1551",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79868,
+          -1.28994
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 127,
+        "F_NAME": "ULINZI HOUSE MIR DISP",
+        "HMIS_": 99,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "KILIMANI",
+        "SUB_LOCATI": "KILIMANI(NAIROBI)",
+        "LONG": 36.79868,
+        "LAT": -1.28994,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1552",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.88726,
+          -1.27931
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 128,
+        "F_NAME": "UMOJA HEALTH CENTRE",
+        "HMIS_": 145,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "EMBAKASI",
+        "LOCATION": "UMOJA",
+        "SUB_LOCATI": "UMOJA",
+        "LONG": 36.88726,
+        "LAT": -1.27931,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1553",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 129,
+        "F_NAME": "UNDUGU SOCIETY DISP",
+        "HMIS_": null,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "NGO",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1554",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85362,
+          -1.25503
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 130,
+        "F_NAME": "UTALII COLLEGE DISP",
+        "HMIS_": 2641,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KASARANI",
+        "LOCATION": "RUARAKA",
+        "SUB_LOCATI": "UTALII",
+        "LONG": 36.85362,
+        "LAT": -1.25503,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1555",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 131,
+        "F_NAME": "UZIMA DISP",
+        "HMIS_": 129,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1556",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.71516,
+          -1.27885
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 132,
+        "F_NAME": "WAITHAKA HEALTH CENTRE",
+        "HMIS_": 147,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "WAITHAKA",
+        "SUB_LOCATI": "WAITHAKA",
+        "LONG": 36.71516,
+        "LAT": -1.27885,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1557",
+      "geometry": null,
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 134,
+        "F_NAME": "WESTLANDS DISP",
+        "HMIS_": 130,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "",
+        "LOCATION": "",
+        "SUB_LOCATI": "",
+        "LONG": null,
+        "LAT": null,
+        "SPATIAL_RE": "",
+        "F_TYPE": 4,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1558",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79847,
+          -1.25851
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 133,
+        "F_NAME": "WESTLANDS DISP",
+        "HMIS_": 54,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "PARKLANDS",
+        "SUB_LOCATI": "UPPER PARKLANDS",
+        "LONG": 36.79847,
+        "LAT": -1.25851,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1559",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.801751,
+          -1.260665
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 135,
+        "F_NAME": "WESTLANDS HEALTH CENTRE",
+        "HMIS_": 148,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "WESTLANDS",
+        "LOCATION": "PARKLANDS",
+        "SUB_LOCATI": "UPPER PARKLANDS",
+        "LONG": 36.801751,
+        "LAT": -1.260665,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 3,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1560",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.80738,
+          -1.30921
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 136,
+        "F_NAME": "WILSON AIRPORT DISP",
+        "HMIS_": 3337,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "KIBERA",
+        "LOCATION": "NAIROBI WEST",
+        "SUB_LOCATI": "NAIROBI WEST",
+        "LONG": 36.80738,
+        "LAT": -1.30921,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.1561",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77706,
+          -1.30227
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 137,
+        "F_NAME": "WOODLEY DISP",
+        "HMIS_": 55,
+        "PROV": "NAIROBI",
+        "DIST": "NAIROBI",
+        "DIVISION": "DAGORETTI",
+        "LOCATION": "KENYATTA/GOLF COURSE",
+        "SUB_LOCATI": "WOODLEY",
+        "LONG": 36.77706,
+        "LAT": -1.30227,
+        "SPATIAL_RE": "GPS",
+        "F_TYPE": 4,
+        "AGENCY": "LA",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.2218",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.6856,
+          -1.42793
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 34,
+        "F_NAME": "KISERIAN HEALTH CENTRE",
+        "HMIS_": 1544,
+        "PROV": "RIFT VALLEY",
+        "DIST": "KAJIADO",
+        "DIVISION": "NGONG",
+        "LOCATION": "KISERIAN",
+        "SUB_LOCATI": "UPPER MATASIA",
+        "LONG": 36.6856,
+        "LAT": -1.42793,
+        "SPATIAL_RE": "1:50000 MAPS",
+        "F_TYPE": 3,
+        "AGENCY": "MISS",
+        "N14": "",
+        "N15": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kenya_health.2249",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7514,
+          -1.40735
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FNO": 69,
+        "F_NAME": "ONGATA RONGAI HEALTH CENTRE",
+        "HMIS_": 1551,
+        "PROV": "RIFT VALLEY",
+        "DIST": "KAJIADO",
+        "DIVISION": "NGONG",
+        "LOCATION": "ONGATA RONGAI",
+        "SUB_LOCATI": "LEMELEPO",
+        "LONG": 36.7514,
+        "LAT": -1.40735,
+        "SPATIAL_RE": "DDP",
+        "F_TYPE": 3,
+        "AGENCY": "MOH",
+        "N14": "",
+        "N15": ""
+      }
+    }
   ]
 }

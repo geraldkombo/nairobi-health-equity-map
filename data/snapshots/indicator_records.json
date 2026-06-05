@@ -1,0 +1,674 @@
+[
+  {
+    "ward_code": "1366",
+    "population": 65941,
+    "poverty_proxy": 8.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1367",
+    "population": 28647,
+    "poverty_proxy": 8.2,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1368",
+    "population": 145442,
+    "poverty_proxy": 8.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1369",
+    "population": 4664,
+    "poverty_proxy": 8.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1370",
+    "population": 9370,
+    "poverty_proxy": 8.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1371",
+    "population": 113454,
+    "poverty_proxy": 22.5,
+    "travel_time_to_facility_proxy": 32.5,
+    "facility_density_proxy": 0.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1372",
+    "population": 15476,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1373",
+    "population": 9571,
+    "poverty_proxy": 22.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1374",
+    "population": 93140,
+    "poverty_proxy": 22.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1375",
+    "population": 6513,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1376",
+    "population": 51635,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1377",
+    "population": 22809,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1378",
+    "population": 33120,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1379",
+    "population": 60579,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1380",
+    "population": 37607,
+    "poverty_proxy": 42.8,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1381",
+    "population": 51556,
+    "poverty_proxy": 12.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1382",
+    "population": 5407,
+    "poverty_proxy": 12.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1383",
+    "population": 127565,
+    "poverty_proxy": 12.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1384",
+    "population": 2640,
+    "poverty_proxy": 12.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1385",
+    "population": 13958,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1386",
+    "population": 1724,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1387",
+    "population": 14309,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1388",
+    "population": 6905,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1389",
+    "population": 130969,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 25.6,
+    "facility_density_proxy": 0.38,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1390",
+    "population": 17493,
+    "poverty_proxy": 62.4,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1391",
+    "population": 6404,
+    "poverty_proxy": 18.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1392",
+    "population": 58333,
+    "poverty_proxy": 18.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1393",
+    "population": 51707,
+    "poverty_proxy": 18.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1394",
+    "population": 104652,
+    "poverty_proxy": 18.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1395",
+    "population": 14653,
+    "poverty_proxy": 18.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1396",
+    "population": 18205,
+    "poverty_proxy": 32.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1397",
+    "population": 45104,
+    "poverty_proxy": 32.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1398",
+    "population": 28919,
+    "poverty_proxy": 32.6,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1399",
+    "population": 21225,
+    "poverty_proxy": 32.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1400",
+    "population": 311860,
+    "poverty_proxy": 32.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1401",
+    "population": 64041,
+    "poverty_proxy": 45.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1402",
+    "population": 69676,
+    "poverty_proxy": 45.2,
+    "travel_time_to_facility_proxy": 32.5,
+    "facility_density_proxy": 0.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1403",
+    "population": 33200,
+    "poverty_proxy": 45.2,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1404",
+    "population": 50884,
+    "poverty_proxy": 45.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1405",
+    "population": 33658,
+    "poverty_proxy": 45.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1406",
+    "population": 156110,
+    "poverty_proxy": 32.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1407",
+    "population": 15336,
+    "poverty_proxy": 32.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1408",
+    "population": 56662,
+    "poverty_proxy": 32.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1409",
+    "population": 18605,
+    "poverty_proxy": 32.8,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1410",
+    "population": 19296,
+    "poverty_proxy": 32.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1411",
+    "population": 55325,
+    "poverty_proxy": 38.5,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1412",
+    "population": 77289,
+    "poverty_proxy": 38.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1413",
+    "population": 82898,
+    "poverty_proxy": 38.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1414",
+    "population": 41591,
+    "poverty_proxy": 38.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1415",
+    "population": 143249,
+    "poverty_proxy": 38.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1416",
+    "population": 31950,
+    "poverty_proxy": 35.6,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1417",
+    "population": 29756,
+    "poverty_proxy": 35.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1418",
+    "population": 32081,
+    "poverty_proxy": 35.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1419",
+    "population": 149228,
+    "poverty_proxy": 35.6,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1420",
+    "population": 42084,
+    "poverty_proxy": 35.6,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1421",
+    "population": 9249,
+    "poverty_proxy": 28.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1422",
+    "population": 2998,
+    "poverty_proxy": 28.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1423",
+    "population": 137292,
+    "poverty_proxy": 28.4,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1424",
+    "population": 14803,
+    "poverty_proxy": 28.4,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1425",
+    "population": 62000,
+    "poverty_proxy": 28.4,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1426",
+    "population": 22802,
+    "poverty_proxy": 32.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1427",
+    "population": 28386,
+    "poverty_proxy": 32.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1428",
+    "population": 53238,
+    "poverty_proxy": 32.5,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1429",
+    "population": 91074,
+    "poverty_proxy": 32.5,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1430",
+    "population": 53239,
+    "poverty_proxy": 30.5,
+    "travel_time_to_facility_proxy": 5.0,
+    "facility_density_proxy": 0.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1431",
+    "population": 72469,
+    "poverty_proxy": 30.5,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1432",
+    "population": 26092,
+    "poverty_proxy": 30.5,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1433",
+    "population": 42852,
+    "poverty_proxy": 30.5,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1434",
+    "population": 47843,
+    "poverty_proxy": 35.8,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1435",
+    "population": 17998,
+    "poverty_proxy": 35.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1436",
+    "population": 67933,
+    "poverty_proxy": 35.8,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1437",
+    "population": 125155,
+    "poverty_proxy": 35.8,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1438",
+    "population": 9917,
+    "poverty_proxy": 35.8,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1439",
+    "population": 43390,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 5.0,
+    "facility_density_proxy": 0.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1440",
+    "population": 26791,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1441",
+    "population": 17015,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1442",
+    "population": 8531,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 53.1,
+    "facility_density_proxy": 0.88,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1443",
+    "population": 80248,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1444",
+    "population": 26086,
+    "poverty_proxy": 28.6,
+    "travel_time_to_facility_proxy": 46.2,
+    "facility_density_proxy": 0.75,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1445",
+    "population": 62007,
+    "poverty_proxy": 55.2,
+    "travel_time_to_facility_proxy": 39.4,
+    "facility_density_proxy": 0.62,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1446",
+    "population": 57310,
+    "poverty_proxy": 55.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1447",
+    "population": 36474,
+    "poverty_proxy": 55.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1449",
+    "population": 18773,
+    "poverty_proxy": 55.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "ward_code": "1450",
+    "population": 32747,
+    "poverty_proxy": 55.2,
+    "travel_time_to_facility_proxy": 60.0,
+    "facility_density_proxy": 1.0,
+    "updated_at": "2026-06-05"
+  }
+]

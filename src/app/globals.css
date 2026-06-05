@@ -1,7 +1,9 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
 
 @theme {
-  /* Zero-blue design system — no blue hues anywhere */
+  /* Zero-blue design system - no blue hues anywhere */
   --color-neutral-50: #fafaf9;
   --color-neutral-100: #f5f5f4;
   --color-neutral-200: #e7e5e4;
@@ -74,7 +76,7 @@ body {
   outline-offset: 2px;
 }
 
-/* MapLibre overrides — zero blue */
+/* MapLibre overrides - zero blue */
 .maplibregl-marker {
   filter: hue-rotate(120deg);
 }

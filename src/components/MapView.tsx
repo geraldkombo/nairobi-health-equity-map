@@ -1,134 +1,202 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
 
 interface MapViewProps {
   boundaries: GeoJSON.FeatureCollection;
   facilityPoints: GeoJSON.FeatureCollection;
-  wardScores: Record<string, number>;
-  onWardClick: (wardCode: string) => void;
-  selectedWardId: string | null;
+  countyScores: Record<string, number>;
+  countyNames: Record<string, string>;
+  onCountyClick: (countyCode: string) => void;
+  selectedCountyCode: string | null;
 }
 
 function getPGSColor(pgs: number): string {
   if (pgs >= 0.7) return "#dc2626";
-  if (pgs >= 0.5) return "#fdba74";
-  if (pgs >= 0.3) return "#86efac";
-  return "#bbf7d0";
+  if (pgs >= 0.5) return "#f97316";
+  if (pgs >= 0.3) return "#eab308";
+  return "#22c55e";
 }
 
-function buildMatchExpression(wardScores: Record<string, number>): any[] {
-  const entries = Object.entries(wardScores).flatMap(([k, v]) => [k, getPGSColor(v)]);
-  return ["match", ["get", "ward_code"], ...entries, "#e7e5e4"];
+function buildMatchExpression(countyScores: Record<string, number>): any[] {
+  const entries = Object.entries(countyScores).flatMap(([k, v]) => [Number(k), getPGSColor(v)]);
+  return ["match", ["get", "county_code"], ...entries, "#e7e5e4"];
 }
 
 export default function MapView({
   boundaries,
   facilityPoints,
-  wardScores,
-  onWardClick,
-  selectedWardId,
+  countyScores,
+  countyNames,
+  onCountyClick,
+  selectedCountyCode,
 }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const popupRef = useRef<maplibregl.Popup | null>(null);
   const [ready, setReady] = useState(false);
+  const [hasError, setError] = useState(false);
+
+  const formatScore = useCallback((pgs: number) => `${(pgs * 100).toFixed(0)}`, []);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
-    const map = new maplibregl.Map({
-      container: containerRef.current,
-      style: {
-        version: 8,
-        sources: {
-          "osm-tiles": {
-            type: "raster",
-            tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-            tileSize: 256,
-            attribution: "&copy; OpenStreetMap contributors",
+    let map: maplibregl.Map | null = null;
+    try {
+      map = new maplibregl.Map({
+        container: containerRef.current,
+        style: {
+          version: 8,
+          sources: {
+            "osm-tiles": {
+              type: "raster",
+              tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+              tileSize: 256,
+              attribution: "&copy; OpenStreetMap contributors",
+            },
           },
+          layers: [
+            {
+              id: "osm-tiles-layer",
+              type: "raster",
+              source: "osm-tiles",
+              minzoom: 0,
+              maxzoom: 19,
+            },
+          ],
         },
-        layers: [
-          {
-            id: "osm-tiles-layer",
-            type: "raster",
-            source: "osm-tiles",
-            minzoom: 0,
-            maxzoom: 19,
-          },
-        ],
-      },
-      center: [36.82, -1.28],
-      zoom: 11,
-    });
+        center: [37.9, 0.5],
+        zoom: 6,
+        maxBounds: [[33, -5], [42, 5]],
+      });
+    } catch (e) {
+      console.error("Map initialization error:", e);
+      return;
+    }
+    if (!map) return;
 
     map.on("load", () => {
-      mapRef.current = map;
+      try {
+        mapRef.current = map;
 
-      map.addSource("wards", {
-        type: "geojson",
-        data: boundaries as any,
-      });
+        map.addSource("counties", {
+          type: "geojson",
+          data: boundaries as any,
+        });
 
-      map.addLayer({
-        id: "wards-fill",
-        type: "fill",
-        source: "wards",
-        paint: {
-          "fill-color": [
-            "case",
-            ["boolean", ["==", ["get", "ward_code"], selectedWardId ?? ""], false],
-            "#a3e635",
-            buildMatchExpression(wardScores),
-          ] as any,
-          "fill-opacity": 0.6,
-        },
-      });
+        map.addLayer({
+          id: "counties-fill",
+          type: "fill",
+          source: "counties",
+          paint: {
+            "fill-color": [
+              "case",
+              ["boolean", ["==", ["get", "county_code"], Number(selectedCountyCode ?? "0")], false],
+              "#a3e635",
+              buildMatchExpression(countyScores),
+            ] as any,
+            "fill-opacity": 0.65,
+            "fill-outline-color": "#78716c",
+          },
+        });
 
-      map.addLayer({
-        id: "wards-outline",
-        type: "line",
-        source: "wards",
-        paint: {
-          "line-color": "#44403c",
-          "line-width": 1,
-        },
-      });
+        map.addLayer({
+          id: "counties-outline",
+          type: "line",
+          source: "counties",
+          paint: {
+            "line-color": "#44403c",
+            "line-width": 1.5,
+            "line-opacity": 0.8,
+          },
+        });
 
-      map.addSource("facilities", {
-        type: "geojson",
-        data: facilityPoints as any,
-      });
+        map.addSource("facilities", {
+          type: "geojson",
+          data: facilityPoints as any,
+        });
 
-      map.addLayer({
-        id: "facilities-points",
-        type: "circle",
-        source: "facilities",
-        paint: {
-          "circle-radius": 4,
-          "circle-color": "#78716c",
-          "circle-stroke-width": 1,
-          "circle-stroke-color": "#fff",
-        },
-      });
+        map.addLayer({
+          id: "facilities-points",
+          type: "circle",
+          source: "facilities",
+          paint: {
+            "circle-radius": 5,
+            "circle-color": "#1c1917",
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#fff",
+            "circle-opacity": 0.85,
+          },
+        });
 
-      map.on("click", "wards-fill", (e) => {
-        if (e.features && e.features[0]?.properties?.ward_code) {
-          onWardClick(e.features[0].properties.ward_code);
-        }
-      });
+        map.addLayer({
+          id: "facilities-labels",
+          type: "symbol",
+          source: "facilities",
+          layout: {
+            "text-field": ["get", "name"],
+            "text-size": 10,
+            "text-offset": [0, -1.5],
+            "text-anchor": "bottom",
+            "text-optional": true,
+          },
+          paint: {
+            "text-color": "#44403c",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1.5,
+          },
+        });
 
-      map.on("mouseenter", "wards-fill", () => {
-        map.getCanvas().style.cursor = "pointer";
-      });
+        map.on("click", "counties-fill", (e) => {
+          if (e.features && e.features[0]?.properties) {
+            const code = String(e.features[0].properties.county_code);
+            onCountyClick(code);
+          }
+        });
 
-      map.on("mouseleave", "wards-fill", () => {
-        map.getCanvas().style.cursor = "";
-      });
+        map.on("mouseenter", "counties-fill", (e) => {
+          map.getCanvas().style.cursor = "pointer";
+          if (e.features && e.features[0]?.properties) {
+            const props = e.features[0].properties;
+            const code = String(props.county_code);
+            const name = props.county_name || "Unknown";
+            const score = countyScores[code];
+            const scoreLabel = score !== undefined ? `PGS: ${formatScore(score)}` : "No data";
+            const color = score !== undefined ? getPGSColor(score) : "#e7e5e4";
+            const html = `
+              <div style="font-family:system-ui;min-width:120px">
+                <div style="font-weight:600;font-size:14px;color:#1c1917">${name}</div>
+                <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                  <span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:${color}"></span>
+                  <span style="font-size:13px;color:#57534e">${scoreLabel}</span>
+                </div>
+              </div>
+            `;
+            if (popupRef.current) popupRef.current.remove();
+            popupRef.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 })
+              .setLngLat(e.lngLat)
+              .setHTML(html)
+              .addTo(map);
+          }
+        });
 
-      setReady(true);
+        map.on("mouseleave", "counties-fill", () => {
+          map.getCanvas().style.cursor = "";
+          if (popupRef.current) {
+            popupRef.current.remove();
+            popupRef.current = null;
+          }
+        });
+
+        map.addControl(new maplibregl.NavigationControl(), "bottom-right");
+
+        setReady(true);
+      } catch (e) {
+        console.error("Map load handler error:", e);
+        setError(true);
+      }
     });
 
     return () => {
@@ -142,25 +210,33 @@ export default function MapView({
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded()) return;
 
-    const source = map.getSource("wards") as maplibregl.GeoJSONSource;
-    if (source) source.setData(boundaries as any);
+    try {
+      const source = map.getSource("counties") as maplibregl.GeoJSONSource;
+      if (source) source.setData(boundaries as any);
 
-    map.setPaintProperty("wards-fill", "fill-color", [
-      "case",
-      ["boolean", ["==", ["get", "ward_code"], selectedWardId ?? ""], false],
-      "#a3e635",
-      buildMatchExpression(wardScores),
-    ] as any);
-  }, [wardScores, selectedWardId, boundaries]);
+      map.setPaintProperty("counties-fill", "fill-color", [
+        "case",
+        ["boolean", ["==", ["get", "county_code"], Number(selectedCountyCode ?? "0")], false],
+        "#a3e635",
+        buildMatchExpression(countyScores),
+      ] as any);
+    } catch (e) {
+      console.error("Map update error:", e);
+    }
+  }, [countyScores, selectedCountyCode, boundaries]);
 
   return (
-    <div className="relative min-h-[400px] w-full overflow-hidden rounded-xl border border-neutral-200">
-      <div ref={containerRef} className="h-[500px] w-full md:h-[600px]" aria-label="Map of Nairobi wards with health equity data" role="application" />
-      {!ready && (
+    <div className="relative min-h-[400px] w-full overflow-hidden rounded-xl border border-neutral-200 shadow-sm">
+      <div ref={containerRef} className="h-[500px] w-full md:h-[600px]" aria-label="Map of Kenya counties with health equity data" role="application" />
+      {hasError ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-neutral-50 text-sm text-neutral-500">
+          Map render error. Check console for details.
+        </div>
+      ) : !ready ? (
         <div className="absolute inset-0 flex items-center justify-center bg-neutral-50 text-sm text-neutral-500">
           Loading map...
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

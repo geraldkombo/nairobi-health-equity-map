@@ -1,12 +1,8 @@
 "use client";
 
-import { DEMO_SOURCES, type DataSources } from "@/lib/adapters";
+import { REAL_SOURCES } from "@/lib/adapters";
 
-interface SourcesPanelProps {
-  sources?: DataSources;
-}
-
-function SourceList({ label, items }: { label: string; items: DataSources[keyof DataSources] }) {
+function SourceList({ label, items }: { label: string; items: { name: string; url: string; license: string; note: string }[] }) {
   if (!items || items.length === 0) return null;
   return (
     <div>
@@ -31,18 +27,17 @@ function SourceList({ label, items }: { label: string; items: DataSources[keyof 
   );
 }
 
-export default function SourcesPanel({ sources }: SourcesPanelProps) {
-  const data = sources ?? DEMO_SOURCES;
+export default function SourcesPanel() {
   return (
     <div className="rounded-xl border border-neutral-200 bg-white p-5">
       <h3 className="text-sm font-semibold text-neutral-800">Data sources & provenance</h3>
       <div className="mt-4 space-y-4">
-        <SourceList label="Wards" items={data.wards} />
-        <SourceList label="Facilities" items={data.facilities} />
-        <SourceList label="Indicators" items={data.indicators} />
+        <SourceList label="Boundaries" items={REAL_SOURCES.counties} />
+        <SourceList label="Facilities" items={REAL_SOURCES.facilities} />
+        <SourceList label="Indicators" items={REAL_SOURCES.indicators} />
       </div>
       <p className="mt-4 border-t border-neutral-100 pt-3 text-xs text-neutral-400">
-        Last updated: Demo data (synthetic). Replace with real sources for production use.
+        All data sourced from official Kenyan open-data repositories.
       </p>
     </div>
   );

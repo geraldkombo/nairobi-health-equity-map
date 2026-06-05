@@ -1,121 +1,45 @@
-# Nairobi Health Equity Map
+﻿# Nairobi Health Equity Map (NHEM)
+**An open-data mapping tool for research and public-interest reporting**
 
-A hyper-local, map-first civic intelligence platform built for journalists, researchers, and public finance advocates. The Nairobi Health Equity Map visualises health-access inequities across city wards using transparent, reproducible open data.
+**Live demo:** https://uhcke.netlify.app  
+**Repository:** https://github.com/geraldkombo/nairobi-health-equity-map
 
-While many global dashboards map disparities, this tool is specifically engineered to bridge the gap between observation and accountability, outputting publication-ready briefs and data narratives to support municipal budget tracking and civic reporting.
+## Overview
+NHEM turns public, non-identifiable open datasets into explainable spatial insights about health access and vulnerability in Nairobi City County. Built for researchers, journalists, and community advocates.
 
 ## Key features
-
-- **Ward-level precision:** Evaluates spatial health access using a transparent Priority Gap Score (PGS) aligned with Nairobi county boundaries.
-- **Newsroom-ready outputs:** Instantly generates one-page print/PDF briefs and plain-English "What this means" summaries for immediate editorial use.
-- **Auditable evidence:** Always-visible sources panel detailing dataset provenance, update timestamps, and missing-data caveats.
-- **Built for resilience:** Optimised for low-bandwidth environments with local data fallbacks.
-- **Compare view:** Side-by-side comparison of two wards with narrative summary.
-- **Research mode:** Adjustable PGS weights and full score component breakdown.
+- **Map-first:** Explore ward-level PGS (Priority Gap Score) choropleth with hover tooltips and facility overlays
+- **Reporting Mode:** Plain-English insights, one-click brief generation
+- **Research Mode:** Configurable PGS weights, detailed score components
+- **Side-by-side comparison:** Compare any two wards
+- **One-page brief:** Print/PDF-ready brief per ward
+- **Full transparency:** Methodology page with formula, sources, and limitations
 
 ## Tech stack
-
-- Next.js 15 (App Router) + TypeScript (strict)
+- Next.js 15 (App Router) + TypeScript
 - MapLibre GL JS (open-source mapping)
 - Tailwind CSS v4 (zero-blue design system)
-- ECharts (charting)
-- Netlify Functions (API proxy/caching)
+- Netlify (static-first CDN)
 
-## Quickstart
-
+## Quick start
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000).
 
-### Netlify dev
-
+## Build for production
 ```bash
-npm install -g netlify-cli
-netlify dev
+npm run build
+npm run start
 ```
 
 ## Deploy to Netlify
-
-### Static export (recommended, no auth required)
-
-The project is pre-configured for static export:
-
 ```bash
 npm run build
-# deploy the `out/` directory
-```
-
-### Netlify deploy button
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/geraldkombo/nairobi-health-equity-map)
-
-### Manual deploy via CLI
-
-```bash
-npm install -g netlify-cli
 netlify deploy --prod --dir=out
 ```
 
-### Live demo
-
-https://nairobi-health-equity-map.netlify.app
-
-## Environment variables
-
-None required for demo. Add as needed for upstream API keys:
-
-| Variable | Purpose |
-|---|---|
-| `OVERPASS_API_KEY` | Optional Overpass API key |
-| `MFL_API_TOKEN` | Optional MFL access token |
-
-## Scripts
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Start dev server |
-| `npm run build` | Production build |
-| `npm run lint` | ESLint check |
-| `npm run format` | Prettier format |
-| `npm run typecheck` | TypeScript check |
-| `npm run test:e2e` | Playwright E2E tests |
-
-## API endpoints (Netlify Functions)
-
-| Endpoint | Description |
-|---|---|
-| `/api/health` | Health check |
-| `/api/wards` | Nairobi wards |
-| `/api/facilities` | Facilities |
-| `/api/proxy?url=...` | Upstream API proxy |
-
-## Data resilience
-
-The app ships with pre-compiled JSON snapshots in `data/snapshots/` to ensure the platform remains functional even if upstream APIs fail. A "data freshness" banner alerts users when snapshot data is being used.
-
-## Project structure
-
-```
-├── data/
-│   ├── boundaries/       # Ward polygons (GeoJSON)
-│   ├── facilities/       # Facility points (GeoJSON)
-│   ├── indicators/       # Ward indicators (CSV)
-│   └── snapshots/        # Fallback JSON snapshots
-├── docs/
-│   ├── METHOD.md         # PGS methodology
-│   └── DATA_SOURCES.md   # Data source documentation
-├── netlify/functions/    # Netlify Functions
-├── src/
-│   ├── app/              # Next.js App Router pages
-│   ├── components/       # React components
-│   ├── lib/              # Core utilities (scoring, geo, etc.)
-│   └── data-adapters/    # Demo and remote data adapters
-└── tests/e2e/            # Playwright smoke tests
-```
-
 ## License
-
 MIT

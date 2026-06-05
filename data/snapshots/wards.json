@@ -1,27 +1,422 @@
-{
-  "meta": {
-    "county": "Nairobi",
-    "level": "ward",
-    "fetched_at": "2026-01-15T00:00:00.000Z",
-    "sources": [
-      {
-        "name": "Open Admin Data (Kenya administrative divisions)",
-        "url": "https://openadmindata.org/api/ke",
-        "license": "CC-BY-4.0",
-        "note": "Fallback snapshot. Geometry polygons are not provided by this source; centroids only."
-      }
-    ]
+[
+  {
+    "id": "1366",
+    "name": "Kitisuru",
+    "subcounty": "Westlands"
   },
-  "wards": [
-    {"id":"KE047-001","name":"Karen","lat":-1.32,"lon":36.75,"subcounty":"Langata","subcounty_id":"KE-SC-001","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-002","name":"Kilimani","lat":-1.265,"lon":36.8,"subcounty":"Westlands","subcounty_id":"KE-SC-002","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-003","name":"Kibera","lat":-1.305,"lon":36.795,"subcounty":"Langata","subcounty_id":"KE-SC-001","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-004","name":"Mathare","lat":-1.25,"lon":36.855,"subcounty":"Starehe","subcounty_id":"KE-SC-003","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-005","name":"Dandora","lat":-1.255,"lon":36.895,"subcounty":"Embakasi","subcounty_id":"KE-SC-004","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-006","name":"Kasarani","lat":-1.2,"lon":36.905,"subcounty":"Kasarani","subcounty_id":"KE-SC-005","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-007","name":"Westlands","lat":-1.245,"lon":36.815,"subcounty":"Westlands","subcounty_id":"KE-SC-002","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-008","name":"Parklands","lat":-1.235,"lon":36.825,"subcounty":"Westlands","subcounty_id":"KE-SC-002","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-009","name":"Embakasi","lat":-1.3,"lon":36.935,"subcounty":"Embakasi","subcounty_id":"KE-SC-004","county":"Nairobi","source":"openadmindata.org"},
-    {"id":"KE047-010","name":"Langata","lat":-1.34,"lon":36.755,"subcounty":"Langata","subcounty_id":"KE-SC-001","county":"Nairobi","source":"openadmindata.org"}
-  ]
-}
+  {
+    "id": "1367",
+    "name": "Parklands/Highridge",
+    "subcounty": "Westlands"
+  },
+  {
+    "id": "1368",
+    "name": "Karura",
+    "subcounty": "Westlands"
+  },
+  {
+    "id": "1369",
+    "name": "Kangemi",
+    "subcounty": "Westlands"
+  },
+  {
+    "id": "1370",
+    "name": "Mountain View",
+    "subcounty": "Westlands"
+  },
+  {
+    "id": "1371",
+    "name": "Kilimani",
+    "subcounty": "Dagoretti North"
+  },
+  {
+    "id": "1372",
+    "name": "Kawangware",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1373",
+    "name": "Gatina",
+    "subcounty": "Dagoretti North"
+  },
+  {
+    "id": "1374",
+    "name": "Kileleshwa",
+    "subcounty": "Dagoretti North"
+  },
+  {
+    "id": "1375",
+    "name": "Kabiro",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1376",
+    "name": "Mutu-Ini",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1377",
+    "name": "Ngando",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1378",
+    "name": "Riruta",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1379",
+    "name": "Uthiru/Ruthimitu",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1380",
+    "name": "Waithaka",
+    "subcounty": "Dagoretti South"
+  },
+  {
+    "id": "1381",
+    "name": "Karen",
+    "subcounty": "Langata"
+  },
+  {
+    "id": "1382",
+    "name": "Nairobi West",
+    "subcounty": "Langata"
+  },
+  {
+    "id": "1383",
+    "name": "Mugumu-Ini",
+    "subcounty": "Langata"
+  },
+  {
+    "id": "1384",
+    "name": "South C",
+    "subcounty": "Langata"
+  },
+  {
+    "id": "1385",
+    "name": "Nyayo Highrise",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1386",
+    "name": "Laini Saba",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1387",
+    "name": "Lindi",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1388",
+    "name": "Makina",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1389",
+    "name": "Woodley/Kenyatta Golf Course",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1390",
+    "name": "Sarangombe",
+    "subcounty": "Kibra"
+  },
+  {
+    "id": "1391",
+    "name": "Githurai",
+    "subcounty": "Roysambu"
+  },
+  {
+    "id": "1392",
+    "name": "Kahawa West",
+    "subcounty": "Roysambu"
+  },
+  {
+    "id": "1393",
+    "name": "Zimmerman",
+    "subcounty": "Roysambu"
+  },
+  {
+    "id": "1394",
+    "name": "Roysambu",
+    "subcounty": "Roysambu"
+  },
+  {
+    "id": "1395",
+    "name": "Kahawa",
+    "subcounty": "Roysambu"
+  },
+  {
+    "id": "1396",
+    "name": "Clay City",
+    "subcounty": "Kasarani"
+  },
+  {
+    "id": "1397",
+    "name": "Mwiki",
+    "subcounty": "Kasarani"
+  },
+  {
+    "id": "1398",
+    "name": "Kasarani",
+    "subcounty": "Kasarani"
+  },
+  {
+    "id": "1399",
+    "name": "Njiru",
+    "subcounty": "Kasarani"
+  },
+  {
+    "id": "1400",
+    "name": "Ruai",
+    "subcounty": "Kasarani"
+  },
+  {
+    "id": "1401",
+    "name": "Baba Dogo",
+    "subcounty": "Ruaraka"
+  },
+  {
+    "id": "1402",
+    "name": "Utalii",
+    "subcounty": "Ruaraka"
+  },
+  {
+    "id": "1403",
+    "name": "Mathare North",
+    "subcounty": "Ruaraka"
+  },
+  {
+    "id": "1404",
+    "name": "Lucky Summer",
+    "subcounty": "Ruaraka"
+  },
+  {
+    "id": "1405",
+    "name": "Korogocho",
+    "subcounty": "Ruaraka"
+  },
+  {
+    "id": "1406",
+    "name": "Imara Daima",
+    "subcounty": "Embakasi South"
+  },
+  {
+    "id": "1407",
+    "name": "Kwa Njenga",
+    "subcounty": "Embakasi South"
+  },
+  {
+    "id": "1408",
+    "name": "Kwa Reuben",
+    "subcounty": "Embakasi South"
+  },
+  {
+    "id": "1409",
+    "name": "Pipeline",
+    "subcounty": "Embakasi South"
+  },
+  {
+    "id": "1410",
+    "name": "Kware",
+    "subcounty": "Embakasi South"
+  },
+  {
+    "id": "1411",
+    "name": "Kariobangi North",
+    "subcounty": "Embakasi North"
+  },
+  {
+    "id": "1412",
+    "name": "Dandora Area I",
+    "subcounty": "Embakasi North"
+  },
+  {
+    "id": "1413",
+    "name": "Dandora Area Ii",
+    "subcounty": "Embakasi North"
+  },
+  {
+    "id": "1414",
+    "name": "Dandora Area Iii",
+    "subcounty": "Embakasi North"
+  },
+  {
+    "id": "1415",
+    "name": "Dandora Area Iv",
+    "subcounty": "Embakasi North"
+  },
+  {
+    "id": "1416",
+    "name": "Kayole North",
+    "subcounty": "Embakasi Central"
+  },
+  {
+    "id": "1417",
+    "name": "Kayole Central",
+    "subcounty": "Embakasi Central"
+  },
+  {
+    "id": "1418",
+    "name": "Kayole South",
+    "subcounty": "Embakasi Central"
+  },
+  {
+    "id": "1419",
+    "name": "Komarock",
+    "subcounty": "Embakasi Central"
+  },
+  {
+    "id": "1420",
+    "name": "Matopeni/Spring Valley",
+    "subcounty": "Embakasi Central"
+  },
+  {
+    "id": "1421",
+    "name": "Upper Savannah",
+    "subcounty": "Embakasi East"
+  },
+  {
+    "id": "1422",
+    "name": "Lower Savannah",
+    "subcounty": "Embakasi East"
+  },
+  {
+    "id": "1423",
+    "name": "Embakasi",
+    "subcounty": "Embakasi East"
+  },
+  {
+    "id": "1424",
+    "name": "Utawala",
+    "subcounty": "Embakasi East"
+  },
+  {
+    "id": "1425",
+    "name": "Mihango",
+    "subcounty": "Embakasi East"
+  },
+  {
+    "id": "1426",
+    "name": "Umoja I",
+    "subcounty": "Embakasi West"
+  },
+  {
+    "id": "1427",
+    "name": "Umoja Ii",
+    "subcounty": "Embakasi West"
+  },
+  {
+    "id": "1428",
+    "name": "Mowlem",
+    "subcounty": "Embakasi West"
+  },
+  {
+    "id": "1429",
+    "name": "Kariobangi South",
+    "subcounty": "Embakasi West"
+  },
+  {
+    "id": "1430",
+    "name": "Maringo/Hamza",
+    "subcounty": "Makadara"
+  },
+  {
+    "id": "1431",
+    "name": "Viwandani",
+    "subcounty": "Makadara"
+  },
+  {
+    "id": "1432",
+    "name": "Harambee",
+    "subcounty": "Makadara"
+  },
+  {
+    "id": "1433",
+    "name": "Makongeni",
+    "subcounty": "Makadara"
+  },
+  {
+    "id": "1434",
+    "name": "Pumwani",
+    "subcounty": "Kamukunji"
+  },
+  {
+    "id": "1435",
+    "name": "Eastleigh North",
+    "subcounty": "Kamukunji"
+  },
+  {
+    "id": "1436",
+    "name": "Eastleigh South",
+    "subcounty": "Kamukunji"
+  },
+  {
+    "id": "1437",
+    "name": "Airbase",
+    "subcounty": "Kamukunji"
+  },
+  {
+    "id": "1438",
+    "name": "California",
+    "subcounty": "Kamukunji"
+  },
+  {
+    "id": "1439",
+    "name": "Nairobi Central",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1440",
+    "name": "Ngara",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1441",
+    "name": "Pangani",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1442",
+    "name": "Ziwani/Kariokor",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1443",
+    "name": "Landimawe",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1444",
+    "name": "Nairobi South",
+    "subcounty": "Starehe"
+  },
+  {
+    "id": "1445",
+    "name": "Hospital",
+    "subcounty": "Mathare"
+  },
+  {
+    "id": "1446",
+    "name": "Mabatini",
+    "subcounty": "Mathare"
+  },
+  {
+    "id": "1447",
+    "name": "Huruma",
+    "subcounty": "Mathare"
+  },
+  {
+    "id": "1449",
+    "name": "Mlango Kubwa",
+    "subcounty": "Mathare"
+  },
+  {
+    "id": "1450",
+    "name": "Kiamaiko",
+    "subcounty": "Mathare"
+  }
+]

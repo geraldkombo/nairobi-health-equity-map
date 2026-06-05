@@ -16,7 +16,7 @@ export interface NormalizedIndicators {
   facilityDensity: number;
 }
 
-export function normalizeWard(
+export function normalizeCounty(
   raw: {
     travel_time_to_facility_proxy: number;
     poverty_proxy: number;

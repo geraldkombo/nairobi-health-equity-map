@@ -1,59 +1,58 @@
 "use client";
 
 import { useMemo } from "react";
-import type { WardRecord, IndicatorRecord } from "@/lib/adapters";
-import { normalizeWard } from "@/lib/normalize";
-import { computePGS, type PGSWeights } from "@/lib/scoring";
+import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
+import { normalizeCounty } from "@/lib/normalize";
+import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 
 interface CompareViewProps {
-  wardA: WardRecord;
-  wardB: WardRecord;
+  countyA: CountyRecord;
+  countyB: CountyRecord;
   indicators: IndicatorRecord[];
-  weights: PGSWeights;
 }
 
-export default function CompareView({ wardA, wardB, indicators, weights }: CompareViewProps) {
+export default function CompareView({ countyA, countyB, indicators }: CompareViewProps) {
   const stats = useMemo(() => {
     const allTravel = indicators.map((i) => i.travel_time_to_facility_proxy);
     const allPoverty = indicators.map((i) => i.poverty_proxy);
     const allPop = indicators.map((i) => i.population);
     const allDensity = indicators.map((i) => i.facility_density_proxy);
 
-    const countyStats = {
+    const nationalStats = {
       travelTimeRange: [Math.min(...allTravel), Math.max(...allTravel)] as [number, number],
       povertyRange: [Math.min(...allPoverty), Math.max(...allPoverty)] as [number, number],
       populationRange: [Math.min(...allPop), Math.max(...allPop)] as [number, number],
       facilityDensityRange: [Math.min(...allDensity), Math.max(...allDensity)] as [number, number],
     };
 
-    const iA = indicators.find((i) => i.ward_code === wardA.id);
-    const iB = indicators.find((i) => i.ward_code === wardB.id);
+    const iA = indicators.find((i) => i.county_code === countyA.id);
+    const iB = indicators.find((i) => i.county_code === countyB.id);
 
-    const sA = iA ? computePGS(wardA.id, normalizeWard(iA, countyStats), weights) : null;
-    const sB = iB ? computePGS(wardB.id, normalizeWard(iB, countyStats), weights) : null;
+    const sA = iA ? computePGS(countyA.id, normalizeCounty(iA, nationalStats), DEFAULT_WEIGHTS) : null;
+    const sB = iB ? computePGS(countyB.id, normalizeCounty(iB, nationalStats), DEFAULT_WEIGHTS) : null;
 
     return { sA, sB, iA, iB };
-  }, [wardA, wardB, indicators, weights]);
+  }, [countyA, countyB, indicators]);
 
   const narrative = useMemo(() => {
     if (!stats.sA || !stats.sB) return null;
     const diff = stats.sA.pgs - stats.sB.pgs;
-    if (Math.abs(diff) < 0.01) return "Both wards have a similar assessed priority level.";
-    const higher = diff > 0 ? wardA.name : wardB.name;
-    const lower = diff > 0 ? wardB.name : wardA.name;
+    if (Math.abs(diff) < 0.01) return "Both counties have a similar assessed priority level.";
+    const higher = diff > 0 ? countyA.name : countyB.name;
+    const lower = diff > 0 ? countyB.name : countyA.name;
     return `${higher} is assessed as higher priority than ${lower}.`;
-  }, [stats, wardA.name, wardB.name]);
+  }, [stats, countyA.name, countyB.name]);
 
   return (
     <div>
       <div className="grid gap-6 md:grid-cols-2">
-        {[wardA, wardB].map((ward) => {
-          const s = ward.id === wardA.id ? stats.sA : stats.sB;
-          const ind = ward.id === wardA.id ? stats.iA : stats.iB;
+        {[countyA, countyB].map((county) => {
+          const s = county.id === countyA.id ? stats.sA : stats.sB;
+          const ind = county.id === countyA.id ? stats.iA : stats.iB;
           return (
-            <div key={ward.id} className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="font-semibold text-neutral-900">{ward.name}</h3>
-              <p className="text-sm text-neutral-500">{ward.subcounty}</p>
+            <div key={county.id} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-900">{county.name}</h3>
+              <p className="text-sm text-neutral-500">County</p>
               {s && (
                 <div className="mt-3">
                   <div className="text-3xl font-bold text-neutral-900">{(s.pgs * 100).toFixed(0)}</div>
@@ -76,7 +75,7 @@ export default function CompareView({ wardA, wardB, indicators, weights }: Compa
                   </div>
                   <div className="flex justify-between">
                     <span>Facility density</span>
-                    <span className="font-medium">{ind.facility_density_proxy} /km²</span>
+                    <span className="font-medium">{ind.facility_density_proxy} /km2</span>
                   </div>
                 </div>
               )}

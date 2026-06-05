@@ -1,4 +1,4 @@
-# Nairobi Health Equity Map: an open-data mapping tool for research and public-interest reporting
+﻿# Nairobi Health Equity Map: an open-data mapping tool for research and public-interest reporting
 
 **Submission type:** CSS Community Marketplace Exhibitor / Abstract  
 **Theme/Sub-theme:** Strengthening Community Systems in the Changing Global Health Landscape (Community Systems in the Era of Donor Transition and UHC)  
@@ -8,7 +8,7 @@
 **Demo geography:** Nairobi City County  
 **Contact:** geraldshikunyi@gmail.com  
 **Repository:** https://github.com/geraldkombo/nairobi-health-equity-map  
-**Live demo (Netlify):** https://nairobi-health-equity-map.netlify.app  
+**Live demo (Netlify):** https://uhcke.netlify.app  
 
 ## Abstract
 Kenya's push toward Universal Health Coverage (UHC) is accelerating at the same time external donor financing tightens. In this transition, community systems are expected to do more with less—yet evidence to guide decisions and accountability is often fragmented across technical dashboards, spreadsheets, and closed reports. This creates an information gap that affects both **researchers** (who need transparent, reproducible methods) and **journalists** (who need clear, verifiable stories grounded in credible data).
@@ -24,11 +24,11 @@ All data, methodology, and source code are publicly accessible:
 
 | Resource | URL |
 |---|---|
-| Live platform | https://nairobi-health-equity-map.netlify.app |
+| Live platform | https://uhcke.netlify.app |
 | Source repository | https://github.com/geraldkombo/nairobi-health-equity-map |
-| Methodology & PGS formula | https://nairobi-health-equity-map.netlify.app/method |
-| Ward comparison tool | https://nairobi-health-equity-map.netlify.app/compare |
-| One-page brief generator | https://nairobi-health-equity-map.netlify.app/brief?ward=KE047-003 |
+| Methodology & PGS formula | https://uhcke.netlify.app/method |
+| Ward comparison tool | https://uhcke.netlify.app/compare |
+| One-page brief generator | https://uhcke.netlify.app/brief?ward=KE047-003 |
 | Data sources documentation | `/docs/DATA_SOURCES.md` in repository |
 
 ## Technical stack (verified on Netlify production)

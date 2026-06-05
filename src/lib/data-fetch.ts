@@ -1,13 +1,13 @@
-import type { WardRecord, IndicatorRecord, FacilitiesGeoJSON } from "@/lib/adapters";
+import type { CountyRecord, IndicatorRecord, FacilitiesGeoJSON } from "@/lib/adapters";
 
-export async function fetchWards(): Promise<{ wards: WardRecord[]; source: "live" | "snapshot" }> {
+export async function fetchCounties(): Promise<{ counties: CountyRecord[]; source: "live" | "snapshot" }> {
   try {
     const res = await fetch("/api/wards");
     const data = await res.json();
-    return { wards: data.wards ?? data, source: "live" };
+    return { counties: data.counties ?? data, source: "live" };
   } catch {
-    const snap = await fetch("/data/snapshots/wards.json").then((r) => r.json());
-    return { wards: snap.wards, source: "snapshot" };
+    const snap = await fetch("/data/snapshots/counties.json").then((r) => r.json());
+    return { counties: snap, source: "snapshot" };
   }
 }
 
@@ -23,7 +23,7 @@ export async function fetchFacilities(): Promise<{ geojson: FacilitiesGeoJSON; s
 }
 
 export async function fetchIndicators(): Promise<IndicatorRecord[]> {
-  const res = await fetch("/data/indicators/ward_indicators.csv");
+  const res = await fetch("/data/indicators/county_indicators.csv");
   const text = await res.text();
   const lines = text.trim().split("\n");
   const headers = lines[0].split(",");
@@ -34,11 +34,15 @@ export async function fetchIndicators(): Promise<IndicatorRecord[]> {
       record[h.trim()] = vals[i]?.trim() ?? "";
     });
     return {
-      ward_code: record.ward_code,
+      county_code: record.county_code,
+      county_name: record.county_name,
       population: Number(record.population),
       poverty_proxy: Number(record.poverty_proxy),
-      travel_time_to_facility_proxy: Number(record.travel_time_to_facility_proxy),
+      facility_count: Number(record.facility_count),
       facility_density_proxy: Number(record.facility_density_proxy),
+      travel_time_to_facility_proxy: Number(record.travel_time_to_facility_proxy),
+      immunization_coverage: Number(record.immunization_coverage),
+      skilled_birth_attendance: Number(record.skilled_birth_attendance),
       updated_at: record.updated_at,
     };
   });

@@ -1,9 +1,9 @@
 {
-  "name": "nairobi-health-equity-map",
+  "name": "kenya-health-equity-map",
   "version": "1.0.0",
   "private": true,
-  "description": "Hyper-local, map-first civic intelligence platform for health equity in Nairobi",
-  "repository": "github.com/geraldkombo/nairobi-health-equity-map",
+  "description": "Map-first civic intelligence platform for health equity across Kenya's 47 counties",
+  "repository": "github.com/geraldkombo/kenya-health-equity-map",
   "engines": {
     "node": ">=22.0.0"
   },

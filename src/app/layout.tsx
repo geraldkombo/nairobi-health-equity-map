@@ -3,11 +3,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Nairobi Health Equity Map",
-  description: "A hyper-local, map-first civic intelligence platform for journalists, researchers, and public finance advocates. Visualise health-access inequities across Nairobi wards using transparent open data.",
+  title: "Kenya Health Equity Map",
+  description: "A map-first civic intelligence platform visualising health-access inequities across Kenya's 47 counties using transparent open data.",
   openGraph: {
-    title: "Nairobi Health Equity Map",
-    description: "Visualise health-access inequities across Nairobi wards using transparent open data.",
+    title: "Kenya Health Equity Map",
+    description: "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
   },
   robots: { index: true, follow: true },
 };
