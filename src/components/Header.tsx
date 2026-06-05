@@ -17,7 +17,7 @@ export default function Header() {
             Compare
           </Link>
           <a
-            href="https://github.com/user/nairobi-health-equity-map"
+            href="https://github.com/geraldkombo/nairobi-health-equity-map"
             target="_blank"
             rel="noreferrer"
             className="hover:text-neutral-900 transition-colors"

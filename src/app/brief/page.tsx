@@ -7,6 +7,7 @@ import { haversineKm } from "@/lib/geo";
 import { normalizeWard } from "@/lib/normalize";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 import type { WardRecord, IndicatorRecord, FacilitiesGeoJSON } from "@/lib/adapters";
+import { fetchWards, fetchFacilities, fetchIndicators } from "@/lib/data-fetch";
 
 function BriefContent() {
   const params = useSearchParams();
@@ -21,32 +22,14 @@ function BriefContent() {
     async function load() {
       try {
         setError(null);
-        const [wardsRes, indicatorsRes, facilitiesRes] = await Promise.all([
-          fetch("/api/wards").then((r) => r.json()),
-          fetch("/data/indicators/ward_indicators.csv").then((r) => r.text()),
-          fetch("/api/facilities").then((r) => r.json()),
+        const [wardsRes, facilitiesRes, indicators] = await Promise.all([
+          fetchWards(),
+          fetchFacilities(),
+          fetchIndicators(),
         ]);
-        setWards(wardsRes.wards ?? wardsRes);
-        setFacilities(facilitiesRes.geojson ?? facilitiesRes);
-
-        const lines = indicatorsRes.trim().split("\n");
-        const headers = lines[0].split(",");
-        const parsed: IndicatorRecord[] = lines.slice(1).map((line: string) => {
-          const vals = line.split(",");
-          const record: Record<string, string> = {};
-          headers.forEach((h: string, i: number) => {
-            record[h.trim()] = vals[i]?.trim() ?? "";
-          });
-          return {
-            ward_code: record.ward_code,
-            population: Number(record.population),
-            poverty_proxy: Number(record.poverty_proxy),
-            travel_time_to_facility_proxy: Number(record.travel_time_to_facility_proxy),
-            facility_density_proxy: Number(record.facility_density_proxy),
-            updated_at: record.updated_at,
-          };
-        });
-        setIndicators(parsed);
+        setWards(wardsRes.wards);
+        setFacilities(facilitiesRes.geojson);
+        setIndicators(indicators);
       } catch (e: any) {
         setError(e?.message ?? "Failed to load data.");
       }

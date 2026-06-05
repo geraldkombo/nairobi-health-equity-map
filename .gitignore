@@ -1,5 +1,7 @@
 node_modules
 .next
+out
+public/data
 *.local
 .env
 .env.local
@@ -9,3 +11,6 @@ netlify/functions/node_modules
 coverage
 playwright-report
 test-results
+
+# Local Netlify folder
+.netlify

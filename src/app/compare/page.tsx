@@ -6,6 +6,7 @@ import SourcesPanel from "@/components/SourcesPanel";
 import WeightsControl from "@/components/WeightsControl";
 import type { WardRecord, IndicatorRecord } from "@/lib/adapters";
 import { DEFAULT_WEIGHTS, type PGSWeights } from "@/lib/scoring";
+import { fetchWards, fetchIndicators } from "@/lib/data-fetch";
 
 export default function ComparePage() {
   const [wards, setWards] = useState<WardRecord[]>([]);
@@ -17,30 +18,12 @@ export default function ComparePage() {
   useEffect(() => {
     async function load() {
       try {
-        const [wardsRes, indicatorsRes] = await Promise.all([
-          fetch("/api/wards").then((r) => r.json()),
-          fetch("/data/indicators/ward_indicators.csv").then((r) => r.text()),
+        const [wardsRes, indicators] = await Promise.all([
+          fetchWards(),
+          fetchIndicators(),
         ]);
-        setWards(wardsRes.wards ?? wardsRes);
-
-        const lines = indicatorsRes.trim().split("\n");
-        const headers = lines[0].split(",");
-        const parsed: IndicatorRecord[] = lines.slice(1).map((line: string) => {
-          const vals = line.split(",");
-          const record: Record<string, string> = {};
-          headers.forEach((h: string, i: number) => {
-            record[h.trim()] = vals[i]?.trim() ?? "";
-          });
-          return {
-            ward_code: record.ward_code,
-            population: Number(record.population),
-            poverty_proxy: Number(record.poverty_proxy),
-            travel_time_to_facility_proxy: Number(record.travel_time_to_facility_proxy),
-            facility_density_proxy: Number(record.facility_density_proxy),
-            updated_at: record.updated_at,
-          };
-        });
-        setIndicators(parsed);
+        setWards(wardsRes.wards);
+        setIndicators(indicators);
       } catch {}
     }
     load();

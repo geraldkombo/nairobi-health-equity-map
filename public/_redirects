@@ -1,0 +1,4 @@
+# Netlify redirects for clean URLs (static export)
+/brief  /brief.html  200
+/compare  /compare.html  200
+/method  /method.html  200

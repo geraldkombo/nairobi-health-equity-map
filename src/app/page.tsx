@@ -11,6 +11,7 @@ import WeightsControl from "@/components/WeightsControl";
 import type { WardRecord, IndicatorRecord, FacilitiesGeoJSON } from "@/lib/adapters";
 import { normalizeWard } from "@/lib/normalize";
 import { computePGS, type PGSWeights, DEFAULT_WEIGHTS } from "@/lib/scoring";
+import { fetchWards, fetchFacilities, fetchIndicators } from "@/lib/data-fetch";
 
 export default function HomePage() {
   const [wards, setWards] = useState<WardRecord[] | null>(null);
@@ -22,51 +23,25 @@ export default function HomePage() {
   const [weights, setWeights] = useState<PGSWeights>(DEFAULT_WEIGHTS);
   const [error, setError] = useState<string | null>(null);
   const [dataFreshness, setDataFreshness] = useState<"live" | "snapshot" | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     async function load() {
       try {
-        const [wardsRes, indicatorsRes, facilitiesRes, boundariesRes] = await Promise.all([
-          fetch("/api/wards").then((r) => r.json()),
-          fetch("/data/indicators/ward_indicators.csv").then((r) => r.text()),
-          fetch("/api/facilities").then((r) => r.json()),
+        const [wardsRes, facilitiesRes, indicators, boundariesRes] = await Promise.all([
+          fetchWards(),
+          fetchFacilities(),
+          fetchIndicators(),
           fetch("/data/boundaries/nairobi_wards.geojson").then((r) => r.json()),
         ]);
-        setWards(wardsRes.wards ?? wardsRes);
-        setFacilities(facilitiesRes.geojson ?? facilitiesRes);
+        setWards(wardsRes.wards);
+        setFacilities(facilitiesRes.geojson);
         setBoundaries(boundariesRes);
-        setDataFreshness("live");
-
-        const lines = indicatorsRes.trim().split("\n");
-        const headers = lines[0].split(",");
-        const parsed: IndicatorRecord[] = lines.slice(1).map((line: string) => {
-          const vals = line.split(",");
-          const record: Record<string, string> = {};
-          headers.forEach((h: string, i: number) => {
-            record[h.trim()] = vals[i]?.trim() ?? "";
-          });
-          return {
-            ward_code: record.ward_code,
-            population: Number(record.population),
-            poverty_proxy: Number(record.poverty_proxy),
-            travel_time_to_facility_proxy: Number(record.travel_time_to_facility_proxy),
-            facility_density_proxy: Number(record.facility_density_proxy),
-            updated_at: record.updated_at,
-          };
-        });
-        setIndicators(parsed);
+        setDataFreshness(wardsRes.source === "snapshot" || facilitiesRes.source === "snapshot" ? "snapshot" : "live");
+        setIndicators(indicators);
+        setLoaded(true);
       } catch (e: any) {
-        try {
-          const snapWards = await fetch("/data/snapshots/wards.json").then((r) => r.json());
-          const snapFacilities = await fetch("/data/snapshots/facilities.json").then((r) => r.json());
-          const boundariesRes = await fetch("/data/boundaries/nairobi_wards.geojson").then((r) => r.json());
-          setWards(snapWards.wards);
-          setFacilities(snapFacilities);
-          setBoundaries(boundariesRes);
-          setDataFreshness("snapshot");
-        } catch {
-          setError(e?.message ?? "Failed to load data.");
-        }
+        setError(e?.message ?? "Failed to load data.");
       }
     }
     load();

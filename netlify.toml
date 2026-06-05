@@ -1,7 +1,9 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-  functions = "netlify/functions"
+  publish = "out"
+
+[build.processing]
+  skip_processing = true
 
 [dev]
   framework = "next"

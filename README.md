@@ -39,12 +39,29 @@ netlify dev
 
 ## Deploy to Netlify
 
-1. Push this repo to GitHub
-2. In Netlify: "Add new site" → "Import from Git"
-3. Build settings (pre-configured in `netlify.toml`):
-   - Build command: `npm run build`
-   - Publish directory: `.next`
-4. Deploy
+### Static export (recommended, no auth required)
+
+The project is pre-configured for static export:
+
+```bash
+npm run build
+# deploy the `out/` directory
+```
+
+### Netlify deploy button
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/geraldkombo/nairobi-health-equity-map)
+
+### Manual deploy via CLI
+
+```bash
+npm install -g netlify-cli
+netlify deploy --prod --dir=out
+```
+
+### Live demo
+
+https://comforting-boba-d84e62.netlify.app
 
 ## Environment variables
 
