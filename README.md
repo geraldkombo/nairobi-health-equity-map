@@ -61,7 +61,7 @@ netlify deploy --prod --dir=out
 
 ### Live demo
 
-https://comforting-boba-d84e62.netlify.app
+https://nairobi-health-equity-map.netlify.app
 
 ## Environment variables
 
