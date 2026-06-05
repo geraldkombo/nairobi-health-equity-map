@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://uhcke-247.netlify.app";
+  const baseUrl = process.env.SITE_URL || "https://uhcke.netlify.app";
   const lastMod = new Date("2026-06-05");
   return [
     { url: baseUrl, lastModified: lastMod, changeFrequency: "weekly", priority: 1 },
