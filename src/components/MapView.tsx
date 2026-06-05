@@ -154,6 +154,11 @@ export default function MapView({
 
         map.addControl(new maplibregl.NavigationControl(), "bottom-right");
 
+        map.fitBounds(
+          [[33.5, -5], [42.5, 5]],
+          { padding: 40, duration: 0 }
+        );
+
         setReady(true);
       } catch (e) {
         console.error("Map load handler error:", e);
