@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 import { normalizeCounty } from "@/lib/normalize";
@@ -11,13 +11,35 @@ interface CountyDetailsProps {
   indicators: IndicatorRecord[];
 }
 
-function ProgressBar({ label, value, max, invert }: { label: string; value: number; max: number; invert?: boolean }) {
+function InfoIcon({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-flex items-center">
+      <button
+        onClick={() => setOpen(!open)}
+        onBlur={() => setOpen(false)}
+        className="ml-1 inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-stone-300 text-[9px] font-bold text-white hover:bg-stone-500 focus:outline-none"
+        aria-label={text}
+        title={text}
+      >
+        ?
+      </button>
+      {open && (
+        <span className="absolute bottom-full left-1/2 z-10 mb-1 w-56 -translate-x-1/2 rounded-md bg-stone-800 px-3 py-2 text-[10px] leading-4 text-white shadow-lg">
+          {text}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function ProgressBar({ label, value, max, invert, info }: { label: string; value: number; max: number; invert?: boolean; info?: string }) {
   const pct = Math.min(100, Math.round((value / max) * 100));
   const displayPct = invert ? 100 - pct : pct;
   return (
     <div>
       <div className="flex items-center justify-between text-xs">
-        <span className="text-stone-600">{label}</span>
+        <span className="text-stone-600">{label}{info && <InfoIcon text={info} />}</span>
         <span className="font-medium text-stone-700">{invert ? 100 - pct : pct}%</span>
       </div>
       <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-stone-100">
@@ -39,14 +61,6 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
     return computePGS(county.id, norm, DEFAULT_WEIGHTS);
   }, [indicator, county.id]);
 
-  const narrative = score
-    ? score.drivers.length > 0
-      ? score.drivers.length === 1
-        ? `This county's priority score is driven by ${score.drivers[0].toLowerCase().replace(/^is /, "")}.`
-        : `This county's priority score is driven by multiple factors: ${score.drivers.map((d) => d.toLowerCase().replace(/^is /, "")).join("; ")}.`
-      : "All indicator proxies are within typical national range."
-    : null;
-
   const nationalAvg = useMemo(() => {
     if (indicators.length === 0) return null;
     return {
@@ -56,10 +70,52 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
     };
   }, [indicators]);
 
+  const comparisons = useMemo(() => {
+    if (!indicator || indicators.length === 0) return null;
+    const sorted = (field: keyof IndicatorRecord) =>
+      [...indicators].sort((a, b) => (a[field] as number) - (b[field] as number));
+    const pctRank = (field: keyof IndicatorRecord) => {
+      const arr = sorted(field);
+      const idx = arr.findIndex((i) => i.county_code === county.id);
+      return idx >= 0 ? Math.round((idx / arr.length) * 100) : null;
+    };
+    return {
+      travelTime: pctRank("travel_time_to_facility_proxy"),
+      poverty: pctRank("poverty_proxy"),
+      population: pctRank("population"),
+      facilityDensity: pctRank("facility_density_proxy"),
+    };
+  }, [indicator, indicators, county.id]);
+
+  const narrativeLines = useMemo(() => {
+    if (!comparisons || !indicator || !nationalAvg) return [];
+    const lines: string[] = [];
+    if (comparisons.travelTime !== null && comparisons.travelTime >= 70) {
+      lines.push(`Travel time is longer than ${comparisons.travelTime}% of counties, indicating poor physical access to health facilities.`);
+    }
+    if (comparisons.poverty !== null && comparisons.poverty >= 70) {
+      lines.push(`Poverty proxy ranks above ${comparisons.poverty}% of counties, pointing to higher socioeconomic vulnerability.`);
+    }
+    if (comparisons.population !== null) {
+      if (comparisons.population >= 80) {
+        lines.push(`Population is higher than ${comparisons.population}% of counties, placing greater demand on health services.`);
+      } else if (comparisons.population <= 20) {
+        lines.push(`Population is lower than ${100 - comparisons.population}% of counties; demand pressure is relatively low.`);
+      }
+    }
+    if (comparisons.facilityDensity !== null && comparisons.facilityDensity <= 20) {
+      lines.push(`Facility density is lower than ${100 - comparisons.facilityDensity}% of counties, meaning fewer health facilities per person.`);
+    }
+    if (lines.length === 0) {
+      lines.push("All indicator proxies are within typical national range relative to other counties.");
+    }
+    return lines;
+  }, [comparisons, indicator, nationalAvg]);
+
   const pgsClass = score
-    ? score.pgs >= 0.7 ? "text-stone-50 bg-[#78350F]"
-      : score.pgs >= 0.5 ? "text-white bg-[#EA580C]"
-      : score.pgs >= 0.3 ? "text-stone-800 bg-[#F59E0B]"
+    ? score.pgs >= 70 ? "text-stone-50 bg-[#78350F]"
+      : score.pgs >= 50 ? "text-white bg-[#EA580C]"
+      : score.pgs >= 30 ? "text-stone-800 bg-[#F59E0B]"
       : "text-stone-800 bg-[#FDE68A]"
     : "";
 
@@ -74,15 +130,18 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
         </div>
         {score && (
           <div className={`rounded-lg px-3 py-1.5 text-right ${pgsClass}`}>
-            <div className="text-xl font-bold tracking-tight">{(score.pgs * 100).toFixed(0)}</div>
+            <div className="text-xl font-bold tracking-tight">{score.pgs}</div>
             <div className="text-[10px] font-medium opacity-80">PGS</div>
           </div>
         )}
       </div>
 
-      {narrative && (
+      {narrativeLines.length > 0 && (
         <div className="mt-4 rounded-lg bg-stone-50 p-4 text-sm leading-6 text-stone-700 border border-stone-100" role="note">
-          <strong>What this means:</strong> {narrative}
+          <strong>How this county compares:</strong>
+          <ul className="mt-1 list-disc space-y-0.5 pl-4">
+            {narrativeLines.map((line, i) => <li key={i}>{line}</li>)}
+          </ul>
         </div>
       )}
 
@@ -91,11 +150,11 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
           <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500">Component breakdown</h4>
           <ProgressBar label="Travel time proxy" value={indicator.travel_time_to_facility_proxy} max={100} />
           <ProgressBar label="Poverty proxy" value={indicator.poverty_proxy} max={100} />
-          <ProgressBar label="Population pressure" value={indicator.population} max={5_000_000} />
+          <ProgressBar label="Population pressure" value={indicator.population / Math.max(indicator.facility_count, 1)} max={10000} />
           <ProgressBar
             label="Facility density"
-            value={indicator.facility_density_proxy}
-            max={1}
+            value={(Math.max(indicator.facility_count, 1) / indicator.population) * 10000}
+            max={4}
             invert
           />
         </div>
@@ -138,20 +197,6 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
           >
             Generate brief
           </Link>
-          <button
-            onClick={() => {
-              const blob = new Blob([JSON.stringify({ county, score, indicator }, null, 2)], { type: "application/json" });
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement("a");
-              a.href = url;
-              a.download = `${county.id}-data.json`;
-              a.click();
-              URL.revokeObjectURL(url);
-            }}
-            className="rounded-lg border border-stone-300 px-3 py-2 text-xs font-medium text-stone-700 hover:bg-stone-50 transition-colors"
-          >
-            Download JSON
-          </button>
         </div>
       )}
     </div>

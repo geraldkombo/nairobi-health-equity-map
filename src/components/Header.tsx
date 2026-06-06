@@ -16,9 +16,6 @@ export default function Header() {
           <Link href="/compare" className="hover:text-stone-800 transition-colors">
             Compare
           </Link>
-          <Link href="/brief?county=1" className="hover:text-stone-800 transition-colors">
-            Regional Briefs
-          </Link>
         </nav>
       </div>
     </header>

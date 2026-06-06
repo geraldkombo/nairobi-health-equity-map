@@ -17,3 +17,7 @@ test-results
 
 # Temp files
 tmp/
+
+# Raw ETL staging data (KMHFR API dumps, etc.)
+raw-data/
+scripts/etl/raw-data/

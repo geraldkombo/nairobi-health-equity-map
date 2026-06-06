@@ -1,0 +1,425 @@
+[
+  {
+    "id": "mombasa",
+    "name": "Mombasa",
+    "population": 1208333,
+    "facilities": 120,
+    "facilitiesPer10k": 0.99,
+    "poverty": 27.1,
+    "travelTime": 15
+  },
+  {
+    "id": "kwale",
+    "name": "Kwale",
+    "population": 866820,
+    "facilities": 73,
+    "facilitiesPer10k": 0.84,
+    "poverty": 47.4,
+    "travelTime": 52
+  },
+  {
+    "id": "kilifi",
+    "name": "Kilifi",
+    "population": 1453787,
+    "facilities": 138,
+    "facilitiesPer10k": 0.95,
+    "poverty": 46.4,
+    "travelTime": 58
+  },
+  {
+    "id": "tana-river",
+    "name": "Tana River",
+    "population": 315943,
+    "facilities": 64,
+    "facilitiesPer10k": 2.03,
+    "poverty": 62.2,
+    "travelTime": 118
+  },
+  {
+    "id": "lamu",
+    "name": "Lamu",
+    "population": 143920,
+    "facilities": 95,
+    "facilitiesPer10k": 6.6,
+    "poverty": 28.5,
+    "travelTime": 95
+  },
+  {
+    "id": "taita-taveta",
+    "name": "Taita Taveta",
+    "population": 340671,
+    "facilities": 65,
+    "facilitiesPer10k": 1.91,
+    "poverty": 33.9,
+    "travelTime": 72
+  },
+  {
+    "id": "garissa",
+    "name": "Garissa",
+    "population": 841353,
+    "facilities": 112,
+    "facilitiesPer10k": 1.33,
+    "poverty": 65.5,
+    "travelTime": 98
+  },
+  {
+    "id": "wajir",
+    "name": "Wajir",
+    "population": 781263,
+    "facilities": 110,
+    "facilitiesPer10k": 1.41,
+    "poverty": 62.6,
+    "travelTime": 110
+  },
+  {
+    "id": "mandera",
+    "name": "Mandera",
+    "population": 867457,
+    "facilities": 60,
+    "facilitiesPer10k": 0.69,
+    "poverty": 77.5,
+    "travelTime": 120
+  },
+  {
+    "id": "marsabit",
+    "name": "Marsabit",
+    "population": 459785,
+    "facilities": 60,
+    "facilitiesPer10k": 1.3,
+    "poverty": 63.7,
+    "travelTime": 115
+  },
+  {
+    "id": "isiolo",
+    "name": "Isiolo",
+    "population": 268002,
+    "facilities": 73,
+    "facilitiesPer10k": 2.72,
+    "poverty": 57.7,
+    "travelTime": 85
+  },
+  {
+    "id": "meru",
+    "name": "Meru",
+    "population": 1545714,
+    "facilities": 127,
+    "facilitiesPer10k": 0.82,
+    "poverty": 24.1,
+    "travelTime": 42
+  },
+  {
+    "id": "tharaka-nithi",
+    "name": "Tharaka Nithi",
+    "population": 393177,
+    "facilities": 74,
+    "facilitiesPer10k": 1.88,
+    "poverty": 34.7,
+    "travelTime": 55
+  },
+  {
+    "id": "embu",
+    "name": "Embu",
+    "population": 608599,
+    "facilities": 60,
+    "facilitiesPer10k": 0.99,
+    "poverty": 23.3,
+    "travelTime": 35
+  },
+  {
+    "id": "kitui",
+    "name": "Kitui",
+    "population": 1136187,
+    "facilities": 78,
+    "facilitiesPer10k": 0.69,
+    "poverty": 47.3,
+    "travelTime": 62
+  },
+  {
+    "id": "machakos",
+    "name": "Machakos",
+    "population": 1421932,
+    "facilities": 129,
+    "facilitiesPer10k": 0.91,
+    "poverty": 28.7,
+    "travelTime": 38
+  },
+  {
+    "id": "makueni",
+    "name": "Makueni",
+    "population": 987653,
+    "facilities": 128,
+    "facilitiesPer10k": 1.3,
+    "poverty": 33.8,
+    "travelTime": 50
+  },
+  {
+    "id": "nyandarua",
+    "name": "Nyandarua",
+    "population": 638289,
+    "facilities": 67,
+    "facilitiesPer10k": 1.05,
+    "poverty": 32.3,
+    "travelTime": 40
+  },
+  {
+    "id": "nyeri",
+    "name": "Nyeri",
+    "population": 759262,
+    "facilities": 102,
+    "facilitiesPer10k": 1.34,
+    "poverty": 19.3,
+    "travelTime": 30
+  },
+  {
+    "id": "kirinyaga",
+    "name": "Kirinyaga",
+    "population": 610411,
+    "facilities": 93,
+    "facilitiesPer10k": 1.52,
+    "poverty": 18,
+    "travelTime": 28
+  },
+  {
+    "id": "muranga",
+    "name": "Muranga",
+    "population": 1056640,
+    "facilities": 133,
+    "facilitiesPer10k": 1.26,
+    "poverty": 24.3,
+    "travelTime": 32
+  },
+  {
+    "id": "kiambu",
+    "name": "Kiambu",
+    "population": 2417735,
+    "facilities": 150,
+    "facilitiesPer10k": 0.62,
+    "poverty": 21.4,
+    "travelTime": 18
+  },
+  {
+    "id": "turkana",
+    "name": "Turkana",
+    "population": 926976,
+    "facilities": 60,
+    "facilitiesPer10k": 0.65,
+    "poverty": 79.4,
+    "travelTime": 125
+  },
+  {
+    "id": "west-pokot",
+    "name": "West Pokot",
+    "population": 621241,
+    "facilities": 110,
+    "facilitiesPer10k": 1.77,
+    "poverty": 57.1,
+    "travelTime": 78
+  },
+  {
+    "id": "samburu",
+    "name": "Samburu",
+    "population": 310327,
+    "facilities": 114,
+    "facilitiesPer10k": 3.67,
+    "poverty": 62.1,
+    "travelTime": 92
+  },
+  {
+    "id": "trans-nzoia",
+    "name": "Trans Nzoia",
+    "population": 990341,
+    "facilities": 120,
+    "facilitiesPer10k": 1.21,
+    "poverty": 40.4,
+    "travelTime": 45
+  },
+  {
+    "id": "uasin-gishu",
+    "name": "Uasin Gishu",
+    "population": 1163186,
+    "facilities": 76,
+    "facilitiesPer10k": 0.65,
+    "poverty": 22.7,
+    "travelTime": 25
+  },
+  {
+    "id": "elgeyo-marakwet",
+    "name": "Elgeyo Marakwet",
+    "population": 444775,
+    "facilities": 133,
+    "facilitiesPer10k": 2.99,
+    "poverty": 34.1,
+    "travelTime": 65
+  },
+  {
+    "id": "nandi",
+    "name": "Nandi",
+    "population": 985727,
+    "facilities": 62,
+    "facilitiesPer10k": 0.63,
+    "poverty": 33,
+    "travelTime": 48
+  },
+  {
+    "id": "baringo",
+    "name": "Baringo",
+    "population": 666763,
+    "facilities": 100,
+    "facilitiesPer10k": 1.5,
+    "poverty": 40.9,
+    "travelTime": 68
+  },
+  {
+    "id": "laikipia",
+    "name": "Laikipia",
+    "population": 518560,
+    "facilities": 110,
+    "facilitiesPer10k": 2.12,
+    "poverty": 33.6,
+    "travelTime": 55
+  },
+  {
+    "id": "nakuru",
+    "name": "Nakuru",
+    "population": 2162202,
+    "facilities": 128,
+    "facilitiesPer10k": 0.59,
+    "poverty": 23.9,
+    "travelTime": 22
+  },
+  {
+    "id": "narok",
+    "name": "Narok",
+    "population": 1157873,
+    "facilities": 107,
+    "facilitiesPer10k": 0.92,
+    "poverty": 43.2,
+    "travelTime": 60
+  },
+  {
+    "id": "kajiado",
+    "name": "Kajiado",
+    "population": 1117840,
+    "facilities": 78,
+    "facilitiesPer10k": 0.7,
+    "poverty": 27.2,
+    "travelTime": 42
+  },
+  {
+    "id": "kericho",
+    "name": "Kericho",
+    "population": 901727,
+    "facilities": 92,
+    "facilitiesPer10k": 1.02,
+    "poverty": 24.3,
+    "travelTime": 38
+  },
+  {
+    "id": "bomet",
+    "name": "Bomet",
+    "population": 875689,
+    "facilities": 81,
+    "facilitiesPer10k": 0.92,
+    "poverty": 36.4,
+    "travelTime": 45
+  },
+  {
+    "id": "kakamega",
+    "name": "Kakamega",
+    "population": 1867579,
+    "facilities": 150,
+    "facilitiesPer10k": 0.8,
+    "poverty": 37.5,
+    "travelTime": 40
+  },
+  {
+    "id": "vihiga",
+    "name": "Vihiga",
+    "population": 590013,
+    "facilities": 83,
+    "facilitiesPer10k": 1.41,
+    "poverty": 32,
+    "travelTime": 35
+  },
+  {
+    "id": "bungoma",
+    "name": "Bungoma",
+    "population": 1670570,
+    "facilities": 150,
+    "facilitiesPer10k": 0.9,
+    "poverty": 39.6,
+    "travelTime": 48
+  },
+  {
+    "id": "busia",
+    "name": "Busia",
+    "population": 893681,
+    "facilities": 67,
+    "facilitiesPer10k": 0.75,
+    "poverty": 42.5,
+    "travelTime": 55
+  },
+  {
+    "id": "siaya",
+    "name": "Siaya",
+    "population": 993183,
+    "facilities": 64,
+    "facilitiesPer10k": 0.64,
+    "poverty": 39.1,
+    "travelTime": 50
+  },
+  {
+    "id": "kisumu",
+    "name": "Kisumu",
+    "population": 1155574,
+    "facilities": 94,
+    "facilitiesPer10k": 0.81,
+    "poverty": 33.5,
+    "travelTime": 28
+  },
+  {
+    "id": "homa-bay",
+    "name": "Homa Bay",
+    "population": 1131950,
+    "facilities": 78,
+    "facilitiesPer10k": 0.69,
+    "poverty": 47.7,
+    "travelTime": 52
+  },
+  {
+    "id": "migori",
+    "name": "Migori",
+    "population": 1116436,
+    "facilities": 100,
+    "facilitiesPer10k": 0.9,
+    "poverty": 41.9,
+    "travelTime": 58
+  },
+  {
+    "id": "kisii",
+    "name": "Kisii",
+    "population": 1266860,
+    "facilities": 60,
+    "facilitiesPer10k": 0.47,
+    "poverty": 32.5,
+    "travelTime": 35
+  },
+  {
+    "id": "nyamira",
+    "name": "Nyamira",
+    "population": 605576,
+    "facilities": 77,
+    "facilitiesPer10k": 1.27,
+    "poverty": 27.9,
+    "travelTime": 42
+  },
+  {
+    "id": "nairobi",
+    "name": "Nairobi",
+    "population": 4397073,
+    "facilities": 400,
+    "facilitiesPer10k": 0.91,
+    "poverty": 16.7,
+    "travelTime": 12
+  }
+]

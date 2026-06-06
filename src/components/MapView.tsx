@@ -12,9 +12,9 @@ interface MapViewProps {
 }
 
 function getPGSColor(pgs: number): string {
-  if (pgs >= 0.7) return "#78350F";
-  if (pgs >= 0.5) return "#EA580C";
-  if (pgs >= 0.3) return "#F59E0B";
+  if (pgs >= 70) return "#78350F";
+  if (pgs >= 50) return "#EA580C";
+  if (pgs >= 30) return "#F59E0B";
   return "#FDE68A";
 }
 
@@ -43,8 +43,6 @@ export default function MapView({
   const [ready, setReady] = useState(false);
   const [hasError, setError] = useState(false);
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
-
-  const formatScore = useCallback((pgs: number) => `${(pgs * 100).toFixed(0)}`, []);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -183,7 +181,16 @@ export default function MapView({
     }
   }, [countyScores, selectedCountyCode, boundaries]);
 
-  const pgsLabel = hoverInfo?.pgs !== undefined ? `${formatScore(hoverInfo.pgs)}` : null;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const timer = setTimeout(() => {
+      try { map.resize(); } catch {}
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [selectedCountyCode]);
+
+  const pgsLabel = hoverInfo?.pgs !== undefined ? `${hoverInfo.pgs}` : null;
   const pgsColor = hoverInfo?.pgs !== undefined ? getPGSColor(hoverInfo.pgs) : null;
 
   return (

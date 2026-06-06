@@ -6,6 +6,7 @@ import CountyDetails from "@/components/CountyDetails";
 import HowToUse from "@/components/HowToUse";
 import SourcesPanel from "@/components/SourcesPanel";
 import InsightsDashboard from "@/components/InsightsDashboard";
+import CountyRankings from "@/components/CountyRankings";
 import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
 import { normalizeCounty } from "@/lib/normalize";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
@@ -76,7 +77,7 @@ export default function HomePage() {
   }, []);
 
   const totalFacilities = indicators.reduce((sum, i) => sum + i.facility_count, 0);
-  const highPriorityCounties = counties ? counties.filter(c => (countyScores[c.id] ?? 0) >= 0.5).length : 0;
+  const highPriorityCounties = counties ? counties.filter(c => (countyScores[c.id] ?? 0) >= 50).length : 0;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
@@ -126,16 +127,16 @@ export default function HomePage() {
 
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-stone-500">
             <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#FDE68A]"></span> Low (&lt;0.30)
+              <span className="inline-block h-3 w-3 rounded-sm bg-[#FDE68A]"></span> Low (&lt;30)
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#F59E0B]"></span> Medium (0.30&ndash;0.49)
+              <span className="inline-block h-3 w-3 rounded-sm bg-[#F59E0B]"></span> Medium (30 to 49)
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#EA580C]"></span> High (0.50&ndash;0.69)
+              <span className="inline-block h-3 w-3 rounded-sm bg-[#EA580C]"></span> High (50 to 69)
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#78350F]"></span> Critical (0.70+)
+              <span className="inline-block h-3 w-3 rounded-sm bg-[#78350F]"></span> Critical (70+)
             </span>
             <span className="ml-auto text-stone-400">Priority Gap Score (PGS)</span>
           </div>
@@ -148,9 +149,13 @@ export default function HomePage() {
               indicators={indicators}
             />
           ) : (
-            <div className="rounded-xl border border-stone-200 bg-white p-8 text-center text-sm text-stone-400">
-              Click a county on the map to see details.
-            </div>
+            counties && (
+              <CountyRankings
+                counties={counties}
+                indicators={indicators}
+                onCountyClick={handleCountySelect}
+              />
+            )
           )}
           <SourcesPanel />
         </div>

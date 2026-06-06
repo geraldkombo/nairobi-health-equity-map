@@ -35,7 +35,7 @@ function PrintableBrief({
 }: {
   county: CountyRecord;
   indicator: IndicatorRecord;
-  nationalAvg: { population: number; poverty: number; facilities: number; travelTime: number };
+  nationalAvg: { population: number; poverty: number; facilities: number; travelTime: number; populationPressure: number };
   today: string;
 }) {
   const norm = normalizeCounty(indicator);
@@ -45,11 +45,11 @@ function PrintableBrief({
 
   const narrative = useMemo(() => {
     const parts: string[] = [];
-    const pct = Math.round(score.pgs * 100);
+    const pct = Math.round(score.pgs);
     const natPct = Math.round(
       ((nationalAvg.travelTime / 100) * 0.6 + (1 - nationalAvg.facilities / 100) * 0.4) * 0.4 +
         (nationalAvg.poverty / 100) * 0.3 +
-        Math.min(1, nationalAvg.population / 5_000_000) * 0.3
+        nationalAvg.populationPressure * 0.3
     );
 
     if (pct > natPct + 10) {
@@ -94,11 +94,11 @@ function PrintableBrief({
             <h1 className="text-3xl font-bold tracking-tight text-stone-900">{county.name}</h1>
             <p className="mt-1 text-sm text-stone-500">County, Kenya &middot; Generated {today}</p>
           </div>
-          <div className="flex flex-col items-center rounded-lg px-4 py-2" style={{ backgroundColor: score.pgs >= 0.7 ? "#78350F" : score.pgs >= 0.5 ? "#EA580C" : score.pgs >= 0.3 ? "#F59E0B" : "#FDE68A" }}>
-            <span className="text-2xl font-bold tracking-tight" style={{ color: score.pgs >= 0.5 ? "white" : "#292524" }}>
-              {(score.pgs * 100).toFixed(0)}
+          <div className="flex flex-col items-center rounded-lg px-4 py-2" style={{ backgroundColor: score.pgs >= 70 ? "#78350F" : score.pgs >= 50 ? "#EA580C" : score.pgs >= 30 ? "#F59E0B" : "#FDE68A" }}>
+            <span className="text-2xl font-bold tracking-tight" style={{ color: score.pgs >= 50 ? "white" : "#292524" }}>
+              {score.pgs}
             </span>
-            <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: score.pgs >= 0.5 ? "rgba(255,255,255,0.8)" : "#57534E" }}>
+            <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: score.pgs >= 50 ? "rgba(255,255,255,0.8)" : "#57534E" }}>
               PGS / 100
             </span>
           </div>
@@ -116,7 +116,7 @@ function PrintableBrief({
           <a href="https://www.knbs.or.ke/kihbs-2015-16/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KIHBS 2015/16 county estimates</a>.
           Health facility locations from{" "}
           <a href="https://geoportal.icpac.net/layers/geonode:kenya_health_facilities" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ICPAC/KEMRI Kenya Health Facilities</a>
-          {" "}(CC-BY-4.0). Travel-time estimates derived from cost-distance modelling
+          {" "}(CC-BY-4.0). Travel time estimates derived from cost and distance modelling
           (<a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">WHO AccessMod</a>)
           using{" "}
           <a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">OSM road networks</a>
@@ -174,7 +174,7 @@ function PrintableBrief({
           </div>
         </div>
         <p className="mt-3 text-[10px] leading-5 text-stone-400">
-          Travel time and facility density modelled via cost-distance proximity analysis
+          Travel time and facility density modelled via cost and distance proximity analysis
           (<a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">WHO AccessMod</a>;
           <a href="https://geoportal.icpac.net/layers/geonode:kenya_health_facilities" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ICPAC/KEMRI facilities</a>).
           Poverty proxy from{" "}
@@ -188,22 +188,22 @@ function PrintableBrief({
       <div className="break-inside-avoid rounded-lg border border-stone-200 p-5 print:border-black">
         <h2 className="text-xs font-bold uppercase tracking-widest text-stone-500">Limitations</h2>
         <p className="mt-3 text-sm leading-7 text-stone-700">
-          This brief is a transparent, open-data snapshot. It indicates potential access constraints using verifiable proxies: travel time estimates, facility density, and indicator-based gap scoring. It does not measure quality of care, clinical capacity, or health outcomes. Facility data from ICPAC/KEMRI may be incomplete for some counties. Population figures reflect the 2019 KNBS Census; intercensal growth is not modelled at ward level.
+          This brief is a transparent, open data snapshot. It indicates potential access constraints using verifiable proxies: travel time estimates, facility density, and indicator based gap scoring. It does not measure quality of care, clinical capacity, or health outcomes. Facility data from ICPAC/KEMRI may be incomplete for some counties. Population figures reflect the 2019 KNBS Census; intercensal growth is not modelled at ward level.
         </p>
         <p className="mt-3 text-sm leading-7 text-stone-700">
-          <strong>Travel time methodology:</strong> Average travel time is derived from cost-distance spatial
+          <strong>Travel time methodology:</strong> Average travel time is derived from cost and distance spatial
           modelling algorithms
           (<a href="https://kemri-wellcome.org/programmes/geographic-access/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">KEMRI-Wellcome Trust</a>
           {" / "}
           <a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">AccessMod</a>).
-          It does not rely on straight-line Euclidean distance. Instead, it calculates the &ldquo;least-cost
-          path&rdquo; by simulating a combined transport model&mdash;factoring in walking speeds across varied
-          land cover (<a href="https://worldcover.esa.int/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">ESA WorldCover</a>)
-          and topography, combined with motorized and non-motorized travel along primary, secondary, and rural
-          road networks (<a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">OSM Kenya</a>).
+It does not rely on straight line Euclidean distance. Instead, it calculates the lowest cost
+path by simulating a combined transport model, factoring in walking speeds across varied
+land cover (<a href="https://worldcover.esa.int/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">ESA WorldCover</a>)
+and topography, combined with motorized and manual transport travel along primary, secondary, and rural
+road networks (<a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">OSM Kenya</a>).
         </p>
         <p className="mt-2 text-[10px] leading-5 text-stone-400">
-          Suggested citation: Kenya Health Equity Map &mdash; <a href="https://kenya-health-equity.netlify.app" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">kenya-health-equity.netlify.app</a>.
+          Suggested citation: Kenya Health Equity Map, <a href="https://kenya-health-equity.netlify.app" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">kenya-health-equity.netlify.app</a>.
           {county.name} County Brief, generated {today}. Sources:{" "}
           <a href="https://www.knbs.or.ke/census-2019/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KNBS 2019 Census</a>;
           <a href="https://www.knbs.or.ke/kihbs-2015-16/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KIHBS 2015/16</a>;
@@ -257,6 +257,10 @@ function BriefContent() {
       poverty: indicators.reduce((s, i) => s + i.poverty_proxy, 0) / indicators.length,
       facilities: indicators.reduce((s, i) => s + i.facility_count, 0) / indicators.length,
       travelTime: indicators.reduce((s, i) => s + i.travel_time_to_facility_proxy, 0) / indicators.length,
+      populationPressure: indicators.reduce((s, i) => {
+        const popPerFac = i.population / Math.max(i.facility_count, 1);
+        return s + Math.min(popPerFac / 10000, 1);
+      }, 0) / indicators.length,
     };
   }, [indicators]);
 

@@ -12,11 +12,11 @@
     "dev": "node -e \"const fs=require('fs');const s='./data';const d='./public/data';fs.rmSync(d,{recursive:true,force:true});fs.cpSync(s,d,{recursive:true})\" && next dev",
     "build": "next build",
     "start": "npx serve out",
-    "etl:fetch": "npx tsx scripts/etl/fetch-knbs.ts",
-    "etl:aggregate": "npx tsx scripts/etl/aggregate-wards.ts",
-    "etl:build": "npx tsx scripts/etl/build-snapshots.ts",
-    "postetl": "node -e \"const fs=require('fs');const s='./data/snapshots';const d='./public/data/snapshots';if(!fs.existsSync(d)){fs.mkdirSync(d,{recursive:true})};fs.readdirSync(s).forEach(f=>fs.copyFileSync(s+'/'+f,d+'/'+f))\"",
-    "etl": "npm run etl:fetch && npm run etl:aggregate && npm run etl:build && npm run postetl",
+    "etl:extract": "npx tsx scripts/etl/1-extract-kmhfr.ts",
+    "etl:knbs": "npx tsx scripts/etl/2-extract-knbs.ts",
+    "etl:spatial": "npx tsx scripts/etl/3-extract-spatial.ts",
+    "etl:build": "npx tsx scripts/etl/4-build-snapshot.ts",
+    "etl": "npm run etl:extract && npm run etl:knbs && npm run etl:spatial && npm run etl:build",
     "lint": "next lint",
     "format": "prettier --write .",
     "test:e2e": "playwright test",
@@ -45,6 +45,7 @@
     "postcss": "8.5.3",
     "prettier": "3.5.3",
     "tailwindcss": "4.1.6",
+    "tsx": "^4.22.4",
     "typescript": "5.8.3"
   }
 }

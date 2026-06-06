@@ -5,12 +5,12 @@ import Header from "@/components/Header";
 export const metadata: Metadata = {
   title: "Kenya Health Equity Map",
   description:
-    "A map-first civic intelligence platform visualising health-access inequities across Kenya's 47 counties using transparent open data.",
+    "A map based civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.",
   openGraph: {
     title: "Kenya Health Equity Map",
     description:
       "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
-    url: "https://kenya-health-equity.netlify.app",
+    url: "https://ke-health-equity.netlify.app",
     locale: "en_KE",
     siteName: "Kenya Health Equity Map",
   },

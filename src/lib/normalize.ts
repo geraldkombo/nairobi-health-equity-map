@@ -5,70 +5,29 @@ export interface NormalizedIndicators {
   facilityDensity: number;
 }
 
-export interface ZScoreParams {
-  mean: number;
-  sd: number;
-}
-
-const ABSOLUTE_MAX: Record<string, number> = {
-  travel_time_to_facility_proxy: 100,
-  poverty_proxy: 100,
-  population: 5_000_000,
-  facility_density_proxy: 1,
-};
-
-function clamp(v: number, max: number) {
-  return Math.max(0, Math.min(1, v / max));
-}
-
-/** Absolute-threshold normalization (time-stable). */
+/** Absolute-threshold normalization using population-per-facility and facilities-per-capita metrics. */
 export function normalizeCounty(
   raw: {
     travel_time_to_facility_proxy: number;
     poverty_proxy: number;
     population: number;
-    facility_density_proxy: number;
+    facility_count: number;
   },
 ): NormalizedIndicators {
-  return {
-    travelTime: clamp(raw.travel_time_to_facility_proxy, ABSOLUTE_MAX.travel_time_to_facility_proxy),
-    poverty: clamp(raw.poverty_proxy, ABSOLUTE_MAX.poverty_proxy),
-    populationPressure: clamp(raw.population, ABSOLUTE_MAX.population),
-    facilityDensity: 1 - clamp(raw.facility_density_proxy, ABSOLUTE_MAX.facility_density_proxy),
-  };
-}
+  const travelTime = Math.min(raw.travel_time_to_facility_proxy / 100, 1);
+  const poverty = Math.min(raw.poverty_proxy / 100, 1);
 
-/** Z-score normalization (statistically robust, shifts with national mean). */
-export function normalizeCountyZScore(
-  raw: {
-    travel_time_to_facility_proxy: number;
-    poverty_proxy: number;
-    population: number;
-    facility_density_proxy: number;
-  },
-  stats: {
-    travelTime: ZScoreParams;
-    poverty: ZScoreParams;
-    population: ZScoreParams;
-    facilityDensity: ZScoreParams;
-  },
-): NormalizedIndicators {
-  const z = (val: number, mean: number, sd: number) => (sd === 0 ? 0 : (val - mean) / sd);
-  const scaleTo01 = (z: number) => Math.max(0, Math.min(1, (z * 15 + 50) / 100));
+  const facilities = Math.max(raw.facility_count, 1);
+  const popPerFacility = raw.population / facilities;
+  const populationPressure = Math.min(popPerFacility / 10000, 1);
+
+  const facilitiesPer10k = (facilities / raw.population) * 10000;
+  const facilityDensity = Math.max(1 - facilitiesPer10k / 4, 0);
 
   return {
-    travelTime: scaleTo01(z(raw.travel_time_to_facility_proxy, stats.travelTime.mean, stats.travelTime.sd)),
-    poverty: scaleTo01(z(raw.poverty_proxy, stats.poverty.mean, stats.poverty.sd)),
-    populationPressure: scaleTo01(z(raw.population, stats.population.mean, stats.population.sd)),
-    facilityDensity: 1 - scaleTo01(z(raw.facility_density_proxy, stats.facilityDensity.mean, stats.facilityDensity.sd)),
+    travelTime,
+    poverty,
+    populationPressure,
+    facilityDensity,
   };
-}
-
-/** Compute z-score params (mean, sd) across an array of values. */
-export function computeZScoreParams(values: number[]): ZScoreParams {
-  const n = values.length;
-  if (n === 0) return { mean: 0, sd: 0 };
-  const mean = values.reduce((s, v) => s + v, 0) / n;
-  const variance = values.reduce((s, v) => s + (v - mean) ** 2, 0) / n;
-  return { mean, sd: Math.sqrt(variance) };
 }

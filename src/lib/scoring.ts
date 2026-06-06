@@ -36,10 +36,12 @@ export function computePGS(
   const vulnerability = norm.poverty;
   const popPressure = norm.populationPressure;
 
-  const pgs =
+  const rawPgs =
     accessibility * weights.accessibility +
     vulnerability * weights.vulnerability +
     popPressure * weights.populationPressure;
+
+  const pgs = Math.round(rawPgs * 100);
 
   const drivers: string[] = [];
   if (norm.travelTime > 0.7) {
@@ -60,7 +62,7 @@ export function computePGS(
 
   return {
     countyCode,
-    pgs: Math.round(pgs * 100) / 100,
+    pgs,
     components: norm,
     drivers,
   };

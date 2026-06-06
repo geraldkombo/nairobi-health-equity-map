@@ -31,7 +31,7 @@ export default function HowToUse() {
               Use the <strong>Compare</strong> page to place two counties side by side.
             </li>
             <li>
-              Use the <strong>Brief</strong> button on a selected county to generate a printable one-page summary.
+              Use the <strong>Brief</strong> button on a selected county to generate a printable single page summary.
             </li>
           </ul>
         </div>

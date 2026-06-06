@@ -4,7 +4,7 @@
   functions = "netlify/functions"
 
 [build.environment]
-  SITE_URL = "https://kenya-health-equity.netlify.app"
+  SITE_URL = "https://ke-health-equity.netlify.app"
 
 [dev]
   framework = "next"
@@ -16,6 +16,8 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; worker-src 'self' blob:; child-src blob:; img-src 'self' data: https://basemaps.cartocdn.com https://*.tile.openstreetmap.org; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://api.kmhfr.health.go.ke"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[redirects]]
   from = "/api/*"
