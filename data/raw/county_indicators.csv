@@ -1,4 +1,0 @@
-county_code,county_name,population,poverty_proxy,facility_count,facility_density_proxy,travel_time_to_facility_proxy,immunization_coverage,skilled_birth_attendance,updated_at
-Mombasa,1,231641,23.9,9,0.882,46.5,0,0,2026-06-06
-Nairobi,47,312876,19.7,76,0,43.5,0,0,2026-06-06
-Kiambu,22,254064,8.2,12,0.842,51.6,0,0,2026-06-06

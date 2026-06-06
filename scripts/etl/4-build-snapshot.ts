@@ -5,6 +5,10 @@ import { parse } from "csv-parse/sync";
 import { CountySnapshotArraySchema } from "./lib/zod-schemas";
 import { sanitizeCountyName, createCountyId, toTitleCase } from "./lib/county-names";
 
+interface GeoPoint { type: "Point"; coordinates: number[]; }
+interface GeoFeature { type: "Feature"; geometry: GeoPoint | null; properties: Record<string, any>; }
+interface GeoFC { type: "FeatureCollection"; features: GeoFeature[]; }
+
 const RAW_DIR = path.join(import.meta.dirname, "raw-data");
 const SNAPSHOT_DIR = path.join(import.meta.dirname, "../../data/snapshots");
 
@@ -118,11 +122,40 @@ function main() {
   const validated = CountySnapshotArraySchema.parse(snapshot);
   console.log(`\nValidated ${validated.length} county records.`);
 
-  // 6. Write
+  // 6. Write county indicators
   if (!fs.existsSync(SNAPSHOT_DIR)) fs.mkdirSync(SNAPSHOT_DIR, { recursive: true });
   const outPath = path.join(SNAPSHOT_DIR, "county_indicators.json");
   fs.writeFileSync(outPath, JSON.stringify(validated, null, 2));
   console.log(`Written to ${outPath}`);
+
+  // 7. Copy facilities as GeoJSON to snapshot dir
+  const facRaw = path.join(RAW_DIR, "kmhfr_facilities_raw.json");
+  const facOut = path.join(SNAPSHOT_DIR, "facilities.json");
+  if (fs.existsSync(facRaw)) {
+    const facilities = JSON.parse(fs.readFileSync(facRaw, "utf-8"));
+    const fc: GeoFC = {
+      type: "FeatureCollection",
+      features: facilities
+        .filter((f: any) => f.lat != null && f.long != null)
+        .map((f: any) => ({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [f.long, f.lat],
+          },
+          properties: {
+            FNO: f.code,
+            F_NAME: f.name,
+            F_TYPE: f.keph_level_name === "Level 5" ? 1 : f.keph_level_name === "Level 4" ? 2 : f.keph_level_name === "Level 3" ? 3 : 4,
+            AGENCY: f.owner_name === "Ministry of Health" ? "MOH" : f.owner_name,
+            COUNTY: f.county_name,
+            DISTRICT: f.county_name,
+          },
+        })),
+    };
+    fs.writeFileSync(facOut, JSON.stringify(fc));
+    console.log(`Written ${fc.features.length} facilities to ${facOut}`);
+  }
 }
 
 main();
