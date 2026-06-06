@@ -26,13 +26,13 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           <select
             id="county-a"
             value={countyA}
-            onChange={(e) => setCountyA(e.target.value)}
+            onChange={(e) => { setCountyA(e.target.value); if (e.target.value === countyB) setCountyB(""); }}
             className="w-full rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-900 focus:border-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-200"
             aria-label="Select first county"
           >
             <option value="">Choose a county...</option>
             {counties.map((c) => (
-              <option key={c.id} value={c.id}>{c.name}</option>
+              <option key={c.id} value={c.id} disabled={c.id === countyB}>{c.name}</option>
             ))}
           </select>
         </div>
@@ -43,19 +43,19 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           <select
             id="county-b"
             value={countyB}
-            onChange={(e) => setCountyB(e.target.value)}
+            onChange={(e) => { setCountyB(e.target.value); if (e.target.value === countyA) setCountyA(""); }}
             className="w-full rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-900 focus:border-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-200"
             aria-label="Select second county"
           >
             <option value="">Choose a county...</option>
             {counties.map((c) => (
-              <option key={c.id} value={c.id}>{c.name}</option>
+              <option key={c.id} value={c.id} disabled={c.id === countyA}>{c.name}</option>
             ))}
           </select>
         </div>
       </div>
 
-      {selA && selB ? (
+      {selA && selB && selA.id !== selB.id ? (
         <div className="mt-6">
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
         </div>
