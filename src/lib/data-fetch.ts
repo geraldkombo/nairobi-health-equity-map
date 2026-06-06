@@ -1,8 +1,15 @@
 import type { CountyRecord, IndicatorRecord, FacilitiesGeoJSON } from "@/lib/adapters";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function dataUrl(path: string): string {
+  return BASE + path;
+}
+
 async function loadJSON<T>(path: string): Promise<T> {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  const url = dataUrl(path);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
   return res.json();
 }
 

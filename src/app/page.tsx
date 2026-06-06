@@ -11,7 +11,7 @@ import CountyRankings from "@/components/CountyRankings";
 import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
 import { normalizeCounty } from "@/lib/normalize";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
-import { fetchCounties, fetchIndicators } from "@/lib/data-fetch";
+import { fetchCounties, fetchIndicators, dataUrl } from "@/lib/data-fetch";
 import MapErrorBoundary from "@/components/MapErrorBoundary";
 
 const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
@@ -30,7 +30,7 @@ export default function HomePage() {
         const [countiesRes, indicators, boundariesRes] = await Promise.all([
           fetchCounties(),
           fetchIndicators(),
-          fetch("/data/boundaries/counties_simplified.geojson").then(async (r) => {
+          fetch(dataUrl("/data/boundaries/counties_simplified.geojson")).then(async (r) => {
             if (!r.ok) throw new Error(`Boundaries fetch failed: ${r.status}`);
             return r.json();
           }),

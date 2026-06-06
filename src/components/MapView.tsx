@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const dataUrl = (path: string) => BASE + path;
+
 interface MapViewProps {
   boundaries: GeoJSON.FeatureCollection;
   countyScores: Record<string, number>;
@@ -119,7 +122,7 @@ export default function MapView({
 
         map.addSource("facilities", {
           type: "geojson",
-          data: "/data/snapshots/facilities.json",
+          data: dataUrl("/data/snapshots/facilities.json"),
           cluster: true,
           clusterMaxZoom: 12,
           clusterRadius: 50,
