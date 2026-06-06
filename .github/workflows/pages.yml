@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /nairobi-health-equity-map
+          NEXT_PUBLIC_BASE_PATH: /kenya-health-equity-map
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
