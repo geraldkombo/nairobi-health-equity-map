@@ -57,7 +57,7 @@ export default function HomePage() {
     if (!counties || indicators.length === 0) return {};
     const scores: Record<string, number> = {};
     for (const county of counties) {
-      const ind = indicators.find((i) => i.county_code === county.id);
+      const ind = indicators.find((i) => i.county_name.toLowerCase() === county.name.toLowerCase());
       if (ind) {
         const norm = normalizeCounty(ind);
         scores[county.id] = computePGS(county.id, norm, DEFAULT_WEIGHTS).pgs;

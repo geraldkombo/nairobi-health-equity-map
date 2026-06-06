@@ -20,8 +20,8 @@ function pgsBadge(pgs: number): string {
 
 export default function CompareView({ countyA, countyB, indicators }: CompareViewProps) {
   const stats = useMemo(() => {
-    const iA = indicators.find((i) => i.county_code === countyA.id);
-    const iB = indicators.find((i) => i.county_code === countyB.id);
+    const iA = indicators.find((i) => i.county_name.toLowerCase() === countyA.name.toLowerCase());
+    const iB = indicators.find((i) => i.county_name.toLowerCase() === countyB.name.toLowerCase());
 
     const sA = iA ? computePGS(countyA.id, normalizeCounty(iA), DEFAULT_WEIGHTS) : null;
     const sB = iB ? computePGS(countyB.id, normalizeCounty(iB), DEFAULT_WEIGHTS) : null;

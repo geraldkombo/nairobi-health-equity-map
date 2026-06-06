@@ -247,7 +247,7 @@ function BriefContent() {
 
   const indicator = useMemo(() => {
     if (!selected) return null;
-    return indicators.find((i) => i.county_code === selected.id) ?? null;
+    return indicators.find((i) => i.county_name.toLowerCase() === selected.name.toLowerCase()) ?? null;
   }, [selected, indicators]);
 
   const nationalAvg = useMemo(() => {

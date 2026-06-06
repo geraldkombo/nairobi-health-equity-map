@@ -46,7 +46,7 @@ export default function CountyRankings({ counties, indicators, onCountyClick }: 
     if (!counties || indicators.length === 0) return [];
     return counties
       .map((c) => {
-        const ind = indicators.find((i) => i.county_code === c.id);
+        const ind = indicators.find((i) => i.county_name.toLowerCase() === c.name.toLowerCase());
         if (!ind) return { id: c.id, name: c.name, score: 0 };
         const norm = normalizeCounty(ind);
         const { pgs } = computePGS(c.id, norm, DEFAULT_WEIGHTS);
