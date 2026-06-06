@@ -117,6 +117,79 @@ export default function MapView({
           },
         });
 
+        map.addSource("facilities", {
+          type: "geojson",
+          data: "/data/snapshots/facilities.json",
+          cluster: true,
+          clusterMaxZoom: 12,
+          clusterRadius: 50,
+        });
+
+        map.addLayer({
+          id: "facility-clusters",
+          type: "circle",
+          source: "facilities",
+          filter: ["has", "point_count"],
+          paint: {
+            "circle-color": "#78350F",
+            "circle-radius": ["step", ["get", "point_count"], 15, 10, 20, 50, 25],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#FDFBF7",
+          },
+        });
+
+        map.addLayer({
+          id: "facility-cluster-count",
+          type: "symbol",
+          source: "facilities",
+          filter: ["has", "point_count"],
+          layout: {
+            "text-field": "{point_count_abbreviated}",
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            "text-size": 12,
+          },
+          paint: { "text-color": "#FDFBF7" },
+        });
+
+        map.addLayer({
+          id: "facility-points",
+          type: "circle",
+          source: "facilities",
+          filter: ["!", ["has", "point_count"]],
+          paint: {
+            "circle-radius": 5,
+            "circle-stroke-width": 1,
+            "circle-stroke-color": "#78350F",
+            "circle-color": [
+              "match",
+              ["get", "F_TYPE"],
+              1, "#DC2626",
+              2, "#EA580C",
+              3, "#F59E0B",
+              4, "#FDE68A",
+              "#A8A29E",
+            ],
+          },
+        });
+
+        map.on("click", "facility-points", (e) => {
+          if (e.features && e.features[0]?.properties) {
+            const props = e.features[0].properties;
+            const name = props.F_NAME || "Unnamed facility";
+            const ftype = props.F_TYPE || "Unknown";
+            const typeLabels: Record<number, string> = { 1: "Hospital", 2: "Sub-hospital", 3: "Health Centre", 4: "Dispensary" };
+            const typeLabel = typeLabels[ftype as number] || `Type ${ftype}`;
+            const agency = props.AGENCY || "Unknown";
+            new maplibregl.Popup({ offset: [0, -10] })
+              .setLngLat((e.features[0].geometry as any).coordinates)
+              .setHTML(`<strong>${name}</strong><br/><span class="text-xs text-stone-500">${typeLabel} &middot; ${agency}</span>`)
+              .addTo(map);
+          }
+        });
+
+        map.on("mouseenter", "facility-points", () => { map.getCanvas().style.cursor = "pointer"; });
+        map.on("mouseleave", "facility-points", () => { map.getCanvas().style.cursor = ""; });
+
         map.on("click", "counties-fill", (e) => {
           if (e.features && e.features[0]?.properties) {
             const code = String(e.features[0].properties.county_code);

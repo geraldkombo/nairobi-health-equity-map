@@ -1,0 +1,20 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FDFBF7"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#78350F"/>
+  <text x="60" y="180" font-family="system-ui, sans-serif" font-size="52" font-weight="700" fill="#292524">Kenya Health</text>
+  <text x="60" y="250" font-family="system-ui, sans-serif" font-size="52" font-weight="700" fill="#292524">Equity Map</text>
+  <text x="60" y="320" font-family="system-ui, sans-serif" font-size="22" fill="#57534E">Visualising health access inequities</text>
+  <text x="60" y="355" font-family="system-ui, sans-serif" font-size="22" fill="#57534E">across Kenya's 47 counties</text>
+  <rect x="60" y="400" width="200" height="14" rx="7" fill="#FDE68A"/>
+  <rect x="270" y="400" width="200" height="14" rx="7" fill="#F59E0B"/>
+  <rect x="480" y="400" width="200" height="14" rx="7" fill="#EA580C"/>
+  <rect x="690" y="400" width="200" height="14" rx="7" fill="#78350F"/>
+  <text x="60" y="440" font-family="system-ui, sans-serif" font-size="12" fill="#A8A29E">Low &lt;30</text>
+  <text x="270" y="440" font-family="system-ui, sans-serif" font-size="12" fill="#A8A29E">Medium 30-49</text>
+  <text x="480" y="440" font-family="system-ui, sans-serif" font-size="12" fill="#A8A29E">High 50-69</text>
+  <text x="690" y="440" font-family="system-ui, sans-serif" font-size="12" fill="#A8A29E">Critical 70+</text>
+  <text x="60" y="500" font-family="system-ui, sans-serif" font-size="14" fill="#A8A29E">ke-health-equity.netlify.app</text>
+  <circle cx="1020" cy="315" r="180" fill="#EA580C" opacity="0.1"/>
+  <circle cx="1020" cy="315" r="120" fill="#F59E0B" opacity="0.15"/>
+  <circle cx="1020" cy="315" r="60" fill="#FDE68A" opacity="0.2"/>
+</svg>

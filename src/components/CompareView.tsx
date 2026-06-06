@@ -12,9 +12,9 @@ interface CompareViewProps {
 }
 
 function pgsBadge(pgs: number): string {
-  if (pgs >= 0.7) return "text-stone-50 bg-[#78350F]";
-  if (pgs >= 0.5) return "text-white bg-[#EA580C]";
-  if (pgs >= 0.3) return "text-stone-800 bg-[#F59E0B]";
+  if (pgs >= 70) return "text-stone-50 bg-[#78350F]";
+  if (pgs >= 50) return "text-white bg-[#EA580C]";
+  if (pgs >= 30) return "text-stone-800 bg-[#F59E0B]";
   return "text-stone-800 bg-[#FDE68A]";
 }
 
@@ -32,7 +32,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
   const narrative = useMemo(() => {
     if (!stats.sA || !stats.sB) return null;
     const diff = stats.sA.pgs - stats.sB.pgs;
-    if (Math.abs(diff) < 0.01) return "Both counties have a similar assessed priority level.";
+    if (Math.abs(diff) < 1) return "Both counties have a similar assessed priority level.";
     const higher = diff > 0 ? countyA.name : countyB.name;
     const lower = diff > 0 ? countyB.name : countyA.name;
     return `${higher} is assessed as higher priority than ${lower}.`;
@@ -50,7 +50,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
               <p className="text-sm text-stone-500">County</p>
               {s && (
                 <div className={`mt-3 inline-block rounded-lg px-3 py-1.5 ${pgsBadge(s.pgs)}`}>
-                  <span className="text-xl font-bold">{(s.pgs * 100).toFixed(0)}</span>
+                  <span className="text-xl font-bold">{s.pgs}</span>
                   <span className="ml-1 text-xs font-medium opacity-80">PGS</span>
                 </div>
               )}

@@ -16,6 +16,9 @@ export default function Header() {
           <Link href="/compare" className="hover:text-stone-800 transition-colors">
             Compare
           </Link>
+          <Link href="/dua" className="hover:text-stone-800 transition-colors">
+            Data
+          </Link>
         </nav>
       </div>
     </header>

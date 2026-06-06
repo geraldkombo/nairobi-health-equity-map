@@ -204,8 +204,10 @@ secondary, and rural road networks (<a href="https://www.openstreetmap.org/relat
               It indicates relative priority, not absolute need.
             </li>
             <li>
-<strong>Data quality:</strong> Current facility coverage is limited to the ICPAC/KEMRI dataset.
+              <strong>Data quality:</strong> Current facility coverage is limited to the ICPAC/KEMRI dataset.
 Actual deployment with complete data requires comprehensive MFL data from the Ministry of Health.
+Immunisation coverage and skilled-birth attendance fields are placeholder values pending
+integration of KHIS DHIS2 data.
             </li>
             <li>
               <strong>Spatial granularity:</strong> County-level analysis masks within-county disparities.

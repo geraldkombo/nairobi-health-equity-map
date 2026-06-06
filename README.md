@@ -1,64 +1,57 @@
-﻿# Kenya Health Equity Map (KHEM)
+# Kenya Health Equity Map
 
-**An open-data mapping tool for research and public-interest reporting across Kenya's 47 counties**
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9bf4da5c-326a-400e-8bb3-5548fc58994e/deploy-status)](https://ke-health-equity.netlify.app)
+[![Node](https://img.shields.io/badge/Node-22-339933?logo=node.js)](.nvmrc)
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js)](package.json)
+[![MapLibre](https://img.shields.io/badge/MapLibre-GL-7cb342?logo=maplibre)](package.json)
 
-**Live demo:** https://uhcke-247.netlify.app  
-**Repository:** https://github.com/geraldkombo/nairobi-health-equity-map
+Map-first civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.
 
-## Overview
+**Production URL:** https://ke-health-equity.netlify.app
 
-KHEM turns public, non-identifiable open datasets into explainable spatial insights about health access and vulnerability across all 47 counties of Kenya. Built for researchers, journalists, and public finance advocates.
-
-## Key features
-
-- **Map-first:** Explore county-level PGS (Priority Gap Score) choropleth with hover tooltips and facility overlays (155 health facilities mapped)
-- **Reporting Mode:** Plain-English insights, one-click brief generation per county
-- **Side-by-side comparison:** Compare any two counties
-- **One-page brief:** Print/PDF-ready brief per county with data provenance
-- **Full transparency:** Methodology page with formula, sources, and limitations
-- **County-level indicators:** Travel time proxy, poverty proxy, facility density, population pressure
-
-## Data sources
-
-All data is from official Kenyan open-data repositories:
+## Data Sources
 
 | Source | Data | License |
-|---|---|---|
-| IEBC Official Boundaries | County boundary GeoJSON | CC-BY-4.0 |
-| ICPAC/KEMRI Kenya Health Facilities | 155 health facility locations | CC-BY-4.0 |
-| KNBS 2019 Census | County populations | Open Data |
-| KIHBS 2015/16 | County poverty estimates | Open Data |
+|--------|------|---------|
+| KNBS 2019 Census | County population | Open Data |
+| KDHS 2022 | Poverty estimates | Restricted (registered) |
+| KMHFR / ICPAC-KEMRI | Health facility locations | CC-BY-4.0 |
+| IEBC / KNBS GIS | County boundaries | Open Data / CC-BY-4.0 |
+| WHO AccessMod | Travel time methodology | GPL-3.0 |
+| OSM / ESA WorldCover | Road network, land cover | ODbL-1.0 / CC-BY-4.0 |
 
-## Tech stack
+## Architecture
 
-- Next.js 15 (App Router) + TypeScript
-- MapLibre GL JS (open-source mapping)
-- Tailwind CSS v4 (zero-blue design system)
-- Netlify (static-first CDN + serverless functions)
+- **Frontend:** Next.js 15 static export + MapLibre GL JS + Tailwind CSS 4
+- **Data Pipeline:** Zod-validated ETL scripts in `scripts/etl/`
+- **Backend:** Zero runtime backend — all data is static JSON at build time
+- **Deployment:** GitHub Actions → Netlify
 
-## Quick start
+## Quick Start
 
 ```bash
 npm install
-npm run dev
+npm run etl        # Extract, validate, build county indicators
+npm run build      # Static export to out/
+npx serve out      # Preview locally
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Project Structure
 
-## Build for production
-
-```bash
-npm run build
-npm run start
 ```
-
-## Deploy to Netlify
-
-```bash
-npm run build
-netlify deploy --prod --dir=out
+src/
+├── app/           # Next.js pages (/, /brief, /compare, /method, /dua)
+├── components/    # MapView, CountyDetails, CompareView, etc.
+└── lib/           # scoring.ts, normalize.ts, adapters.ts, data-fetch.ts
+scripts/etl/       # ETL pipeline (extract → validate → build snapshot)
+data/snapshots/    # Validated county indicators as JSON
 ```
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
+
+## Attribution
+
+Data sourced from KNBS, ICPAC/KEMRI, OSM, ESA, and WHO. See the [Data Use Agreement](https://ke-health-equity.netlify.app/dua) for full attribution requirements.

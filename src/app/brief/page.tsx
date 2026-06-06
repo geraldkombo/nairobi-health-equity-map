@@ -203,7 +203,7 @@ and topography, combined with motorized and manual transport travel along primar
 road networks (<a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-800">OSM Kenya</a>).
         </p>
         <p className="mt-2 text-[10px] leading-5 text-stone-400">
-          Suggested citation: Kenya Health Equity Map, <a href="https://kenya-health-equity.netlify.app" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">kenya-health-equity.netlify.app</a>.
+          Suggested citation: Kenya Health Equity Map, <a href="https://ke-health-equity.netlify.app" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ke-health-equity.netlify.app</a>.
           {county.name} County Brief, generated {today}. Sources:{" "}
           <a href="https://www.knbs.or.ke/census-2019/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KNBS 2019 Census</a>;
           <a href="https://www.knbs.or.ke/kihbs-2015-16/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KIHBS 2015/16</a>;
@@ -268,7 +268,7 @@ function BriefContent() {
 
   const handlePrint = useReactToPrint({
     contentRef: printRef,
-    documentTitle: `kenya-health-equity-brief-${selected?.name?.toLowerCase().replace(/\s+/g, "-") ?? countyCode}`,
+    documentTitle: `ke-health-equity-brief-${selected?.name?.toLowerCase().replace(/\s+/g, "-") ?? countyCode}`,
     pageStyle: `
       @page { size: A4; margin: 15mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -332,7 +332,7 @@ function BriefContent() {
 
         {/* ── Print footer (screen only) ── */}
         <p className="mt-8 text-center text-[10px] text-stone-300 print:hidden">
-          kenya-health-equity.netlify.app
+          ke-health-equity.netlify.app
         </p>
       </div>
     </div>

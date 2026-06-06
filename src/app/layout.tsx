@@ -3,7 +3,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Kenya Health Equity Map",
+  metadataBase: new URL("https://ke-health-equity.netlify.app"),
+  title: {
+    default: "Kenya Health Equity Map",
+    template: "%s | Kenya Health Equity Map",
+  },
   description:
     "A map based civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.",
   openGraph: {
@@ -13,6 +17,14 @@ export const metadata: Metadata = {
     url: "https://ke-health-equity.netlify.app",
     locale: "en_KE",
     siteName: "Kenya Health Equity Map",
+    type: "website",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kenya Health Equity Map",
+    description: "Visualise health-access inequities across Kenya's 47 counties.",
+    images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
 };
