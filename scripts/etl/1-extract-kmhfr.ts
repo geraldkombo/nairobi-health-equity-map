@@ -1,252 +1,205 @@
-import fs from "fs";
-import path from "path";
-import { z } from "zod";
-import { fetchWithRetry } from "./lib/api-client";
-import { KmhfrFacilitySchema, type ValidatedFacility } from "./lib/zod-schemas";
+import * as fs from 'fs';
+import * as path from 'path';
+import { z } from 'zod';
+import * as turf from '@turf/turf';
+import { KmhfrFacilitySchema } from './lib/zod-schemas';
 
-const RAW_DIR = path.join(import.meta.dirname, "raw-data");
-const OUTPUT = path.join(RAW_DIR, "kmhfr_facilities_raw.json");
-const BASE = "https://api.kmhfr.health.go.ke/api/facilities/facilities/";
-const FIELDS =
-  "id,code,name,official_name,county_name,sub_county_name,ward_name,keph_level_name,facility_type_name,owner_name,operation_status_name,lat,long";
-const INDICATORS_CSV = path.join(import.meta.dirname, "../../data/indicators/county_indicators.csv");
-const BOUNDARIES_GEOJSON = path.join(import.meta.dirname, "../../data/boundaries/counties.geojson");
+type KmhfrFacility = z.infer<typeof KmhfrFacilitySchema>;
 
-function isPublicServing(f: ValidatedFacility): boolean {
-  const owner = f.owner_name?.toLowerCase() ?? "";
-  const status = f.operation_status_name?.toLowerCase() ?? "";
-  return (
-    status === "operational" &&
-    (owner.includes("ministry of health") ||
-      owner.includes("faith based") ||
-      owner.includes("ngo") ||
-      owner.includes("christian health association") ||
-      owner.includes("mission"))
+const OsmElementSchema = z.object({
+  type: z.enum(['node', 'way', 'relation']),
+  id: z.number(),
+  lat: z.number().optional(),
+  lon: z.number().optional(),
+  center: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  tags: z.record(z.string()).optional()
+});
+
+const OverpassResponseSchema = z.object({
+  elements: z.array(OsmElementSchema)
+});
+
+const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+const OUTPUT_DIR = path.join(process.cwd(), 'scripts', 'etl', 'raw-data');
+const OUTPUT_FILE = path.join(OUTPUT_DIR, 'kmhfr_facilities_raw.json');
+const COUNTIES_FILE = path.join(process.cwd(), 'data', 'boundaries', 'counties.geojson');
+
+const OVERPASS_QUERY = `
+  [out:json][timeout:120];
+  area(3600192798)->.kenya;
+  (
+    node["amenity"~"hospital|clinic|doctors"](area.kenya);
+    node["healthcare"~"hospital|clinic|health_post|dispensary|rehabilitation"](area.kenya);
+    way["amenity"~"hospital|clinic|doctors"](area.kenya);
+    way["healthcare"~"hospital|clinic|health_post|dispensary|rehabilitation"](area.kenya);
   );
-}
+  out center;
+`;
 
-async function extractFromApi(): Promise<ValidatedFacility[]> {
-  let all: ValidatedFacility[] = [];
-  let url: string | null = `${BASE}?fields=${FIELDS}&page=1`;
-  let page = 0;
-
-  while (url) {
-    page++;
-    process.stdout.write(`  page ${page}... `);
-    const res = await fetchWithRetry(url, {
-      headers: { Accept: "application/json" },
-    });
-    const body = await res.json();
-    const facilities: unknown[] = body.results ?? [];
-
-    for (const raw of facilities) {
-      const parsed = KmhfrFacilitySchema.safeParse(raw);
-      if (parsed.success) all.push(parsed.data);
-      else console.warn("  skip invalid facility:", parsed.error.issues[0]?.message);
-    }
-
-    process.stdout.write(`${facilities.length} facilities\n`);
-    url = body.next ?? null;
-    await new Promise((r) => setTimeout(r, 500));
-  }
-
-  return all;
-}
-
-function loadIndicators(): Map<string, number> {
-  const counts = new Map<string, number>();
-  const csvPath = path.join(import.meta.dirname, "../../data/indicators/county_indicators.csv");
-  if (!fs.existsSync(csvPath)) return counts;
-  const lines = fs.readFileSync(csvPath, "utf-8").trim().split("\n");
-  if (lines.length < 2) return counts;
-  const headers = lines[0].split(",");
-  const nameIdx = headers.indexOf("county_name");
-  const facIdx = headers.indexOf("facility_count");
-  if (nameIdx === -1 || facIdx === -1) return counts;
-  for (let i = 1; i < lines.length; i++) {
-    const cols = lines[i].split(",");
-    const name = cols[nameIdx]?.trim().toUpperCase() ?? "";
-    const count = parseInt(cols[facIdx]?.trim() ?? "0", 10);
-    if (name) counts.set(name, count);
-  }
-  return counts;
-}
-
-function loadCountyCentroids(): ((name: string) => { lat: number; long: number } | null) {
-  let boundaries: any = null;
-  try {
-    const raw = fs.readFileSync(BOUNDARIES_GEOJSON, "utf-8");
-    boundaries = JSON.parse(raw);
-  } catch {
-    return () => null;
-  }
-
-  const centroids = new Map<string, { lat: number; long: number }>();
-  const features: any[] = boundaries?.features ?? [];
-  for (const f of features) {
-    const props = f.properties ?? {};
-    const name = (props.county_name || props.NAME || props.NAME_1 || "").toString().toUpperCase();
-    const geom = f.geometry;
-    if (!geom || !name) continue;
-
-    if (geom.type === "Polygon") {
-      const coords = geom.coordinates[0];
-      let sumLon = 0, sumLat = 0, n = 0;
-      for (const c of coords) { sumLon += c[0]; sumLat += c[1]; n++; }
-      centroids.set(name, { long: sumLon / n, lat: sumLat / n });
-    } else if (geom.type === "MultiPolygon") {
-      let sumLon = 0, sumLat = 0, n = 0;
-      for (const poly of geom.coordinates) {
-        const ring = poly[0];
-        for (const c of ring) { sumLon += c[0]; sumLat += c[1]; n++; }
-      }
-      centroids.set(name, { long: sumLon / n, lat: sumLat / n });
+function getCountyForPoint(lon: number, lat: number, countiesGeoJson: any): string {
+  const pt = turf.point([lon, lat]);
+  for (const feature of countiesGeoJson.features) {
+    if (turf.booleanPointInPolygon(pt, feature)) {
+      return feature.properties.county_name || 'Unknown';
     }
   }
-
-  return (name: string) => centroids.get(name) ?? null;
+  // Fallback: find nearest county centroid
+  let minDist = Infinity;
+  let nearest = 'Unknown';
+  for (const feature of countiesGeoJson.features) {
+    const centroid = turf.centroid(feature);
+    const d = turf.distance(pt, centroid, { units: 'kilometers' });
+    if (d < minDist) {
+      minDist = d;
+      nearest = feature.properties.county_name || 'Unknown';
+    }
+  }
+  return nearest;
 }
 
-function generateSyntheticFacilities(): ValidatedFacility[] {
-  const indicatorCounts = loadIndicators();
-  const getCentroid = loadCountyCentroids();
+function mapOperator(operator: string | undefined): string {
+  if (!operator) return 'Unknown';
+  const op = operator.toLowerCase();
+  if (op.includes('ministry') || op.includes('moh')) return 'Ministry of Health';
+  if (op.includes('catholic') || op.includes('church') || op.includes('diocese')) return 'Faith Based';
+  return operator;
+}
 
-  const countyNames = [
-    "MOMBASA","KWALE","KILIFI","TANA RIVER","LAMU","TAITA TAVETA","GARISSA","WAJIR",
-    "MANDERA","MARSABIT","ISIOLO","MERU","THARAKA NITHI","EMBU","KITUI","MACHAKOS",
-    "MAKUENI","NYANDARUA","NYERI","KIRINYAGA","MURANGA","KIAMBU","TURKANA","WEST POKOT",
-    "SAMBURU","TRANS NZOIA","UASIN GISHU","ELGEYO MARAKWET","NANDI","BARINGO","LAIKIPIA",
-    "NAKURU","NAROK","KAJIADO","KERICHO","BOMET","KAKAMEGA","VIHIGA","BUNGOMA","BUSIA",
-    "SIAYA","KISUMU","HOMA BAY","MIGORI","KISII","NYAMIRA","NAIROBI",
-  ];
+function isPublicServing(facility: KmhfrFacility): boolean {
+  const status = facility.operation_status_name?.toLowerCase() || '';
+  const owner = facility.owner_name?.toLowerCase() || '';
+  
+  if (status !== 'operational' && status !== 'unknown' && status !== '') return false;
+  if (owner.includes('private') || owner.includes('company')) return false;
+  
+  return true;
+}
 
-  const facilities: ValidatedFacility[] = [];
-  let seq = 1;
+function getCountyTargetCount(countyName: string): number {
+  const name = countyName.toUpperCase();
+  
+  if (name.includes('NAIROBI')) return 400;
+  if (name.includes('MOMBASA')) return 120;
+  if (name.includes('KIAMBU') || name.includes('KAKAMEGA') || name.includes('BUNGOMA')) return 150;
+  
+  const asalCounties = ['ISIOLO', 'MARSABIT', 'MANDERA', 'WAJIR', 'GARISSA', 'TANA RIVER', 'TURKANA', 'SAMBURU', 'WEST POKOT', 'BARINGO'];
+  if (asalCounties.some(asal => name.includes(asal))) return 60;
+  
+  return Math.floor(Math.random() * (140 - 60 + 1)) + 60;
+}
 
-  for (const county of countyNames) {
-    const csvCount = indicatorCounts.get(county);
-    const minCount = csvCount ?? 60;
-    const count = Math.max(
-      minCount,
-      county === "NAIROBI" ? 400
-      : county === "MOMBASA" ? 120
-      : county === "KIAMBU" || county === "KAKAMEGA" || county === "BUNGOMA" ? 150
-      : county === "TURKANA" || county === "MANDERA" || county === "MARSABIT" ? 60
-      : Math.floor(60 + Math.random() * 80)
-    );
+function generateSyntheticFacilities(countiesGeoJson: any): KmhfrFacility[] {
+  const facilities: KmhfrFacility[] = [];
+  let idCounter = 1;
 
-    const centroid = getCentroid(county);
-    const spread = 0.15;
+  for (const feature of countiesGeoJson.features) {
+    const countyName = feature.properties.county_name || 'Unknown';
+    const centroid = turf.centroid(feature);
+    const baseLon = centroid.geometry.coordinates[0];
+    const baseLat = centroid.geometry.coordinates[1];
 
-    for (let i = 0; i < count; i++) {
-      const id = String(seq++);
-      const lat = centroid ? centroid.lat + (Math.random() - 0.5) * spread : null;
-      const long = centroid ? centroid.long + (Math.random() - 0.5) * spread : null;
-      facilities.push({
-        id,
-        code: id,
-        name: `Facility ${id}`,
-        official_name: `Health Facility ${id}`,
-        county_name: county,
-        sub_county_name: null,
-        ward_name: null,
-        keph_level_name: ["Level 2","Level 3","Level 4","Level 5"][Math.floor(Math.random() * 4)],
-        facility_type_name: null,
-        owner_name: i % 5 === 0 ? "Faith Based" : "Ministry of Health",
-        operation_status_name: "Operational",
-        lat,
-        long,
-      });
+    const countForThisCounty = getCountyTargetCount(countyName);
+
+    for (let j = 0; j < countForThisCounty; j++) {
+      const currentId = idCounter++;
+      const facility: KmhfrFacility = {
+        id: `synthetic-${currentId}`,
+        code: `SYN-${currentId}`,
+        name: `${countyName} Health Center ${j + 1}`,
+        official_name: `${countyName} Health Center ${j + 1}`,
+        county_name: countyName,
+        sub_county_name: 'Unknown',
+        ward_name: 'Unknown',
+        keph_level_name: j % 5 === 0 ? 'Level 4' : 'Level 2',
+        facility_type_name: j % 5 === 0 ? 'Hospital' : 'Dispensary',
+        owner_name: j % 3 === 0 ? 'Faith Based' : 'Ministry of Health',
+        operation_status_name: 'Operational',
+        lat: baseLat + (Math.random() * 0.3 - 0.15),
+        long: baseLon + (Math.random() * 0.3 - 0.15)
+      };
+      facilities.push(facility);
     }
   }
 
   return facilities;
 }
 
-async function main() {
-  console.log("1-extract-kmhfr.ts — KMHFR Facility Extraction");
-  if (!fs.existsSync(RAW_DIR)) fs.mkdirSync(RAW_DIR, { recursive: true });
+async function extractFacilities() {
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
 
-  let facilities: ValidatedFacility[];
+  const countiesRaw = fs.readFileSync(COUNTIES_FILE, 'utf-8');
+  const countiesGeoJson = JSON.parse(countiesRaw);
+
+  let finalData: KmhfrFacility[] = [];
 
   try {
-    console.log("Attempting live KMHFR API with retry...");
-    facilities = await extractFromApi();
-    console.log(`\nFetched ${facilities.length} facilities from live API.`);
-  } catch (err) {
-    console.warn(`\nAPI unavailable (${err instanceof Error ? err.message : err}).`);
-    console.log("Falling back to synthetic facility generator...");
-    facilities = generateSyntheticFacilities();
-    console.log(`Generated ${facilities.length} synthetic facilities.`);
-  }
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 120000);
+    let idCounter = 0;
 
-  if (fs.existsSync(INDICATORS_CSV)) {
-    const csvRaw = fs.readFileSync(INDICATORS_CSV, "utf-8");
-    const csvLines = csvRaw.trim().split("\n");
-    if (csvLines.length > 1) {
-      const headers = csvLines[0].split(",");
-      const nameCol = headers.indexOf("county_name");
-      const facCol = headers.indexOf("facility_count");
-      if (nameCol !== -1 && facCol !== -1) {
-        const csvCounts = new Map<string, number>();
-        for (let i = 1; i < csvLines.length; i++) {
-          const cols = csvLines[i].split(",");
-          const name = cols[nameCol]?.trim().toUpperCase() ?? "";
-          const count = parseInt(cols[facCol]?.trim() ?? "0", 10);
-          if (name && count > 0) csvCounts.set(name, count);
-        }
-        let validCount = 0;
-        for (const f of facilities) {
-          const expected = csvCounts.get(f.county_name.toUpperCase());
-          if (expected && parseFloat(f.lat ?? "0") !== 0) validCount++;
-        }
-        if (validCount < 47) {
-          console.log(`Only ${validCount}/${csvCounts.size} counties have facilities with coordinates — merging ICPAC data`);
-          const existingFile = path.join(import.meta.dirname, "../../data/facilities/facilities.geojson");
-          if (fs.existsSync(existingFile)) {
-            const geo = JSON.parse(fs.readFileSync(existingFile, "utf-8"));
-            const existingCodes = new Set(facilities.map(f => f.code));
-            let merged = 0;
-            for (const feat of (geo.features ?? [])) {
-              const p = feat.properties ?? {};
-              const coords = feat.geometry?.coordinates ?? [];
-              const code = String(p.FNO || `ICPAC-${merged}`);
-              if (!existingCodes.has(code) && coords[0] && coords[1]) {
-                facilities.push({
-                  id: code,
-                  code,
-                  name: p.F_NAME || `ICPAC Facility ${code}`,
-                  official_name: p.F_NAME || null,
-                  county_name: (p.DIST || "UNKNOWN").toUpperCase(),
-                  sub_county_name: p.DIVISION || null,
-                  ward_name: p.LOCATION || null,
-                  keph_level_name: null,
-                  facility_type_name: String(p.F_TYPE || ""),
-                  owner_name: p.AGENCY === "MOH" ? "Ministry of Health" : p.AGENCY || "Unknown",
-                  operation_status_name: "Operational",
-                  lat: coords[1],
-                  long: coords[0],
-                });
-                existingCodes.add(code);
-                merged++;
-              }
-            }
-            console.log(`Merged ${merged} facilities from ICPAC GeoJSON`);
-          }
-        }
-      }
+    const queryParam = encodeURIComponent(OVERPASS_QUERY.trim());
+    const response = await fetch(`${OVERPASS_URL}?data=${queryParam}`, {
+      headers: { 'User-Agent': 'KenyaHealthEquityMap/1.0' },
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`Overpass API responded with status: ${response.status}`);
     }
+
+    const rawData = await response.json();
+    const parsedData = OverpassResponseSchema.parse(rawData);
+
+    const allFacilities = parsedData.elements
+      .map((el): KmhfrFacility | null => {
+        const lat = el.lat ?? el.center?.lat;
+        const long = el.lon ?? el.center?.lon;
+        
+        if (!lat || !long) return null;
+
+        const tags = el.tags || {};
+        const countyName = getCountyForPoint(long, lat, countiesGeoJson).replace(/^ELEGEYO-/, 'ELGEYO-');
+        const ownerName = mapOperator(tags.operator);
+        const operationStatus = tags.operational_status || 'Operational';
+        
+        return {
+          id: `osm-${el.type}-${el.id}`,
+          code: tags.ref || `OSM-${el.id}`,
+          name: tags.name || 'Unnamed Facility',
+          official_name: tags.official_name || tags.name || 'Unnamed Facility',
+          county_name: countyName,
+          sub_county_name: tags['addr:subdistrict'] || 'Unknown',
+          ward_name: tags['addr:ward'] || 'Unknown',
+          keph_level_name: tags.healthcare === 'hospital' ? 'Level 4' : 'Level 2',
+          facility_type_name: tags.amenity || tags.healthcare || 'Facility',
+          owner_name: ownerName,
+          operation_status_name: operationStatus,
+          lat: lat,
+          long: long
+        };
+      })
+      .filter((f): f is KmhfrFacility => f !== null);
+
+    finalData = allFacilities.filter(isPublicServing);
+
+    if (finalData.length === 0) {
+      throw new Error("Overpass returned valid JSON but no valid geographical points after filtering.");
+    }
+
+  } catch (error) {
+    console.error(error);
+    finalData = generateSyntheticFacilities(countiesGeoJson).filter(isPublicServing);
   }
 
-  const before = facilities.length;
-  facilities = facilities.filter(isPublicServing);
-  console.log(`Filtered to ${facilities.length} public-serving operational facilities (removed ${before - facilities.length}).`);
-
-  fs.writeFileSync(OUTPUT, JSON.stringify(facilities, null, 2));
-  console.log(`Written to ${OUTPUT}`);
+  const validatedFacilities = z.array(KmhfrFacilitySchema).parse(finalData);
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(validatedFacilities, null, 2), 'utf-8');
 }
 
-main().catch((err) => {
-  console.error("Fatal:", err);
-  process.exit(1);
-});
+extractFacilities().catch(console.error);
