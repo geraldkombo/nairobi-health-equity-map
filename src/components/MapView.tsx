@@ -4,7 +4,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const dataUrl = (path: string) => BASE + path;
 
 interface MapViewProps {
   boundaries: GeoJSON.FeatureCollection;
@@ -120,77 +119,7 @@ export default function MapView({
           },
         });
 
-        map.addSource("facilities", {
-          type: "geojson",
-          data: dataUrl("/data/snapshots/facilities.json"),
-          cluster: true,
-          clusterMaxZoom: 10,
-          clusterRadius: 20,
-        });
 
-        map.addLayer({
-          id: "facility-clusters",
-          type: "circle",
-          source: "facilities",
-          filter: ["has", "point_count"],
-          paint: {
-            "circle-color": [
-              "step",
-              ["get", "point_count"],
-              "#f97316",
-              25, "#ea580c",
-              100, "#451a03",
-            ],
-            "circle-radius": ["step", ["get", "point_count"], 6, 25, 8, 100, 12],
-            "circle-opacity": ["step", ["zoom"], 0.3, 7, 0.6],
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#ffffff",
-          },
-        });
-
-        map.addLayer({
-          id: "facility-cluster-count",
-          type: "symbol",
-          source: "facilities",
-          filter: ["has", "point_count"],
-          layout: {
-            "text-field": "{point_count_abbreviated}",
-            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-            "text-size": 11,
-          },
-          paint: { "text-color": "#ffffff" },
-        });
-
-        map.addLayer({
-          id: "facility-points",
-          type: "circle",
-          source: "facilities",
-          filter: ["!", ["has", "point_count"]],
-          paint: {
-            "circle-radius": 5,
-            "circle-stroke-width": 1.5,
-            "circle-stroke-color": "#ffffff",
-            "circle-color": "#f97316",
-          },
-        });
-
-        map.on("click", "facility-points", (e) => {
-          if (e.features && e.features[0]?.properties) {
-            const props = e.features[0].properties;
-            const name = props.F_NAME || "Unnamed facility";
-            const ftype = props.F_TYPE || "Unknown";
-            const typeLabels: Record<number, string> = { 1: "Hospital", 2: "Sub-hospital", 3: "Health Centre", 4: "Dispensary" };
-            const typeLabel = typeLabels[ftype as number] || `Type ${ftype}`;
-            const agency = props.AGENCY || "Unknown";
-            new maplibregl.Popup({ offset: [0, -10] })
-              .setLngLat((e.features[0].geometry as any).coordinates)
-              .setHTML(`<strong>${name}</strong><br/><span class="text-xs text-stone-500">${typeLabel} &middot; ${agency}</span>`)
-              .addTo(map);
-          }
-        });
-
-        map.on("mouseenter", "facility-points", () => { map.getCanvas().style.cursor = "pointer"; });
-        map.on("mouseleave", "facility-points", () => { map.getCanvas().style.cursor = ""; });
 
         map.on("click", "counties-fill", (e) => {
           if (e.features && e.features[0]?.properties) {
