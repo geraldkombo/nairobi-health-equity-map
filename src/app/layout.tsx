@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kenya-equity.netlify.app"),
+  metadataBase: new URL("https://kenya-health-equity.netlify.app"),
   title: {
     default: "Kenya Health Equity Map",
     template: "%s | Kenya Health Equity Map",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Kenya Health Equity Map",
     description:
       "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
-    url: "https://kenya-equity.netlify.app",
+    url: "https://kenya-health-equity.netlify.app",
     locale: "en_KE",
     siteName: "Kenya Health Equity Map",
     type: "website",

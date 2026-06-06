@@ -1,14 +1,14 @@
 # Kenya Health Equity Map
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9bf4da5c-326a-400e-8bb3-5548fc58994e/deploy-status)](https://kenya-equity.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9bf4da5c-326a-400e-8bb3-5548fc58994e/deploy-status)](https://kenya-health-equity.netlify.app)
 [![Node](https://img.shields.io/badge/Node-22-339933?logo=node.js)](.nvmrc)
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js)](package.json)
 [![MapLibre](https://img.shields.io/badge/MapLibre-GL-7cb342?logo=maplibre)](package.json)
 
 Map-first civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.
 
-**Production URL:** https://kenya-equity.netlify.app
+**Production URL:** https://kenya-health-equity.netlify.app
 
 ## Data Sources
 
@@ -54,4 +54,4 @@ MIT — see [LICENSE](LICENSE).
 
 ## Attribution
 
-Data sourced from KNBS, ICPAC/KEMRI, OSM, ESA, and WHO. See the [Data Use Agreement](https://kenya-equity.netlify.app/dua) for full attribution requirements.
+Data sourced from KNBS, ICPAC/KEMRI, OSM, ESA, and WHO. See the [Data Use Agreement](https://kenya-health-equity.netlify.app/dua) for full attribution requirements.
