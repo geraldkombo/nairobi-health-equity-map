@@ -227,6 +227,24 @@ export default function MapView({
           Loading map...
         </div>
       ) : null}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-1.5">
+        <a
+          href="https://www.knbs.or.ke/gis-boundary-files/"
+          target="_blank"
+          rel="noreferrer"
+          className="pointer-events-auto text-[9px] text-stone-400 hover:text-stone-600 underline underline-offset-2"
+        >
+          KNBS boundaries
+        </a>
+        <a
+          href="https://geoportal.icpac.net/layers/geonode:kenya_health_facilities"
+          target="_blank"
+          rel="noreferrer"
+          className="pointer-events-auto text-[9px] text-stone-400 hover:text-stone-600 underline underline-offset-2"
+        >
+          Facilities: ICPAC/KEMRI
+        </a>
+      </div>
     </div>
   );
 }

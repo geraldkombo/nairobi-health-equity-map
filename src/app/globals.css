@@ -52,18 +52,75 @@ body {
 }
 
 @media print {
-  body {
-    background: white;
-    color: black;
+  @page {
+    size: A4;
+    margin: 15mm;
   }
-  .no-print {
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  body {
+    background: white !important;
+    color: #1C1917 !important;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .no-print,
+  .print\:hidden {
     display: none !important;
   }
+
   .print-only {
     display: block !important;
   }
+
   a {
     text-decoration: underline;
+    color: #292524 !important;
+  }
+
+  img,
+  svg {
+    break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid;
+  }
+
+  table, figure, .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .rounded-lg,
+  .rounded-xl {
+    border: 1px solid #292524 !important;
+    box-shadow: none !important;
+  }
+
+  .bg-stone-50,
+  .bg-stone-100 {
+    background: transparent !important;
+  }
+
+  .driver-section {
+    break-before: page;
+  }
+
+  sup, sub {
+    font-size: 0.75em;
+  }
+
+  @-moz-document url-prefix() {
+    body {
+      color-adjust: exact !important;
+    }
   }
 }
 

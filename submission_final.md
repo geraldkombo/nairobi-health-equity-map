@@ -1,139 +1,121 @@
-﻿# Nairobi Health Equity Map
-**Submission for:** CSS Community Marketplace Exhibitor
-**Theme focus:** Community Systems in the Era of Donor Transition and UHC
+﻿# Kenya Health Equity Map
+**Submission for:** Africa Open Data Conference 2026 / Civic Tech Showcase
+**Theme:** Open Data for Universal Health Coverage and Community Systems Strengthening
 
 | Field | Value |
 |---|---|
-| **Applicant / Lead** | Gerald Kombo (Independent Developer) |
+| **Lead** | Gerald Kombo |
 | **Country** | Kenya |
-| **Demo geography** | Nairobi City County |
-| **Contact** | geraldshikunyi@gmail.com |
-| **Repository** | https://github.com/geraldkombo/nairobi-health-equity-map |
-| **Live demo** | https://uhcke.netlify.app |
+| **Geography** | All 47 Kenyan counties |
+| **Live platform** | https://kenya-health-equity.netlify.app |
+| **Methodology** | https://kenya-health-equity.netlify.app/method |
 
 ---
 
 ## 1) One-line pitch
-**A public, open-data Nairobi health equity map—live on Netlify at https://uhcke.netlify.app—built for researchers and journalists, showing where access gaps are, why they matter, and how to verify the data behind every insight.**
+**An open-data, serverless geospatial platform that maps health access inequity across all 47 Kenyan counties using an absolute Priority Gap Score, serving verifiable, citation-linked evidence for policy-makers, researchers, and civil society at https://kenya-health-equity.netlify.app.**
 
-## 2) Problem statement (why this matters now)
-Donor transition and the shift toward domestic financing increase the stakes of *county-level prioritization*. Communities, investigators, and the media need evidence that is:
-- **localized** (ward/sub-county differences are visible),
-- **explainable** (not a black-box score), and
-- **verifiable** (clear data provenance and limitations).
+## 2) Problem statement
+Kenya's devolved health system gives counties responsibility for frontline service delivery, yet planning decisions are often made without comparable, transparent data across all 47 counties. Existing tools either rely on relative scoring (which shifts when peer counties change, making longitudinal tracking impossible), require proprietary GIS software, or depend on live API backends with cold-start latency and single points of failure. Policy-makers, researchers, and advocates need a platform that is: **objective** (scores must be time-stable), **transparent** (every claim must link to its source), **fast** (zero latency on any connection), and **offline-capable** (usable in low-bandwidth ASAL counties).
 
-Today, critical signals about access, service availability, and vulnerability are often spread across technical systems and reports that are hard to interpret quickly—especially for non-specialists. This limits timely accountability, micro-planning, and evidence-informed public discourse.
+## 3) Solution overview
+The Kenya Health Equity Map is a fully static, serverless web application deployed on Netlify's global CDN. It:
 
-## 3) Solution overview (what the tool does)
-**Nairobi Health Equity Map** is a lightweight, map-first web application, live and verified at **https://uhcke.netlify.app**, that:
-- visualises facility and service-point layers (where available via open sources),
-- highlights underserved geographies using an **explainable Priority Gap Score (PGS)**,
-- provides plain-language "drivers" that explain *why* an area is flagged,
-- supports **side-by-side comparisons** between two locations (https://uhcke.netlify.app/compare),
-- generates one-page briefs for reporting and accountability (https://uhcke.netlify.app/brief?ward=KE047-003),
-- includes a dedicated methodology page (https://uhcke.netlify.app/method), and
-- provides researcher-friendly downloads: spreadsheets (CSV), map data (GeoJSON), and per-ward JSON exports.
+- Visualises health access inequity across all 47 counties via a choropleth map (CartoDB Positron base tiles, warm stone palette, WCAG AA accessible)
+- Computes an **absolute Priority Gap Score (PGS)** for each county using fixed denominators (travel time / 100, poverty / 100, population / 5M, facility density / 1 inverted) — scores are stable across time and data refreshes
+- Models travel time using **KEMRI-Wellcome Trust / WHO AccessMod cost-distance methodology** over combined transport networks (walking speeds by land cover from ESA WorldCover, motorized/non-motorized speeds by road classification from OSM Kenya)
+- Provides **driver decomposition** showing exactly how accessibility (40%), vulnerability (30%), and population pressure (30%) contribute to each county's score
+- Generates **A4-formatted PDF briefs** for any county via the browser print API (`/brief?county=<id>`) with inline source citations — no server-side PDF engine required
+- Supports **side-by-side county comparison** at `/compare`
+- Includes a dedicated **methodology page** (`/method`) with full formula, component definitions, travel time modelling documentation, and all limitations
+- Maintains a **SourcesPanel** with 10 verifiable source cards — each with license badge, type badge, and direct download URL (KNBS 2019 Census, KIHBS 2015/16, ICPAC/KEMRI Health Facilities, KMHFR, WHO AccessMod, KEMRI/Wellcome Trust, OSM Kenya, ESA WorldCover, World Bank Kenya Poverty, KNBS GIS Boundaries)
 
-## 4) What makes it innovative (and credible for research + media)
-### Research-grade transparency
-- A dedicated **Method** page with indicator definitions, full PGS formula, weighting logic, and documented limitations.
-- **Data provenance** on every view: sources, refresh timestamps, and link-outs to original datasets.
-- **Exportable snapshots**: downloadable **spreadsheets (CSV)**, **map data files (GeoJSON)**, and **per-ward JSON** for reproducibility and secondary analysis.
-- Open-source repository at https://github.com/geraldkombo/nairobi-health-equity-map with full commit history.
+## 4) Technical architecture
 
-### Journalist-ready usability
-- Reporting Mode (default): plain-English "Key Facts," median comparisons, and one-click brief generation.
-- Research Mode: data quality scores, completeness percentages, missing-data warnings, and dynamic PGS weight controls.
-- "Story-ready" comparison view (two places; one narrative).
-- One-page brief output designed for print/PDF, stakeholder meetings, and editorial use.
-- WCAG AA accessible with keyboard navigation, focus rings, and semantic HTML.
-
-### Technical differentiation from existing tools
-Unlike RWJF City Health Dashboard or KFF Racial Equity Data Dashboard (which operate at state/national levels with static interfaces):
-- **Hyper-local:** Ward-level granularity matched to Kenyan electoral boundaries.
-- **Zero proprietary GIS:** MapLibre GL JS (open source) replacing Esri/Google Maps lock-in.
-- **Data resilience:** Pre-compiled JSON snapshots ensure full functionality when upstream APIs fail.
-- **Zero-blue design:** High-contrast monochrome + warm accent palette for editorial aesthetics and eye comfort.
-
-### Safe-by-design data governance
-- Open-data-first and **no PII** in the prototype by design.
-- Optional serverless proxy layer to protect secrets, normalize responses, and cache safely.
-
-## 5) Target users and primary use cases
-**Primary users**
-- Researchers (universities, think tanks, policy labs)
-- Journalists and data teams (newsrooms, investigative units)
-- Community-led organizations (CSOs/CBOs) and advocacy coalitions
-- County planning teams and implementers
-
-**Primary use cases**
-- Identify "health access deserts" and underserved hotspots.
-- Produce evidence packs for budget, planning, and accountability dialogues.
-- Support reporting with verifiable maps, datasets, and transparent methodology.
-
-## 6) Data sources and API approach (open/public)
-The platform is designed to use **public, non-identifiable** datasets and APIs (subject to licensing/availability), such as:
-- Kenya Master Facility List (MFL) (facility metadata and locations, where available)
-- WHO Global Health Observatory (GHO) indicators
-- World Bank Open Data indicators
-- Open administrative boundaries with appropriate licensing
-- Population grid layers (as proxies for population pressure)
-
-Current demo uses synthetic indicators with open-source ward boundaries (Open Admin Data, CC-BY-4.0) and facility points (OpenStreetMap, ODbL).
-
-> Credentialed systems (e.g., DHIS2/KHIS) are not required for the demo; future integration would only use aggregated, non-identifiable extracts where approvals exist.
-
-## 7) Technical approach (verified on Netlify production)
 | Component | Implementation |
 |---|---|
-| **Frontend** | Next.js 15 (App Router) + TypeScript strict |
-| **Mapping** | MapLibre GL JS (open source, no proprietary SDKs) |
-| **Charts** | ECharts (lightweight, client-side) |
-| **Styling** | Tailwind CSS v4 — zero-blue system, WCAG AA |
-| **Hosting** | Netlify — static-first CDN, HTTPS enforced |
-| **Serverless** | 4 Netlify Functions (health, wards, facilities, proxy) |
-| **Data fallback** | Pre-compiled JSON snapshots in `/data/snapshots/` |
-| **Exports** | CSV, GeoJSON, JSON download with one click |
-| **CI/CD** | GitHub Actions (typecheck, lint, Playwright E2E) |
+| **Frontend** | Next.js 15.2.4 (App Router) + TypeScript strict |
+| **Mapping** | MapLibre GL JS 4.7.1 (open source, no proprietary SDKs) |
+| **Charts** | ECharts 5.5.1 |
+| **Styling** | Tailwind CSS v4 — warm stone palette, WCAG AA |
+| **Hosting** | Netlify — static-first CDN, HTTPS enforced, zero cold starts |
+| **Data pipeline** | ETL: Zod-validated CSV ingestion -> population-weighted aggregation -> JSON snapshots |
+| **Validation** | Zod schemas at both ingestion (`WardRowSchema`) and emission (`IndicatorRecordSchema`) boundaries |
+| **Data format** | Static JSON served from `/data/snapshots/` — no API layer, no serverless functions |
+| **PDF generation** | Client-side via `react-to-print` + `@media print` CSS (A4, `print-color-adjust: exact`) |
+| **Design tokens** | Stone-50 through Stone-950, warm accent scale, PGS low/medium/high/critical colors |
+| **Domain** | `kenya-health-equity.netlify.app` |
 
-**Live endpoints (Netlify Functions):**
-- `https://uhcke.netlify.app/.netlify/functions/health`
-- `https://uhcke.netlify.app/.netlify/functions/wards`
-- `https://uhcke.netlify.app/.netlify/functions/facilities`
+## 5) Key design decisions
 
-## 8) Demonstration plan (marketplace booth)
-In a 3-5 minute walkthrough, participants will:
-1. **Explore** the Nairobi map at https://uhcke.netlify.app and identify high-priority underserved areas via the choropleth PGS visualization.
-2. **Click** a ward to see its Priority Gap Score + plain-language drivers + data provenance (e.g., Kibera: https://uhcke.netlify.app/brief?ward=KE047-003).
-3. **Compare** two locations side-by-side at https://uhcke.netlify.app/compare to show inequity clearly.
-4. **Generate** a one-page brief (print/PDF) to demonstrate real-world use in reporting and decision spaces.
-5. **Verify** methodology transparency at https://uhcke.netlify.app/method.
-6. **Download** data as CSV or GeoJSON for offline analysis and reproducibility.
+**Absolute thresholds over relative min-max.** Relative scores shift when peer counties change, making year-over-year policy tracking impossible. Fixed denominators (100, 100, 5,000,000, 1) give objective, time-stable PGS values that remain valid as new data arrives.
 
-## 9) Alignment to the forum theme
-The tool strengthens community systems by making inequities **visible, explainable, and shareable**, improving coordination and accountability during donor transition and UHC implementation. It directly addresses the conference sub-theme by:
-- Providing civil society with auditable evidence for budget advocacy (linking health access to public finance).
-- Reducing dependency on proprietary systems and technical intermediaries.
-- Enabling replication across counties with minimal configuration changes.
+**Static JSON over live database.** Demographic data updates annually or quarterly. A live BaaS (Supabase/PocketBase) adds latency and cost with no proportional value. GitHub Actions ETL + Netlify rebuild is the right pattern for this use case.
 
-## 10) Sustainability and replication
-- **Cost:** Zero ongoing licensing costs — static-first CDN with on-demand serverless.
-- **Replicability:** Open-source (MIT) and configurable — substitute data layers for any Kenyan county.
-- **Roadmap:** Expand real indicators (KNBS, KHIS), improve download formats (Excel, PDF), add trend tracking, support multi-county deployment.
-- **Low barrier:** Deploys to Netlify from any GitHub fork with a single click via the "Deploy to Netlify" button.
+**CDN direct fetch over API proxy.** Static files from `/data/snapshots/` are served by Netlify's global CDN with zero cold-start latency. The old `/api/*` to serverless function to file proxy pattern added unnecessary failure points.
 
-## Verification checklist
-All URLs below have been tested and return HTTP 200:
+**Client-side PDF over server-side Puppeteer.** Introducing a headless browser on Netlify Edge functions would re-introduce the cold starts and latency eliminated by the move to static data. Client-side generation ensures briefs can be exported even when field researchers are offline in ASAL counties.
 
-| Check | Status |
-|---|---|
-| Home page loads | ✅ https://uhcke.netlify.app |
-| Method page | ✅ https://uhcke.netlify.app/method |
-| Compare page | ✅ https://uhcke.netlify.app/compare |
-| Brief generator | ✅ https://uhcke.netlify.app/brief?ward=KE047-003 |
-| Data CSV accessible | ✅ https://uhcke.netlify.app/data/indicators/ward_indicators.csv |
-| GeoJSON accessible | ✅ https://uhcke.netlify.app/data/boundaries/nairobi_wards.geojson |
-| Snapshot fallback | ✅ https://uhcke.netlify.app/data/snapshots/wards.json |
-| Source repository | ✅ https://github.com/geraldkombo/nairobi-health-equity-map |
-| HTTPS enforced | ✅ All pages served over TLS |
-| Clean URLs | ✅ /method, /compare, /brief resolve without .html extension |
+**KEMRI/AccessMod travel time methodology over Euclidean distance.** Straight-line distance underestimates true travel time in rural Kenya by ignoring land cover, road networks, and transport mode shifts. The cost-distance combined transport model is the established standard in Kenyan health geography literature.
+
+## 6) Data sources and provenance
+
+Every data point on the platform links directly to its source:
+
+| Dataset | Source URL | License |
+|---|---|---|
+| KNBS 2019 Population Census | https://www.knbs.or.ke/census-2019/ | Open Data |
+| KIHBS 2015/16 County Poverty | https://www.knbs.or.ke/kihbs-2015-16/ | Open Data |
+| ICPAC/KEMRI Health Facilities | https://geoportal.icpac.net/layers/geonode:kenya_health_facilities | CC-BY-4.0 |
+| KMHFR Master Facility List | https://kmhfr.health.go.ke/ | Open Data |
+| WHO AccessMod | https://www.accessmod.org | GPL-3.0 |
+| KEMRI/Wellcome Trust | https://kemri-wellcome.org/programmes/geographic-access/ | Research |
+| OSM Kenya Road Network | https://www.openstreetmap.org/relation/192798 | ODbL-1.0 |
+| ESA WorldCover Land Cover | https://worldcover.esa.int/ | CC-BY-4.0 |
+| World Bank Kenya Poverty | https://databank.worldbank.org/source/kenya-poverty-and-equity | CC-BY-4.0 |
+| KNBS GIS Boundaries | https://www.knbs.or.ke/gis-boundary-files/ | Open Data |
+
+## 7) Use cases and target users
+
+**Primary users:**
+- County health planning teams and County Assembly budget committees
+- Researchers (universities, think tanks, policy labs) studying health inequity
+- Civil society organizations and advocacy coalitions
+- Journalists and data teams covering health access and devolution
+
+**Primary use cases:**
+- Identify high-priority counties for health infrastructure investment
+- Generate evidence packs for County Integrated Development Plan (CIDP) budget hearings
+- Produce one-page briefs for stakeholder meetings, planning workshops, and advocacy
+- Support open-data journalism with verifiable, citation-ready evidence
+
+## 8) Roadmap and future work
+
+| Priority | Item | Status |
+|---|---|---|
+| 1 | **Real data pipeline** — integrate actual KNBS ward-level census data, KMHFR facility list, and KEMRI travel-time surfaces for all 47 counties | Synthetic sample data in place; full data access required |
+| 2 | **Protomaps vector tiles** — replace CartoDB Positron raster tiles with self-hosted `.pmtiles` for data sovereignty, zero API keys, and custom styling | Staged after real data |
+| 3 | **Z-score PGS alignment** — research WHO HEAT methodology for distance-to-benchmark z-score normalization | Research phase |
+| 4 | **PWA offline support** — add Service Worker + IndexedDB caching for map tiles and county data in ASAL regions | Planned |
+| 5 | **Facility clustering** — implement supercluster for 12,000+ KMHFR facility points at low zoom levels | Staged after KMHFR integration |
+| 6 | **Open Graph + JSON-LD** — social share images and structured data for every county brief | Planned |
+
+## 9) Verification checklist
+
+| Check | Status | URL |
+|---|---|---|
+| Home page loads | ✅ | https://kenya-health-equity.netlify.app |
+| Methodology page | ✅ | https://kenya-health-equity.netlify.app/method |
+| Compare page | ✅ | https://kenya-health-equity.netlify.app/compare |
+| Regional brief PDF | ✅ | https://kenya-health-equity.netlify.app/brief?county=1 |
+| County data JSON | ✅ | https://kenya-health-equity.netlify.app/data/snapshots/county_indicators.json |
+| HTTPS enforced | ✅ | All pages served over TLS |
+| Clean URLs | ✅ | No .html extensions |
+| Build verifies | ✅ | 0 errors, 0 warnings (Next.js 15.2.4) |
+
+## 10) Sustainability
+
+- **Cost:** Zero ongoing licensing costs. Static CDN hosting on Netlify free tier.
+- **Replicability:** Open-source (MIT). Swap data layers for any county or country.
+- **Maintainability:** Fully static. No server management, no database administration, no API key rotation.
+- **Barrier to entry:** Deploys from any GitHub fork with a single Netlify connect.

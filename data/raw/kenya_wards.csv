@@ -1,0 +1,16 @@
+ward_code,ward_name,county_code,county_name,population,poverty_rate,facility_count,travel_time_minutes
+1371,Airport,Mombasa,1,113454,22.5,4,32.5
+1373,Bamburi,Mombasa,1,9571,22.5,1,60.0
+1374,Changamwe,Mombasa,1,93140,22.5,3,60.0
+1372,Chaani,Mombasa,1,15476,42.8,1,60.0
+1381,Kisasi,Nairobi,47,51556,12.5,12,53.1
+1382,Nairobi Central,Nairobi,47,5407,12.5,8,60.0
+1383,Eastlands,Nairobi,47,127565,12.5,25,53.1
+1384,Westlands,Nairobi,47,2640,12.5,6,60.0
+1430,Upper Hill,Nairobi,47,53239,30.5,15,5.0
+1431,South C,Nairobi,47,72469,30.5,10,46.2
+1366,Kiambu Central,Kiambu,22,65941,8.2,3,53.1
+1367,Kiambu East,Kiambu,22,28647,8.2,2,39.4
+1368,Kiambu West,Kiambu,22,145442,8.2,5,53.1
+1369,Kiambu North,Kiambu,22,4664,8.2,1,53.1
+1370,Kiambu South,Kiambu,22,9370,8.2,1,53.1

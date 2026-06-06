@@ -117,7 +117,21 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
       )}
 
       {indicator && (
-        <div className="mt-4 flex gap-2">
+        <div className="mt-4 border-t border-stone-100 pt-3">
+          <p className="text-[10px] leading-4 text-stone-400">
+            Population:{" "}
+            <a href="https://www.knbs.or.ke/census-2019/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KNBS 2019 Census</a>
+            {" · "}Poverty:{" "}
+            <a href="https://www.knbs.or.ke/kihbs-2015-16/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KIHBS 2015/16</a>
+            {" · "}Facilities:{" "}
+            <a href="https://geoportal.icpac.net/layers/geonode:kenya_health_facilities" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ICPAC/KEMRI</a>
+            {" · "}Modelling:{" "}
+            <a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">WHO AccessMod</a>
+          </p>
+        </div>
+      )}
+      {indicator && (
+        <div className="mt-3 flex gap-2">
           <Link
             href={`/brief?county=${county.id}`}
             className="rounded-lg bg-stone-800 px-3 py-2 text-xs font-semibold text-white hover:bg-stone-700 transition-colors"

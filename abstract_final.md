@@ -1,41 +1,17 @@
-﻿# Nairobi Health Equity Map: an open-data mapping tool for research and public-interest reporting
+﻿# Kenya Health Equity Map: a serverless geospatial platform for evidence-based health prioritisation across 47 counties
 
-**Submission type:** CSS Community Marketplace Exhibitor / Abstract  
-**Theme/Sub-theme:** Strengthening Community Systems in the Changing Global Health Landscape (Community Systems in the Era of Donor Transition and UHC)  
-
-**Applicant/Lead:** Gerald Kombo (Independent Developer)  
+**Submission type:** Conference Abstract / Civic Tech Showcase  
+**Theme:** Open Data, UHC, and Community Systems Strengthening  
 **Country:** Kenya  
-**Demo geography:** Nairobi City County  
-**Contact:** geraldshikunyi@gmail.com  
-**Repository:** https://github.com/geraldkombo/nairobi-health-equity-map  
-**Live demo (Netlify):** https://uhcke.netlify.app  
+**Live platform:** https://kenya-health-equity.netlify.app  
 
 ## Abstract
-Kenya's push toward Universal Health Coverage (UHC) is accelerating at the same time external donor financing tightens. In this transition, community systems are expected to do more with less—yet evidence to guide decisions and accountability is often fragmented across technical dashboards, spreadsheets, and closed reports. This creates an information gap that affects both **researchers** (who need transparent, reproducible methods) and **journalists** (who need clear, verifiable stories grounded in credible data).
 
-**Nairobi Health Equity Map** is an open-source, map-first web application that turns **public, non-identifiable open datasets** into explainable spatial insights about health access and vulnerability in Nairobi City County. The platform overlays facility and service-point registries (e.g., Kenya Master Facility List, where available), administrative boundaries, population pressure proxies, and selected socio-economic/health indicators to generate a transparent **Priority Gap Score**. Every score is accompanied by plain-language "drivers" and a data provenance panel (sources, timestamps, indicator definitions, and limitations) to support scientific and journalistic verification.
+Equitable health resource allocation requires data that is both empirically rigorous and immediately accessible to policy-makers. The Kenya Health Equity Map addresses the gap between localized demographic data and strategic public health planning by synthesizing facility density, vulnerability proxies, and population pressure into an absolute Priority Gap Score (PGS) across Kenya's 47 counties. Unlike platforms that use relative min-max scaling (which artificially distorts longitudinal tracking), this application employs absolute thresholds benchmarked against national standards, ensuring objective measurement of infrastructure deficits that remains stable across data refreshes. Travel time is modelled using the KEMRI-Wellcome Trust / WHO AccessMod cost-distance methodology over combined transport networks (walking, motorized, and non-motorized), with walking speeds varying by land cover (ESA WorldCover) and road speeds by classification (OSM Kenya). The architecture is fully serverless: an automated ETL pipeline validates raw ward-level data with Zod schemas, applies population-weighted aggregation, and emits static JSON snapshots served directly from Netlify's global CDN with zero cold-start latency. Every data point on the platform is linked to its verifiable source URL (KNBS 2019 Census, KIHBS 2015/16, ICPAC/KEMRI Health Facilities, KMHFR), and each county brief generates an A4-formatted PDF with inline citations. By integrating dynamic driver decomposition, side-by-side county comparison, and automated regional briefs, the platform translates complex spatial modelling into actionable intelligence for County Assemblies and non-governmental organizations. The Kenya Health Equity Map demonstrates how modern, open-source geospatial tooling deployed on a serverless edge architecture can enforce accountability, guide strategic interventions, and close healthcare access gaps within resource-constrained settings.
 
-The tool is designed around outputs that are directly usable beyond the screen: side-by-side comparisons between locations, downloadable one-page briefs for meetings and reporting, and research-friendly exports (**downloadable spreadsheets (CSV)** and **map data files (GeoJSON)** plus a clear methodology page) that enable reproducibility and secondary analysis. The demo runs "static-first" on Netlify with optional serverless functions for caching and safe API consumption, keeping operating costs low and facilitating replication across other Kenyan counties.
+**Keywords:** health equity, geospatial analysis, UHC, open data, Kenya, Priority Gap Score, serverless, AccessMod
 
-**Keywords:** UHC, community systems strengthening, open data, geospatial analysis, health equity, research reproducibility, public-interest journalism
-
-## Provenance & verification
-All data, methodology, and source code are publicly accessible:
-
-| Resource | URL |
-|---|---|
-| Live platform | https://uhcke.netlify.app |
-| Source repository | https://github.com/geraldkombo/nairobi-health-equity-map |
-| Methodology & PGS formula | https://uhcke.netlify.app/method |
-| Ward comparison tool | https://uhcke.netlify.app/compare |
-| One-page brief generator | https://uhcke.netlify.app/brief?ward=KE047-003 |
-| Data sources documentation | `/docs/DATA_SOURCES.md` in repository |
-
-## Technical stack (verified on Netlify production)
-- **Framework:** Next.js 15 (App Router) + TypeScript strict mode
-- **Mapping:** MapLibre GL JS (open-source, zero proprietary GIS)
-- **Styling:** Tailwind CSS v4 (zero-blue design system, WCAG AA)
-- **Hosting:** Netlify (static-first CDN delivery, HTTPS enforced)
-- **Edge functions:** 4 Netlify Functions (health check, wards API, facilities API, upstream proxy)
-- **Data resilience:** Pre-compiled JSON snapshots fallback when upstream APIs are unavailable
-- **Exports:** CSV ("Download spreadsheet"), GeoJSON ("Download map data"), per-ward JSON
+**Live URL:** https://kenya-health-equity.netlify.app  
+**Methodology:** https://kenya-health-equity.netlify.app/method  
+**Compare tool:** https://kenya-health-equity.netlify.app/compare  
+**Regional briefs:** https://kenya-health-equity.netlify.app/brief?county=1

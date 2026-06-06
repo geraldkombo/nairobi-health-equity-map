@@ -28,7 +28,7 @@ export default function HomePage() {
         const [countiesRes, indicators, boundariesRes] = await Promise.all([
           fetchCounties(),
           fetchIndicators(),
-          fetch("/data/boundaries/counties.geojson").then(async (r) => {
+          fetch("/data/boundaries/counties_simplified.geojson").then(async (r) => {
             if (!r.ok) throw new Error(`Boundaries fetch failed: ${r.status}`);
             return r.json();
           }),
@@ -177,6 +177,27 @@ export default function HomePage() {
             Compare counties
           </a>
         </div>
+      </div>
+      <div className="mt-6 border-t border-stone-100 pt-4 pb-2">
+        <p className="text-[10px] leading-5 text-stone-400">
+          <strong>Data sources:</strong>{" "}
+          <a href="https://www.knbs.or.ke/census-2019/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KNBS 2019 Census</a>
+          {" · "}
+          <a href="https://www.knbs.or.ke/kihbs-2015-16/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KIHBS 2015/16</a>
+          {" · "}
+          <a href="https://geoportal.icpac.net/layers/geonode:kenya_health_facilities" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ICPAC/KEMRI Health Facilities</a>
+          {" · "}
+          <a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">WHO AccessMod travel model</a>
+          {" · "}
+          <a href="https://kemri-wellcome.org/programmes/geographic-access/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KEMRI/Wellcome Trust</a>
+          {" · "}
+          <a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">OSM Kenya road network</a>
+          {" · "}
+          <a href="https://worldcover.esa.int/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">ESA WorldCover land cover</a>
+          {" · "}
+          <a href="https://www.knbs.or.ke/gis-boundary-files/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-600">KNBS GIS boundaries</a>
+          <span className="ml-1">| CC-BY-4.0 open data</span>
+        </p>
       </div>
     </div>
   );
