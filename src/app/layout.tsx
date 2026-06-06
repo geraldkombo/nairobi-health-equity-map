@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kenya-health-equity.netlify.app"),
+  metadataBase: new URL("https://kenya-health-equity-map.netlify.app"),
   title: {
     default: "Kenya Health Equity Map",
     template: "%s | Kenya Health Equity Map",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     title: "Kenya Health Equity Map",
     description:
       "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
-    url: "https://kenya-health-equity.netlify.app",
+    url: "https://kenya-health-equity-map.netlify.app",
     locale: "en_KE",
     siteName: "Kenya Health Equity Map",
     type: "website",
@@ -27,14 +29,28 @@ export const metadata: Metadata = {
     images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Health Equity KE",
+    "mobile-web-app-capable": "yes",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="antialiased">
+      <head>
+        <link rel="manifest" href={`${BASE}/manifest.json`} />
+      </head>
       <body className="min-h-[100svh] bg-stone-50 text-stone-800">
         <Header />
         <main>{children}</main>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("${BASE}/sw.js").catch(()=>{})})}`,
+          }}
+        />
       </body>
     </html>
   );

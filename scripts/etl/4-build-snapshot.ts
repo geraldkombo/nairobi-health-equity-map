@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { z } from "zod";
+import { parse } from "csv-parse/sync";
 import { CountySnapshotArraySchema } from "./lib/zod-schemas";
 import { sanitizeCountyName, createCountyId, toTitleCase } from "./lib/county-names";
 
@@ -47,7 +48,25 @@ function main() {
   }
   console.log(`Travel times: ${Object.keys(travelMap).length} counties`);
 
-  // 3. KMHFR facilities
+  // 3a. KDHS indicators (immunization, SBA) from indicators CSV
+  const indicatorsCsv = path.join(import.meta.dirname, "../../data/indicators/county_indicators.csv");
+  const kdhsMap: Record<string, { immunization_coverage: number; skilled_birth_attendance: number }> = {};
+  if (fs.existsSync(indicatorsCsv)) {
+    const csvRaw = fs.readFileSync(indicatorsCsv, "utf-8");
+    const records: Record<string, string>[] = parse(csvRaw, { columns: true, skip_empty_lines: true });
+    for (const r of records) {
+      const key = sanitizeCountyName(r.county_name);
+      kdhsMap[key] = {
+        immunization_coverage: parseFloat(r.immunization_coverage) || 0,
+        skilled_birth_attendance: parseFloat(r.skilled_birth_attendance) || 0,
+      };
+    }
+    console.log(`KDHS indicators: ${Object.keys(kdhsMap).length} counties`);
+  } else {
+    console.warn("Missing county_indicators.csv — immunization/SBA will remain 0");
+  }
+
+  // 3b. KMHFR facilities
   const kmhfrFile = path.join(RAW_DIR, "kmhfr_facilities_raw.json");
   if (!fs.existsSync(kmhfrFile)) {
     console.error("Missing kmhfr_facilities_raw.json. Run 1-extract-kmhfr.ts first.");
@@ -75,6 +94,8 @@ function main() {
 
     if (facCount === 0) unmatched.push(county.county_name);
 
+    const kdhs = kdhsMap[key] ?? { immunization_coverage: 0, skilled_birth_attendance: 0 };
+
     return {
       county_code: createCountyId(key),
       county_name: toTitleCase(key),
@@ -83,8 +104,8 @@ function main() {
       facility_density_proxy: Math.round(facilitiesPer10k * 100) / 100,
       poverty_proxy: county.poverty_rate,
       travel_time_to_facility_proxy: Math.round(travelTime),
-      immunization_coverage: 0,
-      skilled_birth_attendance: 0,
+      immunization_coverage: kdhs.immunization_coverage,
+      skilled_birth_attendance: kdhs.skilled_birth_attendance,
       updated_at: new Date().toISOString().slice(0, 10),
     };
   });
