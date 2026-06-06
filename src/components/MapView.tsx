@@ -124,8 +124,8 @@ export default function MapView({
           type: "geojson",
           data: dataUrl("/data/snapshots/facilities.json"),
           cluster: true,
-          clusterMaxZoom: 14,
-          clusterRadius: 30,
+          clusterMaxZoom: 10,
+          clusterRadius: 20,
         });
 
         map.addLayer({
@@ -134,10 +134,10 @@ export default function MapView({
           source: "facilities",
           filter: ["has", "point_count"],
           paint: {
-            "circle-color": "#78350F",
-            "circle-radius": ["step", ["get", "point_count"], 10, 10, 14, 50, 18],
-            "circle-opacity": ["step", ["zoom"], 0.6, 6, 0.8],
-            "circle-stroke-width": 2,
+            "circle-color": "#EA580C",
+            "circle-radius": ["step", ["get", "point_count"], 6, 20, 8, 100, 12],
+            "circle-opacity": ["step", ["zoom"], 0.25, 7, 0.5],
+            "circle-stroke-width": 1,
             "circle-stroke-color": "#FDFBF7",
           },
         });
@@ -150,7 +150,7 @@ export default function MapView({
           layout: {
             "text-field": "{point_count_abbreviated}",
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-            "text-size": 12,
+            "text-size": 10,
           },
           paint: { "text-color": "#FDFBF7" },
         });
