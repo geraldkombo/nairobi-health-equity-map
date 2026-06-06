@@ -70,6 +70,7 @@ export default function MapView({
         },
         center: [37.9, 0.5],
         zoom: 5.2,
+        cooperativeGestures: true,
       });
     } catch (e) {
       console.error("Map initialization error:", e);
@@ -120,6 +121,11 @@ export default function MapView({
             const code = String(e.features[0].properties.county_code);
             onCountyClick(code);
           }
+        });
+
+        map.on("click", (e) => {
+          const features = map.queryRenderedFeatures(e.point, { layers: ["counties-fill"] });
+          if (!features.length) onCountyClick("");
         });
 
         map.on("mousemove", "counties-fill", (e) => {
@@ -183,8 +189,8 @@ export default function MapView({
     const map = mapRef.current;
     if (!map) return;
     const timer = setTimeout(() => {
-      try { map.resize(); } catch {}
-    }, 300);
+      try { map.resize(); } catch (e) { console.error('Map resize error:', e); }
+    }, 500);
     return () => clearTimeout(timer);
   }, [selectedCountyCode]);
 
@@ -195,7 +201,7 @@ export default function MapView({
     <div className="relative min-h-[400px] w-full overflow-hidden rounded-xl border border-stone-200 shadow-sm">
       <div
         ref={containerRef}
-        className="h-[500px] w-full md:h-[600px]"
+        className="h-[70svh] w-full min-h-[400px] max-h-[800px]"
         aria-label="Map of Kenya counties with health equity data"
         role="application"
         tabIndex={0}

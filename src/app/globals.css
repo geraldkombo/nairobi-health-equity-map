@@ -132,3 +132,7 @@ body {
 .maplibregl-marker {
   filter: hue-rotate(120deg);
 }
+
+.maplibregl-canvas-container {
+  touch-action: none;
+}

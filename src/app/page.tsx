@@ -76,14 +76,14 @@ export default function HomePage() {
   }, [counties]);
 
   const handleCountySelect = useCallback((countyCode: string) => {
-    setSelectedCountyCode(countyCode);
+    setSelectedCountyCode(countyCode || null);
   }, []);
 
   const totalFacilities = indicators.reduce((sum, i) => sum + i.facility_count, 0);
   const highPriorityCounties = counties ? counties.filter(c => (countyScores[c.id] ?? 0) >= 50).length : 0;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-7xl px-2 py-3 sm:px-6 sm:py-6">
       {error && (
         <div className="mb-6 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700" role="alert">
           {error}
@@ -99,18 +99,18 @@ export default function HomePage() {
         />
       )}
 
-      <div className="mb-6">
-        <h1 className="text-xl font-bold tracking-tight text-stone-800">Kenya Health Equity Map</h1>
-        <p className="mt-1 text-sm text-stone-500">
-          Explore health access inequities across Kenya&apos;s 47 counties. Hover the map to see scores, click a county for details.
+      <div className="mb-3 sm:mb-6">
+        <h1 className="text-lg font-bold tracking-tight text-stone-800 sm:text-xl">Kenya Health Equity Map</h1>
+        <p className="mt-0.5 text-xs text-stone-500 sm:text-sm">
+          Explore health access gaps across Kenya&apos;s 47 counties. Tap a county for details.
         </p>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-3 sm:mb-4">
         <HowToUse />
       </div>
 
-      <div className="mb-6 max-w-sm">
+      <div className="mb-3 max-w-sm sm:mb-6">
         {counties && (
           <SearchBar
             counties={counties.map((c) => ({ id: c.id, name: c.name, code: c.id }))}
@@ -119,7 +119,7 @@ export default function HomePage() {
         )}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="relative grid gap-4 sm:gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           {boundaries ? (
             <MapErrorBoundary>
@@ -137,24 +137,24 @@ export default function HomePage() {
             </div>
           )}
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-stone-500">
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#FFF7BC]"></span> Low (&lt;30)
+          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-stone-500 sm:mt-4 sm:text-xs">
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#FFF7BC] sm:h-3 sm:w-3"></span> Low (&lt;30)
             </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#FEC44F]"></span> Medium (30 to 49)
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#FEC44F] sm:h-3 sm:w-3"></span> Med (30&ndash;49)
             </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#D95F0E]"></span> High (50 to 69)
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#D95F0E] sm:h-3 sm:w-3"></span> High (50&ndash;69)
             </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded-sm bg-[#8C2D04]"></span> Critical (70+)
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#8C2D04] sm:h-3 sm:w-3"></span> Critical (70+)
             </span>
-            <span className="ml-auto text-stone-400">Priority Gap Score (PGS)</span>
+            <span className="ml-auto text-stone-400">PGS</span>
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="hidden space-y-4 lg:block">
           {selectedCounty ? (
             <CountyDetails
               county={selectedCounty}
@@ -172,6 +172,27 @@ export default function HomePage() {
           <SourcesPanel />
         </div>
       </div>
+
+      {selectedCounty && (
+        <div className="fixed inset-x-0 bottom-0 z-50 max-h-[70svh] overflow-y-auto rounded-t-2xl border border-stone-200 bg-white shadow-2xl lg:hidden">
+          <div className="sticky top-0 flex items-center justify-between bg-white px-4 pt-2 pb-1">
+            <div className="h-1.5 w-12 rounded-full bg-stone-300 mx-auto"></div>
+            <button
+              onClick={() => setSelectedCountyCode(null)}
+              className="absolute right-3 top-2 rounded-full p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-600"
+              aria-label="Close county details"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div className="px-4 pb-6">
+            <CountyDetails
+              county={selectedCounty}
+              indicators={indicators}
+            />
+          </div>
+        </div>
+      )}
 
       <div className="mt-8 border-t border-stone-200 pt-6">
         <div className="flex flex-wrap gap-3">
