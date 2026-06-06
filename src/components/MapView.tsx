@@ -134,11 +134,17 @@ export default function MapView({
           source: "facilities",
           filter: ["has", "point_count"],
           paint: {
-            "circle-color": "#EA580C",
-            "circle-radius": ["step", ["get", "point_count"], 6, 20, 8, 100, 12],
-            "circle-opacity": ["step", ["zoom"], 0.25, 7, 0.5],
-            "circle-stroke-width": 1,
-            "circle-stroke-color": "#FDFBF7",
+            "circle-color": [
+              "step",
+              ["get", "point_count"],
+              "#f97316",
+              25, "#ea580c",
+              100, "#451a03",
+            ],
+            "circle-radius": ["step", ["get", "point_count"], 6, 25, 8, 100, 12],
+            "circle-opacity": ["step", ["zoom"], 0.3, 7, 0.6],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff",
           },
         });
 
@@ -150,9 +156,9 @@ export default function MapView({
           layout: {
             "text-field": "{point_count_abbreviated}",
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-            "text-size": 10,
+            "text-size": 11,
           },
-          paint: { "text-color": "#FDFBF7" },
+          paint: { "text-color": "#ffffff" },
         });
 
         map.addLayer({
@@ -162,17 +168,9 @@ export default function MapView({
           filter: ["!", ["has", "point_count"]],
           paint: {
             "circle-radius": 5,
-            "circle-stroke-width": 1,
-            "circle-stroke-color": "#78350F",
-            "circle-color": [
-              "match",
-              ["get", "F_TYPE"],
-              1, "#DC2626",
-              2, "#EA580C",
-              3, "#F59E0B",
-              4, "#FDE68A",
-              "#A8A29E",
-            ],
+            "circle-stroke-width": 1.5,
+            "circle-stroke-color": "#ffffff",
+            "circle-color": "#f97316",
           },
         });
 
