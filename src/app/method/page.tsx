@@ -1,4 +1,5 @@
-﻿import SourcesPanel from "@/components/SourcesPanel";
+﻿import Link from "next/link";
+import SourcesPanel from "@/components/SourcesPanel";
 
 export default function MethodPage() {
   return (
@@ -223,6 +224,10 @@ export default function MethodPage() {
         </section>
 
         <SourcesPanel />
+
+        <div className="text-center text-xs text-stone-400">
+          <Link href="/" className="text-[#EA580C] underline underline-offset-2">&larr; Return to map</Link>
+        </div>
       </div>
     </div>
   );

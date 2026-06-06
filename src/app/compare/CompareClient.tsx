@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import CompareView from "@/components/CompareView";
 import SourcesPanel from "@/components/SourcesPanel";
 
@@ -67,6 +68,10 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
 
       <div className="mt-8">
         <SourcesPanel />
+      </div>
+
+      <div className="mt-6 text-center text-xs text-stone-400">
+        <Link href="/" className="text-[#EA580C] underline underline-offset-2">&larr; Return to map</Link>
       </div>
     </>
   );

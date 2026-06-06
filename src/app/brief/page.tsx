@@ -297,7 +297,7 @@ function BriefContent() {
               href="/"
               className="text-sm font-medium text-stone-500 underline underline-offset-2 hover:text-stone-800 transition-colors"
             >
-              &larr; Map
+              &larr; Return to map
             </Link>
           </div>
         </div>
