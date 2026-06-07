@@ -95,38 +95,39 @@ function PrintableBrief({
         </div>
       </section>
 
-      {/* CLM Action Plan */}
+      {/* Non-Commanding Community Options */}
       <section className="break-inside-avoid">
         <h2 className="text-xs font-bold uppercase tracking-widest text-orange-700">
-          Community-Led Monitoring Action Plan
+          How Communities Can Leverage This Data
         </h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div className="border-l-4 border-orange-600 pl-4 py-1">
-            <h3 className="text-sm font-bold text-amber-900">Quarterly CHMT Meetings</h3>
-            <p className="mt-0.5 text-xs leading-5 text-stone-600">
-              Present these specific facility deficit metrics to demand targeted resource allocation
-              for underserved wards.
+          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
+            <h3 className="text-sm font-bold text-amber-900">CHMT Engagement Options</h3>
+            <p className="mt-1 text-xs leading-5 text-stone-600">
+              Advocates can choose to share these specific facility gap metrics during consultative
+              dialogues with County Health Management Teams (CHMTs) to help visually highlight
+              underserved regions[cite: 4].
             </p>
           </div>
-          <div className="border-l-4 border-orange-600 pl-4 py-1">
-            <h3 className="text-sm font-bold text-amber-900">County Budget Hearings</h3>
-            <p className="mt-0.5 text-xs leading-5 text-stone-600">
-              Submit this document to the health department as formal, quantifiable evidence
-              justifying infrastructure expansion.
+          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
+            <h3 className="text-sm font-bold text-amber-900">Supporting Budget Conversations</h3>
+            <p className="mt-1 text-xs leading-5 text-stone-600">
+              Provides an open, quantifiable resource that community members can carry into local
+              health budget hearings to support conversations around               infrastructure funding[cite: 4].
             </p>
           </div>
-          <div className="border-l-4 border-orange-600 pl-4 py-1">
-            <h3 className="text-sm font-bold text-amber-900">System Accountability</h3>
-            <p className="mt-0.5 text-xs leading-5 text-stone-600">
-              Utilize this brief as a fixed baseline to track whether travel times and clinical
-              access parameters improve annually.
+          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
+            <h3 className="text-sm font-bold text-amber-900">Tracking Local Progress</h3>
+            <p className="mt-1 text-xs leading-5 text-stone-600">
+              Serves as a community-owned baseline to quietly track whether physical travel times and
+              clinic access parameters improve over the               coming years[cite: 4].
             </p>
           </div>
-          <div className="border-l-4 border-orange-600 pl-4 py-1">
-            <h3 className="text-sm font-bold text-amber-900">Peer Mobilization</h3>
-            <p className="mt-0.5 text-xs leading-5 text-stone-600">
-              Share with regional advocacy networks to coordinate a unified demand for maternal and
-              primary care funding.
+          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
+            <h3 className="text-sm font-bold text-amber-900">Peer Network Collaboration</h3>
+            <p className="mt-1 text-xs leading-5 text-stone-600">
+              Can be shared freely among regional peer-led networks to coordinate joint, collaborative
+              efforts around maternal and               primary healthcare support[cite: 4].
             </p>
           </div>
         </div>
