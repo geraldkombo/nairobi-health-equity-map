@@ -57,7 +57,7 @@ In Mandera (50% home births, PGS 91), a women\'s peer network uses the county br
 
 ### 3.3 Strengthening Budget Allocations
 
-In Tana River, a community health committee utilized the verified 72.5% poverty rate and 48% home birth rate to build an evidence-based case for removing financial barriers at local dispensaries during county health planning forums and CHMT meetings. Tana River\'s economic context underscores why this matters: the county has a Rural Access Index of just 11.35%. In late 2023, excessive rains destroyed over 9,568 acres of crops, causing maize yields to fall 50% below long-term averages. For families whose financial reserves have been depleted by climate shocks, the indirect costs of facility delivery are insurmountable. The printed brief made this structural poverty visible to budget planners.
+In Tana River, a community health committee utilized the verified 72.5% poverty rate and 48% home birth rate to build an evidence-based case for removing financial barriers at local dispensaries during county health planning forums and CHMT quarterly meetings. Tana River\'s economic context underscores why this matters: the county has a Rural Access Index of just 11.35%. In late 2023, excessive rains destroyed over 9,568 acres of crops, causing maize yields to fall 50% below long-term averages. For families whose financial reserves have been depleted by climate shocks, the indirect costs of facility delivery are insurmountable. The printed brief made this structural poverty visible to budget planners.
 
 ### 3.4 Cross-County Peer Coordination
 

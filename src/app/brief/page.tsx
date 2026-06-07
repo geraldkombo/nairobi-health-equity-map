@@ -141,7 +141,7 @@ function PrintableBrief({
                 key: "financial",
                 label: "Financial Protection",
                 desc: norm.poverty > 0.6
-                  ? `A ${indicator.poverty_proxy}% poverty rate means most families cannot absorb out-of-pocket delivery costs. Present this data at CHMT meetings and public participation forums to advocate for waived maternal health fees.`
+                  ? `A ${indicator.poverty_proxy}% poverty rate means most families cannot absorb out-of-pocket delivery costs. Raise this at CHMT planning meetings and Health Facility Management Committee discussions to advocate for waived maternal health fees.`
                   : `At ${indicator.poverty_proxy}% poverty, financial barriers still affect access. Use this figure to argue for subsidized transport or supply vouchers for expectant mothers.`,
               },
               {
