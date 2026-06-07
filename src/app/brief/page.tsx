@@ -174,7 +174,7 @@ function PrintableBrief({
           dispensaries may not be reflected.
           <strong className="text-amber-900">
             {" "}If your local clinic is missing from this map, you can report it directly to
-            OpenStreetMap at www.openstreetmap.org/note/new - just drop a pin and describe the
+            OpenStreetMap at www.openstreetmap.org/note/new#map=6/0.5/38.0 - just drop a pin and describe the
             facility. No account needed. Every addition strengthens the evidence base for all
             communities.
           </strong>

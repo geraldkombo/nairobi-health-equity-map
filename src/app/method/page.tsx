@@ -138,7 +138,7 @@ export default function MethodPage() {
               </li>
             </ol>
             <a
-              href="https://www.openstreetmap.org/note/new"
+              href="https://www.openstreetmap.org/note/new#map=6/0.5/38.0&layers=N"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center rounded-lg bg-amber-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-800 transition-colors"
