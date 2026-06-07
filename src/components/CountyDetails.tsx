@@ -86,7 +86,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
       population: pctRank("population"),
       facilityDensity: pctRank("facility_density_proxy"),
     };
-  }, [indicator, indicators, county.id]);
+  }, [indicator, indicators, county]);
 
   const narrativeLines = useMemo(() => {
     if (!comparisons || !indicator || !nationalAvg) return [];

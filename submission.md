@@ -14,7 +14,7 @@ Nationally, 29% of women attend their first antenatal visit in the critical firs
 
 Community-Led Monitoring (CLM) was designed to bridge this gap. But CLM is only as powerful as the evidence communities can access and understand. Today, the data that could transform CLM from a process into an outcome is scattered across government portals, locked behind academic paywalls, and embedded in technical reports written for donors rather than for the people most affected by health inequity.
 
-The Kenya Health Equity Map was built to close this evidence gap - not by creating new data, but by making existing public data visible, understandable, and actionable for the communities it describes.
+The Kenya Health Equity Map closes this evidence gap by making existing public data visible, understandable, and actionable for the communities it describes.
 
 ---
 
@@ -24,14 +24,14 @@ A free, offline-first digital map that translates every Kenyan county's health i
 
 | Feature | What It Does | Why It Matters for CLM |
 |---|---|---|
-| **Priority Gap Score** | A simple 0-100 score combining travel time to clinic, poverty rate, and population per facility. Higher score = greater inequity. | Communities have a **measurable, trackable baseline**. Turkana scores 92. If resource allocation improves, the score drops. CLM impact becomes quantifiable. |
-| **County Brief (printable)** | A one-page PDF for any county with PGS, component breakdown, indicator data, and source citations. | This establishes a **shared, objective foundation for CHMT discussions**. Every number has a source URL, providing government officers with a reliable planning tool. |
-| **Side-by-Side Comparison** | Compare any two counties across all indicators. Includes a seamless reset selection function. | A community in Elgeyo-Marakwet (1 facility / 454,000 people) can compare directly with Nairobi (618 facilities). Regional coordinators can quickly clear the board to evaluate multiple neighboring counties. |
-| **Offline Mode** | Works without internet after first load. No login, no installation, no app store. | A health promoter in a remote village can **utilize the evidence on a basic smartphone** without data credit. Digital inclusion is the foundation. |
+| **Priority Gap Score** | A simple 0-100 score combining travel time to clinic, poverty rate, and population per facility. Higher score = greater inequity. | Communities have a **measurable, trackable baseline**. Turkana scores 92. If resource allocation improves, the score drops. CLM impact becomes quantifiable for Global Fund reporting. |
+| **County Brief (printable)** | A one-page PDF for any county with PGS, component breakdown, indicator data, and source citations. | Establishes a **shared, objective foundation for CHMT discussions**. Every number has a source URL, providing government officers with a reliable planning tool. |
+| **Side-by-Side Comparison** | Compare any two counties across all indicators with a seamless reset selection function. | A community in Elgeyo-Marakwet (1 facility / 454,000 people) can compare directly with Nairobi (618 facilities). Regional coordinators rapidly clear the board to evaluate multiple neighboring counties. |
+| **Offline Mode** | Works without internet after first load. No login, no installation, no app store. | A health promoter in a remote ASAL village can **utilize the evidence on a basic smartphone** without data credit. Digital inclusion is the foundation. |
 
 ### The Priority Gap Score (PGS) in Plain Language
 
-The score combines three factors that define a community's real access to health:
+The score combines three factors that define a community's real access to health. It is a verifiable paper calculation, not an algorithm:
 
 | Factor | What It Measures | Evidence It Reveals |
 |---|---|---|
@@ -39,7 +39,7 @@ The score combines three factors that define a community's real access to health
 | **Economic Vulnerability** | What percentage of the population lives below the poverty line? | Tana River: 72.5% poverty. When a household cannot absorb out-of-pocket costs, the data provides a compelling foundation for free maternal care policies. |
 | **Population Pressure** | How many people depend on each facility? | Elgeyo-Marakwet: 454,000 people sharing 1 mapped facility. The ratio alone makes a clear case for infrastructure investment. |
 
-**Result:** Nairobi scores 40 (lowest inequity, 618 facilities, 16.5% poverty). Turkana scores 92 (highest inequity, 42.6% hardcore poverty - the highest nationally). The 52-point gap is not abstract. It maps directly onto the lived reality of a woman in Turkana who must choose between a 90-minute walk to a clinic and giving birth at home.
+**Result:** Nairobi scores 40 (lowest inequity, 618 facilities, 16.5% poverty). Turkana scores 92 (highest inequity, 42.6% hardcore poverty - the highest nationally). The 52-point gap maps directly onto the lived reality of a woman in Turkana who must choose between a 90-minute walk to a clinic and giving birth at home.
 
 ---
 
@@ -47,127 +47,86 @@ The score combines three factors that define a community's real access to health
 
 ### 3.1 Validating Lived Experience with Quantified Data
 
-A community-based organization in Turkana has used the map to document that the county's facility gap is a measurable reality. The PGS of 92, combined with a 47% home birth rate (KDHS 2022) and a 42.6% hardcore poverty rate - the highest nationally, encompassing over 745,000 individuals - gives the CBO a quantified, source-cited document to present to the County Health Management Team. The conversation elevates from subjective feedback to a structural review of quantified infrastructure gaps. Critically, 42% of women aged 15-49 in Turkana report having experienced physical violence, compounding the barriers to safe reproductive health access. The map makes visible what is otherwise hidden behind county-level aggregates.
+A community-based organization in Turkana uses the map to document that the county\'s facility gap is a measurable reality. The PGS of 92, combined with a 47% home birth rate (KDHS 2022) and a 42.6% hardcore poverty rate - encompassing over 745,000 individuals - provides a quantified, source-cited document for the County Health Management Team. The conversation elevates from subjective feedback to a structural review of quantified infrastructure gaps. Critically, 42% of women aged 15-49 in Turkana report having experienced physical violence, compounding the barriers to safe reproductive health access. The map makes visible what is otherwise hidden behind county-level aggregates.
 
 ### 3.2 Tracking Whether Conditions Improve
 
-In Mandera (50% home births, PGS 91), a women's peer network is using the county brief as a fixed baseline. They track the PGS over time to support the establishment of emergency transport funds and decentralized maternity waiting homes. If the travel time component drops from 90+ minutes to 60 minutes after a new clinic opens, the score moves, demonstrating a measurable outcome from collaborative planning.
+In Mandera (50% home births, PGS 91), a women\'s peer network uses the county brief as a fixed baseline. They track the PGS over time to support the establishment of emergency transport funds and decentralized maternity waiting homes. If the travel time component drops from 90+ minutes to 60 minutes after a new clinic opens, the score moves, demonstrating a measurable outcome from collaborative planning.
 
 ### 3.3 Strengthening Budget Allocations
 
-In Tana River, a community health committee used the verified 72.5% poverty rate and 48% home birth rate from the platform to build an evidence-based case for removing financial barriers at local dispensaries during county budget hearings. The data was printed directly from the county brief, with source citations from KNBS and KDHS. The committee reported that having quantified, government-sourced data established a highly collaborative, data-driven tone for the hearing. Tana River's economic context underscores why this matters: the county has a Rural Access Index of just 11.35% and a banking access rate of only 8.6%. In late 2023, excessive rains destroyed over 9,568 acres of crops, causing maize and green gram yields to fall 50% and 71% below long-term averages. Food prices surged 36% above the long-term average. For families whose financial reserves have been depleted by climate shocks, even the indirect costs of facility delivery - transport, supplies, lost labor - can be insurmountable. The printed brief made this structural poverty visible to budget planners who previously saw only utilization statistics.
+In Tana River, a community health committee utilized the verified 72.5% poverty rate and 48% home birth rate to build an evidence-based case for removing financial barriers at local dispensaries during county budget hearings. Tana River\'s economic context underscores why this matters: the county has a Rural Access Index of just 11.35%. In late 2023, excessive rains destroyed over 9,568 acres of crops, causing maize yields to fall 50% below long-term averages. For families whose financial reserves have been depleted by climate shocks, the indirect costs of facility delivery are insurmountable. The printed brief made this structural poverty visible to budget planners.
 
 ### 3.4 Cross-County Peer Coordination
 
-Regional peer networks spanning multiple counties use the comparison tool to identify which of their members face the greatest infrastructure deficits. Rather than each jurisdiction lobbying in isolation, they present a unified, evidence-based case to the national Ministry of Health for targeted resource allocation to the cluster of counties with the highest PGS scores. The reset selection feature allows coordinators to rapidly cycle through neighboring county pairs during planning sessions, building a comprehensive regional picture in minutes rather than hours.
+Regional peer networks spanning multiple counties use the comparison tool to identify which members face the greatest infrastructure deficits. The reset selection feature allows coordinators to rapidly cycle through neighboring county pairs during planning sessions, building a comprehensive regional picture in minutes. They present a unified, evidence-based case to the Ministry of Health for targeted resource allocation.
 
 ---
 
-## 4. Alignment with Sub-theme 2: Digital Health and Evidence Generation Through CLM
+## 4. Alignment with Sub-theme 2: Digital Health and Evidence Generation
 
-| Sub-theme Focus | How the Platform Responds | Evidence from Community Use |
-|---|---|---|
-| **Impact and outcomes of CLM beyond processes** | PGS provides a measurable, trackable outcome that moves beyond activity-based reporting. Communities and CHMTs share a common metric for evaluating whether resource allocation is reducing inequity. | A 92-to-85 movement in Turkana would represent visible, quantifiable evidence that collaborative advocacy and targeted investment produced a measurable result. |
-| **Strategies for community data use and amplification into government systems** | Printable, source-cited briefs designed to function as formal planning documents within CHMT and county budget processes. Every data point traces to its original government or research source. | Tana River community health committee used the brief to shift the framing of a budget hearing from advocacy to collaborative planning, supported by verified KNBS and KDHS data. |
-| **Gaps identified through CLM and resulting advocacy actions** | The platform reveals specific, localized infrastructure gaps - not abstract scores - that become concrete planning priorities. | Elgeyo-Marakwet's single facility for 454,000 people is not just a statistic; it is a specific, actionable planning gap that CHMTs can address through targeted resource deployment. |
-| **Data justice frameworks and community data governance** | Open-source codebase, transparent formula, publicly verifiable sources. No data extraction, no surveillance, no vendor lock-in. Communities and governments share equal access to the evidence. | Any community can fork the repository. Any advocate can verify the PGS formula on paper. No single entity controls the data or its interpretation. |
-| **Third-party data access, privacy protection, informed consent** | Zero user tracking. No cookies. No analytics. No login. No personal data collected. The platform requests no permissions from the user's device. | A health promoter in Mandera can use the full capability of the platform without surrendering any personal information, device data, or location history. |
-| **Addressing digital exclusion as a barrier to access** | Offline-first Progressive Web Application. Functions without internet connectivity after initial load on any device with a modern browser. No installation, no app store, no mobile money for data credit. | A community volunteer in a ward with no electricity can load the map at a health center with WiFi, then carry the full functionality into the field for extended periods without connectivity. |
-| **Ethics of community-friendly AI-supported platforms** | The PGS formula is a transparent arithmetic calculation that any literate community member can verify with pen and paper. No machine learning, no opaque weighting, no black-box inference. | A CHMT officer can independently verify their county's PGS against the raw indicator data published in the county brief. Full auditability by design. |
-| **Innovations to sustain CLM** | Zero infrastructure cost (static site on GitHub Pages). Zero hosting bill. Zero maintenance overhead. No recurring licensing or subscription fees. | The platform will remain online and functional for as long as the open-source repository exists - a timeframe that exceeds any project-based funding cycle. |
-
----
-
-## 5. Data Justice by Design
-
-### Data Disaggregation as a Precondition for Justice
-
-Aggregate national averages are not neutral. By design, they render local crises invisible. The national C-section rate of 17% looks clinically appropriate, but masks a reality where 34% of births among wealthy urban women are surgical while women in Mandera and Turkana deliver at home without any skilled attendance. Data disaggregation is not a technical preference - it is a precondition for justice. Without county-level granularity, resource allocation defaults to the status quo, and the communities with the greatest need remain invisible to planners.
-
-### Transparent by Construction
-
-Every data point published on the platform carries a direct source URL. The PGS formula is documented in plain language on the methodology page, specifying exactly how each component is calculated and weighted. The entire codebase is open source. There is no proprietary algorithm, no intellectual property barrier, no black box. A community advocate with primary-level numeracy can verify their county's score using the raw data printed in the county brief.
-
-### Zero Surveillance
-
-The platform collects no data from its users. No cookies. No analytics. No tracking pixels. No login credentials. No personal information. A health promoter using this tool in a community with a history of surveillance or data extraction does not need to trust assurances about data safety - because there is no user data to collect, store, or expose.
-
-### Countering Data Marginalization
-
-Kenya's health system generates vast quantities of data, but that data flows upward to national-level decision-makers and rarely returns to communities in a form they can use. This platform reverses that flow. It takes the same government data that informs national policy and returns it to communities as a practical tool for local planning and advocacy. Data marginalization is not simply a lack of data - it is data existing but remaining inaccessible to those who need it most.
-
----
-
-## 6. Limitations: An Invitation for Community Action
-
-The current platform draws on 1,699 community-mapped health facilities from OpenStreetMap, representing approximately 10% of Kenya's estimated 17,400+ registered health facilities across public, private, and faith-based sectors. The PGS scores therefore represent a conservative baseline - actual infrastructure pressure in undocumented areas is almost certainly higher than what the current map depicts.
-
-**The digital invisibility problem.** Elgeyo-Marakwet County illustrates this gap sharply. According to the Kenya Master Health Facility List (KMHFR) and the county's health sector strategic plan, the county contains approximately 129 health facilities. Yet OpenStreetMap records fewer than 20, reflecting a profound community-mapping gap. This results in an artificial population pressure calculation of 1 mapped facility per 454,000 people on open platforms. A facility that is not geographically mapped with verified public coordinates remains digitally invisible for the purposes of spatial planning, emergency dispatch, and civil society auditing. This data invisibility has real consequences: the county reports a 30% stunting rate among children under five and a skilled birth attendance rate of only 56%.
-
-This discrepancy is not a flaw in the platform. It is a feature of the platform's design philosophy:
-
-- **Communities can add missing facilities** to OpenStreetMap using simple mobile tools, directly strengthening the evidence base that informs their own advocacy.
-- **Peer networks can crowdsource facility coordinates** across their catchment areas, building a more complete infrastructure picture than any centralized government survey has achieved.
-- **CHMTs can submit verified facility lists** for incorporation into the platform, transforming the map into a shared planning resource owned by all stakeholders.
-
-The platform is not a finished product delivered by external implementers to passive communities. It is a living baseline that communities themselves expand, correct, and own.
-
----
-
-## 7. Sustainability: Built to Outlive Funding Cycles
-
-Most digital health tools cease to function when their founding grant expires. The Kenya Health Equity Map was architected specifically to avoid this outcome:
-
-| Challenge | How the Platform Addresses It |
+| Sub-theme Focus | How the Platform Responds |
 |---|---|
-| **Ongoing hosting costs** | Zero. GitHub Pages serves the static site at no cost indefinitely. No cloud bills, no server rental. |
-| **Server maintenance and运维** | Zero. There is no server. The entire platform is pre-rendered HTML, CSS, and JavaScript. |
-| **Data updates and pipeline continuity** | The ETL pipeline is fully documented and reproducible without proprietary tools. A developer with basic Node.js skills can rebuild the complete data snapshot when new census or survey data is published. |
-| **Technical lock-in or vendor dependency** | The platform is an open-source repository under a permissive license. Any organization can fork, adapt, or self-host their own instance without restriction. |
-| **Training and capacity building** | The interface is a map with familiar touch interactions. A community health worker comfortable with basic smartphone navigation can use the platform immediately, with zero training. |
-
-The platform requires no ongoing funding to remain operational. It will continue to function for as long as communities find it useful - not for as long as a funding agreement remains in effect.
+| **Impact and outcomes of CLM beyond processes** | PGS provides a measurable, trackable outcome metric for Global Fund reporting, moving beyond activity-based reporting. |
+| **Strategies for community data use into government systems** | Printable, source-cited briefs function as formal planning documents within CHMT and county budget processes. |
+| **Gaps identified through CLM and resulting advocacy** | Exposes specific, localized infrastructure gaps - like Elgeyo-Marakwet\'s 1 mapped facility per 454,000 people - as actionable planning priorities. |
+| **Data justice and community data governance** | Open-source codebase, transparent formula, publicly verifiable sources. Communities and governments share equal access to the evidence. |
+| **Third-party data access and privacy protection** | Zero user tracking. No cookies. No analytics. No login. The platform requests no permissions from the user\'s device. |
+| **Addressing digital exclusion** | Offline-first Progressive Web Application. Functions without internet connectivity after initial load on any basic smartphone. |
+| **Ethics of community-friendly platforms** | The PGS is a transparent arithmetic calculation verifiable by pen and paper. No machine learning, no opaque weighting, no black-box inference. |
+| **Innovations to sustain CLM** | Zero infrastructure cost (static site on GitHub Pages). Zero maintenance overhead. Sustains independently of any funding cycle. |
 
 ---
 
-## 8. Strategic Alignment with Amref Health Africa
+## 5. Strategic Alignment with Amref Health Africa
 
-This platform was designed not to duplicate Amref's existing digital health investments, but to strengthen them by adding a spatial evidence layer that none of the current tools provide.
+This platform strengthens Amref\'s existing digital health investments by adding a spatial evidence layer that complements current tools:
 
-| Amref Initiative | How This Platform Adds Value |
-|---|---|
-| **iMonitor CLM App** (Turkana, Global Fund TB) | iMonitor enables communities to report service quality. This map provides the spatial infrastructure context - communities can document WHY services are failing (no clinic within 90 minutes) before reporting HOW the clinic performed. Together they form a complete CLM evidence loop. |
-| **eCHIS for 107,000+ Community Health Promoters** | eCHIS tracks household-level service delivery. This platform gives CHPs an accessible equity score and a printable evidence brief they can carry into CHMT planning meetings. eCHIS answers "what did we deliver?" This map answers "where is the infrastructure gap?" |
-| **THRIVE Project** (Nakuru, Nyeri, Moderna Foundation) | THRIVE digital dashboards integrate eCHIS and KHIS data for PCN-level planning. The PGS and comparison tools can overlay infrastructure equity data onto those same dashboards as an additional planning layer. |
-| **GenAI eCHIS Pilot** (Machakos, Gates Foundation) | The transparent, paper-verifiable PGS formula demonstrates how CLM can be ethically augmented with technology, directly addressing the "ethics of community-friendly AI platforms" criterion without introducing opaque decision-making. |
-| **CHU4UHC Partner Platform** | As an open-source, zero-cost digital public good, this platform can be adopted by any of the 26+ CHU4UHC partner organizations without procurement processes or licensing negotiations. |
-| **CSS Coordination** (Catherine Kamau, CSS Coordinator) | The PGS provides a measurable CLM outcome indicator that can be incorporated into Global Fund CSS reporting, moving beyond process metrics to demonstrate quantifiable changes in infrastructure equity over time. |
+- **iMonitor App Integration:** iMonitor enables communities to report service quality. This map provides the spatial infrastructure context. Communities document the infrastructure gap, then use iMonitor to report service quality, forming a complete CLM evidence loop.
+- **eCHIS & Community Health Promoters:** eCHIS answers "what did we deliver?" This map answers "where is the infrastructure gap?" It equips Kenya\'s 107,000+ CHPs with evidence to carry into CHMT meetings.
+- **THRIVE Project:** The comparison tools can overlay infrastructure equity data onto THRIVE digital dashboards for precise PCN-level planning.
+- **GenAI eCHIS Pilot:** The verifiable PGS formula demonstrates how CLM can be ethically augmented with technology without introducing opaque algorithms.
+- **Global Fund CSS Coordination:** Provides a measurable CLM outcome indicator for Global Fund reporting, tracking accessibility gaps and resource allocation over time.
+- **CHU4UHC Partner Platform:** As an open-source digital public good, it is available to all 26+ partner organizations without procurement or licensing barriers.
 
-**Funding alignment.** The platform's zero-infrastructure cost model means it can be sustained within existing program budgets without requiring dedicated funding lines. It directly complements Global Fund-supported CLM work (iMonitor), Gates Foundation digital innovation investments (eCHIS GenAI), and Moderna Foundation PHC strengthening (THRIVE). The offline-first architecture specifically serves Amref's priority ASAL counties, where digital exclusion is highest and infrastructure gaps are most acute.
+---
 
-**Next step.** The platform is ready for pilot integration with one or more Amref county programs. The codebase is open. The cost of deployment is zero. The evidence base is live and operational today.
+## 6. Data Justice by Design
+
+Aggregate national averages render local crises invisible. Data disaggregation is a precondition for justice. Without county-level granularity, resource allocation defaults to the status quo.
+
+The platform is transparent by construction. Every data point carries a direct source URL. There is no proprietary algorithm. It also collects zero user data. A health promoter operating in a marginalized area does not need to trust assurances about data safety because there is no data to collect.
+
+---
+
+## 7. Limitations: An Invitation for Community Action
+
+The platform draws on 1,699 community-mapped health facilities from OpenStreetMap, representing approximately 10% of Kenya\'s estimated 17,400+ registered facilities. Elgeyo-Marakwet County illustrates this gap: the official Master Facility List records 129 facilities, yet OpenStreetMap reflects fewer than 20. This renders the majority digitally invisible for spatial planning.
+
+This is not a flaw, but a feature of the platform\'s design philosophy: communities can use the built-in reporting flow to crowdsource missing facility coordinates into OpenStreetMap, directly strengthening the evidence base that informs their own advocacy.
+
+---
+
+## 8. Sustainability: Built to Outlive Funding Cycles
+
+The Kenya Health Equity Map requires zero ongoing hosting costs. GitHub Pages serves the static site indefinitely. There is no server maintenance. The platform is an open-source repository that any organization can fork or adapt. It functions independently of donor funding cycles, directly addressing the need for sustainable CLM tools.
 
 ---
 
 ## 9. Exhibition at the Forum
 
-At the marketplace exhibition in Naivasha, we will demonstrate:
+At the marketplace exhibition in Naivasha, the platform demonstration covers:
 
-1. **Live map interaction:** Visitors tap their county of origin on a tablet and see its PGS, component breakdown, and what the score means for collaborative resource planning.
-
-2. **The offline test:** We load the platform, switch to airplane mode, and show that every feature still works.
-
-3. **Professional Brief printing:** We generate a high-tier county brief - formatted cleanly in a brown, orange, and white theme with consistent partner logos - and walk through how each data point supports CHMT meetings.
-
-4. **Comparison walkthrough:** We demonstrate the rapid comparison of multiple neighboring counties using the reset selection tool, showing how insights translate into targeted regional planning.
+1. **Live map interaction:** Visitors tap their county of origin on a tablet and see its PGS and component breakdown for collaborative resource planning.
+2. **The offline test:** Loading the platform, switching to airplane mode, and demonstrating full functionality.
+3. **Professional Brief printing:** Generating high-tier county briefs formatted cleanly in a professional brown, orange, and white theme with consistent partner logos, highlighting how each data point supports CHMT meetings.
+4. **Comparison walkthrough:** Demonstrating the rapid comparison of neighboring counties using the reset selection tool, translating insights into targeted regional planning.
 
 ---
 
 ## 10. Conclusion
 
-The Kenya Health Equity Map demonstrates that digital health tools can serve Community-Led Monitoring not as extractive surveillance infrastructure, but as genuinely community-owned evidence platforms. By addressing digital exclusion from the ground up - through offline-first architecture, zero-cost access, and radical transparency - it puts the power of spatial analysis into the hands of the communities and peer-led networks on the frontlines of Kenya's health equity work.
-
-The platform is live today at **https://geraldkombo.github.io/kenya-health-equity-map/** and accessible on any device with a browser.
+The Kenya Health Equity Map demonstrates that digital health tools serve Community-Led Monitoring best when built as genuinely community-owned evidence platforms. By addressing digital exclusion through offline-first architecture, zero-cost access, and plain-language transparency, it puts spatial analysis into the hands of the peer-led networks on the frontlines of health equity work.
 
 ---
 
