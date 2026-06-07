@@ -1,6 +1,6 @@
 ﻿# The Kenya Health Equity Map: Community Evidence for Health Justice
 
-*Gerald Kombo - Independent Researcher and Developer, Kenya Health Equity Map (2026)*
+*Gerald Kombo - Independent Researcher and Developer, Kenya Health Equity Map*
 
 ## Sub-theme 2: Digital Health and Evidence Generation Through Community-Led Monitoring
 
