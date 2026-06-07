@@ -1,6 +1,6 @@
 ﻿# From Data to Demand: A Community-Owned Platform for Health Equity Monitoring Across Kenya's 47 Counties
 
-*Gerald Kombo - Independent Researcher and Developer, Kenya Health Equity Map*
+*Gerald Kombo - Independent Researcher and Developer, Kenya Health Equity Map (2026)*
 
 ## Sub-theme 2: Digital Health and Evidence Generation Through Community-Led Monitoring
 
