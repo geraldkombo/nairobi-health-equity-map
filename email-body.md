@@ -1,6 +1,6 @@
 **To:** cssabstracts@amref.org
 **CC:** Gregory.Onyango@amref.org, James.Oching@amref.org
-**Subject:** Revised Abstract Submission - From Data to Demand: A Community-Owned Platform for Health Equity Monitoring Across Kenya's 47 Counties - Gerald Kombo, Independent Researcher and Developer
+**Subject:** REVISED SUBMISSION - From Data to Demand: A Community-Owned Platform for Health Equity Monitoring Across Kenya's 47 Counties - Gerald Kombo, Independent Researcher and Developer
 
 ---
 
