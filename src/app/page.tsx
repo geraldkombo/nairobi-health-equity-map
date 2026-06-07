@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import CountyDetails from "@/components/CountyDetails";
 import HowToUse from "@/components/HowToUse";
@@ -25,6 +25,8 @@ export default function HomePage() {
   const [selectedCountyCode, setSelectedCountyCode] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [offlineBanner, setOfflineBanner] = useState(false);
+  const clmRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     async function load() {
@@ -48,6 +50,7 @@ export default function HomePage() {
       }
     }
     load();
+    if ('serviceWorker' in navigator) setOfflineBanner(true);
   }, []);
 
   const selectedCounty = useMemo(() => {
@@ -101,10 +104,19 @@ export default function HomePage() {
 
       <div className="mb-3 sm:mb-6">
         <h1 className="text-lg font-bold tracking-tight text-stone-800 sm:text-xl">Kenya Health Equity Map</h1>
-        <p className="mt-0.5 text-xs text-stone-500 sm:text-sm">
-          Explore health access gaps across Kenya&apos;s 47 counties. Tap a county for details.
+        <p className="mt-0.5 text-xs font-medium text-stone-700 sm:text-sm">
+          See which counties are most underserved — and get the evidence to demand change.
+        </p>
+        <p className="mt-0.5 text-[11px] italic text-stone-500 sm:text-xs">
+          Community-led monitoring starts with data communities can trust and use.
         </p>
       </div>
+
+      {offlineBanner && (
+        <div className="mb-3 rounded-lg border-l-4 border-emerald-600 bg-emerald-50 px-4 py-3 text-xs text-emerald-800 shadow-sm sm:mb-4 sm:text-sm">
+          <strong>Works offline:</strong> Save this page to your phone&apos;s home screen to use the map without internet.
+        </div>
+      )}
 
       <div className="mb-3 sm:mb-4">
         <HowToUse />
@@ -194,7 +206,28 @@ export default function HomePage() {
         </div>
       )}
 
-      <div className="mt-8 border-t border-stone-200 pt-6">
+      <details ref={clmRef} className="mt-6 rounded-xl border border-stone-200 bg-white transition-all hover:shadow-sm">
+        <summary className="flex cursor-pointer items-center justify-between px-5 py-3 text-sm font-semibold text-stone-800 select-none">
+          How communities are using this map
+          <span className="text-stone-400 transition-transform duration-200">▾</span>
+        </summary>
+        <div className="border-t border-stone-100 px-5 py-4 text-sm leading-6 text-stone-700">
+          <div className="flex gap-4">
+            <span className="mt-0.5 text-lg">📊</span>
+            <p><strong>Turkana:</strong> A local CBO uses the map to show the county government exactly where facilities are missing, validating their lived experience during budget hearings.</p>
+          </div>
+          <div className="mt-4 flex gap-4">
+            <span className="mt-0.5 text-lg">🤱</span>
+            <p><strong>Mandera:</strong> A peer network tracks the 50% home birth rate against clinic access barriers to advocate for emergency transport infrastructure.</p>
+          </div>
+          <div className="mt-4 flex gap-4">
+            <span className="mt-0.5 text-lg">💰</span>
+            <p><strong>Tana River:</strong> A women&apos;s advocacy group uses the 72.5% poverty baseline to argue against out-of-pocket maternal health fees at local dispensaries.</p>
+          </div>
+        </div>
+      </details>
+
+      <div className="mt-6 border-t border-stone-200 pt-6">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/brief?county=1"

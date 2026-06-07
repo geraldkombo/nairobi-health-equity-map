@@ -185,6 +185,17 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
           </p>
         </div>
       )}
+      {score && (
+        <div className="mt-5 rounded-lg bg-amber-50 border border-amber-200 p-4">
+          <h4 className="text-xs font-semibold text-amber-900">What you can do with this data:</h4>
+          <ul className="mt-2 list-disc space-y-1.5 pl-4 text-[11px] text-amber-800">
+            <li>Use this score to show your CHMT that {county.name} needs more health resources.</li>
+            <li>Print the county brief and submit it as evidence at budget hearings.</li>
+            <li>Compare {county.name} with a neighboring county to highlight inequity.</li>
+          </ul>
+        </div>
+      )}
+
       {indicator && (
         <div className="mt-3 flex gap-2">
           <Link

@@ -73,11 +73,11 @@ export default function CountyRankings({ counties, indicators, onCountyClick }: 
 
   return (
     <div className="rounded-xl border border-stone-200 bg-white p-5">
-      <h3 className="text-sm font-semibold text-stone-800">County rankings</h3>
-      <p className="mt-1 text-[10px] text-stone-400">Highest and lowest Priority Gap Scores</p>
+      <h3 className="text-sm font-semibold text-stone-800">Urgent need for advocacy</h3>
+      <p className="mt-1 text-[10px] text-stone-400">Counties with the most urgent need for community action</p>
 
       <div className="mt-3">
-        <h4 className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">Highest PGS</h4>
+        <h4 className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">Highest need</h4>
         <div className="mt-1 space-y-0.5">
           {top5.map((c, i) => (
             <RankedCounty
@@ -93,7 +93,7 @@ export default function CountyRankings({ counties, indicators, onCountyClick }: 
       </div>
 
       <div className="mt-4">
-        <h4 className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">Lowest PGS</h4>
+        <h4 className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">Better access</h4>
         <div className="mt-1 space-y-0.5">
           {bottom5.map((c, i) => (
             <RankedCounty

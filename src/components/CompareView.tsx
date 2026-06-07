@@ -29,8 +29,18 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
     if (Math.abs(diff) < 1) return "Both counties face a similar level of need.";
     const higher = diff > 0 ? countyA.name : countyB.name;
     const lower = diff > 0 ? countyB.name : countyA.name;
-    return `${higher} has more urgent need for health resources than ${lower}.`;
+    return null;
   }, [stats, countyA.name, countyB.name]);
+
+  const equityNote = useMemo(() => {
+    if (!stats.sA || !stats.sB) return null;
+    const diff = stats.sA.pgs - stats.sB.pgs;
+    if (Math.abs(diff) < 1) return null;
+    const h = diff > 0 ? countyA : countyB;
+    const l = diff > 0 ? countyB : countyA;
+    const d = Math.abs(diff);
+    return { higher: h, lower: l, diff: d };
+  }, [stats, countyA, countyB]);
 
   return (
     <div>
@@ -80,6 +90,12 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
       {narrative && (
         <div className="mt-4 rounded-xl border border-stone-200 bg-stone-50 p-4 text-sm leading-6 text-stone-700" role="note">
           <strong>What this means:</strong> {narrative}
+        </div>
+      )}
+      {equityNote && (
+        <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900 shadow-sm" role="note">
+          <p className="font-semibold">This {equityNote.diff}-point gap means communities in <strong>{equityNote.higher.name}</strong> face significantly more barriers to care than those in <strong>{equityNote.lower.name}</strong>.</p>
+          <p className="mt-2 font-medium">Use this comparison in your advocacy to demand equitable resource distribution from the national and county governments.</p>
         </div>
       )}
     </div>

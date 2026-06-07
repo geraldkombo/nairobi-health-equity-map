@@ -223,6 +223,24 @@ export default function MethodPage() {
           </ul>
         </section>
 
+        {/* ── Community Action ── */}
+        <section className="rounded-xl border border-amber-200 bg-amber-50 p-6">
+          <h2 className="text-base font-semibold text-amber-900">Every gap is an invitation to act</h2>
+          <p className="mt-3 text-sm leading-6 text-amber-800">
+            This map currently shows 1,699 community-mapped facilities. Every blank space or missing
+            clinic is an invitation for communities to step in. If your local clinic isn&apos;t on this
+            map, you have the power to add it and make your community visible.
+          </p>
+          <a
+            href="https://www.openstreetmap.org/fixthemap"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center rounded-lg bg-amber-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-800 transition-colors"
+          >
+            Report a missing facility
+          </a>
+        </section>
+
         <SourcesPanel />
 
         <div className="text-center text-xs text-stone-400">

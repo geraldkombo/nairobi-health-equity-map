@@ -58,12 +58,15 @@ Communities can use this data to demand decentralized maternity waiting homes, e
 ### 3.3 Generating Printable Evidence for Government Meetings
 
 The platform generates a one-page county brief for any of the 47 counties. Each brief includes:
-- The county's PGS score and color-coded badge
-- Component breakdown (travel time, poverty, population pressure, facility density)
-- Narrative lines explaining how the county compares nationally
-- Source citations for every data point with verified links
+- The county's equity score and component breakdown (travel time, poverty, population pressure).
+- Narrative lines explaining how the county compares nationally.
+- Source citations for every data point with verified links.
 
-This brief can be printed and carried into meetings with County Health Management Teams (CHMTs), sub-county administrators, and budget hearings.
+**How communities can use this brief:**
+- Present it at CHMT quarterly meetings to demand targeted resources.
+- Submit it to the county health department as formal evidence during budget advocacy hearings.
+- Use it as a baseline to track whether access conditions improve year over year.
+- Share it with peer networks to coordinate advocacy across sub-counties.
 
 ### 3.4 Overcoming Digital Exclusion
 
@@ -83,19 +86,16 @@ To ensure this technology doesn't exclude rural communities, the map is built to
 
 ---
 
-## 5. Limitations and the Role of the Community
+## 5. Limitations: An Invitation for Community Action
 
-While the map is a powerful tool for data justice, it currently relies on a highly validated set of 1,699 community-mapped facilities from OpenStreetMap. This represents approximately **10% of Kenya's estimated 17,400+ registered health facilities** across public, private, and faith-based sectors.
+While the map is a powerful tool for data justice, it currently relies on a highly validated set of 1,699 community-mapped facilities from OpenStreetMap. This represents approximately **10% of Kenya's estimated 17,400+ registered health facilities** across public, private, and faith-based sectors. Because it maps a conservative baseline of infrastructure, the localized accessibility scores represent a minimum estimate of healthcare availability.
 
-Because it maps a conservative baseline of infrastructure, the localized accessibility scores represent a minimum estimate of healthcare availability. However, this limitation presents a direct opportunity for **Community-Led Monitoring**:
+However, this limitation presents a direct opportunity for **Community-Led Monitoring**. Every gap in this data is an invitation for communities to contribute their knowledge. Communities can use this map as a starting baseline to:
+- Identify unmapped local clinics and health posts not yet in OpenStreetMap.
+- Crowdsource new facility coordinates using simple mobile tools and amplify their ground-level knowledge into the formal digital health system.
+- Report inaccuracies in travel time estimates based on lived experience.
 
-Communities can use this map as a starting baseline to:
-- Identify unmapped local clinics and health posts not yet in OpenStreetMap
-- Crowdsource new facility coordinates using simple mobile tools
-- Report inaccuracies in travel time estimates based on local knowledge
-- Amplify their ground-level knowledge into the formal digital health system
-
-This transforms the limitation into a feature: the map is not a finished product but a **living baseline** that communities themselves can improve and expand, directly combating data marginalization.
+This transforms a limitation into a feature: the map is not a finished, top-down product, but a **living baseline** that communities themselves own, improve, and expand, directly combating data marginalization.
 
 ---
 

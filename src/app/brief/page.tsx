@@ -183,6 +183,17 @@ function PrintableBrief({
         </p>
       </div>
 
+      {/* ── CLM Action ── */}
+      <div className="break-inside-avoid rounded-lg border border-amber-200 bg-amber-50 p-5 print:border-black print:bg-transparent">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-amber-900">How communities can use this brief</h2>
+        <ul className="mt-3 list-none space-y-2 text-sm leading-6 text-amber-800">
+          <li className="flex gap-2"><span className="text-amber-600 font-bold">✓</span> <strong>Quarterly meetings:</strong> Present to CHMTs to demand targeted resources.</li>
+          <li className="flex gap-2"><span className="text-amber-600 font-bold">✓</span> <strong>Budget hearings:</strong> Submit to the county health department as formal evidence.</li>
+          <li className="flex gap-2"><span className="text-amber-600 font-bold">✓</span> <strong>Accountability:</strong> Use as a baseline to track whether access improves year over year.</li>
+          <li className="flex gap-2"><span className="text-amber-600 font-bold">✓</span> <strong>Mobilization:</strong> Share with peer networks to coordinate advocacy across sub-counties.</li>
+        </ul>
+      </div>
+
       {/* ── Limitations ── */}
       <div className="break-inside-avoid rounded-lg border border-stone-200 p-5 print:border-black">
         <h2 className="text-xs font-bold uppercase tracking-widest text-stone-500">Limitations</h2>
