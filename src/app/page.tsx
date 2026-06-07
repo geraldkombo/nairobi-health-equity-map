@@ -13,6 +13,7 @@ import { normalizeCounty } from "@/lib/normalize";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 import { fetchCounties, fetchIndicators, dataUrl } from "@/lib/data-fetch";
 import { matchCountyName } from "@/lib/county-names";
+import { siteConfig } from "@/lib/site";
 import MapErrorBoundary from "@/components/MapErrorBoundary";
 import SearchBar from "@/components/SearchBar";
 
@@ -99,7 +100,7 @@ export default function HomePage() {
       )}
 
       <div className="mb-3 sm:mb-6">
-        <h1 className="text-lg font-bold tracking-tight text-stone-800 sm:text-xl">Kenya Health Equity Map</h1>
+        <h1 className="text-lg font-bold tracking-tight text-stone-800 sm:text-xl">{siteConfig.name}</h1>
         <p className="mt-0.5 text-xs font-medium text-stone-700 sm:text-sm">
           See which counties are most underserved - and get the evidence to demand change.
         </p>

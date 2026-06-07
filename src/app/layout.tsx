@@ -1,31 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import { siteConfig } from "@/lib/site";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://geraldkombo.github.io/kenya-health-equity-map"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Kenya Health Equity Map (2026)",
-    template: "%s | Kenya Health Equity Map (2026)",
+    default: siteConfig.nameWithYear,
+    template: `%s | ${siteConfig.nameWithYear}`,
   },
-  description:
-    "A map based civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.",
+  description: siteConfig.description,
   openGraph: {
-    title: "Kenya Health Equity Map (2026)",
-    description:
-      "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
-    url: "https://geraldkombo.github.io/kenya-health-equity-map",
+    title: siteConfig.nameWithYear,
+    description: siteConfig.ogDescription,
+    url: siteConfig.url,
     locale: "en_KE",
-    siteName: "Kenya Health Equity Map (2026)",
+    siteName: siteConfig.nameWithYear,
     type: "website",
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kenya Health Equity Map (2026)",
-    description: "Visualise health-access inequities across Kenya's 47 counties.",
+    title: siteConfig.nameWithYear,
+    description: siteConfig.twitterDescription,
     images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
