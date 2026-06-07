@@ -25,8 +25,6 @@ export default function HomePage() {
   const [selectedCountyCode, setSelectedCountyCode] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [offlineBanner, setOfflineBanner] = useState(false);
-
   useEffect(() => {
     async function load() {
       try {
@@ -49,7 +47,6 @@ export default function HomePage() {
       }
     }
     load();
-    if ('serviceWorker' in navigator) setOfflineBanner(true);
   }, []);
 
   const selectedCounty = useMemo(() => {
@@ -110,12 +107,6 @@ export default function HomePage() {
           Community-led monitoring starts with data communities can trust and use.
         </p>
       </div>
-
-      {offlineBanner && (
-        <div className="mb-3 rounded-lg border-l-4 border-emerald-600 bg-emerald-50 px-4 py-3 text-xs text-emerald-800 shadow-sm sm:mb-4 sm:text-sm">
-          <strong>Works offline:</strong> Save this page to your phone&apos;s home screen to use the map without internet.
-        </div>
-      )}
 
       <div className="mb-3 sm:mb-4">
         <HowToUse />
