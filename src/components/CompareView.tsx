@@ -84,7 +84,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
                 {s && (
                   <div className={`rounded-lg px-3 py-1.5 text-center font-bold ${getPGSBadgeClass(s.pgs)} print:px-1.5 print:py-0.5`}>
                     <span className="text-xl print:text-sm">{s.pgs}</span>
-                    <span className="ml-1 text-xs font-normal opacity-80 print:hidden">PGS</span>
+                    <span className="ml-1 text-xs font-normal opacity-80 print:hidden">Gap Score</span>
                   </div>
                 )}
               </div>

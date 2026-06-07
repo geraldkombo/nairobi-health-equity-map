@@ -224,7 +224,7 @@ export default function MapView({
           </div>
           {pgsLabel && (
             <p className="mt-1 text-sm text-stone-500">
-              PGS: <span className="font-medium text-stone-700">{pgsLabel}</span>
+              Gap Score: <span className="font-medium text-stone-700">{pgsLabel}</span>
             </p>
           )}
         </div>

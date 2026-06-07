@@ -41,7 +41,7 @@ function PrintableBrief({
               {score.pgs}
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wide text-stone-500">
-              PGS / 100
+              Gap Score / 100
             </div>
           </div>
         </div>

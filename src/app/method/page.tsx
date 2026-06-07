@@ -12,7 +12,7 @@ export default function MethodPage() {
       <div className="mt-8 space-y-8">
         {/* ── PGS ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-bold text-amber-900">The Priority Gravity Score (PGS)</h2>
+          <h2 className="text-base font-bold text-amber-900">The Priority Gap Score (PGS)</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
             Instead of relying on complicated academic formulas, this map calculates a straightforward
             health equity score ranging from <strong>0 to 100</strong> for each county. A higher score
@@ -81,7 +81,7 @@ export default function MethodPage() {
 
         {/* ── Why these three things ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-bold text-amber-900">Why these three things?</h2>
+          <h2 className="text-base font-bold text-amber-900">Why these three measures</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
             Researchers who study health access have used the same three measures for decades.
             Travel time and number of facilities tell you about <strong>physical access</strong>.

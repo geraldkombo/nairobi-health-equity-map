@@ -161,7 +161,7 @@ export default function HomePage() {
             <span className="flex items-center gap-1">
               <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#8C2D04] sm:h-3 sm:w-3"></span> Critical (70+)
             </span>
-            <span className="ml-auto text-stone-400">PGS</span>
+            <span className="ml-auto text-stone-400">Priority Gap Score</span>
           </div>
         </div>
 

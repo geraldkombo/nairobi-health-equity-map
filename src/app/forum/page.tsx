@@ -44,7 +44,7 @@ export default function ForumLanding() {
             <div className="flex items-center justify-between">
               <span className="font-bold">Turkana County</span>
               <span className="rounded border border-white/40 px-2 py-0.5 text-xs opacity-80">
-                PGS: 92
+                Score: 92
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
@@ -59,7 +59,7 @@ export default function ForumLanding() {
             <div className="flex items-center justify-between">
               <span className="font-bold">Mandera County</span>
               <span className="rounded border border-white/40 px-2 py-0.5 text-xs opacity-80">
-                PGS: 91
+                Score: 91
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
@@ -74,7 +74,7 @@ export default function ForumLanding() {
             <div className="flex items-center justify-between">
               <span className="font-bold">Tana River County</span>
               <span className="rounded border border-white/40 px-2 py-0.5 text-xs opacity-80">
-                PGS: 89
+                Score: 89
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">

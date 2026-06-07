@@ -127,7 +127,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
         {score && (
           <div className={`rounded-lg px-3 py-1.5 text-right ${pgsClass}`}>
             <div className="text-xl font-bold tracking-tight">{score.pgs}</div>
-            <div className="text-[10px] font-medium opacity-80">PGS</div>
+            <div className="text-[10px] font-medium opacity-80">Gap Score</div>
           </div>
         )}
       </div>
