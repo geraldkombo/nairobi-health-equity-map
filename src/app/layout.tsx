@@ -7,24 +7,24 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata: Metadata = {
   metadataBase: new URL("https://geraldkombo.github.io/kenya-health-equity-map"),
   title: {
-    default: "Kenya Health Equity Map",
-    template: "%s | Kenya Health Equity Map",
+    default: "Kenya Health Equity Map (2026)",
+    template: "%s | Kenya Health Equity Map (2026)",
   },
   description:
     "A map based civic intelligence platform visualising health access inequities across Kenya's 47 counties using transparent open data.",
   openGraph: {
-    title: "Kenya Health Equity Map",
+    title: "Kenya Health Equity Map (2026)",
     description:
       "Visualise health-access inequities across Kenya's 47 counties using transparent open data.",
     url: "https://geraldkombo.github.io/kenya-health-equity-map",
     locale: "en_KE",
-    siteName: "Kenya Health Equity Map",
+    siteName: "Kenya Health Equity Map (2026)",
     type: "website",
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kenya Health Equity Map",
+    title: "Kenya Health Equity Map (2026)",
     description: "Visualise health-access inequities across Kenya's 47 counties.",
     images: ["/og-image.svg"],
   },
