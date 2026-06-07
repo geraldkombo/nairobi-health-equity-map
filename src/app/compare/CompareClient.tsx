@@ -77,16 +77,34 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
 
   return (
     <>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-stone-500">Select two counties to compare their equity indicators side by side.</p>
-        {selA && selB && (
-          <button
-            onClick={handlePrint}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#EA580C] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#C04A0A] print:hidden"
-          >
-            Print advocacy report
-          </button>
-        )}
+      <div className="mb-6 pb-4 border-b border-gray-200 print:hidden flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-amber-900">Compare Counties</h1>
+          <p className="text-gray-600 mt-1 text-sm">
+            Select two counties to evaluate their infrastructure disparities side-by-side.
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {(countyA || countyB) && (
+            <button
+              onClick={() => { setCountyA(""); setCountyB(""); }}
+              className="text-xs flex items-center gap-1.5 bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 font-bold px-3 py-1.5 rounded-md transition-colors shadow-sm"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+              Reset Selection
+            </button>
+          )}
+          {selA && selB && (
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-2 rounded-lg bg-[#EA580C] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#C04A0A] print:hidden"
+            >
+              Print advocacy report
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Selectors */}
@@ -95,17 +113,6 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           <h2 className="text-sm font-bold uppercase tracking-wide text-stone-700">
             Configure Comparison
           </h2>
-          {(countyA || countyB) && (
-            <button
-              onClick={() => { setCountyA(""); setCountyB(""); }}
-              className="inline-flex items-center gap-1.5 rounded-md border border-stone-300 bg-white px-3 py-1.5 text-xs font-bold text-stone-700 shadow-sm transition-colors hover:bg-stone-100"
-            >
-              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              Reset Selection
-            </button>
-          )}
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>

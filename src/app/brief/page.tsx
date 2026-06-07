@@ -95,39 +95,34 @@ function PrintableBrief({
         </div>
       </section>
 
-      {/* Non-Commanding Community Options */}
-      <section className="break-inside-avoid">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-orange-700">
-          How Communities Can Leverage This Data
+      {/* Active Advocacy Focus Section */}
+      <section className="mb-8">
+        <h2 className="text-sm font-bold text-orange-700 uppercase tracking-widest mb-4">
+          Community Advocacy Focus Areas
         </h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
-            <h3 className="text-sm font-bold text-amber-900">CHMT Engagement Options</h3>
-            <p className="mt-1 text-xs leading-5 text-stone-600">
-              Advocates can choose to share these specific facility gap metrics during consultative
-              dialogues with County Health Management Teams (CHMTs) to help visually highlight
-              underserved regions[cite: 4].
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
+            <h3 className="font-bold text-amber-900 text-sm">CHMT Consultations</h3>
+            <p className="text-xs text-gray-700 mt-1">
+              Highlights specific facility gap metrics to actively support resource allocation demands for underserved wards[cite: 4].
             </p>
           </div>
-          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
-            <h3 className="text-sm font-bold text-amber-900">Supporting Budget Conversations</h3>
-            <p className="mt-1 text-xs leading-5 text-stone-600">
-              Provides an open, quantifiable resource that community members can carry into local
-              health budget hearings to support conversations around               infrastructure funding[cite: 4].
+          <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
+            <h3 className="font-bold text-amber-900 text-sm">Health Budget Hearings</h3>
+            <p className="text-xs text-gray-700 mt-1">
+              Supplies quantifiable infrastructure data to strengthen community requests for localized facility funding[cite: 4].
             </p>
           </div>
-          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
-            <h3 className="text-sm font-bold text-amber-900">Tracking Local Progress</h3>
-            <p className="mt-1 text-xs leading-5 text-stone-600">
-              Serves as a community-owned baseline to quietly track whether physical travel times and
-              clinic access parameters improve over the               coming years[cite: 4].
+          <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
+            <h3 className="font-bold text-amber-900 text-sm">Access Accountability</h3>
+            <p className="text-xs text-gray-700 mt-1">
+              Establishes a transparent baseline for tracking whether physical travel times and clinic capacities improve year over year[cite: 4].
             </p>
           </div>
-          <div className="rounded-r-sm border-l-4 border-orange-600 bg-stone-50 p-4 shadow-sm">
-            <h3 className="text-sm font-bold text-amber-900">Peer Network Collaboration</h3>
-            <p className="mt-1 text-xs leading-5 text-stone-600">
-              Can be shared freely among regional peer-led networks to coordinate joint, collaborative
-              efforts around maternal and               primary healthcare support[cite: 4].
+          <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
+            <h3 className="font-bold text-amber-900 text-sm">Peer Network Coordination</h3>
+            <p className="text-xs text-gray-700 mt-1">
+              Facilitates evidence-sharing among regional groups to align joint advocacy for maternal and primary care improvements[cite: 4].
             </p>
           </div>
         </div>
