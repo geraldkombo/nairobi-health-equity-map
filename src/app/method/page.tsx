@@ -14,61 +14,68 @@ export default function MethodPage() {
         <section className="rounded-xl border border-stone-200 bg-white p-6">
           <h2 className="text-base font-bold text-amber-900">The Priority Gap Score (PGS)</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
-            Instead of relying on complicated academic formulas, this map calculates a straightforward
-            health equity score ranging from <strong>0 to 100</strong> for each county. A higher score
-            signifies a greater level of health inequity and an urgent need for community intervention.
+            The Priority Gap Score (PGS) is a composite index ranging from <strong>0 to 100</strong>
+            that quantifies the degree of health inequity within each county. Higher values indicate
+            more severe gaps in healthcare access and greater urgency for resource allocation and
+            community intervention. The methodology is published in full below and can be
+            independently verified by any user.
           </p>
           <p className="mt-3 text-sm leading-6 text-stone-700">
-            For example: <strong>Turkana</strong> scores 92 - very hard to access care.
-            <strong> Nairobi</strong> scores 40 - much easier with 618 facilities in one city.
+            <strong>Turkana</strong> (PGS 92) and <strong>Mandera</strong> (PGS 91) represent the
+            most underserved counties, while <strong>Nairobi</strong> (PGS 40) benefits from a
+            higher concentration of health infrastructure and lower poverty rates.
           </p>
         </section>
 
         {/* ── Three Components ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-bold text-amber-900">Three things that make the score</h2>
+          <h2 className="text-base font-bold text-amber-900">Score Components</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg bg-stone-50 p-5">
               <h3 className="font-bold text-orange-700">1. Vulnerability</h3>
               <p className="mt-2 text-xs leading-5 text-stone-600">
-                Measures the percentage of people living below the poverty line. Communities in
-                poverty cannot absorb out-of-pocket health or transport costs.
+                Proportion of the county population living below the poverty line. Higher poverty
+                rates reduce a household&apos;s capacity to absorb out-of-pocket health expenditures
+                and transport costs associated with seeking care.
               </p>
             </div>
             <div className="rounded-lg bg-stone-50 p-5">
               <h3 className="font-bold text-orange-700">2. Physical Access</h3>
               <p className="mt-2 text-xs leading-5 text-stone-600">
-                Measures how many minutes it actually takes a person to walk, cycle, or find
-                transport to the nearest mapped health facility.
+                Mean travel time to the nearest mapped health facility, computed across the
+                county population using least-cost path analysis along road and path networks.
               </p>
             </div>
             <div className="rounded-lg bg-stone-50 p-5">
               <h3 className="font-bold text-orange-700">3. Population Pressure</h3>
               <p className="mt-2 text-xs leading-5 text-stone-600">
-                Measures how many thousands of people are forced to rely on a single local clinic,
-                leading to drug stockouts and long wait times.
+                Population-to-facility ratio, reflecting the demand pressure on existing health
+                infrastructure. Higher ratios are associated with longer wait times, stockouts,
+                and reduced service quality.
               </p>
             </div>
           </div>
           <div className="mt-4 rounded-lg bg-stone-50 p-4 text-xs leading-6 text-stone-600">
-            <p className="font-semibold text-stone-700">How they combine:</p>
+            <p className="font-semibold text-stone-700">Aggregation method:</p>
             <p className="mt-1">
-              <strong>Score</strong> = Accessibility (40%) + Vulnerability (30%) + Population Pressure (30%).
-              Each piece is converted to a 0-1 scale first so different units (minutes, percentages,
-              population counts) can be added together fairly. The final number is multiplied by 100
-              to give a score out of 100.
+              <strong>PGS</strong> = Accessibility (40%) + Vulnerability (30%) + Population Pressure (30%).
+              Each component is normalised to a 0&ndash;1 scale prior to aggregation, enabling
+              combination of heterogeneous units (minutes, percentages, population counts).
+              The result is multiplied by 100 to produce a final score out of 100.
             </p>
           </div>
         </section>
 
         {/* ── How travel time is calculated ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-bold text-amber-900">How we estimate travel time</h2>
+          <h2 className="text-base font-bold text-amber-900">Travel time estimation</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
-            We don&apos;t just draw a straight line on a map. Instead, we use a computer model that
-            simulates how a real person would travel to the nearest clinic. It follows roads and
-            paths, and accounts for walking speed on different terrain. Tarmac roads assume motorbike
-            or matatu speed. Rural dirt roads assume cycling or walking speed.
+            Travel time estimates are derived using AccessMod, a WHO-supported geographic
+            accessibility modelling tool developed by researchers at KEMRI-Wellcome Trust.
+            The model computes least-cost travel paths along the road and path network
+            derived from OpenStreetMap, applying mode-specific speed assumptions based on
+            road surface classification: paved roads are assigned motorised transport speeds,
+            while unpaved and informal paths are assigned pedestrian or bicycle speeds.
           </p>
           <p className="mt-3 text-xs leading-5 text-stone-500">
             This model was developed by researchers at KEMRI-Wellcome Trust and WHO using an open
@@ -79,18 +86,21 @@ export default function MethodPage() {
           </p>
         </section>
 
-        {/* ── Why these three things ── */}
+        {/* ── Why these three measures ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-bold text-amber-900">Why these three measures</h2>
+          <h2 className="text-base font-bold text-amber-900">Rationale for selected indicators</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
-            Researchers who study health access have used the same three measures for decades.
-            Travel time and number of facilities tell you about <strong>physical access</strong>.
-            Poverty tells you about <strong>ability to pay</strong>. Population tells you about
-            <strong> demand</strong> - how many people are fighting for the same bed.
+            These three dimensions are well established in health-access literature. Travel time
+            and facility density measure <strong>physical accessibility</strong> of care. Poverty
+            rates approximate <strong>economic accessibility</strong> — a household&apos;s capacity to
+            afford transport, consultation fees, and treatment. Population-to-facility ratios
+            capture <strong>demand pressure</strong> on available services.
           </p>
           <p className="mt-3 text-sm leading-6 text-stone-700">
-            Most importantly, all this data is <strong>publicly available</strong>. You don&apos;t
-            need special permission or a government login to see it. Anyone can verify the numbers.
+            All constituent datasets are drawn from publicly accessible sources — Kenya National
+            Bureau of Statistics (KNBS), the Kenya Demographic and Health Survey (KDHS), WHO
+            AccessMod, and OpenStreetMap — ensuring that every input can be independently
+            verified by researchers, advocates, and community members.
           </p>
         </section>
 
@@ -120,21 +130,20 @@ export default function MethodPage() {
             </h3>
             <ol className="mt-2 list-decimal pl-5 space-y-2 text-sm text-stone-700">
               <li>
-                Tap the button below. It opens a map of your area on OpenStreetMap.
+                Select the button below to open an interactive map of your area on OpenStreetMap.
               </li>
               <li>
-                Click or tap the exact location where the missing clinic or dispensary is situated.
-                A pin will drop on the map.
+                Select the precise location of the missing health facility to place a marker.
               </li>
               <li>
-                In the text box, paste this message (or write your own):
+                In the text field, provide the facility name and any available details:
                 <div className="mt-1 rounded bg-stone-100 p-2 text-xs font-mono text-stone-600 select-all">
-                  Missing health facility: [clinic name]. This facility serves our community but is not on the map. Please add it. Location verified by community health workers.
+                  Missing health facility: [facility name]. This facility serves the community but is not currently mapped. Location verified by community health workers.
                 </div>
               </li>
               <li>
-                Click &quot;Add Note&quot; - your report is now visible to the volunteer community that
-                maintains the map. No account needed.
+                Select &quot;Add Note&quot; to submit the report. It will be reviewed by the volunteer
+                mapping community. No account is required.
               </li>
             </ol>
             <a
