@@ -23,8 +23,8 @@ A free, offline-first digital map that shows every Kenyan county's health infras
 | Feature | What It Does | Why It Matters for CLM |
 |---|---|---|
 | **Priority Gap Score** | A 0-100 score combining travel time to clinic, poverty rate, and population per facility. Higher score = greater inequity. | Communities have a **measurable, trackable baseline**. Turkana scores 92. If advocacy succeeds, the score drops. CLM impact is no longer anecdotal - it is quantifiable. |
-| **County Brief (printable)** | A one-page PDF for any county with PGS, component breakdown, indicator data, and source citations. | Communities can **carry this into CHMT meetings and budget hearings** as formal evidence. Every number has a source URL. Government cannot dismiss it. |
-| **Side-by-Side Comparison** | Compare any two counties across all indicators with an advocacy takeaway. | A community in Elgeyo-Marakwet (1 facility / 454,000 people) can compare directly with Nairobi (618 facilities) to **demand equitable resource allocation**. |
+| **County Brief (printable)** | A one-page PDF for any county with PGS, component breakdown, indicator data, and source citations. | Communities can **carry this into CHMT meetings and budget hearings** as formal evidence. Every number has a source URL. This establishes a shared, objective foundation for CHMT discussions. |
+| **Side-by-Side Comparison** | Compare any two counties across all indicators with an advocacy takeaway. | A community in Elgeyo-Marakwet (1 facility / 454,000 people) can compare directly with Nairobi (618 facilities) to **advocate for equitable resource allocation**. |
 | **Offline Mode** | Works without internet after first load. No login, no installation, no app store. | A health promoter in a remote village can **show the evidence on a basic smartphone** without data credit. Digital inclusion is not an afterthought - it is the foundation. |
 
 ### The Priority Gap Score (PGS) in Plain Language
@@ -45,7 +45,7 @@ The score combines three factors that define a community's real access to health
 
 ### 3.1 Validating Lived Experience with Quantified Data
 
-A community-based organization in Turkana has used the map to document that the county's facility gap is not a perception - it is measurable. The PGS of 92, combined with a 47% home birth rate (KDHS 2022), gives the CBO a quantified, source-cited document to present to the County Health Management Team. The conversation shifts from "We feel neglected" to "Here is the evidence that our county is the most underserved in Kenya."
+A community-based organization in Turkana has used the map to document that the county's facility gap is not a perception - it is measurable. The PGS of 92, combined with a 47% home birth rate (KDHS 2022), gives the CBO a quantified, source-cited document to present to the County Health Management Team. The conversation elevates from subjective feedback to a structural review of quantified infrastructure gaps.
 
 ### 3.2 Tracking Whether Conditions Improve
 
@@ -53,11 +53,11 @@ In Mandera (50% home births, PGS 91), a women's peer network is using the county
 
 ### 3.3 Strengthening Budget Advocacy
 
-In Tana River, a community health committee used the 72.5% poverty rate and 48% home birth rate from the platform to argue against out-of-pocket delivery fees at local dispensaries during county budget hearings. The data was printed directly from the county brief, with source citations from KNBS and KDHS. The committee reported that having quantified, government-sourced data changed the tone of the hearing.
+In Tana River, a community health committee used the 72.5% poverty rate and 48% home birth rate from the platform to build an evidence-based case for removing financial barriers at local dispensaries during county budget hearings. The data was printed directly from the county brief, with source citations from KNBS and KDHS. The committee reported that having quantified, government-sourced data changed the tone of the hearing.
 
 ### 3.4 Cross-County Peer Coordination
 
-Regional peer networks spanning multiple counties use the comparison tool to identify which of their members face the worst inequity. This allows networks to coordinate joint advocacy: instead of each county lobbying alone, they present a unified, data-backed demand to the national Ministry of Health for targeted resource allocation to the cluster of counties with the highest PGS scores.
+Regional peer networks spanning multiple counties use the comparison tool to identify which of their members face the worst inequity. This allows networks to coordinate joint advocacy: instead of each county lobbying alone, they present a unified, data-backed case to the national Ministry of Health for targeted resource allocation to the cluster of counties with the highest PGS scores.
 
 ---
 
@@ -67,7 +67,7 @@ Regional peer networks spanning multiple counties use the comparison tool to ide
 |---|---|---|
 | **Impact and outcomes of CLM beyond processes** | PGS provides a measurable, trackable outcome. Communities monitor whether their score improves as advocacy succeeds. | A 92-to-85 movement in Turkana would be visible, quantifiable proof that CLM drove resource allocation. |
 | **Strategies for community data use and amplification into government systems** | Printable, source-cited briefs that communities submit to CHMTs, county health departments, and budget hearings as formal evidence. | Tana River community health committee used the brief to change the framing of a budget hearing from anecdote to quantified demand. |
-| **Gaps identified through CLM and resulting advocacy actions** | The platform exposes specific infrastructure gaps (Elgeyo-Marakwet: 1 facility / 454K people) that become direct advocacy targets. | Turkana CBO uses the documented facility gap to demand specific ward-level resource allocation from CHMT. |
+| **Gaps identified through CLM and resulting advocacy actions** | The platform exposes specific infrastructure gaps (Elgeyo-Marakwet: 1 facility / 454K people) that become direct advocacy targets. | Turkana CBO uses the documented facility gap to advocate for specific ward-level resource allocation from CHMT. |
 | **Data justice frameworks and community data governance** | Open source, transparent methodology, publicly verifiable sources. No data extraction, no surveillance, no vendor lock-in. | Any community can fork the code. Any advocate can verify the PGS formula on paper. No one owns the data but the people who generated it. |
 | **Third-party data access, privacy protection, informed consent** | Zero user tracking. No cookies. No login. No personal data collected. The tool requests no permissions. | A health promoter in Mandera can use the platform without surrendering any personal information. |
 | **Addressing digital exclusion as a barrier to access** | Offline-first PWA. Works on basic smartphones after one load. No installation, no app store, no data credit required after initial load. | A community volunteer in a ward with no electricity can load the map at a health centre with WiFi, then use it offline in the field for weeks. |
@@ -146,7 +146,7 @@ At the marketplace exhibition, we will demonstrate:
 1. **Live map interaction** - visitors tap their county of origin on a tablet and see its PGS, component breakdown, and what the score means for advocacy.
 2. **The offline test** - we load the platform, switch to airplane mode, and show that every feature still works.
 3. **Brief printing** - we generate a county brief, hand it to the visitor, and walk through how each data point strengthens a CHMT meeting or budget hearing.
-4. **Comparison walkthrough** - we compare two counties side by side and show how the advocacy takeaway translates into a specific demand.
+4. **Comparison walkthrough** - we compare two counties side by side and show how the advocacy takeaway translates into a specific advocacy ask.
 
 ---
 
