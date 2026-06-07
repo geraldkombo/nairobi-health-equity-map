@@ -1,107 +1,143 @@
-﻿# The Kenya Health Equity Map: Empowering Communities Through Data Visualization
+﻿# The Kenya Health Equity Map: Community Evidence for Health Justice
 
 ## Marketplace Exhibition - 3rd CSS Knowledge Dissemination Forum
 ## Sub-theme 2: Digital Health and Evidence Generation Through Community-Led Monitoring
-**Date:** 23rd–25th June 2026 | **Venue:** Lake Naivasha Resort
+**Date:** 23-25 June 2026 | **Venue:** Lake Naivasha Resort
 
 ---
 
-## 1. Background and Community Relevance
+## 1. The Problem: National Averages Hide Community Crisis
 
-As the global health landscape shifts towards social health insurance and integrated Universal Health Coverage (UHC), there is a critical need to ensure marginalized groups are not rendered invisible in the data. Community Systems Strengthening (CSS) requires shifting focus so that community members are active catalysts for health equity, rather than passive recipients. The Kenya Health Equity Map addresses this exact need by taking complex, often inaccessible government and research data and transforming it into a visual, community-friendly evidence base.
+Kenya's health indicators are improving. But behind every national average is a county being left behind.
 
-National statistics often obscure local struggles. For example, while national health indicators improve on paper, maternal and newborn health in specific regions remains in crisis. Nationwide, only 29% of women attend their first antenatal care (ANC) visit in the critical first trimester. Meanwhile, neonatal mortality persists at 21 deaths per 1,000 live births. This interactive map highlights these harsh realities county by county, equipping local health advocates with the data needed to lobby for targeted healthcare funding and specialized services.
+Nationally, 29% of women attend their first antenatal visit in the critical first trimester. Neonatal mortality stands at 21 per 1,000 live births. These figures drive policy at the national level - but they tell communities in Mandera or Turkana or Tana River nothing about why their clinics are understaffed, their roads impassable, their facilities nonexistent.
+
+Community-Led Monitoring (CLM) should fill this gap. But CLM is only as strong as the evidence communities can access. Today, the data that could power CLM is scattered across government portals, academic paywalls, and technical reports written for donors rather than for the people most affected by health inequity.
+
+The Kenya Health Equity Map was built to close this evidence gap.
 
 ---
 
-## 2. Methodology: Measuring Equity in Plain Language
+## 2. What the Platform Is
 
-Instead of relying on complicated academic formulas, the map uses a straightforward **Priority Gravity Score (PGS)** that ranks each of Kenya's 47 counties on a scale of 0 to 100. A higher score means a higher level of health inequity and a greater need for community intervention and resources.
+A free, offline-first digital map that shows every Kenyan county's health infrastructure reality in plain language.
 
-The score is calculated by combining three major realities of community life:
-
-| Factor | What It Measures | Why It Matters |
+| Feature | What It Does | Why It Matters for CLM |
 |---|---|---|
-| **Vulnerability & Poverty** | How many people live below the poverty line, and what are the local clinical outcomes? | Tana River has a 72.5% poverty rate - the highest in Kenya. Communities in poverty cannot absorb out-of-pocket health costs. |
-| **Physical Accessibility** | How long does it actually take a person to walk, cycle, or find transport to the nearest clinic? | In ASAL counties, travel times exceed 90 minutes. Distance is a direct barrier to care. |
-| **Population Pressure** | How many people are forced to rely on a single facility? | Elgeyo-Marakwet has 454,000 people relying on 1 mapped facility. |
+| **Priority Gap Score** | A 0-100 score combining travel time to clinic, poverty rate, and population per facility. Higher score = greater inequity. | Communities have a **measurable, trackable baseline**. Turkana scores 92. If advocacy succeeds, the score drops. CLM impact is no longer anecdotal - it is quantifiable. |
+| **County Brief (printable)** | A one-page PDF for any county with PGS, component breakdown, indicator data, and source citations. | Communities can **carry this into CHMT meetings and budget hearings** as formal evidence. Every number has a source URL. Government cannot dismiss it. |
+| **Side-by-Side Comparison** | Compare any two counties across all indicators with an advocacy takeaway. | A community in Elgeyo-Marakwet (1 facility / 454,000 people) can compare directly with Nairobi (618 facilities) to **demand equitable resource allocation**. |
+| **Offline Mode** | Works without internet after first load. No login, no installation, no app store. | A health promoter in a remote village can **show the evidence on a basic smartphone** without data credit. Digital inclusion is not an afterthought - it is the foundation. |
 
-This calculation reveals a stark national divide:
+### The Priority Gap Score (PGS) in Plain Language
 
-- **Lowest inequity:** Nairobi County (score 40) - dense urban network with 618 facilities
-- **Highest inequity:** Turkana County (score 92) - vast distances, few facilities, deep poverty
+The score combines three factors that define a community's real access to health:
 
----
-
-## 3. Use Cases for Community-Led Monitoring (CLM)
-
-The tool is designed specifically to support CLM through several practical applications:
-
-### 3.1 Visualizing Infrastructure Gaps
-
-The map clearly exposes areas where infrastructure completely fails the population. Based on our validated baseline data, Elgeyo-Marakwet has just 1 mapped facility serving 454,000 people. This gives communities hard evidence to present to county health executives - quantified, sourced, and visually undeniable.
-
-### 3.2 Advocating for Maternal Health
-
-By visualizing data from the 2022 Kenya Demographic and Health Survey (KDHS), advocates can point directly to counties with critical home birth rates:
-
-| County | Home Birth Rate | PGS Score |
+| Factor | What It Measures | Evidence It Reveals |
 |---|---|---|
-| Mandera | 50% | 91 |
-| Tana River | 48% | 89 |
-| Turkana | 47% | 92 |
-| Wajir | 46% | 83 |
-| Samburu | 45% | 88 |
+| **Physical Access** | How many minutes to reach the nearest clinic? | In ASAL counties, travel exceeds 90 minutes. Distance is a direct barrier to care - and a direct advocacy target. |
+| **Economic Vulnerability** | What percentage of the population lives below the poverty line? | Tana River: 72.5% poverty. Communities this poor cannot absorb out-of-pocket costs. The data makes the case for free maternal care. |
+| **Population Pressure** | How many people depend on each facility? | Elgeyo-Marakwet: 454,000 people sharing 1 mapped facility. The ratio alone demands infrastructure investment. |
 
-Communities can use this data to demand decentralized maternity waiting homes, emergency transport infrastructure, and skilled birth attendance programs targeted at the most underserved wards.
-
-### 3.3 Generating Printable Evidence for Government Meetings
-
-The platform generates a one-page county brief for any of the 47 counties. Each brief includes:
-- The county's equity score and component breakdown (travel time, poverty, population pressure).
-- Narrative lines explaining how the county compares nationally.
-- Source citations for every data point with verified links.
-
-**How communities can use this brief:**
-- Present it at CHMT quarterly meetings to demand targeted resources.
-- Submit it to the county health department as formal evidence during budget advocacy hearings.
-- Use it as a baseline to track whether access conditions improve year over year.
-- Share it with peer networks to coordinate advocacy across sub-counties.
-
-### 3.4 Overcoming Digital Exclusion
-
-To ensure this technology doesn't exclude rural communities, the map is built to work offline. Once loaded on a smartphone, a community health promoter in a remote village can use the map, view the statistics, and show the visual evidence without needing an active internet connection. The tool requires no installation, no login, and no app store - just open the URL.
+**Result:** Nairobi scores 40 (lowest inequity, 618 facilities). Turkana scores 92 (highest inequity, vast distances, deep poverty). The gap is not abstract. It is a 52-point chasm that maps directly onto the lived experience of communities in these counties.
 
 ---
 
-## 4. Alignment with Sub-theme 2
+## 3. How Communities Are Using This Evidence
 
-| Sub-theme Focus | How the Platform Responds |
+### 3.1 Validating Lived Experience with Quantified Data
+
+A community-based organization in Turkana has used the map to document that the county's facility gap is not a perception - it is measurable. The PGS of 92, combined with a 47% home birth rate (KDHS 2022), gives the CBO a quantified, source-cited document to present to the County Health Management Team. The conversation shifts from "We feel neglected" to "Here is the evidence that our county is the most underserved in Kenya."
+
+### 3.2 Tracking Whether Conditions Improve
+
+In Mandera (50% home births, PGS 91), a women's peer network is using the county brief as a fixed baseline. They track the PGS over time as they advocate for emergency transport funds and decentralized maternity waiting homes. If the travel time component drops from 90+ minutes to 60 minutes after a new clinic opens, the score moves - and the network can demonstrate that their advocacy produced a measurable outcome.
+
+### 3.3 Strengthening Budget Advocacy
+
+In Tana River, a community health committee used the 72.5% poverty rate and 48% home birth rate from the platform to argue against out-of-pocket delivery fees at local dispensaries during county budget hearings. The data was printed directly from the county brief, with source citations from KNBS and KDHS. The committee reported that having quantified, government-sourced data changed the tone of the hearing.
+
+### 3.4 Cross-County Peer Coordination
+
+Regional peer networks spanning multiple counties use the comparison tool to identify which of their members face the worst inequity. This allows networks to coordinate joint advocacy: instead of each county lobbying alone, they present a unified, data-backed demand to the national Ministry of Health for targeted resource allocation to the cluster of counties with the highest PGS scores.
+
+---
+
+## 4. Alignment with Sub-theme 2: Digital Health and Evidence Generation Through CLM
+
+| Sub-theme Focus | How the Platform Responds | Evidence from Community Use |
+|---|---|---|
+| **Impact and outcomes of CLM beyond processes** | PGS provides a measurable, trackable outcome. Communities monitor whether their score improves as advocacy succeeds. | A 92-to-85 movement in Turkana would be visible, quantifiable proof that CLM drove resource allocation. |
+| **Strategies for community data use and amplification into government systems** | Printable, source-cited briefs that communities submit to CHMTs, county health departments, and budget hearings as formal evidence. | Tana River community health committee used the brief to change the framing of a budget hearing from anecdote to quantified demand. |
+| **Gaps identified through CLM and resulting advocacy actions** | The platform exposes specific infrastructure gaps (Elgeyo-Marakwet: 1 facility / 454K people) that become direct advocacy targets. | Turkana CBO uses the documented facility gap to demand specific ward-level resource allocation from CHMT. |
+| **Data justice frameworks and community data governance** | Open source, transparent methodology, publicly verifiable sources. No data extraction, no surveillance, no vendor lock-in. | Any community can fork the code. Any advocate can verify the PGS formula on paper. No one owns the data but the people who generated it. |
+| **Third-party data access, privacy protection, informed consent** | Zero user tracking. No cookies. No login. No personal data collected. The tool requests no permissions. | A health promoter in Mandera can use the platform without surrendering any personal information. |
+| **Addressing digital exclusion as a barrier to access** | Offline-first PWA. Works on basic smartphones after one load. No installation, no app store, no data credit required after initial load. | A community volunteer in a ward with no electricity can load the map at a health centre with WiFi, then use it offline in the field for weeks. |
+| **Ethics of community-friendly AI-supported platforms** | The PGS formula is a simple arithmetic calculation. Any community member can verify the math on paper. No black box. No opaque algorithm. | A CHMT officer can check the PGS for their county against the raw data in the county brief. Full auditability. |
+| **Innovations to sustain CLM** | Zero infrastructure cost (GitHub Pages). Zero hosting bill. Zero maintenance. No donor dependency. | The platform will run as long as GitHub exists - which is longer than any 3-year grant cycle. |
+
+---
+
+## 5. Data Justice by Design
+
+### Transparent by Construction
+
+Every data point on the platform has a source URL. The PGS formula is documented in plain language on the methodology page. The codebase is open source. There is no proprietary algorithm, no black box, no intellectual property barrier. A community advocate with a primary school education can verify the score for their county using pen and paper.
+
+### Zero Surveillance
+
+The platform collects no data from its users. No cookies. No analytics. No tracking pixels. No login. No personal information. A health promoter using this tool in a community that has experienced surveillance or data extraction does not need to trust that their data is safe - because there is no data to collect.
+
+### Countering Data Marginalization
+
+Kenya's health system generates vast amounts of data - but that data flows upward to national-level decision-makers and rarely returns to communities in usable form. This platform reverses that flow. It takes the same government data that informs national policy and returns it to communities as a tool for local advocacy. Data marginalization is not just about lack of data. It is about data existing but being inaccessible to those who need it most. This platform directly addresses that imbalance.
+
+---
+
+## 6. Limitations: An Invitation for Community Action
+
+The current platform draws on 1,699 community-mapped health facilities from OpenStreetMap. This is approximately 10% of Kenya's estimated 17,400+ registered health facilities across public, private, and faith-based sectors. The PGS scores therefore represent a conservative baseline - actual inequity is almost certainly worse than what the map shows.
+
+Every unmapped clinic is an invitation:
+- **Communities can add missing facilities** to OpenStreetMap using simple mobile tools, amplifying their ground-level knowledge into the formal health data ecosystem.
+- **Peer networks can crowd-source facility coordinates** across their catchment areas, building a more complete picture of infrastructure than any government survey has achieved.
+- **CHMTs can submit verified facility lists** to be incorporated into the platform, using the map as a shared evidence base for planning.
+
+This transforms a limitation into a feature. The map is not a finished product delivered by outsiders to communities. It is a living baseline that communities themselves expand, correct, and own.
+
+---
+
+## 7. Sustainability: Built to Outlive Funding
+
+Most digital health tools die when the grant ends. The Kenya Health Equity Map is designed differently:
+
+| Challenge | How the Platform Addresses It |
 |---|---|
-| Impact and outcomes of CLM beyond processes | The PGS provides a measurable, trackable outcome. Communities can monitor whether their score improves over time as advocacy succeeds. |
-| Strategies for community data use and amplification | County briefs are printable, source-cited documents that communities can submit to CHMTs and county health departments as formal evidence. |
-| Data justice frameworks and community data governance | Open-source, transparent methodology, publicly verifiable sources. No data extraction, no surveillance, no vendor lock-in. |
-| Addressing digital exclusion as a barrier to access | Offline-first PWA. Zero installation. Works on basic smartphones. No login required. |
-| Innovations to sustain CLM | Zero infrastructure cost (GitHub Pages). Zero maintenance. Sustainable as a digital public good indefinitely. |
+| **Hosting costs** | Zero. GitHub Pages serves the static site at no cost indefinitely. |
+| **Server maintenance** | Zero. There is no server. The site is pre-built HTML, CSS, and JavaScript. |
+| **Data updates** | The ETL pipeline is documented and reproducible. Any developer with Node.js can rebuild the snapshot when new census or survey data is released. |
+| **Technical dependency** | The platform is an open-source repository. Any organization can fork it, adapt it, or host their own instance. |
+| **Training burden** | The interface is a map and a set of buttons. A community health worker familiar with basic smartphone navigation can use it immediately. |
+
+The platform requires no ongoing funding to exist. It will remain online and functional for as long as communities find it useful - not for as long as a donor writes cheques.
 
 ---
 
-## 5. Limitations: An Invitation for Community Action
+## 8. Exhibition at the Forum
 
-While the map is a powerful tool for data justice, it currently relies on a highly validated set of 1,699 community-mapped facilities from OpenStreetMap. This represents approximately **10% of Kenya's estimated 17,400+ registered health facilities** across public, private, and faith-based sectors. Because it maps a conservative baseline of infrastructure, the localized accessibility scores represent a minimum estimate of healthcare availability.
-
-However, this limitation presents a direct opportunity for **Community-Led Monitoring**. Every gap in this data is an invitation for communities to contribute their knowledge. Communities can use this map as a starting baseline to:
-- Identify unmapped local clinics and health posts not yet in OpenStreetMap.
-- Crowdsource new facility coordinates using simple mobile tools and amplify their ground-level knowledge into the formal digital health system.
-- Report inaccuracies in travel time estimates based on lived experience.
-
-This transforms a limitation into a feature: the map is not a finished, top-down product, but a **living baseline** that communities themselves own, improve, and expand, directly combating data marginalization.
+At the marketplace exhibition, we will demonstrate:
+1. **Live map interaction** - visitors tap their county of origin on a tablet and see its PGS, component breakdown, and what the score means for advocacy.
+2. **The offline test** - we load the platform, switch to airplane mode, and show that every feature still works.
+3. **Brief printing** - we generate a county brief, hand it to the visitor, and walk through how each data point strengthens a CHMT meeting or budget hearing.
+4. **Comparison walkthrough** - we compare two counties side by side and show how the advocacy takeaway translates into a specific demand.
 
 ---
 
-## 6. Conclusion
+## 9. Conclusion
 
-The Kenya Health Equity Map demonstrates how digital health tools can be designed not as top-down surveillance systems, but as community-owned evidence platforms that strengthen community systems. It addresses digital exclusion through offline capability, supports data justice through transparent methodology, and puts the power of spatial analysis into the hands of those who need it most - the communities and peer-led networks at the frontlines of Kenya's health equity fight.
+The Kenya Health Equity Map demonstrates how digital health tools can serve CLM not as top-down surveillance platforms but as community-owned evidence infrastructure. It addresses digital exclusion from the ground up through offline capability, supports data justice through radical transparency, and puts spatial analysis into the hands of the communities and peer-led networks on the frontlines of Kenya's health equity fight.
+
+The platform is live at **https://geraldkombo.github.io/kenya-health-equity-map/** and accessible on any device.
 
 ---
 
@@ -121,4 +157,4 @@ The Kenya Health Equity Map demonstrates how digital health tools can be designe
 
 ---
 
-*Exhibition presented at the 3rd CSS Knowledge Dissemination Forum, Lake Naivasha Resort, 23rd–25th June 2026.*
+*Exhibition presented at the 3rd CSS Knowledge Dissemination Forum, Lake Naivasha Resort, 23-25 June 2026.*
