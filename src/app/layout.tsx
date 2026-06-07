@@ -42,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="antialiased">
       <head>
         <link rel="manifest" href={`${BASE}/manifest.json`} />
+        <link rel="apple-touch-icon" href={`${BASE}/icons/icon-192.png`} />
       </head>
       <body className="min-h-[100svh] bg-stone-50 text-stone-800">
         <Header />
