@@ -6,6 +6,7 @@ import { computePGS, DEFAULT_WEIGHTS, getPGSBadgeClass } from "@/lib/scoring";
 import { normalizeCounty } from "@/lib/normalize";
 import { matchCountyName } from "@/lib/county-names";
 import Link from "next/link";
+import ShareButton from "./ShareButton";
 
 interface CountyDetailsProps {
   county: CountyRecord;
@@ -198,6 +199,11 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
 
       {indicator && (
         <div className="mt-3 flex gap-2">
+          <ShareButton
+            title={`${county.name} County - Kenya Health Equity Map`}
+            text={`${county.name} scores ${score?.pgs ?? "?"} on the Priority Gap Score (0-100). View the full county brief.`}
+            url={`https://geraldkombo.github.io/kenya-health-equity-map/brief?county=${county.id}`}
+          />
           <Link
             href={`/brief?county=${county.id}`}
             className="rounded-lg bg-stone-800 px-3 py-2 text-xs font-semibold text-white hover:bg-stone-700 transition-colors"

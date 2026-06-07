@@ -1,4 +1,5 @@
-const CACHE = "ke-health-v3";
+const CACHE = "ke-health-v4";
+const TILE_CACHE = "ke-tiles-v1";
 const BASE = self.location.pathname.replace(/\/sw\.js$/, "");
 
 const SHELL = [
@@ -15,6 +16,8 @@ const SHELL = [
   BASE + "/dua.txt",
 ];
 
+const TILE_ORIGINS = ["https://basemaps.cartocdn.com"];
+
 self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(CACHE).then((cache) =>
@@ -26,12 +29,31 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+      Promise.all(keys.filter((k) => k !== CACHE && k !== TILE_CACHE).map((k) => caches.delete(k)))
     ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener("fetch", (e) => {
+  const url = new URL(e.request.url);
+
+  if (TILE_ORIGINS.some((o) => url.origin === o)) {
+    e.respondWith(
+      caches.open(TILE_CACHE).then((cache) =>
+        cache.match(e.request).then((cached) => {
+          const fetched = fetch(e.request)
+            .then((r) => {
+              cache.put(e.request, r.clone());
+              return r;
+            })
+            .catch(() => cached);
+          return cached || fetched;
+        })
+      )
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then((cached) => {
       const fetched = fetch(e.request)

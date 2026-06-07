@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import InstallPWA from "@/components/InstallPWA";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-[100svh] bg-stone-50 text-stone-800">
         <Header />
+        <InstallPWA />
         <main>{children}</main>
         <script
           dangerouslySetInnerHTML={{

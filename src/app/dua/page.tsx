@@ -1,4 +1,6 @@
 ﻿import Link from "next/link";
+import CSVExport from "@/components/CSVExport";
+import indicatorsData from "@/../data/snapshots/county_indicators.json";
 
 export const metadata = {
   title: "Data Use Agreement | Kenya Health Equity Map",
@@ -180,6 +182,18 @@ export default function DUAPage() {
             {" "}(DHIS2) maintained by the Ministry of Health, which provides facility-level
             service delivery data, commodity availability, and disease surveillance.
           </p>
+        </section>
+
+        {/* Download data */}
+        <section className="rounded-xl border border-stone-200 bg-white p-6">
+          <h2 className="text-base font-semibold text-stone-800">Download Data</h2>
+          <p className="mt-2 text-sm leading-6 text-stone-700">
+            Download all county-level indicators as a CSV file for offline analysis in Excel,
+            R, Python, or any spreadsheet tool.
+          </p>
+          <div className="mt-4">
+            <CSVExport indicators={indicatorsData as any[]} />
+          </div>
         </section>
 
         <div className="rounded-xl border border-stone-200 bg-white p-6 text-center">
