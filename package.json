@@ -20,7 +20,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@turf/turf": "^7.3.5",
@@ -45,6 +46,7 @@
     "@types/react-dom": "19.1.2",
     "eslint": "9.26.0",
     "eslint-config-next": "15.2.4",
+    "husky": "^9.1.7",
     "postcss": "8.5.3",
     "prettier": "3.5.3",
     "tailwindcss": "4.1.6",
