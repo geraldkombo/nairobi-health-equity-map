@@ -104,25 +104,25 @@ function PrintableBrief({
           <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
             <h3 className="font-bold text-amber-900 text-sm">CHMT Consultations</h3>
             <p className="text-xs text-gray-700 mt-1">
-              Highlights specific facility gap metrics to actively support resource allocation demands for underserved wards[cite: 4].
+              Highlights specific facility gap metrics to actively support resource allocation demands for underserved wards.
             </p>
           </div>
           <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
             <h3 className="font-bold text-amber-900 text-sm">Health Budget Hearings</h3>
             <p className="text-xs text-gray-700 mt-1">
-              Supplies quantifiable infrastructure data to strengthen community requests for localized facility funding[cite: 4].
+              Supplies quantifiable infrastructure data to strengthen community requests for localized facility funding.
             </p>
           </div>
           <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
             <h3 className="font-bold text-amber-900 text-sm">Access Accountability</h3>
             <p className="text-xs text-gray-700 mt-1">
-              Establishes a transparent baseline for tracking whether physical travel times and clinic capacities improve year over year[cite: 4].
+              Establishes a transparent baseline for tracking whether physical travel times and clinic capacities improve year over year.
             </p>
           </div>
           <div className="border-l-4 border-orange-600 bg-gray-50 p-4 rounded-r-sm shadow-sm">
             <h3 className="font-bold text-amber-900 text-sm">Peer Network Coordination</h3>
             <p className="text-xs text-gray-700 mt-1">
-              Facilitates evidence-sharing among regional groups to align joint advocacy for maternal and primary care improvements[cite: 4].
+              Facilitates evidence-sharing among regional groups to align joint advocacy for maternal and primary care improvements.
             </p>
           </div>
         </div>

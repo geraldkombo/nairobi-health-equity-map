@@ -184,11 +184,15 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
         </div>
       )}
 
-      <div className="mt-8">
+      <div className="hidden print:block text-center text-lg font-bold text-stone-900 mb-4">
+        County Comparison Report - {selA?.name} vs {selB?.name}
+      </div>
+
+      <div className="mt-8 print:hidden">
         <SourcesPanel />
       </div>
 
-      <div className="mt-6 text-center text-xs text-stone-400">
+      <div className="mt-6 text-center text-xs text-stone-400 print:hidden">
         <Link href="/" className="text-[#EA580C] underline underline-offset-2">&larr; Return to map</Link>
       </div>
     </>
