@@ -121,7 +121,26 @@ The platform requires no ongoing funding to exist. It will remain online and fun
 
 ---
 
-## 8. Exhibition at the Forum
+## 8. Strategic Alignment with Amref Health Africa
+
+This platform was designed to complement and strengthen Amref's existing CLM and digital health portfolio, not duplicate it.
+
+| Amref Initiative | How This Platform Adds Value |
+|---|---|
+| **iMonitor CLM App** (Turkana, Global Fund TB) | iMonitor collects service quality feedback. This map adds the spatial infrastructure layer - communities see WHY services are poor (no clinic within 90 minutes) before reporting HOW the clinic performed. Together they close the CLM evidence loop. |
+| **eCHIS for 107,000+ CHPs** | eCHIS tracks household service delivery. This map gives CHPs an equity score and printable brief to carry into CHMT meetings. eCHIS answers "what did we deliver?" This map answers "where is the gap?" |
+| **THRIVE Project** (Nakuru, Nyeri, Moderna Foundation) | THRIVE dashboards show real-time service data at PCN level. Our PGS and comparison tools could overlay infrastructure equity data onto those same dashboards. |
+| **GenAI eCHIS Pilot** (Machakos, Gates Foundation) | Our transparent, paper-verifiable PGS formula demonstrates ethical augmentation of CLM without black-box AI. Directly addresses the "ethics of community-friendly AI platforms" criterion. |
+| **CHU4UHC Partner Platform** | As an open-source, zero-cost digital public good, this platform can be adopted by any of the 26+ CHU4UHC partners without procurement or licensing barriers. |
+| **CSS Coordination** (Catherine Kamau, CSS Coordinator) | Provides a measurable CLM outcome (PGS change over time) that can be reported to Global Fund as evidence of CSS impact beyond process indicators. |
+
+**Funding alignment.** The platform's zero-infrastructure model means it can be sustained within existing Amref programs without dedicated budget lines. It complements Global Fund-supported CLM work (iMonitor), Gates Foundation digital innovation (eCHIS GenAI), and Moderna-supported PHC strengthening (THRIVE). The offline capability directly serves Amref's priority ASAL counties where digital exclusion is highest.
+
+**Next step.** This platform is ready for pilot integration with one or more Amref county programs. The codebase is open. The cost is zero. The evidence base is live.
+
+---
+
+## 10. Exhibition at the Forum
 
 At the marketplace exhibition, we will demonstrate:
 1. **Live map interaction** - visitors tap their county of origin on a tablet and see its PGS, component breakdown, and what the score means for advocacy.
@@ -131,7 +150,7 @@ At the marketplace exhibition, we will demonstrate:
 
 ---
 
-## 9. Conclusion
+## 11. Conclusion
 
 The Kenya Health Equity Map demonstrates how digital health tools can serve CLM not as top-down surveillance platforms but as community-owned evidence infrastructure. It addresses digital exclusion from the ground up through offline capability, supports data justice through radical transparency, and puts spatial analysis into the hands of the communities and peer-led networks on the frontlines of Kenya's health equity fight.
 

@@ -14,4 +14,6 @@ Community-led monitoring needs evidence that communities can own, understand, an
 
 **Built to outlast funding cycles.** The platform runs on GitHub Pages at zero hosting cost. No server, no database, no licensing fees. It is an open digital public good that any community, NGO, or county health department can fork, adapt, or redistribute. Sustainability is not a future problem - it is designed into the architecture.
 
+**Complements existing investments.** Kenya has professionalized 107,000 Community Health Promoters under the eCHIS digital platform and deployed CLM tools like iMonitor across multiple counties. This platform adds the spatial evidence layer these systems need - infrastructure gap data that turns service delivery feedback into targeted infrastructure demands. It integrates with what already works rather than reinventing it.
+
 **A living baseline for community action.** The current map draws on 1,699 community-mapped health facilities - approximately 10% of Kenya's estimated total. Every unmapped clinic is an invitation: communities can crowdsource missing facility coordinates into OpenStreetMap and strengthen the evidence base themselves. The map is not a finished product. It is a starting point that communities own, improve, and use to demand the resources they have been denied.
