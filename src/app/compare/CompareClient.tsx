@@ -123,21 +123,28 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
               <option key={c.id} value={c.id} disabled={c.id === countyA}>{c.name}</option>
             ))}
           </select>
-          {selA && !selB && suggestedNeighbors.length > 0 && (
+          {selA && suggestedNeighbors.length > 0 && (
             <div className="mt-2">
               <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-stone-500">
-                Suggested neighboring counties
+                Suggested neighboring counties (click to swap comparison)
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {suggestedNeighbors.map((n) => (
-                  <button
-                    key={n.id}
-                    onClick={() => setCountyB(n.id)}
-                    className="rounded-md bg-orange-100 px-2 py-1 text-[11px] font-medium text-orange-800 transition-colors hover:bg-orange-200"
-                  >
-                    + {n.name}
-                  </button>
-                ))}
+                {suggestedNeighbors.map((n) => {
+                  const isActive = selB?.id === n.id;
+                  return (
+                    <button
+                      key={n.id}
+                      onClick={() => setCountyB(n.id)}
+                      className={`rounded-md px-2.5 py-1.5 text-[11px] font-medium shadow-sm transition-all ${
+                        isActive
+                          ? "bg-amber-900 font-bold text-white ring-2 ring-orange-500"
+                          : "bg-orange-100 text-orange-800 hover:bg-orange-200"
+                      }`}
+                    >
+                      {isActive ? "Comparing " : "+ "}{n.name}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
