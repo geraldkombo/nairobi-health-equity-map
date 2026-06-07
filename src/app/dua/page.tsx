@@ -1,6 +1,4 @@
 ﻿import Link from "next/link";
-import CSVExport from "@/components/CSVExport";
-import indicatorsData from "@/../data/snapshots/county_indicators.json";
 
 export const metadata = {
   title: "Data Use Agreement | Kenya Health Equity Map",
@@ -184,15 +182,39 @@ export default function DUAPage() {
           </p>
         </section>
 
-        {/* Download data */}
+        {/* Contribute & Share */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Download Data</h2>
-          <p className="mt-2 text-sm leading-6 text-stone-700">
-            Download all county-level indicators as a CSV file for offline analysis in Excel,
-            R, Python, or any spreadsheet tool.
-          </p>
-          <div className="mt-4">
-            <CSVExport indicators={indicatorsData as any[]} />
+          <h2 className="text-base font-semibold text-stone-800">Contribute & Share</h2>
+          <div className="mt-4 space-y-5 text-sm leading-6 text-stone-700">
+            <div>
+              <strong className="text-stone-800">Add a missing health facility</strong>
+              <p className="mt-1">
+                This map draws facility locations from OpenStreetMap (OSM), a free and open
+                global map anyone can edit. To add a missing clinic or hospital:
+              </p>
+              <ol className="mt-2 list-inside list-decimal space-y-1 pl-1">
+                <li>Visit <a href="https://www.openstreetmap.org" target="_blank" rel="noreferrer" className="text-[#EA580C] underline underline-offset-2">openstreetmap.org</a> and create a free account.</li>
+                <li>Zoom to the facility location and click <strong>Edit</strong>.</li>
+                <li>Place a node and tag it with the facility name and type (hospital, clinic, dispensary, etc.).</li>
+                <li>Save your changes — the facility will appear on this map after the next data refresh.</li>
+              </ol>
+              <p className="mt-2 text-xs text-amber-700">
+                <strong>Accuracy matters:</strong> Only add facilities you have personally visited
+                or can verify from official sources. Do not add planned, demolished, or rumoured
+                facilities — misinformation harms the communities who rely on this data.
+              </p>
+            </div>
+            <div>
+              <strong className="text-stone-800">Share a county profile on WhatsApp</strong>
+              <p className="mt-1">
+                From the main map, tap any county to open its detail panel. Use the
+                <strong> Share </strong> button to copy the county profile link, or take a
+                screenshot showing the county name, Priority Gap Score, and key indicators.
+                Paste the link or image into WhatsApp with a short message explaining what
+                the data shows. Recipients can open the link directly on any device — no
+                login or app required.
+              </p>
+            </div>
           </div>
         </section>
 
