@@ -1,9 +1,26 @@
-const CACHE = "ke-health-v2";
-const STATIC_EXT = /\.(js|css|json|geojson|svg|png|jpg)$/;
-const SHELL_PAGES = ["/", "/brief", "/compare", "/method", "/forum", "/dua", "/brief.txt", "/compare.txt", "/method.txt", "/forum.txt", "/dua.txt"];
+const CACHE = "ke-health-v3";
+const BASE = self.location.pathname.replace(/\/sw\.js$/, "");
+
+const SHELL = [
+  BASE + "/",
+  BASE + "/brief/",
+  BASE + "/compare/",
+  BASE + "/method/",
+  BASE + "/forum/",
+  BASE + "/dua/",
+  BASE + "/brief.txt",
+  BASE + "/compare.txt",
+  BASE + "/method.txt",
+  BASE + "/forum.txt",
+  BASE + "/dua.txt",
+];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(self.skipWaiting());
+  e.waitUntil(
+    caches.open(CACHE).then((cache) =>
+      cache.addAll(SHELL).catch(() => self.skipWaiting())
+    )
+  );
 });
 
 self.addEventListener("activate", (e) => {
@@ -15,34 +32,15 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
-  const url = new URL(e.request.url);
-  const path = url.pathname.replace(/\/kenya-health-equity-map/, "") || "/";
-
-  if (STATIC_EXT.test(url.pathname)) {
-    e.respondWith(
-      caches.open(CACHE).then((cache) =>
-        fetch(e.request)
-          .then((r) => (cache.put(e.request, r.clone()), r))
-          .catch(() => cache.match(e.request))
-      )
-    );
-    return;
-  }
-
-  if (SHELL_PAGES.includes(path) || path === "/") {
-    e.respondWith(
-      fetch(e.request)
+  e.respondWith(
+    caches.match(e.request).then((cached) => {
+      const fetched = fetch(e.request)
         .then((r) => {
-          const copy = r.clone();
-          caches.open(CACHE).then((cache) => cache.put(e.request, copy));
+          caches.open(CACHE).then((cache) => cache.put(e.request, r.clone()));
           return r;
         })
-        .catch(() => caches.match(e.request))
-    );
-    return;
-  }
-
-  e.respondWith(
-    caches.match(e.request).then((r) => r || fetch(e.request).catch(() => caches.match("/")))
+        .catch(() => cached);
+      return cached || fetched;
+    })
   );
 });
