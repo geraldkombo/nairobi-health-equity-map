@@ -33,13 +33,11 @@ The copyright holder is listed in LICENSE (Kenya Health Equity Map). The GitHub 
 ---
 
 ### Indicator 4: Platform Independence
-**Status: PARTIALLY COMPLIANT**
+**Status: COMPLIANT ✓**
 
-The platform uses CARTO for base map tiles but is not locked into it — the MapLibre GL JS rendering engine accepts any tile provider. The core functionality (PGS computation, data display) is fully self-contained in static JSON/JS.
+The platform uses CARTO for base map tiles but is not locked into it — the MapLibre GL JS rendering engine accepts any tile provider. The core functionality (PGS computation, data display) is fully self-contained in static JSON/JS. The tile-swappability note is already documented in README.md under Architecture.
 
 **Answer for form:** "The platform uses CARTO base map tiles via standard MapLibre GL JS rendering. The tile provider is swappable — the application accepts any MVT-compatible tile source. All core functionality (scoring, comparison, brief generation) is client-side and independent of any single service provider."
-
-**Action needed:** Add a note in `README.md` stating: "The vector tile source can be replaced by updating the MapLibre style URL — no code changes required beyond the tile endpoint."
 
 ---
 
@@ -123,7 +121,7 @@ No user profiles, no messaging, no social features, no authentication system —
 | 1. SDG Relevance | ✓ Compliant |
 | 2. Open Licensing | ✓ Compliant |
 | 3. Clear Ownership | ✓ Compliant |
-| 4. Platform Independence | ⚠️ Partial — add tile-swappability note to README |
+| 4. Platform Independence | ✓ Compliant — tile-swappability documented in README |
 | 5. Documentation | ✓ Compliant |
 | 6. Non-PII Data Extraction | ✓ Compliant |
 | 7. Privacy & Applicable Laws | ✓ Compliant |
@@ -132,5 +130,5 @@ No user profiles, no messaging, no social features, no authentication system —
 | 9B. Inappropriate & Illegal Content | ✓ Compliant |
 | 9C. Protection from Harassment | ✓ Compliant |
 
-## One Action Needed
-Add one line to README.md under Architecture: "The CARTO vector tile source can be replaced by updating the MapLibre style URL — no code changes required beyond the tile endpoint."
+## All 9 Indicators Compliant
+No remaining actions. The tile-swappability note was already present in README.md:51.

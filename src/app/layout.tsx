@@ -41,10 +41,20 @@ export const metadata: Metadata = {
     images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   other: {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "Health Equity KE",
+    "apple-mobile-web-app-title": "Health Map",
     "mobile-web-app-capable": "yes",
   },
 };
@@ -54,8 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${lora.variable} antialiased`}>
       <head>
         <link rel="manifest" href={`${BASE}/manifest.json`} />
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇰🇪</text></svg>" />
-        <link rel="apple-touch-icon" href={`${BASE}/icons/icon-192.png`} />
       </head>
       <body className="min-h-[100svh] bg-stone-50 text-stone-800">
         <Header />

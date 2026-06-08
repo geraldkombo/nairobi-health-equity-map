@@ -1,61 +1,31 @@
-import { writeFileSync } from "fs";
-import { resolve } from "path";
-import { deflateSync } from "zlib";
+import sharp from 'sharp';
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-function crc32(buf) {
-  let c = 0xffffffff;
-  for (let i = 0; i < buf.length; i++) {
-    c ^= buf[i];
-    for (let j = 0; j < 8; j++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const svgPath = join(__dirname, '..', 'public', 'icon.svg');
+const svgBuffer = readFileSync(svgPath);
+
+async function generateIcons() {
+  console.log('Generating PWA icons...');
+
+  try {
+    await sharp(svgBuffer)
+      .resize(192, 192)
+      .png()
+      .toFile(join(__dirname, '..', 'public', 'icons', 'icon-192.png'));
+    console.log('Created icon-192.png (192x192)');
+
+    await sharp(svgBuffer)
+      .resize(512, 512)
+      .png()
+      .toFile(join(__dirname, '..', 'public', 'icons', 'icon-512.png'));
+    console.log('Created icon-512.png (512x512)');
+  } catch (error) {
+    console.error('Error generating icons:', error.message);
+    process.exit(1);
   }
-  return (c ^ 0xffffffff) >>> 0;
 }
 
-function chunk(type, data) {
-  const len = Buffer.alloc(4);
-  len.writeUInt32BE(data.length);
-  const t = Buffer.from(type, "ascii");
-  const crcBuf = Buffer.alloc(4);
-  crcBuf.writeUInt32BE(crc32(Buffer.concat([t, data])));
-  return Buffer.concat([len, t, data, crcBuf]);
-}
-
-function createPNG(width, height) {
-  const sig = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
-  const ihdr = Buffer.alloc(13);
-  ihdr.writeUInt32BE(width, 0);
-  ihdr.writeUInt32BE(height, 4);
-  ihdr[8] = 8; // bit depth
-  ihdr[9] = 2; // color type RGB
-  ihdr[10] = 0; // compression
-  ihdr[11] = 0; // filter
-  ihdr[12] = 0; // interlace
-
-  const hThird = Math.round(height / 3);
-  const raw = Buffer.alloc(height * (1 + width * 3));
-  for (let y = 0; y < height; y++) {
-    raw[y * (1 + width * 3)] = 0; // filter byte
-    const color = y < hThird ? [0, 0, 0]         // black
-      : y < hThird + 4 ? [187, 0, 0]              // red
-      : y < height - hThird - 4 ? [0, 128, 0]     // green
-      : y < height - hThird ? [187, 0, 0]         // red
-      : [0, 0, 0];                                // black
-    for (let x = 0; x < width; x++) {
-      const off = y * (1 + width * 3) + 1 + x * 3;
-      raw[off] = color[0];
-      raw[off + 1] = color[1];
-      raw[off + 2] = color[2];
-    }
-  }
-  const compressed = deflateSync(raw);
-  return Buffer.concat([sig, chunk("IHDR", ihdr), chunk("IDAT", compressed), chunk("IEND", Buffer.alloc(0))]);
-}
-
-const sizes = [192, 512];
-const base = resolve(process.cwd(), "public", "icons");
-
-for (const size of sizes) {
-  const png = createPNG(size, size);
-  writeFileSync(resolve(base, `icon-${size}.png`), png);
-  console.log(`Generated icon-${size}.png (${size}x${size})`);
-}
+generateIcons();

@@ -1,14 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#92400E"/>
-      <stop offset="100%" stop-color="#78350F"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="80" fill="url(#g)"/>
-  <g transform="translate(256,246)" fill="#FDFBF7">
-    <rect x="-16" y="-80" width="32" height="160" rx="8"/>
-    <rect x="-80" y="-16" width="160" height="32" rx="8"/>
-  </g>
-  <text x="256" y="430" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="42" font-weight="600" fill="#FDFBF7" opacity="0.5" text-anchor="middle" letter-spacing="6">HEALTH</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#78350F" />
+  <path d="M256 80 C185.3 80 128 137.3 128 208 C128 304 256 432 256 432 C256 432 384 304 384 208 C384 137.3 326.7 80 256 80 Z" fill="#FDFBF7" />
+  <rect x="216" y="196" width="80" height="24" rx="4" fill="#EA580C" />
+  <rect x="244" y="168" width="24" height="80" rx="4" fill="#EA580C" />
 </svg>
