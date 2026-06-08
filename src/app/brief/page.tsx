@@ -60,7 +60,7 @@ function PrintableBrief({
           poverty rate of {indicator.poverty_proxy}%. Furthermore, with only{" "}
           {indicator.facility_count} validated facilities mapped against a vast geography, facility
           density remains a critical limiting factor for decentralized care. These indicators are
-           derived from open-data baselines (KNBS 2019 Census from the Kenya National Bureau of Statistics, KIHBS from the Kenya Integrated Household Budget Survey, OpenStreetMap / ICPAC facility inventory from the IGAD Climate Prediction and Applications Centre) and provide a verifiable, transparent starting point for community-led
+           derived from open-data baselines (KNBS 2019 Census from the Kenya National Bureau of Statistics, KIHBS 2015/16 from the Kenya Integrated Household Budget Survey, OpenStreetMap / ICPAC facility inventory from the IGAD Climate Prediction and Applications Centre) and provide a verifiable, transparent starting point for community-led
           advocacy.
         </p>
         {county.name === "Turkana" && (

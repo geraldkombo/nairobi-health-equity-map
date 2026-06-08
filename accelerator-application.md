@@ -80,11 +80,11 @@ EquityMap is an offline-first digital platform that translates complex public he
 
 | Role | Needed |
 |---|---|
-| **Product & Strategy** | Founder 1 — health equity domain, CLM expertise, Amref/CSO relationships |
-| **Engineering & Data** | Founder 2 — Next.js, geospatial data, open-source architecture |
+| **Product & Strategy** | Gerald Kombo — health equity domain, CLM expertise, Amref/CSO relationships |
+| **Engineering & Data** | Gerald Kombo — Next.js, geospatial data, open-source architecture |
 | **Community & Partnerships** | To be hired — county-level CHMT engagement, CBO training, peer network coordination |
 
-*(Minimum 2 founders required — confirm both commit to 80% session attendance)*
+*(Single founder available at time of application — actively recruiting Co-Founder for Community & Partnerships)*
 
 ---
 
@@ -109,8 +109,8 @@ EquityMap is an offline-first digital platform that translates complex public he
 ## 9. Application Checklist
 
 - [ ] Startup Name: **EquityMap**
-- [ ] Founder 1 details (name, gender, mobile, email, LinkedIn)
-- [ ] Founder 2 details (name, gender, mobile, email, LinkedIn)
+- [x] Founder 1: **Gerald Kombo** (additional details — gender, mobile, email, LinkedIn — pending)
+- [ ] Founder 2 details (to be recruited — Community & Partnerships role)
 - [ ] Website: https://geraldkombo.github.io/kenya-health-equity-map/
 - [ ] Stage: **Early Traction** (MVP live, real users, documented use cases)
 - [ ] Country HQ: **Kenya**

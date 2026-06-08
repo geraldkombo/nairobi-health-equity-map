@@ -146,7 +146,7 @@ export default function DUAPage() {
               &ldquo;European Space Agency, ESA WorldCover 10 m 2021.&rdquo;
             </p>
             <p>
-              <strong>WHO AccessMod</strong> is open source under GPL-3.0. Any derivative use of the
+              <strong>World Health Organization (WHO) AccessMod</strong> is open source under GPL-3.0. Any derivative use of the
               AccessMod methodology must reference the original WHO tool.
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function DUAPage() {
             <p className="font-mono">
               Kenya Health Equity Map.
               <em> Map-first civic intelligence platform for health equity across Kenya&apos;s 47 counties.</em>
-              Nairobi, Kenya.               Retrieved from https://geraldkombo.github.io/kenya-health-equity-map/
+              Nairobi, Kenya. Retrieved from https://geraldkombo.github.io/kenya-health-equity-map/
             </p>
           </div>
           <p className="mt-3 text-xs leading-5 text-stone-500">

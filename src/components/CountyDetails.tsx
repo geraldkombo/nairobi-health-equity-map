@@ -93,14 +93,14 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
     if (!comparisons || !indicator || !nationalAvg) return [];
     const lines: string[] = [];
     if (comparisons.travelTime !== null && comparisons.travelTime >= 70) {
-      lines.push(`Travel time is longer than ${comparisons.travelTime}% of counties - people take too long to reach a clinic.`);
+      lines.push(`Travel time is longer than ${comparisons.travelTime}% of counties - the time required to reach a clinic is substantially elevated.`);
     }
     if (comparisons.poverty !== null && comparisons.poverty >= 70) {
-      lines.push(`Poverty is higher than ${comparisons.poverty}% of counties - many families struggle to afford care.`);
+      lines.push(`Poverty is higher than ${comparisons.poverty}% of counties - many households face economic barriers to accessing care.`);
     }
     if (comparisons.population !== null) {
       if (comparisons.population >= 80) {
-        lines.push(`Population is bigger than ${comparisons.population}% of counties - more people competing for the same health services.`);
+        lines.push(`Population is bigger than ${comparisons.population}% of counties - greater demand pressure on the same health services.`);
       } else if (comparisons.population <= 20) {
         lines.push(`Population is smaller than ${100 - comparisons.population}% of counties - less pressure on health services.`);
       }
