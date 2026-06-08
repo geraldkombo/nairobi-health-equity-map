@@ -1,63 +1,47 @@
 "use client";
 
-import type { SourceEntry } from "@/lib/adapters";
-import { REAL_SOURCES } from "@/lib/adapters";
+import React from "react";
 
-const SECTION_LABELS: Record<string, string> = {
-  counties: "County boundaries",
-  facilities: "Health facilities",
-  indicators: "Population and poverty indicators",
-  methods: "Spatial modelling methods",
-};
-
-export default function SourcesPanel({
-  sources = REAL_SOURCES,
-}: {
-  sources?: Record<string, SourceEntry[]>;
-}) {
+export default function SourcesPanel() {
   return (
-    <div className="rounded-xl border border-stone-200 bg-white p-5">
-      <details>
-        <summary className="cursor-pointer text-sm font-semibold text-stone-800 select-none">Data sources</summary>
-        <p className="mt-2 text-xs leading-5 text-stone-500">
-          This platform aggregates statistics from validated national and international public health databases.
+    <details className="group rounded-[8px] border border-[#E0DBD0] bg-white text-[#292524] shadow-sm transition-all open:pb-4 print:border-black">
+      <summary className="min-h-[44px] cursor-pointer list-none flex items-center justify-between p-4 font-bold text-[14px] uppercase tracking-widest text-[#524B3F] hover:bg-[#F8F5F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] rounded-[8px]">
+        <span>Open Data Methodology & Integrity Sources</span>
+        <span className="transition group-open:rotate-180">
+          <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+      </summary>
+
+      <div className="px-4 pt-4 border-t border-[#E0DBD0] text-[14px] leading-7 text-[#6B6355]">
+        <p className="mb-4">
+          All scoring indicators rely strictly on publicly available baselines. Missing or unmapped
+          facilities directly elevate physical access scores.
         </p>
-        <div className="mt-3 space-y-4">
-          {Object.entries(sources).map(([key, items]) => {
-            const label = SECTION_LABELS[key] ?? key;
-            return (
-              <div key={key}>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500">{label}</h4>
-                <ul className="mt-1 space-y-1">
-                  {items.map((item, i) => (
-                    <li key={i}>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-xs text-stone-600 underline underline-offset-2 hover:text-stone-800"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-        <p className="mt-3 text-xs text-stone-400">
-          Inquiries and Data Corrections{" "}
-          <a
-            href="https://wa.me/254706813068"
-            target="_blank"
-            rel="noreferrer"
-            className="text-emerald-600 underline underline-offset-2 hover:text-emerald-700"
-          >
-            Contact via WhatsApp
+        <ul className="list-disc pl-8 space-y-2 mb-4">
+          <li>
+            <strong>Population:</strong> KNBS 2019 Census data.
+          </li>
+          <li>
+            <strong>Poverty Rate:</strong> KIHBS 2015/16 baseline indicators.
+          </li>
+          <li>
+            <strong>Facility Mapping:</strong> OpenStreetMap / ICPAC master lists. Over 1,699 verified points.
+          </li>
+          <li>
+            <strong>Travel Modeling:</strong> WHO AccessMod methodologies calculating friction surfaces.
+          </li>
+        </ul>
+        <p className="text-[12px] leading-5 text-[#8A8170]">
+          Last Updated: <strong>October 2024</strong>. If a community dispensary is absent from this platform, you can augment the baseline by reporting its coordinates to OpenStreetMap directly at
+          <a href="https://www.openstreetmap.org/note/new" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#524B3F] min-h-[44px] inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] rounded-[4px] px-1 text-[#EA580C]">
+            www.openstreetmap.org
           </a>
+          or via WhatsApp to the data stewards at
+          <a href="https://wa.me/254706813068" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#047857] min-h-[44px] inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] rounded-[4px] px-1 text-[#059669]">
+            +254 706 813 068
+          </a>.
         </p>
-      </details>
-    </div>
+      </div>
+    </details>
   );
 }

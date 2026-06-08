@@ -79,8 +79,8 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
     <>
       <div className="mb-8 pb-4 border-b border-[#E0DBD0] print:hidden flex flex-col md:flex-row md:justify-between md:items-end gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#78350F]">Compare Counties</h1>
-          <p className="text-[#524B3F] mt-2 text-[14px]">
+          <h1 className="text-[24px] font-bold text-[#78350F] md:text-3xl">Compare Counties</h1>
+          <p className="text-[#6B6355] mt-4 text-[14px] leading-7">
             Select two counties to evaluate their infrastructure disparities side-by-side.
           </p>
         </div>
@@ -88,9 +88,9 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           {(countyA || countyB) && (
             <button
               onClick={() => { setCountyA(""); setCountyB(""); }}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center gap-2 bg-[#F8F5F0] border border-[#E0DBD0] hover:bg-[#F0EDE6] text-[#292524] font-bold px-4 py-2 rounded-[6px] transition-colors shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] active:scale-[0.98]"
+              className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center gap-2 bg-[#F8F5F0] border border-[#E0DBD0] hover:bg-[#F0EDE6] text-[#292524] font-bold px-4 py-2 rounded-[6px] transition-colors shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] active:scale-[0.98] text-[12px] uppercase tracking-widest"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
               </svg>
               Reset Selection
@@ -99,7 +99,7 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           {selA && selB && (
             <button
               onClick={handlePrint}
-              className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] gap-2 rounded-[6px] bg-[#EA580C] px-4 py-2 text-[14px] font-semibold text-[#FFFBEB] shadow-sm transition-colors hover:bg-[#C2410C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#92400E] print:hidden active:scale-[0.98]"
+              className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-[6px] bg-[#EA580C] px-4 py-2 text-[14px] font-bold text-[#FFFBEB] shadow-sm transition-colors hover:bg-[#C2410C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#92400E] active:scale-[0.98]"
             >
               Print advocacy report
             </button>
@@ -108,15 +108,15 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
       </div>
 
       {/* Selectors */}
-      <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-[#F8F5F0] p-4 sm:p-8 shadow-sm print:hidden">
+      <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-[#F8F5F0] p-8 shadow-sm print:hidden">
         <div className="mb-4 flex items-center justify-between border-b border-[#E0DBD0] pb-4">
-          <h2 className="text-[14px] font-bold uppercase tracking-wide text-[#524B3F]">
+          <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#524B3F]">
             Configure Comparison
           </h2>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
           <div>
-            <label className="mb-2 block text-[14px] font-semibold text-[#292524]">
+            <label className="mb-2 block text-[12px] font-semibold uppercase text-[#292524]">
               Select Primary County
             </label>
             <select
@@ -131,7 +131,7 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
             </select>
           </div>
           <div>
-            <label className="mb-2 block text-[14px] font-semibold text-[#292524]">
+            <label className="mb-2 block text-[12px] font-semibold uppercase text-[#292524]">
               Select Comparison County
             </label>
             <select
@@ -145,12 +145,13 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
                 <option key={c.id} value={c.id}>{c.name}</option>
               ))}
             </select>
+
             {selA && suggestedNeighbors.length > 0 && (
               <div className="mt-4">
-                <p className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-[#6B6355]">
+                <p className="mb-2 text-[12px] font-semibold uppercase tracking-widest text-[#A8A08F]">
                   Suggested neighboring counties:
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-4">
                   {suggestedNeighbors.map((n) => {
                     const isActive = selB?.id === n.id;
                     return (
@@ -174,18 +175,22 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
         </div>
       </div>
 
+      <div aria-live="polite" className="sr-only">
+        {selA && selB ? `Now comparing ${selA.name} and ${selB.name}` : ""}
+      </div>
+
       {selA && selB && selA.id !== selB.id ? (
-        <div className="mt-8 print:mt-4">
+        <div className="mt-8 print:m-2 print:p-2">
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
         </div>
       ) : (
-        <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-white p-8 text-center text-[14px] text-[#8A8170]">
-          Select two counties to see a comparison.
+        <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-white p-8 text-center text-[14px] leading-7 text-[#8A8170]">
+          Choose a primary county from the left dropdown, then select a neighbor or secondary county to reveal infrastructure disparities.
         </div>
       )}
 
-      <div className="hidden print:block text-center text-[14px] font-bold text-[#292524] mb-4">
-        County Comparison Report - {selA?.name} vs {selB?.name}
+      <div className="hidden print:block text-center text-[10px] font-bold text-[#292524] mb-4 mt-8 pt-8 border-t border-black">
+        Kenya Health Equity Map — County Comparison Report: {selA?.name || "N/A"} vs {selB?.name || "N/A"}
       </div>
 
       <div className="mt-8 print:hidden">
@@ -193,7 +198,10 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
       </div>
 
       <div className="mt-8 text-center text-[12px] text-[#A8A08F] print:hidden flex justify-center">
-        <Link href="/" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-[6px] px-4 py-2 text-[#EA580C] hover:bg-[#F8F5F0] hover:text-[#C2410C] underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]">
+        <Link
+          href="/"
+          className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-2 rounded-[6px] text-[14px] font-medium text-[#524B3F] underline underline-offset-2 transition-colors hover:text-[#292524] hover:bg-[#F8F5F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+        >
           &larr; Return to map
         </Link>
       </div>

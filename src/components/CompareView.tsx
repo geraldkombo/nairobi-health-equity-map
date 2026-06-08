@@ -1,217 +1,136 @@
 "use client";
 
-import { useMemo } from "react";
-import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
+import React from "react";
 import { normalizeCounty } from "@/lib/normalize";
-import { computePGS, DEFAULT_WEIGHTS, getPGSBadgeClass } from "@/lib/scoring";
-import { matchCountyName } from "@/lib/county-names";
+import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 
 interface CompareViewProps {
-  countyA: CountyRecord;
-  countyB: CountyRecord;
-  indicators: IndicatorRecord[];
+  countyA: { id: string; name: string };
+  countyB: { id: string; name: string };
+  indicators: any[];
 }
 
 export default function CompareView({ countyA, countyB, indicators }: CompareViewProps) {
-  const stats = useMemo(() => {
-    const iA = indicators.find((i) => matchCountyName(i.county_name, countyA.name));
-    const iB = indicators.find((i) => matchCountyName(i.county_name, countyB.name));
+  const indA = indicators.find((i) => i.county_name.toUpperCase() === countyA.name.toUpperCase());
+  const indB = indicators.find((i) => i.county_name.toUpperCase() === countyB.name.toUpperCase());
 
-    const sA = iA ? computePGS(countyA.id, normalizeCounty(iA), DEFAULT_WEIGHTS) : null;
-    const sB = iB ? computePGS(countyB.id, normalizeCounty(iB), DEFAULT_WEIGHTS) : null;
+  if (!indA || !indB) {
+    return (
+      <div className="rounded-[8px] border border-[#E0DBD0] p-8 text-center text-[14px] leading-7 text-[#6B6355]">
+        Indicator data is missing for one or both of these counties. Please select another comparison.
+      </div>
+    );
+  }
 
-    return { sA, sB, iA, iB };
-  }, [countyA, countyB, indicators]);
+  const scoreA = computePGS(countyA.id, normalizeCounty(indA), DEFAULT_WEIGHTS);
+  const scoreB = computePGS(countyB.id, normalizeCounty(indB), DEFAULT_WEIGHTS);
 
-  const equityNote = useMemo(() => {
-    if (!stats.sA || !stats.sB) return null;
-    const diff = stats.sA.pgs - stats.sB.pgs;
-    if (Math.abs(diff) < 1) return null;
-    const h = diff > 0 ? countyA : countyB;
-    const l = diff > 0 ? countyB : countyA;
-    const d = Math.abs(diff);
-    return { higher: h, lower: l, diff: d };
-  }, [stats, countyA, countyB]);
+  const diff = Math.abs(scoreA.pgs - scoreB.pgs);
+  const overlap = diff < 8;
 
-  const pgsA = stats.sA?.pgs ?? 0;
-  const pgsB = stats.sB?.pgs ?? 0;
-
-  const markersOverlap = Math.abs(pgsA - pgsB) < 8;
+  const A_COLOR = "#78350F";
+  const B_COLOR = "#EA580C";
 
   return (
-    <div>
-      {/* Header — matches brief quality */}
-      <header className="mb-6 border-b-4 border-amber-900 pb-4 print:mb-2 print:pb-2">
-        <p className="text-xs font-bold uppercase tracking-widest text-orange-700 print:text-[9px]">
-          Kenya Health Equity Map, County Comparison
-        </p>
-        <div className="mt-2 flex items-end justify-between">
-          <div>
-            <h1 className="text-2xl font-serif font-extrabold uppercase tracking-tight text-amber-900 print:text-xl">
-              {countyA.name} vs {countyB.name}
-            </h1>
-            <p className="mt-1 text-sm font-medium text-stone-600 print:text-[10px]">
-              Health Equity and Infrastructure Disparity Report
-            </p>
-          </div>
-        </div>
-      </header>
+    <div className="space-y-8">
+      {/* Gap Score Spectrum */}
+      <section className="rounded-[8px] border border-[#E0DBD0] bg-white p-8 shadow-sm print:border-black print:bg-transparent">
+        <h2 className="text-[14px] font-bold uppercase tracking-widest text-[#524B3F] mb-8">
+          Priority Gap Score Disparity
+        </h2>
 
-      {/* National inequity spectrum */}
-      {stats.sA && stats.sB && (
-        <div className="mb-8 rounded-xl border border-stone-200 bg-white p-5 shadow-sm print:mb-3 print:border-black print:p-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-stone-600 print:hidden">
-            National disparity index (0-100)
-          </h3>
-          <div className="relative mt-4 h-14 w-full rounded-lg bg-gradient-to-r from-[#FFF7BC] via-[#FEC44F] via-[#D95F0E] to-[#8C2D04] shadow-inner print:mt-1 print:h-10">
-            {markersOverlap ? (
-              <>
-                <div
-                  className="absolute -top-1 flex -translate-x-1/2 flex-col items-center transition-all duration-500"
-                  style={{ left: `${Math.min(Math.max(pgsA, 0), 100)}%` }}
-                >
-                  <span className="rounded bg-stone-900 px-2 py-1 text-[11px] font-bold text-white shadow-sm whitespace-nowrap print:text-[8px] print:px-1 print:py-0">
-                    {countyA.name} ({pgsA})
-                  </span>
-                  <div className="mt-0.5 h-2.5 w-2.5 rotate-45 bg-stone-900 print:hidden" />
-                </div>
-                <div
-                  className="absolute flex -translate-x-1/2 flex-col items-center transition-all duration-500"
-                  style={{ left: `${Math.min(Math.max(pgsB, 0), 100)}%`, top: "2.5rem" }}
-                >
-                  <div className="mb-0.5 h-2.5 w-2.5 rotate-45 bg-blue-700 print:hidden" />
-                  <span className="rounded bg-blue-700 px-2 py-1 text-[11px] font-bold text-white shadow-sm whitespace-nowrap print:text-[8px] print:px-1 print:py-0">
-                    {countyB.name} ({pgsB})
-                  </span>
-                </div>
-              </>
-            ) : (
-              <>
-                <div
-                  className="absolute -top-1 flex -translate-x-1/2 flex-col items-center transition-all duration-500"
-                  style={{ left: `${Math.min(Math.max(pgsA, 0), 100)}%` }}
-                >
-                  <span className="rounded bg-stone-900 px-2 py-1 text-[11px] font-bold text-white shadow-sm whitespace-nowrap print:text-[8px] print:px-1 print:py-0">
-                    {countyA.name} ({pgsA})
-                  </span>
-                  <div className="mt-0.5 h-2.5 w-2.5 rotate-45 bg-stone-900 print:hidden" />
-                </div>
-                <div
-                  className="absolute -bottom-1 flex -translate-x-1/2 flex-col items-center transition-all duration-500"
-                  style={{ left: `${Math.min(Math.max(pgsB, 0), 100)}%` }}
-                >
-                  <div className="mb-0.5 h-2.5 w-2.5 rotate-45 bg-blue-700 print:hidden" />
-                  <span className="rounded bg-blue-700 px-2 py-1 text-[11px] font-bold text-white shadow-sm whitespace-nowrap print:text-[8px] print:px-1 print:py-0">
-                    {countyB.name} ({pgsB})
-                  </span>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="mt-2 flex justify-between text-[11px] text-stone-400 print:text-[8px] print:mt-0">
-            <span>Low (0)</span>
-            <span>Critical (70+)</span>
-          </div>
-        </div>
-      )}
+        <div className="relative h-[12px] rounded-[6px] bg-[#E0DBD0] print:border print:border-[#A8A08F]" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
+          <div
+            className="absolute top-0 bottom-0 bg-[#A8A08F] opacity-20"
+            style={{
+              left: `${Math.min(scoreA.pgs, scoreB.pgs)}%`,
+              right: `${100 - Math.max(scoreA.pgs, scoreB.pgs)}%`
+            }}
+          />
 
-      {/* County cards grid */}
-      <div className="grid gap-6 md:grid-cols-2 print:gap-3">
-        {[countyA, countyB].map((county, idx) => {
-          const s = county.id === countyA.id ? stats.sA : stats.sB;
-          const ind = county.id === countyA.id ? stats.iA : stats.iB;
-          const accentColor = idx === 0 ? "border-l-amber-900" : "border-l-blue-700";
-          return (
-            <div key={county.id} className={`rounded-xl border border-stone-200 bg-white shadow-sm ${accentColor} border-l-4 print:border print:shadow-none`}>
-              {/* Card header */}
-              <div className="flex items-start justify-between border-b border-stone-100 bg-stone-50 p-4 print:p-2">
-                <div>
-                  <h3 className="text-lg font-bold text-stone-900 print:text-sm">{county.name}</h3>
-                  <p className="text-xs text-stone-500 uppercase tracking-wide print:hidden">County</p>
-                </div>
-                {s && (
-                  <div className={`rounded-lg px-3 py-1.5 text-center font-bold shadow-sm ${getPGSBadgeClass(s.pgs)} print:px-2 print:py-0.5`}>
-                    <span className="text-xl print:text-sm">{s.pgs}</span>
-                    <span className="ml-1 text-xs font-normal opacity-80 print:hidden">Priority Gap Score</span>
-                  </div>
-                )}
-              </div>
-              {/* Card body */}
-              {ind && (
-                <div className="p-4 print:p-2">
-                  <table className="w-full text-sm print:text-[10px]">
-                    <tbody>
-                      <tr className="border-b border-stone-100">
-                        <td className="py-2.5 text-stone-500 print:py-1.5">Population</td>
-                        <td className="py-2.5 text-right font-semibold text-stone-900 print:py-1.5">{ind.population.toLocaleString()}</td>
-                      </tr>
-                      <tr className="border-b border-stone-100">
-                        <td className="py-2.5 text-stone-500 print:py-1.5">Poverty rate</td>
-                        <td className="py-2.5 text-right font-semibold text-stone-900 print:py-1.5">{ind.poverty_proxy}%</td>
-                      </tr>
-                      <tr className="border-b border-stone-100">
-                        <td className="py-2.5 text-stone-500 print:py-1.5">Travel time to clinic</td>
-                        <td className="py-2.5 text-right font-semibold text-stone-900 print:py-1.5">
-                          {ind.travel_time_to_facility_proxy}{" "}
-                          <span className="text-xs font-normal text-stone-500 print:text-[9px]">minutes</span>
-                        </td>
-                      </tr>
-                      <tr className="border-b border-stone-100">
-                        <td className="py-2.5 text-stone-500 print:py-1.5">Mapped facilities</td>
-                        <td className="py-2.5 text-right font-semibold text-stone-900 print:py-1.5">{ind.facility_count}</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2.5 text-stone-500 print:py-1.5">Facility density</td>
-                        <td className="py-2.5 text-right font-semibold text-stone-900 print:py-1.5">
-                          {ind.facility_density_proxy.toFixed(2)}{" "}
-                          <span className="text-xs font-normal text-stone-500 print:text-[9px]">per 10k</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  {s && s.drivers.length > 0 && (
-                    <div className="mt-4 rounded-lg bg-stone-50 p-3 print:mt-2 print:p-1.5">
-                      <p className="mb-1.5 text-xs font-bold uppercase tracking-wider text-stone-600 print:hidden">
-                        Key drivers
-                      </p>
-                      <ul className="list-disc pl-4 text-xs leading-5 text-stone-700 print:text-[9px] print:leading-4 print:pl-3">
-                        {s.drivers.map((d, i) => (
-                          <li key={i}>{d}</li>
-                        ))}
-                        {s.drivers.length === 0 && <li>All measures within normal range</li>}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )}
+          <div
+            className={`absolute -top-[16px] w-[16px] h-[44px] rounded-[4px] border-2 border-white shadow-sm transition-all z-10 print:border-black`}
+            style={{ left: `calc(${scoreA.pgs}% - 8px)`, backgroundColor: A_COLOR }}
+            title={`${countyA.name}: ${scoreA.pgs}/100`}
+          />
+          <div
+            className={`absolute w-[16px] h-[44px] rounded-[4px] border-2 border-white shadow-sm transition-all z-20 print:border-black ${overlap && scoreA.pgs <= scoreB.pgs ? 'top-[4px]' : overlap ? '-top-[36px]' : '-top-[16px]'}`}
+            style={{ left: `calc(${scoreB.pgs}% - 8px)`, backgroundColor: B_COLOR }}
+            title={`${countyB.name}: ${scoreB.pgs}/100`}
+          />
+        </div>
+
+        <div className="mt-8 flex justify-between text-[12px] font-semibold text-[#8A8170]">
+          <span>0 (High Resource Equity)</span>
+          <span>100 (Severe Infrastructure Gap)</span>
+        </div>
+      </section>
+
+      {/* Raw Data Comparison Cards */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="rounded-[8px] border-t-4 bg-[#F8F5F0] p-8 shadow-sm print:border-black print:bg-transparent" style={{ borderColor: A_COLOR }}>
+          <h3 className="text-[24px] font-bold text-[#292524] mb-4">{countyA.name}</h3>
+          <div className="space-y-4">
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Gap Score</span>
+              <span className="text-[14px] font-bold" style={{ color: A_COLOR }}>{scoreA.pgs}/100</span>
             </div>
-          );
-        })}
-      </div>
-
-      {/* Advocacy callout */}
-      {equityNote && (
-        <div className="mt-8 rounded-r-lg border-l-4 border-orange-600 bg-orange-50 p-5 shadow-sm print:mt-3 print:p-3" role="note">
-          <h4 className="flex items-center gap-2 text-sm font-bold text-amber-900 print:hidden">
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            Advocacy takeaway
-          </h4>
-          <p className="mt-1 text-sm leading-relaxed text-amber-800 print:text-[10px] print:leading-snug print:mt-0.5">
-            Data Takeaway: Significant variations in regional infrastructure demand strategic resource distribution.
-          </p>
-          <div className="mt-3 border-t border-orange-200 pt-3 text-xs font-semibold text-amber-900 print:mt-1 print:pt-1 print:text-[9px]">
-            Use this direct comparison in community-led monitoring to advocate for equitable resource allocation from
-            national and county health executives.
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Poverty Rate</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indA.poverty_proxy}%</span>
+            </div>
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Facility Count</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indA.facility_count}</span>
+            </div>
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Avg Travel Time</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indA.travel_time_to_facility_proxy} min</span>
+            </div>
           </div>
         </div>
-      )}
 
-      {/* Print footer */}
-      <div className="hidden print:block mt-4 text-center text-[9px] text-stone-500">
-        geraldkombo.github.io/kenya-health-equity-map, Source data: KNBS, KIHBS, KDHS, WHO AccessMod, OSM
-      </div>
+        <div className="rounded-[8px] border-t-4 bg-[#F8F5F0] p-8 shadow-sm print:border-black print:bg-transparent" style={{ borderColor: B_COLOR }}>
+          <h3 className="text-[24px] font-bold text-[#292524] mb-4">{countyB.name}</h3>
+          <div className="space-y-4">
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Gap Score</span>
+              <span className="text-[14px] font-bold" style={{ color: B_COLOR }}>{scoreB.pgs}/100</span>
+            </div>
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Poverty Rate</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indB.poverty_proxy}%</span>
+            </div>
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Facility Count</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indB.facility_count}</span>
+            </div>
+            <div className="flex justify-between border-b border-[#E0DBD0] pb-2">
+              <span className="text-[12px] font-semibold uppercase text-[#6B6355]">Avg Travel Time</span>
+              <span className="text-[14px] font-bold text-[#292524]">{indB.travel_time_to_facility_proxy} min</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advocacy Takeaways */}
+      <section className="rounded-[8px] border border-[#E0DBD0] bg-[#FFFBEB] p-8 shadow-sm print:border-black print:bg-transparent">
+        <h2 className="text-[14px] font-bold uppercase tracking-widest text-[#78350F] mb-4">
+          Key Drivers & Advocacy Takeaways
+        </h2>
+        <p className="text-[14px] leading-7 text-[#292524]">
+          This comparison highlights a {diff} point gap between {countyA.name} and {countyB.name}.
+          {indA.travel_time_to_facility_proxy > indB.travel_time_to_facility_proxy
+            ? ` ${countyA.name} experiences significantly worse average travel times (${indA.travel_time_to_facility_proxy} min) compared to ${countyB.name} (${indB.travel_time_to_facility_proxy} min). `
+            : ` ${countyB.name} registers more severe access barriers in travel distance (${indB.travel_time_to_facility_proxy} min) vs ${countyA.name}. `}
+          {indA.poverty_proxy > indB.poverty_proxy
+            ? ` Compounding this physical barrier, ${countyA.name}'s elevated poverty rate (${indA.poverty_proxy}%) restricts ability to absorb transport costs.`
+            : ` Financial constraints are heavily concentrated in ${countyB.name} (${indB.poverty_proxy}% poverty).`}
+        </p>
+        <p className="text-[14px] leading-7 text-[#524B3F] mt-4 font-semibold">
+          Advocacy action: Use this data to negotiate proportional CHMT budget allocations between neighboring wards. Request mobile clinical outreach for regions exceeding 60-minute travel times.
+        </p>
+      </section>
     </div>
   );
 }
