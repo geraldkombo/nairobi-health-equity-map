@@ -130,5 +130,9 @@ No user profiles, no messaging, no social features, no authentication system —
 | 9B. Inappropriate & Illegal Content | ✓ Compliant |
 | 9C. Protection from Harassment | ✓ Compliant |
 
+## DPGA Portal — Short Description (300 char max)
+
+> The Kenya Health Equity Map is an open-source geographic platform that models health infrastructure disparities across Kenya's 47 counties. It aligns with SDG 3 and 10 by mapping physical access, poverty, and population pressure to identify healthcare gaps for underserved communities.
+
 ## All 9 Indicators Compliant
 No remaining actions. The tile-swappability note was already present in README.md:51.
