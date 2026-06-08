@@ -20,7 +20,7 @@ function SourceRow({ name, url, license }: { name: string; url: string; license:
 export default function DUAPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="text-xl font-semibold tracking-tight text-stone-800">Data Use Agreement</h1>
+      <h1 className="text-xl font-bold font-serif tracking-tight text-stone-800">Data Use Agreement</h1>
       <p className="mt-1 text-sm text-stone-500">
         How data is sourced, attributed, and licensed on this platform.
       </p>
@@ -28,7 +28,7 @@ export default function DUAPage() {
       <div className="mt-8 space-y-8">
         {/* ── Principles ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Open Data Principles</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Open Data Principles</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
             The Kenya Health Equity Map is built entirely on open civic data. Every indicator, boundary, and
             facility location displayed on this platform can be traced to a publicly available source.
@@ -43,7 +43,7 @@ export default function DUAPage() {
 
         {/* ── Source Register ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Source Register</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Source Register</h2>
           <p className="mt-1 text-sm text-stone-500">
             Every dataset used in this platform, its license, and the date it was accessed.
           </p>
@@ -124,7 +124,7 @@ export default function DUAPage() {
 
         {/* ── Attribution ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Attribution Requirements</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Attribution Requirements</h2>
           <div className="mt-4 space-y-4 text-sm leading-6 text-stone-700">
             <p>
               <strong>KNBS data</strong> must be attributed as &ldquo;Kenya National Bureau of Statistics,
@@ -154,7 +154,7 @@ export default function DUAPage() {
 
         {/* ── Suggested Citation ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Suggested Citation</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Suggested Citation</h2>
           <div className="mt-4 rounded-lg bg-[#FDE68A] p-5 text-sm leading-6 text-stone-800">
             <p className="font-mono">
               Kenya Health Equity Map.
@@ -171,7 +171,7 @@ export default function DUAPage() {
 
         {/* ── Clinical Data Disclaimer ── */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Clinical Data Disclaimer</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Clinical Data Disclaimer</h2>
           <p className="mt-3 text-sm leading-6 text-stone-700">
             This platform uses indirect measures to assess gaps in health access. It does not measure
             clinical outcomes, quality of care, or health service readiness. For clinical health data,
@@ -184,7 +184,7 @@ export default function DUAPage() {
 
         {/* Contribute & Share */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Data Contribution and Distribution</h2>
+          <h2 className="text-base font-semibold font-serif text-stone-800">Data Contribution and Distribution</h2>
           <div className="mt-4 space-y-5 text-sm leading-6 text-stone-700">
             <div>
               <strong className="text-stone-800">Adding a missing health facility</strong>

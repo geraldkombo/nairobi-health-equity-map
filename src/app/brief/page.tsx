@@ -154,7 +154,7 @@ function PrintableBrief({
             ] satisfies { key: string; label: string; desc: string }[]
           ).map((item) => (
             <div key={item.key} className="border-l-4 border-[#EA580C] bg-[#F8F5F0] p-4 rounded-[8px] shadow-sm">
-              <h3 className="font-bold text-[#78350F] text-[14px]">{item.label}</h3>
+              <h3 className="font-bold font-serif text-[#78350F] text-[14px]">{item.label}</h3>
               <p className="text-[12px] text-[#524B3F] mt-2">{item.desc}</p>
             </div>
           ))}
@@ -252,7 +252,7 @@ function BriefContent() {
             <div className="text-[12px] font-semibold uppercase tracking-wider text-[#A8A08F]">
               Kenya Health Equity Map
             </div>
-            <h1 className="mt-2 text-xl font-bold text-[#292524]">
+            <h1 className="mt-2 text-xl font-bold font-serif text-[#292524]">
               {selected ? selected.name : "Select a county"}
             </h1>
           </div>

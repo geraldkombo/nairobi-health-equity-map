@@ -41,8 +41,9 @@
   --color-pgs-high: #D95F0E;
   --color-pgs-critical: #8C2D04;
 
-  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-lora), "Lora", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 body {

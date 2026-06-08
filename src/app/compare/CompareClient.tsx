@@ -79,7 +79,7 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
     <>
       <div className="mb-8 pb-4 border-b border-[#E0DBD0] print:hidden flex flex-col md:flex-row md:justify-between md:items-end gap-4">
         <div>
-          <h1 className="text-[24px] font-bold text-[#78350F] md:text-3xl">Compare Counties</h1>
+          <h1 className="text-[24px] font-bold font-serif text-[#78350F] md:text-3xl">Compare Counties</h1>
           <p className="text-[#6B6355] mt-4 text-[14px] leading-7">
             Select two counties to evaluate their infrastructure disparities side-by-side.
           </p>

@@ -123,7 +123,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
     <div className="rounded-xl border border-stone-200 bg-white p-5 transition-all duration-200 ease-in-out hover:shadow-md">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h2 className="text-lg font-bold text-stone-800">{county.name}</h2>
+          <h2 className="text-lg font-bold font-serif text-stone-800">{county.name}</h2>
           <p className="text-sm text-stone-500">
             County, Kenya
           </p>

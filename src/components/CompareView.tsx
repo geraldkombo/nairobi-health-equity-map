@@ -129,7 +129,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
               {/* Card Header */}
               <div className="flex items-start justify-between border-b border-[#E0DBD0] bg-[#F8F5F0] p-4 print:p-2">
                 <div>
-                  <h3 className="text-[14px] font-bold text-[#292524] print:text-[12px]">{county.name}</h3>
+                  <h3 className="text-[14px] font-bold font-serif text-[#292524] print:text-[12px]">{county.name}</h3>
                   <p className="text-[12px] uppercase tracking-wide text-[#A8A08F] print:hidden">County</p>
                 </div>
                 {s && (

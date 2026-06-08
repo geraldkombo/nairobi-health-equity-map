@@ -4,7 +4,7 @@ import SourcesPanel from "@/components/SourcesPanel";
 export default function MethodPage() {
   return (
     <div className="mx-auto max-w-3xl px-8 py-8">
-      <h1 className="text-[24px] font-bold text-[#78350F]">Methodology Framework</h1>
+      <h1 className="text-[24px] font-bold font-serif text-[#78350F]">Methodology Framework</h1>
       <p className="mt-4 text-[14px] leading-7 text-[#6B6355] border-l-4 border-[#EA580C] pl-4">
         Health equity requires transparent, verifiable methodologies. All algorithms, data sources, and calculations are publicly documented and independently reproducible.
       </p>
@@ -34,7 +34,7 @@ export default function MethodPage() {
               <li><strong>0–29:</strong> Relatively equitable resource distribution</li>
               <li><strong>30–49:</strong> Moderate infrastructure gaps</li>
               <li><strong>50–69:</strong> Significant gaps requiring intervention</li>
-              <li><strong>70–100:</strong> Severe gaps -- urgent resource allocation needed</li>
+              <li><strong>70–100:</strong> Severe gaps requiring urgent resource allocation</li>
             </ul>
           </div>
           <p className="mt-4 text-[14px] leading-7 text-[#292524]">
@@ -99,14 +99,14 @@ export default function MethodPage() {
             These three dimensions are well established in health-access literature:
           </p>
           <ul className="mt-4 space-y-4 text-[14px] leading-7 text-[#524B3F]">
-<li><strong>Travel time and facility density</strong> measure <strong>physical accessibility</strong> -- can a person reach care when needed?</li>
+<li><strong>Travel time and facility density</strong> measure <strong>physical accessibility</strong>: can a person reach care when needed?</li>
 
-            <li><strong>Poverty rates</strong> approximate <strong>economic accessibility</strong> -- can a household afford transport, fees, and treatment?</li>
+            <li><strong>Poverty rates</strong> approximate <strong>economic accessibility</strong>: whether a household can afford transport, fees, and treatment.</li>
 
-            <li><strong>Population-to-facility ratios</strong> capture <strong>demand pressure</strong> -- is the existing infrastructure overwhelmed?</li>
+            <li><strong>Population-to-facility ratios</strong> capture <strong>demand pressure</strong>: whether the existing infrastructure is overwhelmed by patient volume.</li>
           </ul>
           <p className="mt-4 text-[14px] leading-7 text-[#292524]">
-            All datasets are from publicly accessible sources -- KNBS, KDHS, KIHBS, WHO AccessMod, and OpenStreetMap -- ensuring every input can be independently verified.
+            All datasets are from publicly accessible sources, including KNBS, KDHS, KIHBS, WHO AccessMod, and OpenStreetMap, ensuring every input can be independently verified.
           </p>
         </section>
 
@@ -114,7 +114,7 @@ export default function MethodPage() {
         <section className="rounded-[8px] border border-[#E0DBD0] bg-white p-8">
           <h2 className="text-[14px] font-bold uppercase tracking-widest text-[#78350F]">Maternal Health Access</h2>
           <p className="mt-4 text-[14px] leading-7 text-[#292524]">
-            The platform includes county-level <strong>Skilled Birth Attendance (SBA)</strong> rates from the Kenya Demographic and Health Survey (KDHS 2022). SBA measures the proportion of deliveries attended by a skilled health professional -- a key indicator of maternal health system performance. Counties with low SBA and high travel time represent <strong>maternal health access deserts</strong> where women face compounded barriers to safe delivery.
+            The platform includes county-level <strong>Skilled Birth Attendance (SBA)</strong> rates from the Kenya Demographic and Health Survey (KDHS 2022). SBA measures the proportion of deliveries attended by a skilled health professional, a key indicator of maternal health system performance. Counties with low SBA and high travel time represent <strong>maternal health access deserts</strong> where women face compounded barriers to safe delivery.
           </p>
           <p className="mt-4 text-[14px] leading-7 text-[#524B3F]">
             SBA data is displayed in the county detail panel and can be used alongside the PGS to identify priority counties for maternal health interventions, mobile clinics, and community health worker deployment.

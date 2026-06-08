@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="mx-auto flex min-h-[60svh] max-w-xl flex-col items-center justify-center px-4 text-center">
       <div className="text-6xl font-bold text-neutral-200">404</div>
-      <h1 className="mt-4 text-xl font-semibold text-neutral-900">Resource not found</h1>
+      <h1 className="mt-4 text-xl font-semibold font-serif text-neutral-900">Resource not found</h1>
       <p className="mt-2 text-sm text-neutral-500">
         The requested document does not exist or has been relocated.
       </p>
