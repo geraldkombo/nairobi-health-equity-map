@@ -25,7 +25,7 @@ function PrintableBrief({
       {/* Institutional Header */}
       <header className="break-inside-avoid border-b-4 border-amber-900 pb-4">
         <p className="text-xs font-bold uppercase tracking-widest text-orange-700">
-          Kenya Health Equity Map &middot; Community Evidence Base
+          Kenya Health Equity Map, Community Evidence Base
         </p>
         <div className="mt-2 flex items-end justify-between">
           <div>
@@ -53,8 +53,8 @@ function PrintableBrief({
           Baseline Narrative
         </h2>
         <p className="mt-2 text-sm leading-7 text-stone-800 text-justify">
-          {county.name} registers a Priority Gap Score of {score.pgs}/100, indicating severe resource
-          inequity. Travel time to the nearest health facility is heavily elevated at{" "}
+          {county.name} registers a Priority Gap Score of {score.pgs}/100, indicating significant resource
+          disparity. Travel time to the nearest health facility is substantially elevated at{" "}
           {indicator.travel_time_to_facility_proxy} minutes, demonstrating acute physical access
           constraints in peripheral wards. The socioeconomic vulnerability remains high with a
           poverty rate of {indicator.poverty_proxy}%. Furthermore, with only{" "}
@@ -262,7 +262,7 @@ function BriefContent() {
               disabled={!selected || !indicator}
               className="rounded-lg bg-amber-900 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-orange-800 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              Download PDF &rarr;
+              Download PDF Document
             </button>
             <Link
               href="/"
@@ -281,11 +281,11 @@ function BriefContent() {
 
         {!countyCode ? (
           <div className="mt-8 rounded-xl border border-stone-200 p-6 text-sm text-stone-500 print:hidden">
-            Open this page from the map by clicking <strong>Generate brief</strong> on a selected county.
+            To access this page, select a county from the map interface and choose <strong>Generate analytical brief</strong>.
           </div>
         ) : !selected || !indicator ? (
           <div className="mt-8 rounded-xl border border-stone-200 p-6 text-sm text-stone-500 print:hidden">
-            Loading county data&hellip;
+            Loading county metrics&hellip;
           </div>
         ) : (
           <div ref={printRef}>

@@ -85,7 +85,7 @@ export default function SearchBar({ counties, onSelect }: SearchBarProps) {
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
-        <span className="flex-1 text-left">Search counties...</span>
+        <span className="flex-1 text-left">Search administrative counties...</span>
         <kbd className="hidden rounded border border-stone-200 px-1.5 py-0.5 text-[10px] font-medium text-stone-400 md:inline-block">
           {isMac ? "⌘" : "Ctrl"}+K
         </kbd>
@@ -104,7 +104,7 @@ export default function SearchBar({ counties, onSelect }: SearchBarProps) {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search 47 counties..."
+                placeholder="Search all 47 counties..."
                 className="w-full border-0 bg-transparent px-3 py-3 text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
                 aria-label="Search input"
               />
@@ -132,10 +132,10 @@ export default function SearchBar({ counties, onSelect }: SearchBarProps) {
               </div>
             )}
             {query.trim() && results.length === 0 && (
-              <div className="px-4 py-6 text-center text-sm text-stone-400">No counties match &quot;{query}&quot;</div>
+              <div className="px-4 py-6 text-center text-sm text-stone-400">No corresponding counties found.</div>
             )}
             {!query.trim() && (
-              <div className="px-4 py-6 text-center text-sm text-stone-400">Type a county name to search</div>
+              <div className="px-4 py-6 text-center text-sm text-stone-400">Enter a county name to initiate search.</div>
             )}
           </div>
         </div>

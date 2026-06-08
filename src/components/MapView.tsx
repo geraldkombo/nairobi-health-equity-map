@@ -235,11 +235,11 @@ export default function MapView({
       )}
       {hasError ? (
         <div className="absolute inset-0 flex items-center justify-center bg-stone-50 text-sm text-stone-500">
-          Map render error. Check console for details.
+          Map rendering error encountered. Review the system console for details.
         </div>
       ) : !ready ? (
         <div className="absolute inset-0 flex items-center justify-center bg-stone-50 text-sm text-stone-500">
-          Loading map...
+          Loading geographic interface...
         </div>
       ) : null}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-1.5">

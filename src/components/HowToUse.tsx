@@ -18,7 +18,7 @@ export default function HowToUse() {
         aria-expanded={open}
         aria-controls="how-to-use-content"
       >
-        How to use this map
+        Instructions for use
         <span className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} aria-hidden="true">
           ▾
         </span>
@@ -29,27 +29,27 @@ export default function HowToUse() {
             {isMobile ? (
               <>
                 <li>
-                  <strong>Tap</strong> a county to see its details and score.
+                  Select a county from the geographic interface to view specific health indicators.
                 </li>
                 <li>
-                  <strong>Two fingers</strong> to pan and zoom the map.
+                  Utilize the search function to locate administrative regions directly.
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <strong>Hover</strong> over a county to see its name and Priority Gap Score.
+                  Hover over a county to view its Priority Gap Score.
                 </li>
                 <li>
-                  <strong>Click</strong> a county to open its details panel with key facts.
+                  Select a county to access its details panel with key indicators.
                 </li>
               </>
             )}
             <li>
-              Use the <strong>Compare</strong> page to place two counties side by side.
+              Compare multiple regions to analyze structural disparities.
             </li>
             <li>
-              Use the <strong>Brief</strong> button on a selected county to generate a printable county summary.
+              Generate an analytical brief for formal documentation.
             </li>
           </ul>
         </div>

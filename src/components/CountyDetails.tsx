@@ -122,20 +122,20 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
         <div>
           <h2 className="text-lg font-bold text-stone-800">{county.name}</h2>
           <p className="text-sm text-stone-500">
-            County &middot; Kenya
+            County, Kenya
           </p>
         </div>
         {score && (
           <div className={`rounded-lg px-3 py-1.5 text-right ${pgsClass}`}>
             <div className="text-xl font-bold tracking-tight">{score.pgs}</div>
-            <div className="text-[10px] font-medium opacity-80">Gap Score</div>
+            <div className="text-[10px] font-medium opacity-80">Priority Gap Score</div>
           </div>
         )}
       </div>
 
       {narrativeLines.length > 0 && (
         <div className="mt-4 rounded-lg bg-stone-50 p-4 text-sm leading-6 text-stone-700 border border-stone-100" role="note">
-          <strong>How this county compares:</strong>
+          <strong>Comparative regional analysis:</strong>
           <ul className="mt-1 list-disc space-y-0.5 pl-4">
             {narrativeLines.map((line, i) => <li key={i}>{line}</li>)}
           </ul>
@@ -144,7 +144,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
 
       {indicator && nationalAvg && (
         <div className="mt-5 space-y-3 border-t border-stone-100 pt-4">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500">Score breakdown</h4>
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500">Score distribution</h4>
           <ProgressBar label="Travel time" value={indicator.travel_time_to_facility_proxy} max={100} />
           <ProgressBar label="Poverty rate" value={indicator.poverty_proxy} max={100} />
           <ProgressBar label="People per facility" value={indicator.population / Math.max(indicator.facility_count, 1)} max={10000} />
@@ -188,11 +188,11 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
       )}
       {score && (
         <div className="mt-5 rounded-lg bg-amber-50 border border-amber-200 p-4">
-          <h4 className="text-xs font-semibold text-amber-900">What you can do with this data:</h4>
+          <h4 className="text-xs font-semibold text-amber-900">Potential applications for these metrics:</h4>
           <ul className="mt-2 list-disc space-y-1.5 pl-4 text-[11px] text-amber-800">
-            <li>Use this score to show your CHMT that {county.name} needs more health resources.</li>
-            <li>Print the county brief and submit it as evidence at CHMT quarterly planning meetings and community dialogue days.</li>
-            <li>Compare {county.name} with a neighboring county to highlight inequity.</li>
+            <li>Inform resource allocation strategies.</li>
+            <li>Support policy drafting and review.</li>
+            <li>Guide targeted regional interventions.</li>
           </ul>
         </div>
       )}
@@ -208,7 +208,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
             href={`/brief?county=${county.id}`}
             className="rounded-lg bg-stone-800 px-3 py-2 text-xs font-semibold text-white hover:bg-stone-700 transition-colors"
           >
-            Generate brief
+            Generate analytical brief
           </Link>
         </div>
       )}

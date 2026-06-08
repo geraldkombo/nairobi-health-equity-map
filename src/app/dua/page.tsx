@@ -184,7 +184,7 @@ export default function DUAPage() {
 
         {/* Contribute & Share */}
         <section className="rounded-xl border border-stone-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-stone-800">Contribute & Share</h2>
+          <h2 className="text-base font-semibold text-stone-800">Data Contribution and Distribution</h2>
           <div className="mt-4 space-y-5 text-sm leading-6 text-stone-700">
             <div>
               <strong className="text-stone-800">Adding a missing health facility</strong>
@@ -222,14 +222,14 @@ export default function DUAPage() {
         </section>
 
         <div className="rounded-xl border border-stone-200 bg-white p-6 text-center">
-          <p className="text-sm text-stone-500">Questions or data corrections?</p>
+          <p className="text-sm text-stone-500">Inquiries and Data Corrections</p>
           <a
             href="https://wa.me/254706813068"
             target="_blank"
             rel="noreferrer"
             className="mt-2 inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
           >
-            Chat on WhatsApp
+            Contact via WhatsApp
           </a>
         </div>
 

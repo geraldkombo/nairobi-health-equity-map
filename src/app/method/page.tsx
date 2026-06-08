@@ -4,9 +4,9 @@ import SourcesPanel from "@/components/SourcesPanel";
 export default function MethodPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="text-xl font-semibold tracking-tight text-amber-900">Measuring equity in plain language</h1>
+      <h1 className="text-xl font-semibold tracking-tight text-amber-900">Methodology Framework</h1>
       <p className="mt-1 text-sm text-stone-500 border-l-4 border-orange-600 pl-4">
-        Data justice means transparent methodologies. No black box algorithms. No hidden calculations.
+        Health equity necessitates transparent methodologies. All algorithms and calculations remain publicly accessible and documented.
       </p>
 
       <div className="mt-8 space-y-8">
@@ -106,7 +106,7 @@ export default function MethodPage() {
 
         {/* ── Data Limitations: An Invitation to Act ── */}
         <section className="rounded-xl bg-amber-900 p-6 text-white shadow-md">
-          <h2 className="text-base font-bold text-orange-400">Data Limitations: An Invitation to Act</h2>
+          <h2 className="text-base font-bold text-orange-400">Data Limitations and Future Considerations</h2>
           <p className="mt-3 text-sm leading-6 text-stone-100">
             While this map is a powerful tool for advocacy, it relies on a validated baseline of
             1,699 community-mapped facilities, representing approximately 10% of Kenya&apos;s officially
@@ -126,24 +126,23 @@ export default function MethodPage() {
           </p>
           <div className="mt-4 rounded-sm bg-white p-5 text-stone-900">
             <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900">
-              How to report a missing clinic
+              Procedure for reporting unmapped health facilities
             </h3>
             <ol className="mt-2 list-decimal pl-5 space-y-2 text-sm text-stone-700">
               <li>
-                Select the button below to open an interactive map of your area on OpenStreetMap.
+                Navigate to the OpenStreetMap platform.
               </li>
               <li>
-                Select the precise location of the missing health facility to place a marker.
+                Identify the precise geographic coordinates of the facility.
               </li>
               <li>
-                In the text field, provide the facility name and any available details:
+                Input the required facility specifications.
                 <div className="mt-1 rounded bg-stone-100 p-2 text-xs font-mono text-stone-600 select-all">
                   Missing health facility: [facility name]. This facility serves the community but is not currently mapped. Location verified by community health workers.
                 </div>
               </li>
               <li>
-                Select &quot;Add Note&quot; to submit the report. It will be reviewed by the volunteer
-                mapping community. No account is required.
+                Submit the record for verification.
               </li>
             </ol>
             <a
@@ -152,7 +151,7 @@ export default function MethodPage() {
               rel="noreferrer"
               className="mt-4 inline-flex items-center rounded-lg bg-amber-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-800 transition-colors"
             >
-              Report a missing facility on OpenStreetMap
+              Report unmapped facility via OpenStreetMap
             </a>
           </div>
         </section>

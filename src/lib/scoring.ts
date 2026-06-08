@@ -68,7 +68,7 @@ export function computePGS(
 
   const drivers: string[] = [];
   if (norm.travelTime > 0.7) {
-    drivers.push("People here travel longer to reach a clinic than 70% of other counties");
+    drivers.push("Travel duration to health facilities in this region exceeds that of 70 percent of comparable counties.");
   }
   if (norm.facilityDensity > 0.7) {
     drivers.push("Fewer health facilities per person compared to other counties");

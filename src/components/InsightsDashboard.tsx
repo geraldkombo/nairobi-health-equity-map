@@ -18,7 +18,7 @@ export default function InsightsDashboard({ countyCount, facilityCount, highPrio
       <div className="rounded-xl border border-stone-200 bg-white p-4 transition-all duration-200 ease-in-out hover:shadow-md">
         <div className="text-xs font-semibold uppercase tracking-wider text-stone-500">Counties</div>
         <div className="mt-1 text-2xl font-bold text-stone-800">{countyCount}</div>
-        <div className="text-xs text-stone-400">analysed</div>
+        <div className="text-xs text-stone-400">analyzed</div>
       </div>
       <div className="rounded-xl border border-stone-200 bg-white p-4 transition-all duration-200 ease-in-out hover:shadow-md">
         <div className="text-xs font-semibold uppercase tracking-wider text-stone-500">Facilities</div>
@@ -33,7 +33,7 @@ export default function InsightsDashboard({ countyCount, facilityCount, highPrio
       <div className="rounded-xl border border-stone-200 bg-white p-4 transition-all duration-200 ease-in-out hover:shadow-md">
         <div className="text-xs font-semibold uppercase tracking-wider text-stone-500">High priority</div>
         <div className="mt-1 text-2xl font-bold text-stone-800">{highPriorityCount}</div>
-        <div className="text-xs text-stone-400">counties (Priority Gap Score &ge;50)</div>
+        <div className="text-xs text-stone-400">counties (Priority Gap Score &gt;= 50)</div>
       </div>
     </div>
   );

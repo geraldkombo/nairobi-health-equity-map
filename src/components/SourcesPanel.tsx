@@ -20,7 +20,7 @@ export default function SourcesPanel({
       <details>
         <summary className="cursor-pointer text-sm font-semibold text-stone-800 select-none">Data sources</summary>
         <p className="mt-2 text-xs leading-5 text-stone-500">
-          All data is sourced from official Kenyan open data repositories and international research programmes.
+          This platform aggregates statistics from validated national and international public health databases.
         </p>
         <div className="mt-3 space-y-4">
           {Object.entries(sources).map(([key, items]) => {
@@ -47,14 +47,14 @@ export default function SourcesPanel({
           })}
         </div>
         <p className="mt-3 text-xs text-stone-400">
-          Questions or data corrections?{" "}
+          Inquiries and Data Corrections{" "}
           <a
             href="https://wa.me/254706813068"
             target="_blank"
             rel="noreferrer"
             className="text-emerald-600 underline underline-offset-2 hover:text-emerald-700"
           >
-            Chat on WhatsApp
+            Contact via WhatsApp
           </a>
         </p>
       </details>

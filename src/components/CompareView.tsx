@@ -43,7 +43,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
       {/* Header — matches brief quality */}
       <header className="mb-6 border-b-4 border-amber-900 pb-4 print:mb-2 print:pb-2">
         <p className="text-xs font-bold uppercase tracking-widest text-orange-700 print:text-[9px]">
-          Kenya Health Equity Map &middot; County Comparison
+          Kenya Health Equity Map, County Comparison
         </p>
         <div className="mt-2 flex items-end justify-between">
           <div>
@@ -51,7 +51,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
               {countyA.name} vs {countyB.name}
             </h1>
             <p className="mt-1 text-sm font-medium text-stone-600 print:text-[10px]">
-              Health Equity &amp; Infrastructure Disparity Report
+              Health Equity and Infrastructure Disparity Report
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
       {stats.sA && stats.sB && (
         <div className="mb-8 rounded-xl border border-stone-200 bg-white p-5 shadow-sm print:mb-3 print:border-black print:p-2">
           <h3 className="text-xs font-bold uppercase tracking-wider text-stone-600 print:hidden">
-            National inequity spectrum (0-100)
+            National disparity index (0-100)
           </h3>
           <div className="relative mt-4 h-14 w-full rounded-lg bg-gradient-to-r from-[#FFF7BC] via-[#FEC44F] via-[#D95F0E] to-[#8C2D04] shadow-inner print:mt-1 print:h-10">
             {markersOverlap ? (
@@ -132,7 +132,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
                 {s && (
                   <div className={`rounded-lg px-3 py-1.5 text-center font-bold shadow-sm ${getPGSBadgeClass(s.pgs)} print:px-2 print:py-0.5`}>
                     <span className="text-xl print:text-sm">{s.pgs}</span>
-                    <span className="ml-1 text-xs font-normal opacity-80 print:hidden">Gap Score</span>
+                    <span className="ml-1 text-xs font-normal opacity-80 print:hidden">Priority Gap Score</span>
                   </div>
                 )}
               </div>
@@ -199,10 +199,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
             Advocacy takeaway
           </h4>
           <p className="mt-1 text-sm leading-relaxed text-amber-800 print:text-[10px] print:leading-snug print:mt-0.5">
-            The <strong>{equityNote.diff}-point gap</strong> reveals a stark systemic disparity. Communities in{" "}
-            <strong>{equityNote.higher.name}</strong> face significantly more barriers to basic care, enduring longer
-            travel times and severely under-resourced facilities compared to{" "}
-            <strong>{equityNote.lower.name}</strong>.
+            Data Takeaway: Significant variations in regional infrastructure demand strategic resource distribution.
           </p>
           <div className="mt-3 border-t border-orange-200 pt-3 text-xs font-semibold text-amber-900 print:mt-1 print:pt-1 print:text-[9px]">
             Use this direct comparison in community-led monitoring to advocate for equitable resource allocation from
@@ -213,7 +210,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
 
       {/* Print footer */}
       <div className="hidden print:block mt-4 text-center text-[9px] text-stone-500">
-        geraldkombo.github.io/kenya-health-equity-map &middot; Source data: KNBS, KIHBS, KDHS, WHO AccessMod, OSM
+        geraldkombo.github.io/kenya-health-equity-map, Source data: KNBS, KIHBS, KDHS, WHO AccessMod, OSM
       </div>
     </div>
   );

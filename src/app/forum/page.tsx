@@ -17,18 +17,18 @@ export default function ForumLanding() {
           Kenya Health Equity Map
         </h1>
         <p className="mb-6 text-sm text-stone-700">
-          Community-led monitoring evidence base. 100% offline capable.
-          Zero tracking.
+          Evidence base for health equity monitoring. Fully functional offline
+          with no user tracking.
         </p>
 
         <div className="mb-6 rounded-lg border border-orange-100 bg-white p-4 text-left">
           <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-stone-800">
-            The Offline Test
+            Offline Functionality Verification
           </p>
           <p className="text-sm text-stone-600">
-            1. Wait for this page to fully load.<br />
-            2. Turn on <strong>Airplane Mode</strong>.<br />
-            3. Tap a county below to see the evidence.
+            1. Allow the application to initialize completely.<br />
+            2. Enable <strong>Airplane Mode</strong> on the device.<br />
+            3. Select a county below to view the corresponding data.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function ForumLanding() {
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
-              Physical access barrier. 42.6% hardcore poverty, 47% home births to nearest clinic travel exceeds 90 minutes.
+              Analysis indicates critical vulnerabilities in geographic accessibility and health infrastructure.
             </p>
           </Link>
 
@@ -63,7 +63,7 @@ export default function ForumLanding() {
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
-              Geographic isolation. 50% home births, among the highest nationally. Border region with severe infrastructure deficits.
+              Data demonstrates significant resource disparities requiring targeted intervention.
             </p>
           </Link>
 
@@ -78,7 +78,7 @@ export default function ForumLanding() {
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
-              Economic vulnerability driver. 72.5% poverty, 11.35% Rural Access Index, repeated climate shocks destroying crops and incomes.
+              Metrics highlight substantial gaps in facility-to-population ratios.
             </p>
           </Link>
 
@@ -93,7 +93,7 @@ export default function ForumLanding() {
               </span>
             </div>
             <p className="text-xs leading-relaxed text-orange-200">
-              Mapping gap demonstration. 129 facilities in official records, fewer than 20 on OpenStreetMap. 30% stunting, 56% skilled birth attendance.
+              Evaluations reveal an elevated necessity for systematic policy reform to address service deficits.
             </p>
           </Link>
         </div>
@@ -103,7 +103,7 @@ export default function ForumLanding() {
             href="/"
             className="text-sm font-bold text-orange-700 underline underline-offset-4 hover:text-amber-900"
           >
-            Open the full interactive map
+            Access the complete interactive map
           </Link>
         </div>
       </div>

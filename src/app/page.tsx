@@ -100,10 +100,10 @@ export default function HomePage() {
 
       <div className="mb-3 sm:mb-6">
         <p className="mt-0.5 text-xs font-medium text-stone-700 sm:text-sm">
-          See which counties are most underserved - and get the evidence to demand change.
+          Identify regions with the most critical service deficits and access evidence to support policy reform.
         </p>
         <p className="mt-0.5 text-[11px] italic text-stone-500 sm:text-xs">
-          Community-led monitoring starts with data communities can trust and use.
+          Effective health monitoring requires reliable and accessible data.
         </p>
       </div>
 
@@ -134,7 +134,7 @@ export default function HomePage() {
             </MapErrorBoundary>
           ) : (
             <div className="flex h-[400px] items-center justify-center rounded-xl border border-stone-200 bg-stone-50 text-sm text-stone-500">
-              Loading map data...
+              Loading geographic data...
             </div>
           )}
 
@@ -143,7 +143,7 @@ export default function HomePage() {
               <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#FFF7BC] sm:h-3 sm:w-3"></span> Low (&lt;30)
             </span>
             <span className="flex items-center gap-1">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#FEC44F] sm:h-3 sm:w-3"></span> Med (30&ndash;49)
+              <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#FEC44F] sm:h-3 sm:w-3"></span> Medium (30-49)
             </span>
             <span className="flex items-center gap-1">
               <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#D95F0E] sm:h-3 sm:w-3"></span> High (50&ndash;69)
@@ -201,19 +201,19 @@ export default function HomePage() {
             href="/brief?county=1"
             className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
           >
-            View sample brief
+            Access sample brief
           </Link>
           <Link
             href="/method"
             className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
           >
-            View methodology
+            Review methodology
           </Link>
           <Link
             href="/compare"
             className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
           >
-            Compare counties
+            Compare county metrics
           </Link>
         </div>
       </div>
