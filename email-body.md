@@ -15,7 +15,7 @@
 
 **Findings and lessons learned:** Turkana scores 92 out of 100 - a severe gap. A mother there walks 90 minutes to the nearest clinic, 47% of births happen at home without skilled attendance, and 42.6% of households live in poverty. Nairobi scores 40 - a noticeable but less severe gap - with 618 mapped facilities and 16.5% poverty. The 52-point gap between them means a woman in Turkana faces a 90-minute walk for care while a woman in Nairobi finds a clinic within walking distance. Communities in Turkana, Tana River (PGS 89, severe gap, 72.5% poverty), and Elgeyo-Marakwet validated the data against local knowledge and added missing facilities to OpenStreetMap themselves.
 
-**Conclusion and next steps:** With a printed brief in hand, a community can attend a legally mandated quarterly County Health Management Team meeting (Kenya Health Act 2017) and hold planners accountable: "Turkana scored 92 last year - a severe gap. What has changed?" The platform costs nothing to run, depends on no donor, and is free for any community to use.
+**Conclusion and next steps:** With a printed brief in hand, a community can attend a legally mandated quarterly County Health Management Team meeting (Kenya Health Act 2017) and hold planners accountable by asking a simple question: "Last year this platform ranked Turkana as the county with the worst health access barriers in Kenya - a 92 out of 100 on the Priority Gap Scale, meaning mothers walk 90 minutes to a clinic and nearly half of births happen at home. What has changed since then?" The platform costs nothing to run, depends on no donor, and is free for any community to use.
 
 **Keywords:** Digital Health, Community-Led Monitoring, Health Equity, Civic Technology, Kenya
 
