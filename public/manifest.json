@@ -2,7 +2,7 @@
   "name": "Kenya Health Equity Map",
   "short_name": "KHEM",
   "description": "Offline-first civic intelligence platform for health equity.",
-  "start_url": "/",
+  "start_url": "/kenya-health-equity-map/",
   "display": "standalone",
   "background_color": "#FAFAF9",
   "theme_color": "#78350F",
@@ -10,12 +10,12 @@
   "categories": ["health", "maps", "civic-tech"],
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/kenya-health-equity-map/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/kenya-health-equity-map/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

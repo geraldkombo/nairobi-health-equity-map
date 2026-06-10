@@ -9,14 +9,12 @@ const svgBuffer = readFileSync(svgPath);
 
 async function generateIcons() {
   console.log('Generating PWA icons...');
-
   try {
     await sharp(svgBuffer)
       .resize(192, 192)
       .png()
       .toFile(join(__dirname, '..', 'public', 'icons', 'icon-192x192.png'));
     console.log('Created icon-192x192.png (192x192)');
-
     await sharp(svgBuffer)
       .resize(512, 512)
       .png()
