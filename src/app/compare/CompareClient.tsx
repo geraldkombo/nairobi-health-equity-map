@@ -232,12 +232,12 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
       </div>
 
       {selA && selB && selA.id !== selB.id ? (
-        <div className="mt-8 print:m-0 print:p-0 print:max-h-[270mm] print:overflow-hidden print:space-y-1.5">
+        <div className="mt-8 print:m-0 print:p-0 print:space-y-4">
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
 
           {/* Action Notes */}
-          {notes.some(n => n.trim()) && <div className="print:mt-0 break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-1.5 bg-white">
-            <h3 className="text-[11px] print:text-[7pt] font-bold text-stone-900 uppercase tracking-wider">County Health Management Team Action Notes</h3>
+          {notes.some(n => n.trim()) && <div className="break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-2 bg-white">
+            <h3 className="text-[11px] print:text-[8pt] font-bold text-stone-900 uppercase tracking-wider">County Health Management Team Action Notes</h3>
             {/* Screen: always show all inputs for typing */}
             <div className="space-y-2 print:hidden mt-1.5">
               {notes.map((note, i) => (
@@ -256,9 +256,9 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
               ))}
             </div>
             {/* Print: only show filled notes as text */}
-            <div className="hidden print:block space-y-0.5">
+            <div className="hidden print:block space-y-1">
               {notes.filter(n => n.trim()).map((note, i) => (
-                <div key={i} className="px-1 py-0.5 text-[7pt] text-stone-800 border-b border-stone-400">
+                <div key={i} className="px-1 py-0.5 text-[8pt] text-stone-800 border-b border-stone-400">
                   {note}
                 </div>
               ))}
