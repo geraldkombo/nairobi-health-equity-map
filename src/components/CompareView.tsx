@@ -45,25 +45,25 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
   const overlap = Math.abs(sA.pgs - sB.pgs) < 8;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 print:space-y-2">
       {/* Institutional Header */}
-      <header className="border-b-4 border-[#78350F] pb-4 print:pb-2">
-        <p className="text-[12px] font-bold uppercase tracking-widest text-[#EA580C] print:text-[9px]">
+      <header className="border-b-4 border-[#78350F] pb-4 print:pb-1">
+        <p className="text-[12px] font-bold uppercase tracking-widest text-[#EA580C] print:text-[7pt]">
           Kenya Health Equity Map, County Comparison
         </p>
         <div className="mt-4 flex items-end justify-between">
-          <h1 className="text-[24px] font-serif font-extrabold uppercase tracking-tight text-[#78350F] md:text-3xl print:text-xl">
+          <h1 className="text-[24px] font-serif font-extrabold uppercase tracking-tight text-[#78350F] md:text-3xl print:text-sm print:leading-tight">
             {countyA.name} vs {countyB.name}
           </h1>
         </div>
       </header>
 
       {/* Priority Gap Scale */}
-      <section className="break-inside-avoid rounded-[8px] border border-[#E0DBD0] bg-white p-8 shadow-sm print:border-black print:bg-transparent print:p-4">
-        <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#524B3F]">
+      <section className="break-inside-avoid rounded-[8px] border border-[#E0DBD0] bg-white p-6 shadow-sm print:border-black print:bg-transparent print:p-2">
+        <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#524B3F] print:text-[7pt]">
           Priority Gap Scale: 0 (best) to 100 (worst)
         </h2>
-        <div className="relative mt-4 h-[56px] w-full rounded-[6px] bg-gradient-to-r from-[#FFF7BC] via-[#FEC44F] via-[#D95F0E] to-[#8C2D04] shadow-inner print:h-[40px]" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
+        <div className="relative mt-3 h-[56px] w-full rounded-[6px] bg-gradient-to-r from-[#FFF7BC] via-[#FEC44F] via-[#D95F0E] to-[#8C2D04] shadow-inner print:h-[24px] print:mt-1" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
           {overlap ? (
             <>
               <div
@@ -77,7 +77,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
               </div>
               <div
                 className="absolute flex -translate-x-1/2 flex-col items-center transition-all duration-500"
-                style={{ left: `${Math.min(Math.max(sB.pgs, 0), 100)}%`, top: '40px' }}
+                style={{ left: `${Math.min(Math.max(sB.pgs, 0), 100)}%`, bottom: '0' }}
               >
                 <div className="mb-[2px] h-[10px] w-[10px] rotate-45 bg-[#EA580C] print:hidden" />
                 <span className="min-h-[44px] inline-flex items-center rounded-[4px] bg-[#EA580C] px-4 py-1 text-[12px] font-bold text-[#FFFBEB] shadow-sm whitespace-nowrap print:text-[8px] print:px-2 print:py-0">
@@ -123,57 +123,57 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
           return (
             <div
               key={county.id}
-              className="break-inside-avoid rounded-[8px] border border-[#E0DBD0] bg-white shadow-sm print:border-black print:shadow-none"
+              className="break-inside-avoid rounded-[8px] border border-[#E0DBD0] bg-white shadow-sm print:border-black print:shadow-none print:text-[6.5pt]"
               style={{ borderTop: `4px solid ${accentColor}` }}
             >
               {/* Card Header */}
-              <div className="flex items-start justify-between border-b border-[#E0DBD0] bg-[#F8F5F0] p-4 print:p-2">
+              <div className="flex items-start justify-between border-b border-[#E0DBD0] bg-[#F8F5F0] p-4 print:p-1.5">
                 <div>
-                  <h3 className="text-[14px] font-bold font-serif text-[#292524] print:text-[12px]">{county.name}</h3>
+                  <h3 className="text-[14px] font-bold font-serif text-[#292524] print:text-[8pt]">{county.name}</h3>
                   <p className="text-[12px] uppercase tracking-wide text-[#A8A08F] print:hidden">County</p>
                 </div>
                 {s && (
-                  <div className={`rounded-[6px] px-4 py-1 text-center font-bold shadow-sm print:px-2 print:py-0 print-fill ${getPGSBadgeClass(s.pgs)}`}>
-                    <span className="text-[20px] print:text-[14px]">{s.pgs}</span>
+                  <div className={`rounded-[6px] px-4 py-1 text-center font-bold shadow-sm print:px-1.5 print:py-0 print-fill ${getPGSBadgeClass(s.pgs)}`}>
+                    <span className="text-[20px] print:text-[11pt]">{s.pgs}</span>
                     <span className="ml-1 text-[12px] font-normal opacity-80 print:hidden">Priority Gap Score</span>
                   </div>
                 )}
               </div>
               {/* Card Body */}
               {ind && (
-                <div className="p-4 print:p-2">
-                  <table className="w-full text-[14px] print:text-[10px]">
+                <div className="p-4 print:p-1.5">
+                  <table className="w-full text-[14px] print:text-[6.5pt]">
                     <tbody>
                       <tr className="border-b border-[#E0DBD0]">
-                        <td className="py-2 text-[#6B6355] print:py-1">Population</td>
-                        <td className="py-2 text-right font-semibold text-[#292524] print:py-1">{ind.population.toLocaleString()}</td>
+                        <td className="py-2 text-[#6B6355] print:py-0.5">Population</td>
+                        <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">{ind.population.toLocaleString()}</td>
                       </tr>
                       <tr className="border-b border-[#E0DBD0]">
-                        <td className="py-2 text-[#6B6355] print:py-1">Poverty rate</td>
-                        <td className="py-2 text-right font-semibold text-[#292524] print:py-1">{ind.poverty_proxy}%</td>
+                        <td className="py-2 text-[#6B6355] print:py-0.5">Poverty rate</td>
+                        <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">{ind.poverty_proxy}%</td>
                       </tr>
                       <tr className="border-b border-[#E0DBD0]">
-                        <td className="py-2 text-[#6B6355] print:py-1">Travel time to clinic</td>
-                        <td className="py-2 text-right font-semibold text-[#292524] print:py-1">
+                        <td className="py-2 text-[#6B6355] print:py-0.5">Travel time to clinic</td>
+                        <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">
                           {ind.travel_time_to_facility_proxy}{" "}
-                          <span className="text-[12px] font-normal text-[#8A8170] print:text-[9px]">minutes</span>
+                          <span className="text-[12px] font-normal text-[#8A8170] print:text-[6pt]">minutes</span>
                         </td>
                       </tr>
                       <tr className="border-b border-[#E0DBD0]">
-                        <td className="py-2 text-[#6B6355] print:py-1">Mapped facilities</td>
-                        <td className="py-2 text-right font-semibold text-[#292524] print:py-1">{ind.facility_count}</td>
+                        <td className="py-2 text-[#6B6355] print:py-0.5">Mapped facilities</td>
+                        <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">{ind.facility_count}</td>
                       </tr>
                       <tr>
-                        <td className="py-2 text-[#6B6355] print:py-1">Facility density</td>
-                        <td className="py-2 text-right font-semibold text-[#292524] print:py-1">
+                        <td className="py-2 text-[#6B6355] print:py-0.5">Facility density</td>
+                        <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">
                           {ind.facility_density_proxy.toFixed(2)}{" "}
-                          <span className="text-[12px] font-normal text-[#8A8170] print:text-[9px]" title="Number of health facilities for every 10,000 people in the county">per 10,000</span>
+                          <span className="text-[12px] font-normal text-[#8A8170] print:text-[6pt]" title="Number of health facilities for every 10,000 people in the county">per 10,000</span>
                         </td>
                       </tr>
                       {ind.skilled_birth_attendance != null && (
                         <tr>
-                          <td className="py-2 text-[#6B6355] print:py-1">Skilled birth attendance</td>
-                          <td className="py-2 text-right font-semibold text-[#292524] print:py-1">
+                          <td className="py-2 text-[#6B6355] print:py-0.5">Skilled birth attendance</td>
+                          <td className="py-2 text-right font-semibold text-[#292524] print:py-0.5">
                             {ind.skilled_birth_attendance}%
                           </td>
                         </tr>
@@ -181,8 +181,8 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
                     </tbody>
                   </table>
                   {s.drivers.length > 0 && (
-                    <div className="mt-4 rounded-[6px] bg-[#F8F5F0] p-4 print:mt-2 print:p-2">
-                      <p className="mb-2 text-[12px] font-bold uppercase tracking-widest text-[#6B6355] print:hidden">
+                    <div className="mt-4 rounded-[6px] bg-[#F8F5F0] p-4 print:hidden">
+                      <p className="mb-2 text-[12px] font-bold uppercase tracking-widest text-[#6B6355]">
                         Key drivers
                       </p>
                       <ul className="list-disc pl-4 text-[12px] leading-6 text-[#524B3F] print:text-[9px] print:leading-4 print:pl-3">
@@ -202,7 +202,7 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
       {/* Advocacy Takeaway */}
       {equityNote && (
         <section
-          className="break-inside-avoid rounded-[8px] border-l-4 bg-[#FFFBEB] p-8 shadow-sm print:border-black print:bg-transparent print:p-4"
+          className="break-inside-avoid rounded-[8px] border-l-4 bg-[#FFFBEB] p-6 shadow-sm print:border-black print:bg-transparent print:p-2"
           style={{ borderLeftColor: "#EA580C" }}
           role="note"
         >
@@ -212,21 +212,21 @@ export default function CompareView({ countyA, countyB, indicators }: CompareVie
             </svg>
             What this means
           </h3>
-          <p className="mt-2 text-[14px] leading-7 text-[#292524] print:text-[10px] print:leading-snug">
+          <p className="mt-2 text-[14px] leading-7 text-[#292524] print:text-[7pt] print:leading-tight print:mt-0">
             {equityNote.diff <= 2 ? (
               <>Both counties score nearly the same on the Priority Gap Scale. The {equityNote.diff}-point difference is too small to call one county worse off than the other. Use the specific indicators above (travel time, poverty rate, facility density) to identify where each county needs investment.</>
             ) : (
               <>{equityNote.higher.name} scores {equityNote.diff} {equityNote.diff === 1 ? "point" : "points"} higher than {equityNote.lower.name}. A higher score means residents face bigger barriers to health care - longer travel, fewer clinics, or higher poverty. Use this comparison to show which county needs more resources.</>
             )}
           </p>
-          <div className="mt-4 border-t border-[#E0DBD0] pt-4 text-[12px] font-semibold text-[#78350F] print:mt-2 print:pt-2 print:text-[9px]">
+          <div className="mt-4 border-t border-[#E0DBD0] pt-4 text-[12px] font-semibold text-[#78350F] print:mt-1 print:pt-1 print:text-[6.5pt]">
             Use this direct comparison in community-led monitoring to advocate for equitable resource allocation from national and county health executives.
           </div>
         </section>
       )}
 
       {/* Print Footer */}
-      <div className="hidden print:block mt-4 text-center text-[9px] text-[#8A8170]">
+      <div className="hidden print:block text-center text-[6.5pt] text-[#8A8170]">
         geraldkombo.github.io/kenya-health-equity-map, Source data: KNBS, KIHBS, KDHS, WHO AccessMod, OSM
       </div>
     </div>
