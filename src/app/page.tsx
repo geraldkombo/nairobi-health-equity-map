@@ -3,20 +3,20 @@
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
-import CountyDetails from "@/components/CountyDetails";
-import HowToUse from "@/components/HowToUse";
-import SourcesPanel from "@/components/SourcesPanel";
-import InsightsDashboard from "@/components/InsightsDashboard";
-import CountyRankings from "@/components/CountyRankings";
 import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
 import { normalizeCounty } from "@/lib/normalize";
 import { computePGS, DEFAULT_WEIGHTS } from "@/lib/scoring";
 import { fetchCounties, fetchIndicators, dataUrl } from "@/lib/data-fetch";
 import { matchCountyName } from "@/lib/county-names";
-import MapErrorBoundary from "@/components/MapErrorBoundary";
-import SearchBar from "@/components/SearchBar";
 
 const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
+const SearchBar = dynamic(() => import("@/components/SearchBar"), { ssr: false });
+const CountyDetails = dynamic(() => import("@/components/CountyDetails"));
+const HowToUse = dynamic(() => import("@/components/HowToUse"));
+const SourcesPanel = dynamic(() => import("@/components/SourcesPanel"));
+const InsightsDashboard = dynamic(() => import("@/components/InsightsDashboard"));
+const CountyRankings = dynamic(() => import("@/components/CountyRankings"));
+const MapErrorBoundary = dynamic(() => import("@/components/MapErrorBoundary"));
 
 export default function HomePage() {
   const [counties, setCounties] = useState<CountyRecord[] | null>(null);
