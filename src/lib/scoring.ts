@@ -45,6 +45,13 @@ export function getPGSBadgeClass(pgs: number): string {
 
 export { PGS_COLORS };
 
+export function pgsPlainLanguage(pgs: number): string {
+  if (pgs >= 70) return `Severe gap - ${pgs} out of 100. Residents face extreme barriers: long travel times to the nearest clinic, high poverty rates, or too few facilities for the population.`;
+  if (pgs >= 50) return `Serious gap - ${pgs} out of 100. Many residents face long travel times to clinics, poverty, or overcrowded facilities.`;
+  if (pgs >= 30) return `Noticeable gap - ${pgs} out of 100. Some residents face moderate barriers to health care access.`;
+  return `Reasonable access - ${pgs} out of 100. Most residents can reach a clinic without extreme difficulty.`;
+}
+
 export function computePGS(
   countyCode: string,
   norm: {

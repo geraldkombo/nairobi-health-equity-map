@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
-import { getPGSColor } from "@/lib/scoring";
+import { getPGSColor, pgsPlainLanguage } from "@/lib/scoring";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -234,7 +234,7 @@ export default function MapView({
             <span className="font-semibold text-stone-800">{hoverInfo.countyName}</span>
           </div>
           {pgsLabel && (
-            <p className="mt-1 text-sm text-stone-500" title={`${pgsLabel} out of 100. Higher numbers mean worse gaps. 0 is best, 100 is worst.`}>
+            <p className="mt-1 text-sm text-stone-500" title={hoverInfo?.pgs !== undefined ? pgsPlainLanguage(hoverInfo.pgs) : ""}>
               Priority Gap Score: <span className="font-medium text-stone-700">{pgsLabel}</span>
             </p>
           )}

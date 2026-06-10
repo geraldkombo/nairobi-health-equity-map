@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import type { CountyRecord, IndicatorRecord } from "@/lib/adapters";
 import { normalizeCounty } from "@/lib/normalize";
-import { computePGS, DEFAULT_WEIGHTS, getPGSColor } from "@/lib/scoring";
+import { computePGS, DEFAULT_WEIGHTS, getPGSColor, pgsPlainLanguage } from "@/lib/scoring";
 import { matchCountyName } from "@/lib/county-names";
 
 interface CountyRankingsProps {
@@ -35,6 +35,7 @@ function RankedCounty({
       <span
         className="rounded px-1.5 py-0.5 text-[10px] font-bold tabular-nums"
         style={{ backgroundColor: color, color: score >= 50 ? "#fff" : "#292524" }}
+        title={pgsPlainLanguage(score)}
       >
         {score}
       </span>
