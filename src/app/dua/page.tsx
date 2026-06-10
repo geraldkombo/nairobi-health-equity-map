@@ -63,9 +63,9 @@ export default function DUAPage() {
                   license="Open Data"
                 />
                 <SourceRow
-                  name="KDHS 2022 (Poverty Estimates)"
-                  url="https://dhsprogram.com/data/dataset/Kenya_Standard-DHS_2022.cfm"
-                  license="Restricted (registered use)"
+                  name="KIHBS 2015/16 (Poverty Estimates)"
+                  url="https://statistics.knbs.or.ke/nada/index.php/catalog/13"
+                  license="Registered use"
                 />
                 <SourceRow
                   name="KMHFR Facility Registry"

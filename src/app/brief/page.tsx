@@ -50,18 +50,16 @@ function PrintableBrief({
       {/* Baseline Narrative */}
       <section className="break-inside-avoid">
         <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#EA580C]">
-          Baseline Narrative
+          Baseline Summary
         </h2>
         <p className="mt-4 text-[14px] leading-7 text-[#292524] text-justify">
-          {county.name} registers a Priority Gap Score of {score.pgs}/100, indicating significant resource
-          disparity. Travel time to the nearest health facility is substantially elevated at{" "}
-          {indicator.travel_time_to_facility_proxy} minutes, demonstrating acute physical access
-          constraints in peripheral wards. The socioeconomic vulnerability remains high with a
-          poverty rate of {indicator.poverty_proxy}%. Furthermore, with only{" "}
-          {indicator.facility_count} validated facilities mapped against a vast geography, facility
-          density remains a critical limiting factor for decentralized care. These indicators are
-           derived from open-data baselines (KNBS 2019 Census from the Kenya National Bureau of Statistics, KIHBS 2015/16 from the Kenya Integrated Household Budget Survey, OpenStreetMap / ICPAC facility inventory from the IGAD Climate Prediction and Applications Centre) and provide a verifiable, transparent starting point for community-led
-          advocacy.
+          {county.name} has a Priority Gap Score of {score.pgs}/100. This reflects a combination of travel
+          time, poverty, and population pressure on health facilities. Travel time to the nearest clinic is{" "}
+          {indicator.travel_time_to_facility_proxy} minutes on average. The poverty rate is{" "}
+          {indicator.poverty_proxy}%. Only{" "}
+          {indicator.facility_count} facilities are mapped in the county. These figures come from
+          public data sources (KNBS 2019 Census, KIHBS 2015/16, OpenStreetMap / ICPAC) and provide a
+          transparent starting point for community-led advocacy.
         </p>
         {county.name === "Turkana" && (
           <div className="mt-4 rounded-[8px] border-l-4 border-[#EA580C] bg-[#FFFBEB] p-4 text-[12px] leading-6 text-[#524B3F]">
@@ -85,8 +83,8 @@ function PrintableBrief({
           <div className="mt-4 rounded-[8px] border-l-4 border-[#EA580C] bg-[#FFFBEB] p-4 text-[12px] leading-6 text-[#524B3F]">
             <strong className="text-[#292524]">Community context:</strong> The official Kenya Master Health Facility List
             records approximately 129 health facilities in this county, but fewer than 20 are mapped
-            on OpenStreetMap. This mapping gap results in an artificial score of 1 facility per
-            454,000 people. The county reports a 30% stunting rate among children under five and
+on OpenStreetMap. This mapping gap results in a score of 1 facility per
+              454,000 people. The county reports a 30% stunting rate among children under five and
             skilled birth attendance of only 56%.
           </div>
         )}

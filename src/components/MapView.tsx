@@ -38,6 +38,7 @@ export default function MapView({
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [ready, setReady] = useState(false);
   const [hasError, setError] = useState(false);
+  const [tileError, setTileError] = useState(false);
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
 
   useEffect(() => {
@@ -156,6 +157,12 @@ export default function MapView({
 
         map.fitBounds([[33.5, -5], [42.5, 5]], { padding: 40, duration: 0 });
 
+        map.on("error", (e) => {
+          if (e.error && typeof e.error.status === "number" && e.error.status >= 400) {
+            setTileError(true);
+          }
+        });
+
         setReady(true);
       } catch (e) {
         console.error("Map load handler error:", e);
@@ -242,6 +249,11 @@ export default function MapView({
           Loading geographic interface...
         </div>
       ) : null}
+      {tileError && (
+        <div className="absolute left-2 right-2 top-2 z-50 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-xs text-amber-700 shadow-sm" role="alert">
+          Map tiles unavailable offline. County outlines still visible.
+        </div>
+      )}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-1.5">
         <a
           href="https://statistics.knbs.or.ke/nada/index.php/catalog/116"

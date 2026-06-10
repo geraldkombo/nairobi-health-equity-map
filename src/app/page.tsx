@@ -103,7 +103,7 @@ export default function HomePage() {
           Identify regions with the most critical service deficits and access evidence to support policy reform.
         </p>
         <p className="mt-0.5 text-[11px] italic text-stone-500 sm:text-xs">
-          Effective health monitoring requires reliable and accessible data.
+          Transparent evidence for CHMT planning and community-led advocacy.
         </p>
       </div>
 
@@ -180,7 +180,7 @@ export default function HomePage() {
             <div className="h-1.5 w-12 rounded-full bg-stone-300 mx-auto"></div>
             <button
               onClick={() => setSelectedCountyCode(null)}
-              className="absolute right-3 top-2 rounded-full p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-600"
+              className="absolute right-3 top-2 inline-flex items-center justify-center rounded-full p-2 text-stone-400 hover:bg-stone-100 hover:text-stone-600 min-h-[44px] min-w-[44px]"
               aria-label="Close county details"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -199,21 +199,21 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3">
           <Link
             href="/brief?county=1"
-            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
+            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors focus-visible:outline-2 focus-visible:outline-accent-600 focus-visible:outline-offset-2"
           >
-            Access sample brief
+            View sample brief
           </Link>
           <Link
             href="/method"
-            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
+            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors focus-visible:outline-2 focus-visible:outline-accent-600 focus-visible:outline-offset-2"
           >
-            Review methodology
+            How the score works
           </Link>
           <Link
             href="/compare"
-            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors"
+            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors focus-visible:outline-2 focus-visible:outline-accent-600 focus-visible:outline-offset-2"
           >
-            Compare county metrics
+            Compare counties
           </Link>
         </div>
       </div>

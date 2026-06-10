@@ -32,7 +32,7 @@ export default function HowToUse() {
                   Select a county from the geographic interface to view specific health indicators.
                 </li>
                 <li>
-                  Utilize the search function to locate administrative regions directly.
+                  Use the search bar to find a county by name.
                 </li>
               </>
             ) : (
@@ -46,10 +46,10 @@ export default function HowToUse() {
               </>
             )}
             <li>
-              Compare multiple regions to analyze structural disparities.
+              Compare two counties side-by-side to see where gaps are largest.
             </li>
             <li>
-              Generate an analytical brief for formal documentation.
+              Print a one-page brief with source citations for CHMT meetings.
             </li>
           </ul>
         </div>

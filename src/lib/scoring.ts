@@ -68,7 +68,7 @@ export function computePGS(
 
   const drivers: string[] = [];
   if (norm.travelTime > 0.7) {
-    drivers.push("Travel duration to health facilities in this region exceeds that of 70 percent of comparable counties.");
+    drivers.push("Longer travel time to clinics than 70% of counties.");
   }
   if (norm.facilityDensity > 0.7) {
     drivers.push("Fewer health facilities per person compared to other counties");
@@ -80,7 +80,7 @@ export function computePGS(
     drivers.push("More people sharing each health facility than 70% of counties");
   }
   if (norm.travelTime <= 0.7 && norm.facilityDensity <= 0.7 && norm.poverty <= 0.7 && norm.populationPressure <= 0.7) {
-    drivers.push("All measures are within the normal range compared to other counties");
+    drivers.push("All measures are within typical range compared to other counties.");
   }
 
   return {

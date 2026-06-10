@@ -32,7 +32,7 @@ export default function SourcesPanel() {
           </li>
         </ul>
         <p className="text-[12px] leading-5 text-[#8A8170]">
-          Last Updated: <strong>October 2024</strong>. If a community dispensary is absent from this platform, community members can augment the baseline by reporting its coordinates to OpenStreetMap directly at
+          Last data refresh: <strong>June 2026</strong>. If a community dispensary is absent from this platform, community members can improve the map by reporting its location to OpenStreetMap directly at
           <a href="https://www.openstreetmap.org/note/new" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#524B3F] min-h-[44px] inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] rounded-[4px] px-1 text-[#EA580C]">
             www.openstreetmap.org
           </a>

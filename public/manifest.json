@@ -1,33 +1,24 @@
 {
   "name": "Kenya Health Equity Map",
-  "short_name": "Health Map",
-  "description": "Mapping health infrastructure inequity in Kenya.",
-  "start_url": ".",
-  "scope": ".",
+  "short_name": "KHEM",
+  "description": "Offline-first civic intelligence platform for health equity.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FAFAF9",
   "theme_color": "#78350F",
   "prefer_related_applications": false,
   "categories": ["health", "maps", "civic-tech"],
-  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

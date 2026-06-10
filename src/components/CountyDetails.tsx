@@ -219,7 +219,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
             href={`/brief?county=${county.id}`}
             className="rounded-lg bg-stone-800 px-3 py-2 text-xs font-semibold text-white hover:bg-stone-700 transition-colors"
           >
-            Generate analytical brief
+            Generate county brief
           </Link>
         </div>
       )}

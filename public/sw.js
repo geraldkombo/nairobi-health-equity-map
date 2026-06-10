@@ -1,69 +1,39 @@
-const CACHE = "ke-health-v4";
-const TILE_CACHE = "ke-tiles-v1";
-const BASE = self.location.pathname.replace(/\/sw\.js$/, "");
-
-const SHELL = [
-  BASE + "/",
-  BASE + "/brief/",
-  BASE + "/compare/",
-  BASE + "/method/",
-  BASE + "/forum/",
-  BASE + "/dua/",
-  BASE + "/brief.txt",
-  BASE + "/compare.txt",
-  BASE + "/method.txt",
-  BASE + "/forum.txt",
-  BASE + "/dua.txt",
-  BASE + "/_not-found",
+const CACHE = "ke-health-v5";
+const SHELL_ROUTES = [
+  "/", 
+  "/brief/", 
+  "/compare/", 
+  "/method/", 
+  "/forum/", 
+  "/dua/", 
+  "/_not-found"
 ];
 
-const TILE_ORIGINS = ["https://basemaps.cartocdn.com"];
-
-self.addEventListener("install", (e) => {
-  e.waitUntil(
-    caches.open(CACHE).then((cache) =>
-      cache.addAll(SHELL).catch(() => self.skipWaiting())
-    )
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE).then((cache) => cache.addAll(SHELL_ROUTES))
   );
+  self.skipWaiting();
 });
 
-self.addEventListener("activate", (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE && k !== TILE_CACHE).map((k) => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener("fetch", (e) => {
-  const url = new URL(e.request.url);
-
-  if (TILE_ORIGINS.some((o) => url.origin === o)) {
-    e.respondWith(
-      caches.open(TILE_CACHE).then((cache) =>
-        cache.match(e.request).then((cached) => {
-          const fetched = fetch(e.request)
-            .then((r) => {
-              cache.put(e.request, r.clone());
-              return r;
-            })
-            .catch(() => cached);
-          return cached || fetched;
-        })
-      )
+self.addEventListener("fetch", (event) => {
+  // Network-first strategy for data, Cache-first for shell and tiles
+  if (event.request.url.includes('/data/snapshots/') || event.request.url.includes('.pmtiles')) {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        return cachedResponse || fetch(event.request).then((response) => {
+          return caches.open(CACHE).then((cache) => {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        });
+      }).catch(() => caches.match('/_not-found'))
     );
-    return;
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
   }
-
-  e.respondWith(
-    caches.match(e.request).then((cached) => {
-      const fetched = fetch(e.request)
-        .then((r) => {
-          caches.open(CACHE).then((cache) => cache.put(e.request, r.clone()));
-          return r;
-        })
-        .catch(() => cached);
-      return cached || fetched;
-    })
-  );
 });

@@ -81,10 +81,10 @@ export default function MethodPage() {
         <section className="rounded-[8px] border border-[#E0DBD0] bg-white p-8">
           <h2 className="text-[14px] font-bold uppercase tracking-widest text-[#78350F]">Travel time estimation</h2>
           <p className="mt-4 text-[14px] leading-7 text-[#292524]">
-            Travel times are estimated using <strong>AccessMod</strong>, a World Health Organization (WHO)-supported tool for geographic accessibility modelling. It finds the fastest route along OpenStreetMap roads and paths: paved roads assume motorised transport; unpaved roads and paths assume walking or bicycle speeds.
+            Travel times are estimated using <strong>AccessMod</strong>, a World Health Organization (WHO)-supported tool for geographic accessibility analysis. It finds the fastest route along OpenStreetMap roads and paths: paved roads assume motorised transport; unpaved roads and paths assume walking or bicycle speeds.
           </p>
           <p className="mt-4 text-[14px] leading-7 text-[#524B3F]">
-            This model was developed by researchers at the Kenya Medical Research Institute (KEMRI)-Wellcome Trust. Road data comes from{" "}
+            This analysis was developed by researchers at the Kenya Medical Research Institute (KEMRI)-Wellcome Trust. Road data comes from{" "}
             <a href="https://www.openstreetmap.org/relation/192798" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#292524] text-[#EA580C]">OpenStreetMap</a>. Tool:{" "}
             <a href="https://www.accessmod.org" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#292524] text-[#EA580C]">AccessMod</a>.
           </p>
@@ -126,7 +126,7 @@ export default function MethodPage() {
             This map relies on a validated baseline of 1,699 community-mapped facilities, representing approximately 10% of Kenya&apos;s officially registered facilities. The calculated scores therefore represent a strict minimum baseline.
           </p>
           <p className="mt-4 text-[14px] leading-7 text-[#FFFBEB]">
-            <strong className="text-[#FDE68A]">Example:</strong> Elgeyo-Marakwet County has approximately 129 facilities in the official Kenya Master Health Facility List, but fewer than 20 are mapped on OpenStreetMap. This creates an artificial score of 1 facility per 454,000 people. The gap between official records and community mapping is precisely where intervention is needed.
+            <strong className="text-[#FDE68A]">Example:</strong> Elgeyo-Marakwet County has approximately 129 facilities in the official Kenya Master Health Facility List, but fewer than 20 are mapped on OpenStreetMap. This creates a score of 1 facility per 454,000 people. The gap between official records and community mapping is precisely where intervention is needed.
           </p>
           <p className="mt-4 text-[14px] font-medium text-[#FDE68A]">
             Every gap in the map represents an opportunity for community members to improve the data.
@@ -156,7 +156,7 @@ export default function MethodPage() {
               href="https://www.openstreetmap.org/note/new#map=6/0.5/38.0&layers=N"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex items-center min-h-[44px] rounded-[6px] bg-[#78350F] px-4 py-2 text-[14px] font-bold text-[#FFFBEB] hover:bg-[#451A03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C] transition-colors"
+              className="mt-4 inline-flex items-center min-h-[44px] rounded-[6px] bg-[#78350F] px-4 py-2 text-[14px] font-bold text-[#FFFBEB] hover:bg-[#451A03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600 transition-colors"
             >
               Report unmapped facility via OpenStreetMap
             </a>
