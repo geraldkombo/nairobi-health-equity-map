@@ -8,28 +8,35 @@ export default function InstallPrompt() {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window);
-    setIsIOS(isIOSDevice);
+    try {
+      const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window);
+      setIsIOS(isIOSDevice);
 
-    const handler = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+      const handler = (e: Event) => {
+        try {
+          e.preventDefault();
+          setDeferredPrompt(e);
+        } catch {}
+      };
+      window.addEventListener("beforeinstallprompt", handler);
+      return () => window.removeEventListener("beforeinstallprompt", handler);
+    } catch {}
   }, []);
 
   useEffect(() => {
-    if (window.matchMedia("(display-mode: standalone)").matches) {
-      setDismissed(true);
-    }
+    try {
+      const mq = window.matchMedia("(display-mode: standalone)");
+      if (mq.matches) setDismissed(true);
+    } catch {}
   }, []);
 
   const handleInstall = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
-    if (result.outcome === "accepted") setDismissed(true);
+    try {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const result = await deferredPrompt.userChoice;
+      if (result.outcome === "accepted") setDismissed(true);
+    } catch {}
     setDeferredPrompt(null);
   };
 
@@ -39,7 +46,7 @@ export default function InstallPrompt() {
     return (
       <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center gap-3 bg-white border-t border-stone-200 shadow-lg p-3 print:hidden">
         <p className="flex-1 text-sm text-stone-700">
-          Tap <strong>Share</strong> <span className="inline-block w-5 h-5 bg-stone-200 rounded text-center text-xs leading-5 align-middle">↑</span> then <strong>Add to Home Screen</strong>
+          Tap <strong>Share</strong> <span className="inline-block w-5 h-5 bg-stone-200 rounded text-center text-xs leading-5 align-middle">&uarr;</span> then <strong>Add to Home Screen</strong>
         </p>
         <button
           onClick={() => setDismissed(true)}
