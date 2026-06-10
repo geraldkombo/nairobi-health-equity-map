@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import InstallPrompt from "@/components/InstallPrompt";
 import { siteConfig } from "@/lib/site";
 
 const inter = Inter({
@@ -80,12 +79,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
           </div>
         </footer>
-        <InstallPrompt />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("${BASE}/sw.js").catch(()=>{})})}`,
-          }}
-        />
       </body>
     </html>
   );
