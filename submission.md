@@ -144,7 +144,3 @@ The Kenya Health Equity Map demonstrates that digital health tools serve Communi
 **Platform URL:** https://geraldkombo.github.io/kenya-health-equity-map/
 **Author:** Gerald Kombo — Independent Researcher and Developer, Kenya Health Equity Map
 **Contact:** cssabstracts@amref.org
-
----
-
-*Structured following the AMREF CSS Knowledge Dissemination Forum template: Introduction, Description of intervention, Findings and lessons learned, Conclusion and next steps.*

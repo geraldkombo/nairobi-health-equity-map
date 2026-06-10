@@ -1,5 +1,5 @@
 **To:** cssabstracts@amref.org
-**Subject:** RESUBMISSION (Template Used) - Democratizing Evidence Generation: An Offline-First Civic Intelligence Platform for Community-Led Monitoring of Health Equity in Kenya - Gerald Kombo
+**Subject:** RESUBMISSION - Democratizing Evidence Generation: An Offline-First Civic Intelligence Platform for Community-Led Monitoring of Health Equity in Kenya - Gerald Kombo
 
 ---
 
@@ -36,10 +36,6 @@ My earlier submission should be disregarded in favor of this version.
 ---
 
 **Platform URL:** https://geraldkombo.github.io/kenya-health-equity-map/
-
----
-
-*Submitted using the AMREF CSS Knowledge Dissemination Forum abstract template.*
 
 Regards,
 

@@ -40,7 +40,3 @@ Email: cssabstracts@amref.org
 **Conclusion and next steps:** Equipping communities with printable evidence and a transparent, trackable score strengthens community-led monitoring outcomes. Planners can now be asked: "Turkana scored 92 last year — has resource allocation closed this gap?" The platform operates independently of donor cycles and is freely available for any community to use.
 
 **Keywords:** Digital Health, Community-Led Monitoring, Health Equity, Civic Technology, Kenya
-
----
-
-*Submitted using the AMREF CSS Knowledge Dissemination Forum abstract template.*
