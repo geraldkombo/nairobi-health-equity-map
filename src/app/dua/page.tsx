@@ -42,7 +42,7 @@ export default function DUAPage() {
         </section>
 
         {/* ── Source Register ── */}
-        <section className="rounded-xl border border-stone-200 bg-white p-6">
+        <section id="sources" className="rounded-xl border border-stone-200 bg-white p-6">
           <h2 className="text-base font-semibold font-serif text-stone-800">Source Register</h2>
           <p className="mt-1 text-sm text-stone-500">
             Every dataset used in this platform, its license, and the date it was accessed.

@@ -26,7 +26,7 @@ export default function MethodPage() {
           <p className="mt-4 text-[14px] leading-7 text-[#292524]">
             The Priority Gap Score is a simple score from <strong>0 to 100</strong> that measures health infrastructure inequity within each county. Higher scores indicate greater service gaps and stronger claims on resource allocation.
           </p>
-          <div className="mt-4 rounded-[6px] bg-[#F8F5F0] p-4 text-[14px] leading-7 text-[#524B3F]">
+          <div id="thresholds" className="mt-4 rounded-[6px] bg-[#F8F5F0] p-4 text-[14px] leading-7 text-[#524B3F]">
             <p className="font-semibold text-[#292524]">How to read the score:</p>
             <ul className="list-disc pl-4 mt-2 space-y-1">
               <li><strong>0–29:</strong> Relatively equitable resource distribution</li>
@@ -66,7 +66,7 @@ export default function MethodPage() {
               </p>
             </div>
           </div>
-          <div className="mt-4 rounded-[8px] bg-[#F8F5F0] p-4 text-[14px] leading-7 text-[#524B3F]">
+          <div id="formula" className="mt-4 rounded-[8px] bg-[#F8F5F0] p-4 text-[14px] leading-7 text-[#524B3F]">
             <p className="font-semibold text-[#292524]">Formula:</p>
             <p className="mt-1">
               <strong>Priority Gap Score</strong> = (Physical Access × 0.40) + (Vulnerability × 0.30) + (Population Pressure × 0.30)

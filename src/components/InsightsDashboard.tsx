@@ -35,9 +35,9 @@ export default function InsightsDashboard({ countyCount, facilityCount, highPrio
   return (
     <div className="grid grid-cols-2 gap-3 mb-6 sm:grid-cols-4">
       <StatCard label="Counties" value={countyCount} sub="compare side-by-side" href="/compare" />
-      <StatCard label="Facilities" value={facilityCount} sub="view data sources" href="/dua" />
-      <StatCard label="Population" value={totalPop.toLocaleString()} sub="residents" href="/method" />
-      <StatCard label="High priority" value={highPriorityCount} sub="counties (Priority Gap Score >= 50)" href="/method" />
+      <StatCard label="Facilities" value={facilityCount} sub="view data sources" href="/dua#sources" />
+      <StatCard label="Population" value={totalPop.toLocaleString()} sub="residents" href="/method#formula" />
+      <StatCard label="High priority" value={highPriorityCount} sub="counties (Priority Gap Score >= 50)" href="/method#thresholds" />
     </div>
   );
 }
