@@ -72,6 +72,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <Header />
         <main id="main-content">{children}</main>
+        <footer className="text-center text-[11px] text-stone-400 py-4 px-4 print:hidden">
+          No account needed. No data collected. Code is open source.
+        </footer>
         <InstallPrompt />
         <script
           dangerouslySetInnerHTML={{
