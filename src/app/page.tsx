@@ -103,7 +103,7 @@ export default function HomePage() {
           Identify regions with the most critical service deficits and access evidence to support policy reform.
         </p>
         <p className="mt-0.5 text-[11px] italic text-stone-500 sm:text-xs">
-          Transparent evidence for legally mandated County Health Management Team planning (Kenya Health Act 2017) and community-led advocacy.
+          A community-owned platform. Transparent evidence for legally mandated County Health Management Team planning (Kenya Health Act 2017) and community-led advocacy.
         </p>
       </div>
 
