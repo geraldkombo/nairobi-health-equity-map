@@ -1,19 +1,7 @@
 **To:** cssabstracts@amref.org
 **Subject:** RESUBMISSION - From Data to Demand: A Community-Owned Platform for Health Equity Monitoring Across Kenya's 47 Counties (Template Used) - Gerald Kombo
 
----
 
-Dear Review Committee,
-
-Following your feedback that only abstracts submitted using the official template are accepted, please find below my resubmission using the AMREF CSS Knowledge Dissemination Forum abstract template for Sub-theme 2: Digital Health and Evidence Generation Through Community-Led Monitoring.
-
-All data points are validated against the live platform at https://geraldkombo.github.io/kenya-health-equity-map/.
-
-This submission responds to the Call for Expression of Interest for the 3rd CSS Knowledge Dissemination Forum (Theme: Strengthening Community Systems in the Changing Global Health Landscape).
-
-My earlier submission should be disregarded in favor of this version.
-
----
 
 # From Data to Demand: A Community-Owned Platform for Health Equity Monitoring Across Kenya's 47 Counties
 
