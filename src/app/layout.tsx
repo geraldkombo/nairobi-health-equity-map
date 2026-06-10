@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import KillServiceWorker from "@/components/KillServiceWorker";
 import { siteConfig } from "@/lib/site";
 
 const inter = Inter({
@@ -65,6 +64,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${lora.variable} antialiased`}>
       <head>
         <link rel="manifest" href={`${BASE}/manifest.json`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                  for(var i = 0; i < registrations.length; i++) {
+                    registrations[i].unregister().then(function(success) {
+                      if (success) {
+                        if ('caches' in window) {
+                          caches.keys().then(function(names) {
+                            for (var j = 0; j < names.length; j++) {
+                              caches.delete(names[j]);
+                            }
+                          });
+                        }
+                      }
+                    });
+                  }
+                });
+              }
+            `,
+          }}
+        />
       </head>
       <body className="min-w-[320px] overflow-x-hidden min-h-[100svh] bg-stone-50 text-stone-800">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:p-4 focus:bg-white focus:z-50 focus:text-accent-600 focus:outline-none min-h-[44px] flex items-center">
@@ -80,7 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
           </div>
         </footer>
-        <KillServiceWorker />
       </body>
     </html>
   );
