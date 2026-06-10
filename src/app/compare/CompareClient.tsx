@@ -236,7 +236,7 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
 
           {/* Action Notes */}
-          {notes.some(n => n.trim()) && <div className="break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-2 bg-white">
+          <div className="break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-2 bg-white">
             <h3 className="text-[11px] print:text-[8pt] font-bold text-stone-900 uppercase tracking-wider">County Health Management Team Action Notes</h3>
             {/* Screen: always show all inputs for typing */}
             <div className="space-y-2 print:hidden mt-1.5">
@@ -251,19 +251,19 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
                     setNotes(next);
                   }}
                   placeholder="Type an action item..."
-                  className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-1.5 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C]"
+                  className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-1.5 text-[13px] text-stone-800 placeholder:text-stone-400 capitalize focus:outline-none focus:border-[#EA580C]"
                 />
               ))}
             </div>
             {/* Print: only show filled notes as text */}
-            <div className="hidden print:block space-y-1">
+            {notes.some(n => n.trim()) && <div className="hidden print:block space-y-1">
               {notes.filter(n => n.trim()).map((note, i) => (
                 <div key={i} className="px-1 py-0.5 text-[8pt] text-stone-800 border-b border-stone-400">
                   {note}
                 </div>
               ))}
-            </div>
-          </div>}
+            </div>}
+          </div>
         </div>
       ) : (
         <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-white p-8 text-center text-[14px] leading-7 text-[#8A8170]">
