@@ -1,5 +1,5 @@
 **To:** cssabstracts@amref.org
-**Subject:** RESUBMISSION - Using Official Template: Stories from the Map - Community-Led Health Equity Evidence in Kenya - Gerald Kombo
+**Subject:** RESUBMISSION - Democratizing Evidence Generation: An Offline-First Civic Intelligence Platform for Community-Led Monitoring of Health Equity in Kenya (Template Used) - Gerald Kombo
 
 ---
 
