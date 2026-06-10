@@ -151,7 +151,7 @@ export default function HomePage() {
             <span className="flex items-center gap-1" title="Scores of 70 or above signal severe gaps. These counties need urgent resource allocation">
               <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#8C2D04] sm:h-3 sm:w-3"></span> Critical (70+)
             </span>
-            <span className="ml-auto text-stone-400">Priority Gap Score</span>
+            <span className="ml-auto text-stone-400" title="The Priority Gap Score (PGS) measures how hard it is for residents to reach a clinic. 0 is best, 100 is worst. Based on travel time, poverty rate, and population pressure on clinics.">Priority Gap Score</span>
           </div>
         </div>
 
