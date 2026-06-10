@@ -40,8 +40,8 @@ function PrintableBrief({
   }, [county.name]);
 
   return (
-    <div className="p-8 print:p-0 flex flex-col justify-between min-h-[277mm]">
-      <div className="space-y-4 print:space-y-3">
+    <div className="p-8 print:p-0 flex flex-col">
+      <div className="space-y-3 print:space-y-2">
 
         {/* Header */}
         <header className="border-b-4 border-[#EA580C] pb-3 flex justify-between items-end break-inside-avoid">
@@ -110,22 +110,22 @@ function PrintableBrief({
         )}
 
         {/* Core Metrics */}
-        <div className="grid grid-cols-4 gap-3 print:gap-2 break-inside-avoid">
-          <div className="border border-stone-200 rounded-lg p-4 print:p-3 bg-white">
-            <p className="text-2xl print:text-[16pt] font-black text-stone-900 leading-none">{indicator.population.toLocaleString()}</p>
-            <p className="text-[11px] print:text-[7pt] text-stone-600 font-medium mt-1 leading-tight">Total population</p>
+        <div className="grid grid-cols-4 gap-2 print:gap-1 break-inside-avoid">
+          <div className="border border-stone-200 rounded-lg p-3 print:p-2 bg-white">
+            <p className="text-xl print:text-[12pt] font-black text-stone-900 leading-none">{indicator.population.toLocaleString()}</p>
+            <p className="text-[10px] print:text-[6pt] text-stone-600 font-medium mt-0.5 leading-tight">Total population</p>
           </div>
-          <div className="border border-stone-200 rounded-lg p-4 print:p-3 bg-white">
-            <p className="text-2xl print:text-[16pt] font-black text-stone-900 leading-none">{indicator.poverty_proxy}%</p>
-            <p className="text-[11px] print:text-[7pt] text-stone-600 font-medium mt-1 leading-tight">Poverty rate</p>
+          <div className="border border-stone-200 rounded-lg p-3 print:p-2 bg-white">
+            <p className="text-xl print:text-[12pt] font-black text-stone-900 leading-none">{indicator.poverty_proxy}%</p>
+            <p className="text-[10px] print:text-[6pt] text-stone-600 font-medium mt-0.5 leading-tight">Poverty rate</p>
           </div>
-          <div className="border border-stone-200 rounded-lg p-4 print:p-3 bg-white">
-            <p className="text-2xl print:text-[16pt] font-black text-stone-900 leading-none">{indicator.travel_time_to_facility_proxy} <span className="text-sm font-normal text-stone-500">min</span></p>
-            <p className="text-[11px] print:text-[7pt] text-stone-600 font-medium mt-1 leading-tight">Travel time to clinic</p>
+          <div className="border border-stone-200 rounded-lg p-3 print:p-2 bg-white">
+            <p className="text-xl print:text-[12pt] font-black text-stone-900 leading-none">{indicator.travel_time_to_facility_proxy} <span className="text-sm font-normal text-stone-500">min</span></p>
+            <p className="text-[10px] print:text-[6pt] text-stone-600 font-medium mt-0.5 leading-tight">Travel time to clinic</p>
           </div>
-          <div className="border border-stone-200 rounded-lg p-4 print:p-3 bg-white">
-            <p className="text-2xl print:text-[16pt] font-black text-stone-900 leading-none">{indicator.facility_count}</p>
-            <p className="text-[11px] print:text-[7pt] text-stone-600 font-medium mt-1 leading-tight">Mapped facilities</p>
+          <div className="border border-stone-200 rounded-lg p-3 print:p-2 bg-white">
+            <p className="text-xl print:text-[12pt] font-black text-stone-900 leading-none">{indicator.facility_count}</p>
+            <p className="text-[10px] print:text-[6pt] text-stone-600 font-medium mt-0.5 leading-tight">Mapped facilities</p>
           </div>
         </div>
 
@@ -173,22 +173,28 @@ function PrintableBrief({
         </div>
 
         {/* Action Notes */}
-        {notes.some(n => n.trim()) && <div className="break-inside-avoid border border-stone-300 rounded-lg p-4 print:p-2 bg-white">
-          <h3 className="text-[11px] print:text-[7pt] font-bold text-stone-900 uppercase tracking-wider mb-2 print:mb-1">County Health Management Team Action Notes</h3>
-          <div className="space-y-3 print:space-y-1">
+        {notes.some(n => n.trim()) && <div className="break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-1.5 bg-white">
+          <h3 className="text-[11px] print:text-[7pt] font-bold text-stone-900 uppercase tracking-wider mb-1.5 print:mb-0.5">County Health Management Team Action Notes</h3>
+          <div className="space-y-2 print:space-y-0.5">
             {notes.map((note, i) => (
-              <input
-                key={i}
-                type="text"
-                value={note}
-                onChange={(e) => {
-                  const next = [...notes];
-                  next[i] = e.target.value;
-                  setNotes(next);
-                }}
-                placeholder="Type an action item..."
-                className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-2 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C] print:border-stone-400 print:text-[7pt] print:py-0.5"
-              />
+              note.trim() ? (
+                <div key={i} className="px-1 py-1 text-[13px] print:text-[7pt] text-stone-800 border-b border-stone-300 print:border-stone-400">
+                  {note}
+                </div>
+              ) : (
+                <input
+                  key={i}
+                  type="text"
+                  value={note}
+                  onChange={(e) => {
+                    const next = [...notes];
+                    next[i] = e.target.value;
+                    setNotes(next);
+                  }}
+                  placeholder="Type an action item..."
+                  className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-1.5 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C] print:hidden"
+                />
+              )
             ))}
           </div>
         </div>}

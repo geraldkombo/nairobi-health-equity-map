@@ -236,22 +236,28 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
 
           {/* Action Notes */}
-          {notes.some(n => n.trim()) && <div className="print:mt-0 break-inside-avoid border border-stone-300 rounded-lg p-4 print:p-2 bg-white">
+          {notes.some(n => n.trim()) && <div className="print:mt-0 break-inside-avoid border border-stone-300 rounded-lg p-3 print:p-1.5 bg-white">
             <h3 className="text-[11px] print:text-[7pt] font-bold text-stone-900 uppercase tracking-wider">County Health Management Team Action Notes</h3>
-            <div className="space-y-2 print:space-y-1 mt-2 print:mt-1">
+            <div className="space-y-2 print:space-y-0.5 mt-1.5 print:mt-0.5">
               {notes.map((note, i) => (
-                <input
-                  key={i}
-                  type="text"
-                  value={note}
-                  onChange={(e) => {
-                    const next = [...notes];
-                    next[i] = e.target.value;
-                    setNotes(next);
-                  }}
-                  placeholder="Type an action item..."
-                  className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-1.5 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C] print:border-stone-400 print:text-[7pt] print:py-0.5"
-                />
+                note.trim() ? (
+                  <div key={i} className="px-1 py-1 text-[13px] print:text-[7pt] text-stone-800 border-b border-stone-300 print:border-stone-400">
+                    {note}
+                  </div>
+                ) : (
+                  <input
+                    key={i}
+                    type="text"
+                    value={note}
+                    onChange={(e) => {
+                      const next = [...notes];
+                      next[i] = e.target.value;
+                      setNotes(next);
+                    }}
+                    placeholder="Type an action item..."
+                    className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-1.5 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C] print:hidden"
+                  />
+                )
               ))}
             </div>
           </div>}
