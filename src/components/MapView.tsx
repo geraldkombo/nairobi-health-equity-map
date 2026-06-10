@@ -234,7 +234,7 @@ export default function MapView({
             <span className="font-semibold text-stone-800">{hoverInfo.countyName}</span>
           </div>
           {pgsLabel && (
-            <p className="mt-1 text-sm text-stone-500">
+            <p className="mt-1 text-sm text-stone-500" title={`${pgsLabel} out of 100. Higher numbers mean worse gaps. 0 is best, 100 is worst.`}>
               Priority Gap Score: <span className="font-medium text-stone-700">{pgsLabel}</span>
             </p>
           )}

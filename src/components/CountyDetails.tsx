@@ -129,7 +129,7 @@ export default function CountyDetails({ county, indicators }: CountyDetailsProps
           </p>
         </div>
         {score && (
-          <div className={`rounded-lg px-3 py-1.5 text-right ${pgsClass}`}>
+          <div className={`rounded-lg px-3 py-1.5 text-right ${pgsClass}`} title={`${score.pgs} out of 100. Higher numbers mean worse gaps in health services. 0 is the best possible score, 100 is the worst. This number reflects how hard it is for residents to reach a clinic based on travel time, poverty, and population pressure.`}>
             <div className="text-xl font-bold tracking-tight">{score.pgs}</div>
             <div className="text-[10px] font-medium opacity-80">Priority Gap Score</div>
           </div>
