@@ -65,6 +65,10 @@ const NEIGHBORS: Record<string, string[]> = {
 export default function CompareClient({ counties, indicators }: CompareClientProps) {
   const [countyA, setCountyA] = useState("");
   const [countyB, setCountyB] = useState("");
+  const [authorName, setAuthorName] = useState("");
+  const [authorTitle, setAuthorTitle] = useState("");
+  const [authorOrg, setAuthorOrg] = useState("");
+  const [notes, setNotes] = useState<string[]>(["", ""]);
 
   const selA = useMemo(() => counties.find((c) => c.id === countyA) ?? null, [counties, countyA]);
   const selB = useMemo(() => counties.find((c) => c.id === countyB) ?? null, [counties, countyB]);
@@ -109,7 +113,53 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
         </div>
       </div>
 
-      {/* Selectors */}
+      {/* Metadata Form */}
+      <div className="rounded-[8px] border border-[#E0DBD0] bg-[#F8F5F0] p-6 shadow-sm print:hidden mb-8">
+        <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#524B3F] mb-6">
+          Author Information
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div>
+            <label htmlFor="author-name" className="mb-2 block text-[12px] font-semibold uppercase text-[#292524]">
+              Your Name
+            </label>
+            <input
+              id="author-name"
+              type="text"
+              value={authorName}
+              onChange={(e) => setAuthorName(e.target.value)}
+              placeholder="e.g. Dr. Jane Doe"
+              className="w-full min-h-[44px] rounded-[4px] border border-[#E0DBD0] bg-white px-4 py-2 text-[14px] text-[#292524] shadow-sm hover:border-[#A8A08F] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+            />
+          </div>
+          <div>
+            <label htmlFor="author-title" className="mb-2 block text-[12px] font-semibold uppercase text-[#292524]">
+              Title / Role
+            </label>
+            <input
+              id="author-title"
+              type="text"
+              value={authorTitle}
+              onChange={(e) => setAuthorTitle(e.target.value)}
+              placeholder="e.g. County Health Officer"
+              className="w-full min-h-[44px] rounded-[4px] border border-[#E0DBD0] bg-white px-4 py-2 text-[14px] text-[#292524] shadow-sm hover:border-[#A8A08F] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+            />
+          </div>
+          <div>
+            <label htmlFor="author-org" className="mb-2 block text-[12px] font-semibold uppercase text-[#292524]">
+              Organization
+            </label>
+            <input
+              id="author-org"
+              type="text"
+              value={authorOrg}
+              onChange={(e) => setAuthorOrg(e.target.value)}
+              placeholder="e.g. County Health Department"
+              className="w-full min-h-[44px] rounded-[4px] border border-[#E0DBD0] bg-white px-4 py-2 text-[14px] text-[#292524] shadow-sm hover:border-[#A8A08F] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+            />
+          </div>
+        </div>
+      </div>
       <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-[#F8F5F0] p-8 shadow-sm print:hidden">
         <div className="mb-4 flex items-center justify-between border-b border-[#E0DBD0] pb-4">
           <h2 className="text-[12px] font-bold uppercase tracking-widest text-[#524B3F]">
@@ -184,6 +234,27 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
       {selA && selB && selA.id !== selB.id ? (
         <div className="mt-8 print:m-2 print:p-2">
           <CompareView countyA={selA} countyB={selB} indicators={indicators} />
+
+          {/* Action Notes */}
+          <div className="mt-8 break-inside-avoid border border-stone-300 rounded-lg p-4 print:p-3 bg-white">
+            <h3 className="text-[11px] print:text-[9pt] font-bold text-stone-900 uppercase tracking-wider mb-2">County Health Management Team Action Notes</h3>
+            <div className="space-y-3 print:space-y-2 mt-3">
+              {notes.map((note, i) => (
+                <input
+                  key={i}
+                  type="text"
+                  value={note}
+                  onChange={(e) => {
+                    const next = [...notes];
+                    next[i] = e.target.value;
+                    setNotes(next);
+                  }}
+                  placeholder="Type an action item..."
+                  className="w-full border-0 border-b border-stone-300 bg-transparent px-1 py-2 text-[13px] text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#EA580C] print:border-stone-400 print:text-[9pt] print:p-1"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       ) : (
         <div className="mt-8 rounded-[8px] border border-[#E0DBD0] bg-white p-8 text-center text-[14px] leading-7 text-[#8A8170]">
@@ -192,10 +263,15 @@ export default function CompareClient({ counties, indicators }: CompareClientPro
       )}
 
       <div className="hidden print:flex justify-between items-center text-xs text-stone-500 mt-12 pt-4 border-t border-stone-200">
-        <span>{selA?.name ? `${selA.name} County` : "Select primary county"}</span>
+        <div className="flex flex-col gap-0.5">
+          <span>{selA?.name ? `${selA.name} County` : "Select primary county"}</span>
+          {authorName && <span className="text-[8pt]">{authorName}{authorTitle ? `, ${authorTitle}` : ""}{authorOrg ? ` - ${authorOrg}` : ""}</span>}
+        </div>
         <span className="font-bold">VS</span>
-        <span>{selB?.name ? `${selB.name} County` : "Select comparison county"}</span>
-        <span>Kenya Health Equity Map | Offline Evidence Generator</span>
+        <div className="flex flex-col gap-0.5 text-right">
+          <span>{selB?.name ? `${selB.name} County` : "Select comparison county"}</span>
+          <span className="text-[8pt]">Kenya Health Equity Map</span>
+        </div>
       </div>
 
       <div className="mt-8 print:hidden">
