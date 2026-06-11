@@ -65,16 +65,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${lora.variable} antialiased`}>
       <head>
         <link rel="manifest" href={`${BASE}/manifest.json`} />
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  var swUrl = (${JSON.stringify(BASE)} || '') + '/sw.js';
-                  navigator.serviceWorker.register(swUrl);
-                });
-              }
-            `,
+            __html: [
+              "if ('serviceWorker' in navigator) {",
+              "  window.addEventListener('load', function() {",
+              "    var swUrl = (" + JSON.stringify(BASE) + " || '') + '/sw.js';",
+              "    navigator.serviceWorker.register(swUrl, { updateViaCache: 'none' });",
+              "  });",
+              "}"
+            ].join("\n"),
           }}
         />
       </head>
