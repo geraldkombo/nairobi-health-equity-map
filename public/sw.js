@@ -1,29 +1,31 @@
-const CACHE_NAME = "ke-health-rescue-v1";
+const CACHE = "khem-v3";
 
 self.addEventListener("install", (e) => {
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (e) => {
-  e.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => caches.delete(cacheName))
-      );
-    }).then(() => {
-      return self.registration.unregister();
-    }).then(() => {
-      return self.clients.claim().then(() => {
-        self.clients.matchAll({ type: "window" }).then((clients) => {
-          clients.forEach((client) => {
-            client.navigate(client.url);
-          });
-        });
-      });
-    })
-  );
+  e.waitUntil(self.clients.claim());
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(fetch(event.request));
+self.addEventListener("fetch", (e) => {
+  const url = new URL(e.request.url);
+  const isMapTile = url.hostname.includes("tile") || url.hostname.includes("cartocdn") || url.hostname.includes("openstreetmap");
+  if (isMapTile) {
+    e.respondWith(fetch(e.request));
+    return;
+  }
+  e.respondWith(
+    caches.open(CACHE).then(async (cache) => {
+      const cached = await cache.match(e.request);
+      if (cached) return cached;
+      try {
+        const fetched = await fetch(e.request);
+        if (url.origin === self.location.origin) cache.put(e.request, fetched.clone());
+        return fetched;
+      } catch {
+        return new Response("Offline", { status: 408 });
+      }
+    })
+  );
 });

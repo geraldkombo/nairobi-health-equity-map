@@ -68,20 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                  for(var i = 0; i < registrations.length; i++) {
-                    registrations[i].unregister().then(function(success) {
-                      if (success) {
-                        if ('caches' in window) {
-                          caches.keys().then(function(names) {
-                            for (var j = 0; j < names.length; j++) {
-                              caches.delete(names[j]);
-                            }
-                          });
-                        }
-                      }
-                    });
-                  }
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js');
                 });
               }
             `,
