@@ -198,12 +198,6 @@ export default function HomePage() {
       <div className="mt-6 border-t border-stone-200 pt-6">
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/brief?county=1"
-            className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors focus-visible:outline-2 focus-visible:outline-accent-600 focus-visible:outline-offset-2"
-          >
-            View sample brief
-          </Link>
-          <Link
             href="/method"
             className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 transition-colors focus-visible:outline-2 focus-visible:outline-accent-600 focus-visible:outline-offset-2"
           >
