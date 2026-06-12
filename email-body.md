@@ -13,9 +13,9 @@
 
 **Description of intervention:** The Kenya Health Equity Map is a free digital platform that turns complex demographic data into a transparent Priority Gap Score (0-100). No login, no data collection, and no account are required. A Community Health Promoter can open it on a basic smartphone, tap their county, and view travel times, poverty rates, and clinic availability in a single place.
 
-**Findings and lessons learned:** Turkana scores 92 out of 100 (severe gap). A mother there travels 90 minutes to reach a clinic, 47% of births happen at home, and 42.6% of households live in poverty. Nairobi scores 40 (moderate gap), with 618 mapped facilities and 16.5% poverty. This 52-point gap means a woman in Turkana travels 90 minutes for basic care while a Nairobi resident accesses a clinic within minutes. Communities in Turkana, Tana River (89, severe gap, 72.5% poverty), and Elgeyo-Marakwet validated these findings against local knowledge and independently added missing clinics to OpenStreetMap.
+**Findings and lessons learned:** Turkana scores 92 out of 100 (severe gap). A mother there travels 90 minutes to reach a clinic, 47% of births happen at home, and 42.6% of households live in poverty. Nairobi scores 40 (moderate gap), with 618 mapped facilities and 16.5% poverty. This 52-point gap means a woman in Turkana travels 90 minutes for basic care while a Nairobi resident accesses a clinic within minutes. Communities in Turkana, Tana River (89, severe gap, 72.5% poverty), and Elgeyo-Marakwet confirmed these findings and independently added missing clinics to OpenStreetMap.
 
-**Conclusion and next steps:** The platform operates at zero ongoing cost and is independent of any single organization. It puts the same county-level evidence that shapes health budgets onto any phone, ready for legally mandated County Health Management Team meetings where community voices belong.
+**Conclusion and next steps:** The platform operates at zero ongoing cost and is independent of any single organization. It puts county-level evidence on any phone, ready for legally mandated County Health Management Team meetings where community voices belong.
 
 **Keywords:** Digital Health, Community-Led Monitoring, Health Equity, Civic Technology, Kenya
 
